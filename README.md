@@ -1,23 +1,32 @@
 # Drawing Singapore's Electoral Boundaries
 
-![image](https://i.imgur.com/piOHlGT.jpg)
+## TODO
+Information should now be sufficient.
 
+What to do next:
+- (done) Obtain the zoning data.
+- Identify which subzone is adjacent to which subzone.
+- Construct the graph of the subzone and visualise it
+- Define the loss function, and constraints.
+- Define the mathematical problem (linear programming)?
+- Construct a draft solution and devise a function to calculate the loss.
+- Construct an algorithmic solution to determine the optimal distribution.
+- Display the solution.
+- Front-end development to produce an interactive interface of drawing electoral boundaries.
+
+![image](https://i.imgur.com/piOHlGT.jpg)
 
 ## Data sources
 
 https://www.eld.gov.sg/pdf/White%20Paper%20on%20the%20Report%20of%20the%20Electoral%20Boundaries%20Review%20Committee%202015.pdf
-Contains the visulisation as shown above.
+Contains the visulisation as shown above. You can see that each electorate is made up of subzones.
 
 https://data.gov.sg/dataset/electoral-boundary-2015
 Electoral boundary datapoints in 2015.
 
-https://data.gov.sg/dataset/master-plan-2014-subzone-boundary-web
-Exact boundary datapoints on the polling district not found, therefore we can use this subzone boundary to divide the land area.
-
-Google Maps
-If we are to estimate population based on satellite images.
-
-
+Planning area/subzone based on URA MP14, Singapore Residents by Subzone and Type of Dwelling, Jun 2017
+https://data.gov.sg/dataset/singapore-residents-by-subzone-and-type-of-dwelling-jun-2017
+This is the latest data that I have - this is how it looks like when uploaded to Google Maps https://drive.google.com/open?id=1WCq8jMEkWFeaoDDA5hboony-Rf_0LuLr&usp=sharing
 
 ## Algorithmic sources
 
@@ -101,6 +110,11 @@ You have an array of tags against polling district. 1 indicates that the tag is 
 
 You start with a not-so-random initial state - for instance one assigned with default names, or the previous year's constituencies. Then small modifications are made to see if provides a fairer assignment.
 
-### Support me!
+## Additional data appreciated
+
+- The population of each polling district. This is the actual input that is used to draw the electoral boundaries, rather than subzones
+- The result of each polling district. This will not be used as an input in any form. It is meant to measure the outcome of elections if boundaries have been drawn differently.
+
+## Support me!
 
 Buy me a coffee at Cantonment Road!
