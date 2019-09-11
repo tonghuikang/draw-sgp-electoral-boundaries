@@ -42,6 +42,11 @@ Similar ideas.
 https://www.todayonline.com/singapore/whos-electoral-boundaries-review-committee-and-how-it-draws-ge-battle-lines
 In 2015, the EBRC determined that one MP could represent between 20,000 and 37,000 voters. It also had to be mindful that the GRCs with fewer MPs should not have more electors than a GRC with more MPs.
 
+https://stackoverflow.com/questions/33782390/how-to-divide-a-connected-weighted-graph-to-n-semi-equal-subgraphs
+This is a minimum k-cut problem.
+
+https://en.wikipedia.org/wiki/Stoer–Wagner_algorithm
+For a minimum 2-cut in an unweighted grpah
 
 ## The special case of Singapore
 
