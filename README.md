@@ -5,8 +5,8 @@ Information should now be sufficient.
 
 What to do next:
 - (done) Obtain the zoning data.
-- Identify which subzone is adjacent to which subzone.
-- Construct the graph of the subzone and visualise it
+- (done) Identify which subzone is adjacent to which subzone.
+- (done) Construct the graph of the subzone and visualise it
 - Define the loss function, and constraints.
 - Define the mathematical problem (linear programming)?
 - Construct a draft solution and devise a function to calculate the loss.
@@ -67,13 +67,13 @@ The size of GRC can range to 3-member GRC to 6-member GRC. Each GRC needs to fie
 
 So the task is to divide the polling districts into a set number of SMC and GRC (of respective sizes).
 
-#### Area names
+#### Area names.
 
 Unlike other countries, SMC and GRC has a name. Each constituency is not merely a number like "North Carolina 12th Congressional District". People and policitians associate themselves to the place or town.
 
 However, when do you consider yourself to be part of a town or otherwise? One way is to look at the road name. If you live on Ang Mo Kio Avenue 1 you will consider weird to be assigned to Nee Soon GRC. 
 
-#### Past constituency
+#### Past constituency.
 
 It is also best to keep constituencies the same as it was in the past. Even if the reassignment of a polling district produces fairer configuration, there will still be sentiments on whether this reassignment benefit a certain political party.
 
@@ -88,7 +88,7 @@ Each polling district will be represented as a node in a connected graph. Adjenc
 ### Objective
 
 We want a fair assignment of the constituencies. 
-The problem is to partition the graph. However, as constituency names need to be assigned, 
+The problem is to partition the graph. However, as constituency names need to be assigned.
 Constraints must be respected, and losses will be assigned for ineffencies.
 
 ### Constraints
