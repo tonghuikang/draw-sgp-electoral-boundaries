@@ -1,17 +1,24 @@
 # Drawing Singapore's Electoral Boundaries
 
-## TODO
-Information should now be sufficient.
+What has been done - data preprocessing
 
-What to do next:
 - (done) Obtain the zoning data.
 - (done) Identify which subzone is adjacent to which subzone.
 - (done) Construct the graph of the subzone and visualise it
+
+The data should be sufficient, but I appreciate more granular popluation information.
+
+## TODO
+Mathematical modelling
+
 - Define the loss function, and constraints.
 - Define the mathematical problem (linear programming)?
 - Construct a draft solution and devise a function to calculate the loss.
 - Construct an algorithmic solution to determine the optimal distribution.
 - Display the solution.
+
+Deployment
+
 - Front-end development to produce an interactive interface of drawing electoral boundaries.
 
 ![image](https://i.imgur.com/piOHlGT.jpg)
@@ -47,6 +54,16 @@ This is a minimum k-cut problem.
 
 https://en.wikipedia.org/wiki/Stoer–Wagner_algorithm
 For a minimum 2-cut in an unweighted grpah
+
+Min-cost flow - https://developers.google.com/optimization/flow/mincostflow However, 
+
+Degree-constrained minimum spanning tree https://en.wikipedia.org/wiki/Degree-constrained_spanning_tree
+
+Polynomial algorithm to compute N+1 degree https://www.sciencedirect.com/science/article/pii/S019667748471042X?via%3Dihub
+
+Approximate algorithm to compute an suboptimal solution to an arbitrary degree https://github.com/niroyb/AntBased_DCMST
+
+
 
 ## The special case of Singapore
 
