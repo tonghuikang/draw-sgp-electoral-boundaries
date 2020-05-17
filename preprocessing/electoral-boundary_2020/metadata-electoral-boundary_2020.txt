@@ -1,0 +1,37 @@
+# Metadata for Electoral Boundary 2020
+---
+Identifier: '6241ae7f-6dfe-4351-8570-611357d1a90e'
+Name: 'electoral-boundary_2020'
+Title: 'Electoral Boundary 2020'
+Description: 'Electoral divisions (also called constituencies) are areas within Singapore
+  demarcated by the Prime Minister by law for the purposes of Parliamentary elections
+  and Presidential elections.'
+Topics:
+  - 'Infrastructure'
+Keywords:
+  - 'Constituency'
+  - 'Election'
+  - 'Electoral Boundary'
+  - 'boundary'
+Publisher:
+  Name: 'Prime Minister''s Office - Elections Department'
+  Admin 1:
+    Name: 'Niki Leong'
+    Department: 'Elections Department'
+    Email: 'Niki_LEONG@eld.gov.sg'
+  Admin 2:
+    Name: 'Ian Tan'
+    Department: 'Elections Department'
+    Email: 'Ian_TAN@eld.gov.sg'
+Sources:
+  - 'Prime Minister''s Office - Elections Department'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Ad-hoc'
+Last Updated: '2020-03-13T08:43:59.706711'
+Resources:
+  -
+    Identifier: 'e2fc4027-2a7c-4be1-8f0b-ba1737c09933'
+    Title: 'Electoral Boundary Dataset'
+    Url: 'https://storage.data.gov.sg/electoral-boundary_2020/resources/electoral-boundary-dataset-2020-03-13T08-35-44Z.kmz'
+    Format: 'KMZ'
+    Last Updated: '2020-03-13T08:35:44.663194'

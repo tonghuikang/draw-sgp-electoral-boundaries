@@ -5,8 +5,7 @@ What has been done - data preprocessing
 - (done) Obtain the zoning data.
 - (done) Identify which subzone is adjacent to which subzone.
 - (done) Construct the graph of the subzone and visualise it
-
-The data should be sufficient, but I appreciate more granular popluation information.
+- The data should be sufficient, but I appreciate more granular popluation information.
 
 ## TODO
 Mathematical modelling
@@ -28,7 +27,9 @@ Deployment
 https://www.eld.gov.sg/pdf/White%20Paper%20on%20the%20Report%20of%20the%20Electoral%20Boundaries%20Review%20Committee%202015.pdf
 Contains the visulisation as shown above. You can see that each electorate is made up of subzones.
 
-https://www.google.com.sg/maps/d/viewer?ll=1.315521116399046%2C103.8463351752846&z=11&mid=1p4VfSRkaNZViwdsr-KRvpiEjQESuP3vP Polling districts
+
+
+https://www.google.com.sg/maps/d/viewer?ll=1.315521116399046%2C103.8463351752846&z=11&mid=1p4VfSRkaNZViwdsr-KRvpiEjQESuP3vP Polling districts from https://www.facebook.com/pritam.eunos/posts/2972177026137924
 
 <iframe src="https://www.google.com.sg/maps/d/embed?mid=1p4VfSRkaNZViwdsr-KRvpiEjQESuP3vP&z=10" width="640" height="480"></iframe>
 
