@@ -1,0 +1,39 @@
+# Metadata for Electoral Boundary 2006
+---
+Identifier: '7d631fa0-f394-4b42-b658-5f477d7326cb'
+Name: 'electoral-boundary-2006'
+Title: 'Electoral Boundary 2006'
+Description: 'Electoral divisions (also called constituencies) are areas within Singapore
+  demarcated by the Prime Minister by law for the purposes of Parliamentary elections
+  and Presidential elections.'
+Topics:
+  - 'Infrastructure'
+Keywords:
+  - 'Boundary'
+  - 'Constituency'
+  - 'Election'
+  - 'Electoral Boundary'
+Publisher:
+  Name: 'Prime Minister''s Office - Elections Department'
+  Admin 1:
+    Name: 'Chua Kim Choon'
+    Department: 'ELECTIONS DEPARTMENT'
+    Email: 'chua_kim_choon@eld.gov.sg'
+Sources:
+  - 'Prime Minister''s Office - Elections Department'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Ad-hoc'
+Last Updated: '2019-01-24T09:56:44.106314'
+Resources:
+  -
+    Identifier: 'e2d9d0e9-9222-41d8-a322-aeebc3d208f4'
+    Title: 'Electoral Boundary 2006 (KML)'
+    Url: 'https://geo.data.gov.sg/ed-bdy-2009/2015/04/24/kml/ed-bdy-2009.kml'
+    Format: 'KML'
+    Last Updated: '2015-04-23T16:00:00'
+  -
+    Identifier: '0c6a0908-8fc8-4bfa-9e55-54f71feeee1f'
+    Title: 'Electoral Boundary 2006 (GEOJSON)'
+    Url: 'https://geo.data.gov.sg/ed-bdy-2009/2015/04/24/geojson/ed-bdy-2009.geojson'
+    Format: 'GeoJSON'
+    Last Updated: '2015-04-23T16:00:00'

@@ -1,0 +1,39 @@
+# Metadata for Electoral Boundary 2015
+---
+Identifier: 'a55a205a-b0a1-427f-ba7b-68d375634b28'
+Name: 'electoral-boundary-2015'
+Title: 'Electoral Boundary 2015'
+Description: 'Electoral divisions (also called constituencies) are areas within Singapore
+  demarcated by the Prime Minister by law for the purposes of Parliamentary elections
+  and Presidential elections.'
+Topics:
+  - 'Infrastructure'
+Keywords:
+  - 'Boundary'
+  - 'Constituency'
+  - 'Election'
+  - 'Electoral Boundary'
+Publisher:
+  Name: 'Prime Minister''s Office - Elections Department'
+  Admin 1:
+    Name: 'Chua Kim Choon'
+    Department: 'ELECTIONS DEPARTMENT'
+    Email: 'chua_kim_choon@eld.gov.sg'
+Sources:
+  - 'Prime Minister''s Office - Elections Department'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Ad-hoc'
+Last Updated: '2019-11-08T04:03:37.442631'
+Resources:
+  -
+    Identifier: '03093213-2c31-487b-907f-09c81c0b82fd'
+    Title: 'Electoral Boundary 2015 (KML)'
+    Url: 'https://geo.data.gov.sg/eld2015/2015/09/16/kml/eld2015.kml'
+    Format: 'KML'
+    Last Updated: '2015-09-15T16:00:00'
+  -
+    Identifier: '5cdc1551-d947-4054-9361-24c692cb65c2'
+    Title: 'Electoral Boundary 2015 (GEOJSON)'
+    Url: 'https://geo.data.gov.sg/eld2015/2015/09/16/geojson/eld2015.geojson'
+    Format: 'GeoJSON'
+    Last Updated: '2015-09-15T16:00:00'
