@@ -28,12 +28,22 @@ Deployment
 https://www.eld.gov.sg/pdf/White%20Paper%20on%20the%20Report%20of%20the%20Electoral%20Boundaries%20Review%20Committee%202015.pdf
 Contains the visulisation as shown above. You can see that each electorate is made up of subzones.
 
+https://www.google.com.sg/maps/d/viewer?ll=1.315521116399046%2C103.8463351752846&z=11&mid=1p4VfSRkaNZViwdsr-KRvpiEjQESuP3vP Polling districts
+
+<iframe src="https://www.google.com.sg/maps/d/embed?mid=1p4VfSRkaNZViwdsr-KRvpiEjQESuP3vP&z=10" width="640" height="480"></iframe>
+
 https://data.gov.sg/dataset/electoral-boundary-2015
 Electoral boundary datapoints in 2015.
 
 Planning area/subzone based on URA MP14, Singapore Residents by Subzone and Type of Dwelling, Jun 2017
 https://data.gov.sg/dataset/singapore-residents-by-subzone-and-type-of-dwelling-jun-2017
 This is the latest data that I have - this is how it looks like when uploaded to Google Maps https://drive.google.com/open?id=1WCq8jMEkWFeaoDDA5hboony-Rf_0LuLr&usp=sharing
+
+## Commentaries
+https://newnaratif.com/research/how-gerrymandering-creates-unfair-elections-in-singapore/
+http://www.wp.sg/wp-statement-on-ebrc-report-dated-13-mar-2020/
+
+Still trying to find a statement where WP say they want a method of drawing the electoral boundaries neutrally.
 
 ## Algorithmic sources
 
