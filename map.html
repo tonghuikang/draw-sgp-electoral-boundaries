@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Singapore Electoral Boundaries 2025</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #map {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #f5f5f5;
+    }
+    .controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      background: white;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .status {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: white;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .legend {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: white;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .legend-item {
+      margin-bottom: 5px;
+    }
+    .legend-color {
+      display: inline-block;
+      width: 20px;
+      height: 10px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <div class="controls">
+    <div>
+      <input type="checkbox" id="smc-grc-toggle" checked>
+      <label for="smc-grc-toggle">Show SMC/GRC Boundaries</label>
+    </div>
+    <div>
+      <input type="checkbox" id="polling-toggle" checked>
+      <label for="polling-toggle">Show Polling Districts</label>
+    </div>
+  </div>
+  
+  <div id="status" class="status">
+    Loading map data...
+  </div>
+  
+  <div class="legend">
+    <div class="legend-item">
+      <span class="legend-color" style="background-color: #0066FF;"></span>
+      <span>SMC/GRC Boundaries</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-color" style="background-color: #FF0000;"></span>
+      <span>Polling Districts</span>
+    </div>
+  </div>
+
+  <script>
+    // Simple KML parsing and canvas-based renderer
+    class KMLRenderer {
+      constructor(elementId) {
+        this.mapElement = document.getElementById(elementId);
+        this.layers = [];
+        this.status = document.getElementById('status');
+        
+        // Create canvas
+        this.canvas = document.createElement('canvas');
+        this.canvas.width = this.mapElement.clientWidth;
+        this.canvas.height = this.mapElement.clientHeight;
+        this.canvas.style.position = 'absolute';
+        this.canvas.style.top = '0';
+        this.canvas.style.left = '0';
+        this.canvas.style.width = '100%';
+        this.canvas.style.height = '100%';
+        this.mapElement.appendChild(this.canvas);
+        
+        // Setup canvas context
+        this.ctx = this.canvas.getContext('2d');
+        
+        // Track bounds for auto-zooming
+        this.minLat = 90;
+        this.maxLat = -90;
+        this.minLng = 180;
+        this.maxLng = -180;
+        
+        // Setup default view centered on Singapore
+        this.centerLat = 1.3521;
+        this.centerLng = 103.8198;
+        this.zoom = 1000; // Just a scale factor
+        
+        this.drawEmptyMap("Loading map data...");
+        
+        // Handle resize
+        window.addEventListener('resize', () => {
+          this.canvas.width = this.mapElement.clientWidth;
+          this.canvas.height = this.mapElement.clientHeight;
+          this.draw();
+        });
+      }
+      
+      drawEmptyMap(message = "Loading map data...") {
+        this.ctx.fillStyle = '#f5f5f5';
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        this.ctx.font = '16px Arial';
+        this.ctx.fillStyle = '#888';
+        this.ctx.textAlign = 'center';
+        this.ctx.fillText(message, this.canvas.width/2, this.canvas.height/2);
+      }
+      
+      // Convert geo coordinates to canvas coordinates
+      geoToCanvas(lat, lng) {
+        const x = ((lng - this.centerLng) * this.zoom) + (this.canvas.width / 2);
+        const y = ((this.centerLat - lat) * this.zoom) + (this.canvas.height / 2);
+        return {x, y};
+      }
+      
+      addKMLLayer(name, color, visible = true) {
+        const layer = {
+          name: name,
+          color: color,
+          visible: visible,
+          polygons: []
+        };
+        this.layers.push(layer);
+        return layer;
+      }
+      
+      // Parse a KML file and add it to a layer
+      parseKML(kmlText, layer) {
+        // Create parser and parse KML
+        const parser = new DOMParser();
+        const kmlDoc = parser.parseFromString(kmlText, 'text/xml');
+        
+        // Find all placemark elements
+        const placemarks = kmlDoc.getElementsByTagName('Placemark');
+        this.status.textContent = `Found ${placemarks.length} placemarks in ${layer.name}`;
+        
+        for (let i = 0; i < placemarks.length; i++) {
+          const placemark = placemarks[i];
+          
+          // Get name if available
+          let name = '';
+          const nameEl = placemark.getElementsByTagName('name')[0];
+          if (nameEl) {
+            name = nameEl.textContent;
+          }
+          
+          // Find polygons/multigeometries
+          const polygons = placemark.getElementsByTagName('Polygon');
+          const multiGeometries = placemark.getElementsByTagName('MultiGeometry');
+          
+          // Handle direct polygons
+          for (let j = 0; j < polygons.length; j++) {
+            this.parsePolygon(polygons[j], layer, name);
+          }
+          
+          // Handle multigeometries (collections of polygons)
+          for (let j = 0; j < multiGeometries.length; j++) {
+            const multiPolygons = multiGeometries[j].getElementsByTagName('Polygon');
+            for (let k = 0; k < multiPolygons.length; k++) {
+              this.parsePolygon(multiPolygons[k], layer, name);
+            }
+          }
+        }
+        
+        this.draw();
+      }
+      
+      // Parse a polygon element from KML
+      parsePolygon(polygonEl, layer, name) {
+        const coordinates = [];
+        
+        // Get coordinates
+        const coordsEl = polygonEl.getElementsByTagName('coordinates');
+        if (coordsEl.length > 0) {
+          const coordsText = coordsEl[0].textContent.trim();
+          const coordPairs = coordsText.split(' ');
+          
+          for (let i = 0; i < coordPairs.length; i++) {
+            const pair = coordPairs[i].trim();
+            if (pair) {
+              const parts = pair.split(',');
+              if (parts.length >= 2) {
+                const lng = parseFloat(parts[0]);
+                const lat = parseFloat(parts[1]);
+                
+                // Update bounds
+                this.minLat = Math.min(this.minLat, lat);
+                this.maxLat = Math.max(this.maxLat, lat);
+                this.minLng = Math.min(this.minLng, lng);
+                this.maxLng = Math.max(this.maxLng, lng);
+                
+                coordinates.push({lat, lng});
+              }
+            }
+          }
+        }
+        
+        if (coordinates.length > 0) {
+          layer.polygons.push({
+            coordinates: coordinates,
+            name: name
+          });
+        }
+      }
+      
+      // Calculate optimal zoom and center based on data bounds
+      updateViewport() {
+        if (this.minLat <= this.maxLat && this.minLng <= this.maxLng) {
+          this.centerLat = (this.minLat + this.maxLat) / 2;
+          this.centerLng = (this.minLng + this.maxLng) / 2;
+          
+          const latSpan = this.maxLat - this.minLat;
+          const lngSpan = this.maxLng - this.minLng;
+          
+          // Calculate zoom to fit bounds with padding
+          const padding = 0.1; // 10% padding
+          this.zoom = Math.min(
+            this.canvas.width / (lngSpan * (1 + padding)),
+            this.canvas.height / (latSpan * (1 + padding))
+          ) * 0.9; // Additional scaling factor
+        }
+      }
+      
+      // Draw all visible layers
+      draw() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.fillStyle = '#f5f5f5';
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        let hasVisiblePolygons = false;
+        
+        // Draw each visible layer
+        for (const layer of this.layers) {
+          if (!layer.visible) continue;
+          
+          this.ctx.strokeStyle = layer.color;
+          this.ctx.fillStyle = layer.color + '33'; // 20% opacity
+          this.ctx.lineWidth = 1;
+          
+          for (const polygon of layer.polygons) {
+            if (polygon.coordinates.length === 0) continue;
+            
+            hasVisiblePolygons = true;
+            
+            this.ctx.beginPath();
+            
+            const start = this.geoToCanvas(
+              polygon.coordinates[0].lat,
+              polygon.coordinates[0].lng
+            );
+            this.ctx.moveTo(start.x, start.y);
+            
+            for (let i = 1; i < polygon.coordinates.length; i++) {
+              const point = this.geoToCanvas(
+                polygon.coordinates[i].lat,
+                polygon.coordinates[i].lng
+              );
+              this.ctx.lineTo(point.x, point.y);
+            }
+            
+            this.ctx.closePath();
+            this.ctx.fill();
+            this.ctx.stroke();
+          }
+        }
+        
+        if (!hasVisiblePolygons) {
+          this.drawEmptyMap("No visible layers or data to display");
+        }
+      }
+      
+      toggleLayer(layer, visible) {
+        if (layer) {
+          layer.visible = visible;
+          this.draw();
+        }
+      }
+    }
+    
+    // Initialize our renderer
+    const renderer = new KMLRenderer('map');
+    
+    // Create our layers
+    const smcGrcLayer = renderer.addKMLLayer('SMC/GRC Boundaries', '#0066FF');
+    const pollingLayer = renderer.addKMLLayer('Polling Districts', '#FF0000');
+    
+    // Function to fetch KML from a URL
+    async function fetchKML(url) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+        }
+        return await response.text();
+      } catch (error) {
+        console.error("Error fetching KML:", error);
+        document.getElementById('status').textContent = `Error loading KML: ${error.message}`;
+        return null;
+      }
+    }
+    
+    // Load KML files from GitHub
+    async function loadAllLayers() {
+      try {
+        // GitHub raw URLs for the KML files
+        const smcGrcUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/ge2025_smc_grc.kml';
+        const pollingUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/ge2025_polling_districts.kml';
+        
+        // Load SMC/GRC layer
+        const smcGrcKML = await fetchKML(smcGrcUrl);
+        if (smcGrcKML) {
+          renderer.parseKML(smcGrcKML, smcGrcLayer);
+        }
+        
+        // Load Polling Districts layer
+        const pollingKML = await fetchKML(pollingUrl);
+        if (pollingKML) {
+          renderer.parseKML(pollingKML, pollingLayer);
+        }
+        
+        // Update viewport after loading all layers
+        renderer.updateViewport();
+        renderer.draw();
+        
+        // Update status
+        document.getElementById('status').textContent = "Map loaded successfully";
+        
+        // Hide status message after a few seconds
+        setTimeout(() => {
+          document.getElementById('status').style.display = 'none';
+        }, 3000);
+        
+      } catch (error) {
+        console.error("Error loading layers:", error);
+        document.getElementById('status').textContent = `Error loading map: ${error.message}`;
+      }
+    }
+    
+    // Add toggle controls
+    document.getElementById('smc-grc-toggle').addEventListener('change', function() {
+      renderer.toggleLayer(smcGrcLayer, this.checked);
+    });
+    
+    document.getElementById('polling-toggle').addEventListener('change', function() {
+      renderer.toggleLayer(pollingLayer, this.checked);
+    });
+    
+    // Load all layers when the page loads
+    window.addEventListener('load', loadAllLayers);
+  </script>
+</body>
+</html>
