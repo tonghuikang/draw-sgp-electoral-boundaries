@@ -88369,9 +88369,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "FS02",
+        "name": "EC27",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2895
       },
       "geometry": {
         "type": "Polygon",
