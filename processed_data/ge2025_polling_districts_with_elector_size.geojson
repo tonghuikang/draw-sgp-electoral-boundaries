@@ -54514,9 +54514,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SB50b",
+        "name": "NS18",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 3033
       },
       "geometry": {
         "type": "Polygon",
@@ -54604,9 +54604,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SB49a",
+        "name": "NS20",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 3033
       },
       "geometry": {
         "type": "Polygon",
@@ -59349,9 +59349,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SB24a",
+        "name": "SB23",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 3450
       },
       "geometry": {
         "type": "Polygon",
@@ -68074,9 +68074,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "CK24b",
+        "name": "CK16",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2913
       },
       "geometry": {
         "type": "Polygon",
@@ -76469,9 +76469,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "WE35a",
+        "name": "WE34",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2929
       },
       "geometry": {
         "type": "Polygon",
@@ -80744,9 +80744,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "HT10b",
+        "name": "HT11",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 3080
       },
       "geometry": {
         "type": "Polygon",
@@ -87714,9 +87714,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SB47a",
+        "name": "SB37",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2911
       },
       "geometry": {
         "type": "Polygon",
