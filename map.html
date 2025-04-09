@@ -60,6 +60,19 @@
     .leaflet-tooltip {
       font-weight: bold;
     }
+    .polling-district-label div {
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    /* Hide district labels by default */
+    .district-label {
+      display: none;
+    }
+    /* Show labels at zoom level 13+ */
+    .show-labels .district-label {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -220,6 +233,26 @@
               // For polling districts with elector size
               if (isPollingDistrict && feature.properties.name && feature.properties.elector_size) {
                 tooltipText = `${feature.properties.name}: ${feature.properties.elector_size.toLocaleString()} electors`;
+                
+                // Add district code label that will only show at certain zoom levels
+                if (feature.properties.name) {
+                  // Create a fixed label at the center of the district
+                  const label = L.marker(layer.getBounds().getCenter(), {
+                    icon: L.divIcon({
+                      className: 'polling-district-label',
+                      html: `<div class="district-label" style="background: white; 
+                                      opacity: 0.8; 
+                                      padding: 1px 3px; 
+                                      font-size: 8px; 
+                                      color: black;
+                                      border-radius: 2px;
+                                      box-shadow: 0 0 1px #000;">${feature.properties.name}</div>`,
+                      iconSize: [30, 12],
+                      iconAnchor: [15, 6] 
+                    }),
+                    interactive: false
+                  }).addTo(map);
+                }
               } 
               // For electoral boundaries
               else {
@@ -384,8 +417,31 @@
       }
     });
     
+    
+    // Handle showing/hiding labels based on zoom level
+    map.on('zoomend', function() {
+      const zoom = map.getZoom();
+      const mapElement = document.getElementById('map');
+      
+      // Show labels only at zoom level 14+
+      if (zoom >= 14) {
+        mapElement.classList.add('show-labels');
+      } else {
+        mapElement.classList.remove('show-labels');
+      }
+    });
+    
     // Load all layers when the page loads
-    window.addEventListener('load', loadAllLayers);
+    window.addEventListener('load', function() {
+      loadAllLayers();
+      
+      // Set initial label visibility based on starting zoom
+      const zoom = map.getZoom();
+      const mapElement = document.getElementById('map');
+      if (zoom >= 14) {
+        mapElement.classList.add('show-labels');
+      }
+    });
   </script>
 </body>
 </html>
