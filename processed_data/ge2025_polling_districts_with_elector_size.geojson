@@ -53034,9 +53034,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SB49b",
+        "name": "SB49",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2911
       },
       "geometry": {
         "type": "Polygon",
@@ -53164,9 +53164,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SB50a",
+        "name": "SB50",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2911
       },
       "geometry": {
         "type": "Polygon",
@@ -53334,9 +53334,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SB47b",
+        "name": "SB47",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2911
       },
       "geometry": {
         "type": "Polygon",
@@ -59429,9 +59429,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SB24b",
+        "name": "SB24",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 3450
       },
       "geometry": {
         "type": "Polygon",
@@ -67929,9 +67929,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "CK24a",
+        "name": "CK24",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2912
       },
       "geometry": {
         "type": "Polygon",
@@ -76529,9 +76529,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "WE35b",
+        "name": "WE35",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2929
       },
       "geometry": {
         "type": "Polygon",
@@ -80644,9 +80644,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "HT10a",
+        "name": "HT10",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 3080
       },
       "geometry": {
         "type": "Polygon",
@@ -87924,41 +87924,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "WE50a",
-        "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              103.806692,
-              1.275793,
-              0.0
-            ],
-            [
-              103.806746,
-              1.275339,
-              0.0
-            ],
-            [
-              103.806694,
-              1.275793,
-              0.0
-            ],
-            [
-              103.806692,
-              1.275793,
-              0.0
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "NS37",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3032
@@ -94929,9 +94894,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "WE50b",
+        "name": "WE50",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2850
       },
       "geometry": {
         "type": "Polygon",

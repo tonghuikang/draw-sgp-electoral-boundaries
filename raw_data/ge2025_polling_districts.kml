@@ -15737,7 +15737,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>SB49b</name>
+      <name>SB49</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -15773,7 +15773,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>SB50a</name>
+      <name>SB50</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -15827,7 +15827,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>SB47b</name>
+      <name>SB47</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -17746,7 +17746,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>SB24b</name>
+      <name>SB24</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -20256,7 +20256,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>CK24a</name>
+      <name>CK24</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -22876,7 +22876,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>WE35b</name>
+      <name>WE35</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -24019,7 +24019,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>HT10a</name>
+      <name>HT10</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -26289,23 +26289,6 @@
               103.713105,1.350185,0
               103.71201,1.351665,0
               103.709414,1.349917,0
-            </coordinates>
-          </LinearRing>
-        </outerBoundaryIs>
-      </Polygon>
-    </Placemark>
-    <Placemark>
-      <name>WE50a</name>
-      <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
-      <Polygon>
-        <outerBoundaryIs>
-          <LinearRing>
-            <tessellate>1</tessellate>
-            <coordinates>
-              103.806692,1.275793,0
-              103.806746,1.275339,0
-              103.806694,1.275793,0
-              103.806692,1.275793,0
             </coordinates>
           </LinearRing>
         </outerBoundaryIs>
@@ -28606,7 +28589,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>WE50b</name>
+      <name>WE50</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
