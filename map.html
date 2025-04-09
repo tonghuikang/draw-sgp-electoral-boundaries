@@ -194,7 +194,7 @@
     }
     
     // Parse GeoJSON
-    function parseGeoJSON(geojsonText, featureGroup, color) {
+    function parseGeoJSON(geojsonText, featureGroup, color, isPollingDistrict = false) {
       try {
         const geojsonData = JSON.parse(geojsonText);
         
@@ -213,35 +213,43 @@
             };
           },
           onEachFeature: function(feature, layer) {
-            // Extract the name from properties and bind tooltip
-            let name = '';
+            // Extract name and prepare tooltip text
+            let tooltipText = '';
+            
             if (feature.properties) {
-              if (feature.properties.name) {
-                name = feature.properties.name;
-              } else if (feature.properties.Name) {
-                name = feature.properties.Name;
-              } else if (feature.properties.NAME) {
-                name = feature.properties.NAME;
-              } else if (feature.properties.CONSTITUENCY) {
-                name = feature.properties.CONSTITUENCY;
-              } else if (feature.properties.constituency) {
-                name = feature.properties.constituency;
-              } else {
-                // Try to find any property that might be a name
-                for (const key in feature.properties) {
-                  if (key.toLowerCase().includes('name') || 
-                      key.toLowerCase().includes('title') ||
-                      key.toLowerCase().includes('id') ||
-                      key.toLowerCase().includes('constituency')) {
-                    name = feature.properties[key];
-                    break;
+              // For polling districts with elector size
+              if (isPollingDistrict && feature.properties.name && feature.properties.elector_size) {
+                tooltipText = `${feature.properties.name}: ${feature.properties.elector_size.toLocaleString()} electors`;
+              } 
+              // For electoral boundaries
+              else {
+                if (feature.properties.name) {
+                  tooltipText = feature.properties.name;
+                } else if (feature.properties.Name) {
+                  tooltipText = feature.properties.Name;
+                } else if (feature.properties.NAME) {
+                  tooltipText = feature.properties.NAME;
+                } else if (feature.properties.CONSTITUENCY) {
+                  tooltipText = feature.properties.CONSTITUENCY;
+                } else if (feature.properties.constituency) {
+                  tooltipText = feature.properties.constituency;
+                } else {
+                  // Try to find any property that might be a name
+                  for (const key in feature.properties) {
+                    if (key.toLowerCase().includes('name') || 
+                        key.toLowerCase().includes('title') ||
+                        key.toLowerCase().includes('id') ||
+                        key.toLowerCase().includes('constituency')) {
+                      tooltipText = feature.properties[key];
+                      break;
+                    }
                   }
                 }
               }
             }
             
-            if (name) {
-              layer.bindTooltip(name, {
+            if (tooltipText) {
+              layer.bindTooltip(tooltipText, {
                 permanent: false,
                 direction: 'center',
                 className: 'electoral-tooltip'
@@ -262,6 +270,7 @@
                 }
               },
               mouseout: function(e) {
+                // Reset style
                 layer.setStyle({
                   weight: 2,
                   color: color,
@@ -328,20 +337,20 @@
     // Load data from GitHub
     async function loadAllLayers() {
       try {
-        // GitHub raw URLs for the files
+        // GitHub URLs for the files
         const electoralUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/raw_data/ge2025_electoral_boundary.geojson';
-        const pollingUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/raw_data/ge2025_polling_districts.kml';
+        const pollingDistrictsUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/processed_data/ge2025_polling_districts_with_elector_size.geojson';
         
         // Load Electoral Boundaries (GeoJSON)
         const electoralGeoJSON = await fetchData(electoralUrl);
         if (electoralGeoJSON) {
-          parseGeoJSON(electoralGeoJSON, electoralLayer, '#0066FF');
+          parseGeoJSON(electoralGeoJSON, electoralLayer, '#0066FF', false);
         }
         
-        // Load Polling Districts (KML)
-        const pollingKML = await fetchData(pollingUrl);
-        if (pollingKML) {
-          parseKML(pollingKML, pollingLayer, '#FF0000');
+        // Load Polling Districts with Elector Size (GeoJSON)
+        const pollingGeoJSON = await fetchData(pollingDistrictsUrl);
+        if (pollingGeoJSON) {
+          parseGeoJSON(pollingGeoJSON, pollingLayer, '#FF0000', true);
         }
         
         // Update status
