@@ -31,6 +31,7 @@ The 2025 Elector Size is processed from
 # Data processing pipeline
 
 ```
+python3 scripts/validate_raw_data.py
 python3 scripts/estimate_elector_size.py
 python3 scripts/add_elector_size_to_polling_districts.py
 ```
