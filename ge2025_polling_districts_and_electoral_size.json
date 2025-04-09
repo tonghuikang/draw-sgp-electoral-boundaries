@@ -1,0 +1,210 @@
+[
+  {
+    "elector_size": 161235,
+    "polling_districts": ["AM11", "AM12", "AM13", "AM14", "AM15", "AM16", "AM17", "AM18", "AM19", "AM20", "AM21", "AM22", "AM23", "AM24", "AM25", "AM26", "AM27", "AM28", "AM29", "AM30", "AM31", "AM32", "AM33", "AM34", "AM35", "AM36", "AM37", "AM38", "AM39", "AM40", "AM41", "AM42", "AM43", "AM44", "AM45", "AM46", "AM47", "AM48", "AM49", "AM50", "AM51", "AM52", "AM53", "AM54", "AM55", "AM56", "AM57", "AM58", "AM59", "AM60", "AM61", "AM62", "AM63", "AM64", "AM65"]
+  },
+  {
+    "elector_size": 41404,
+    "polling_districts": ["JR23", "JR24", "JR25", "JR26", "JR27", "JR28", "JR29", "JR30", "JR31", "JR32", "JR33", "JR34", "JR35", "JR36"]
+  },
+  {
+    "elector_size": 117177,
+    "polling_districts": ["WE01", "WE02", "WE03", "WE04", "WE05", "WE06", "WE07", "WE08", "WE09", "WE10", "WE11", "WE12", "WE13", "WE14", "WE15", "WE16", "WE17", "WE18", "WE19", "WE20", "WE21", "WE22", "WE23", "WE24", "WE25", "WE26", "WE27", "WE28", "WE29", "WE30", "WE31", "WE32", "WE33", "WE34", "WE35", "WE36", "WE37", "WE38", "WE39", "WE40"]
+  },
+  {
+    "elector_size": 151634,
+    "polling_districts": ["NS01", "NS02", "NS03", "NS04", "NS05", "NS06", "NS07", "NS08", "NS09", "NS10", "NS11", "NS12", "NS13", "NS14", "NS15", "NS16", "NS17", "NS18", "NS19", "NS20", "NS21", "NS22", "NS23", "NS24", "NS25", "NS26", "NS27", "NS28", "NS29", "NS30", "NS31", "NS32", "NS33", "NS34", "NS35", "NS36", "NS37", "NS38", "NS39", "NS40", "NS41", "NS42", "NS43", "NS44", "NS45", "NS46", "NS47", "NS48", "NS49", "NS50"]
+  },
+  {
+    "elector_size": 110016,
+    "polling_districts": ["EC04", "EC05", "EC06", "EC07", "EC08", "EC09", "EC10", "EC11", "EC12", "EC13", "EC14", "EC15", "EC16", "EC17", "EC18", "EC19", "EC20", "EC21", "EC22", "EC23", "EC24", "EC25", "EC26", "EC27", "EC28", "EC29", "EC30", "EC31", "EC32", "EC33", "EC34", "EC35", "EC36", "EC37", "EC38", "EC39", "EC40", "EC41"]
+  },
+  {
+    "elector_size": 40675,
+    "polling_districts": ["MA01", "MA02", "MA03", "MA04", "MA05", "MA06", "MA07", "MA08", "MA09", "MA10", "MA11", "MA12", "MA16", "MA17", "MA18"]
+  },
+  {
+    "elector_size": 3834,
+    "polling_districts": ["AJ52", "AJ53", "AJ54"]
+  },
+  {
+    "elector_size": 144070,
+    "polling_districts": ["TP01", "TP02", "TP03", "TP04", "TP05", "TP06", "TP07", "TP08", "TP09", "TP10", "TP11", "TP12", "TP13", "TP14", "TP15", "TP16", "TP17", "TP18", "TP19", "TP20", "TP21", "TP22", "TP23", "TP24", "TP25", "TP26", "TP32", "TP34", "TP35", "TP36", "TP37", "TP38", "TP39", "TP40", "TP41", "TP44", "TP45", "TP46", "TP47", "TP48", "TP49", "TP50", "TP51", "TP52", "TP53", "TP60"]
+  },
+  {
+    "elector_size": 144032,
+    "polling_districts": ["AJ01", "AJ02", "AJ03", "AJ04", "AJ05", "AJ06", "AJ07", "AJ08", "AJ09", "AJ10", "AJ11", "AJ12", "AJ13", "AJ14", "AJ15", "AJ16", "AJ17", "AJ18", "AJ19", "AJ20", "AJ21", "AJ22", "AJ23", "AJ24", "AJ25", "AJ26", "AJ27", "AJ28", "AJ29", "AJ30", "AJ31", "AJ32", "AJ33", "AJ34", "AJ35", "AJ36", "AJ37", "AJ38", "AJ39", "AJ40", "AJ41", "AJ42", "AJ43", "AJ44", "AJ45", "AJ46", "AJ47", "AJ48", "AJ49", "AJ50", "AJ51"]
+  },
+  {
+    "elector_size": 29821,
+    "polling_districts": ["BK01", "BK02", "BK03", "BK04", "BK05", "BK06", "BK07", "BK08", "BK09", "BK10"]
+  },
+  {
+    "elector_size": 33965,
+    "polling_districts": ["HN01", "HN02", "HN03", "HN04", "HN05", "HN06", "HN07", "HN08", "HN09", "HN10"]
+  },
+  {
+    "elector_size": 62424,
+    "polling_districts": ["JR02", "JR03", "JR04", "JR05", "JR06", "JR07", "JR08", "JR09", "JR10", "JR11", "JR12", "JR13", "JR14", "JR15", "JR16", "JR17", "JR18", "JR19", "JR20", "JR21", "JR22", "JR47"]
+  },
+  {
+    "elector_size": 16300,
+    "polling_districts": ["YH03", "YH04", "YH05", "YH06", "YH07", "YH08"] 
+  },
+  {
+    "elector_size": 111185,
+    "polling_districts": ["TM01", "TM02", "TM03", "TM04", "TM05", "TM06", "TM07", "TM08", "TM09", "TM10", "TM11", "TM12", "TM13", "TM14", "TM15", "TM16", "TM17", "TM18", "TM19", "TM20", "TM21", "TM22", "TM23", "TM24", "TM29", "TM37", "TM38", "TM39", "TM40", "TM41", "TM42", "TM43", "TM44", "TM45", "TM46", "TM47", "TM48", "TM49", "TM50", "TM51", "TM52", "TM53"]
+  },
+  {
+    "elector_size": 28503,
+    "polling_districts": ["WE41", "WE42", "WE43", "WE44", "WE45", "WE46", "WE47", "WE48", "WE49", "WE50"]
+  },
+  {
+    "elector_size": 133919,
+    "polling_districts": ["SB01", "SB02", "SB03", "SB04", "SB05", "SB06", "SB07", "SB08", "SB09", "SB10", "SB11", "SB13", "SB14", "SB15", "SB16", "SB17", "SB22", "SB25", "SB26", "SB27", "SB28", "SB29", "SB30", "SB31", "SB32", "SB33", "SB34", "SB35", "SB36", "SB37", "SB38", "SB39", "SB40", "SB41", "SB42", "SB43", "SB44", "SB45", "SB46", "SB47", "SB48", "SB49", "SB50", "SB51", "SB52", "SB53"]
+  },
+  {
+    "elector_size": 98341,
+    "polling_districts": ["MA13", "MA14", "MA15", "MA19", "MA20", "MA21", "MA22", "MA23", "MA24", "MA25", "MA26", "MA27", "MA28", "MA29", "MA30", "MA31", "MA32", "MA33", "MA34", "MA35", "MA36", "MA37", "MA38", "MA39", "MA40", "MA41", "MA42", "MA43", "MA44", "MA45", "MA46", "MA47", "MA48", "MA49"]
+  },
+  {
+    "elector_size": 26779,
+    "polling_districts": ["MP01", "MP02", "MP03", "MP04", "MP05", "MP06", "MP07", "MP08", "MP09", "MP10"]
+  },
+  {
+    "elector_size": 4966,
+    "polling_districts": ["MB06"]
+  },
+  {
+    "elector_size": 1407,
+    "polling_districts": ["PS11", "PS12"]
+  },
+  {
+    "elector_size": 126641,
+    "polling_districts": ["SK01", "SK02", "SK03", "SK04", "SK05", "SK06", "SK07", "SK08", "SK09", "SK10", "SK11", "SK12", "SK13", "SK14", "SK15", "SK16", "SK17", "SK18", "SK19", "SK20", "SK21", "SK22", "SK23", "SK24", "SK25", "SK26", "SK27", "SK28", "SK29", "SK30", "SK31", "SK32", "SK33", "SK34", "SK35", "SK36", "SK37", "SK38", "SK39", "SK40", "SK41"]
+  },
+  {
+    "elector_size": 96825,
+    "polling_districts": ["PN30", "PN31", "PN32", "PN33", "PN34", "PN35", "PN36", "PN37", "PN38", "PN39", "PN40", "PN41", "PN42", "PN43", "PN44", "PN45", "PN46", "PN47", "PN48", "PN49", "PN50", "PN51", "PN52", "PN53", "PN54", "PN55", "PN56", "PN57", "PN58", "PN59", "PN60", "PN61", "PN62", "PN63", "PN64", "PN65"]
+  },
+  {
+    "elector_size": 26732,
+    "polling_districts": ["PW01", "PW02", "PW03", "PW04", "PW05", "PW06", "PW07"]
+  },
+  {
+    "elector_size": 120115,
+    "polling_districts": ["HT01", "HT02", "HT03", "HT04", "HT05", "HT06", "HT07", "HT08", "HT09", "HT10", "HT11", "HT12", "HT13", "HT14", "HT15", "HT16", "HT17", "HT18", "HT19", "HT20", "HT21", "HT22", "HT23", "HT24", "HT25", "HT26", "HT27", "HT28", "HT29", "HT30", "HT31", "HT32", "HT33", "HT34", "HT35", "HT36", "HT37", "HT38", "HT39"]
+  },
+  {
+    "elector_size": 2776,
+    "polling_districts": ["JR01"]
+  },
+  {
+    "elector_size": 119352,
+    "polling_districts": ["MY01", "MY02", "MY03", "MY04", "MY05", "MY06", "MY07", "MY08", "MY09", "MY10", "MY11", "MY12", "MY13", "MY14", "MY15", "MY16", "MY17", "MY18", "MY19", "MY20", "MY21", "MY22", "MY23", "MY24", "MY25", "MY26", "MY27", "MY28", "MY29", "MY30", "MY31", "MY32", "MY33", "MY34", "MY35", "MY36", "MY37", "MY38", "MY39", "MY40", "MY41"]
+  },
+  {
+    "elector_size": 106102,
+    "polling_districts": ["JB01", "JB02", "JB03", "JB04", "JB05", "JB06", "JB07", "JB08", "JB09", "JB10", "JB11", "JB12", "JB13", "JB14", "JB15", "JB16", "JB17", "JB18", "JB19", "JB20", "JB21", "JB22", "JB23", "JB24", "JB25", "JB26", "JB27", "JB28", "JB29", "JB30", "JB31", "JB32", "JB33", "JB34", "JB35", "JB36", "JB37", "JB38", "JB39", "JB40", "JB41", "JB42"]
+  },
+  {
+    "elector_size": 12871,
+    "polling_districts": ["EC01", "EC02", "EC03"]
+  },
+  {
+    "elector_size": 87768,
+    "polling_districts": ["PN01", "PN02", "PN03", "PN04", "PN05", "PN06", "PN07", "PN08", "PN09", "PN10", "PN11", "PN12", "PN13", "PN14", "PN15", "PN16", "PN17", "PN18", "PN19", "PN20", "PN21", "PN22", "PN23", "PN24", "PN25", "PN26", "PN27", "PN28", "PN29"]
+  },
+  {
+    "elector_size": 98505,
+    "polling_districts": ["BS01", "BS02", "BS03", "BS04", "BS05", "BS06", "BS07", "BS08", "BS09", "BS10", "BS11", "BS12", "BS13", "BS14", "BS15", "BS16", "BS17", "BS18", "BS19", "BS20", "BS21", "BS22", "BS23", "BS24", "BS25", "BS26", "BS27", "BS28", "BS29", "BS30", "BS31", "BS32", "BS33", "BS34", "BS35"]
+  },
+  {
+    "elector_size": 81554,
+    "polling_districts": ["CK01", "CK02", "CK03", "CK04", "CK05", "CK06", "CK07", "CK08", "CK09", "CK10", "CK11", "CK12", "CK13", "CK14", "CK15", "CK16", "CK17", "CK18", "CK19", "CK20", "CK21", "CK22", "CK23", "CK24", "CK25", "CK26", "CK27", "CK28"]
+  },
+  {
+    "elector_size": 11621,
+    "polling_districts": ["HN11", "HN12", "HN13", "HN14", "HN15", "HN16"]
+  },
+  {
+    "elector_size": 193,
+    "polling_districts": ["HT40"]
+  },
+  {
+    "elector_size": 33566,
+    "polling_districts": ["BP01", "BP02", "BP03", "BP04", "BP05", "BP06", "BP07", "BP08", "BP09", "BP10", "BP11", "BP12"]
+  },
+  {
+    "elector_size": 30897,
+    "polling_districts": ["PS01", "PS02", "PS03", "PS04", "PS05", "PS06", "PS07", "PS08", "PS09", "PS10"]
+  },
+  {
+    "elector_size": 25668,
+    "polling_districts": ["JR37", "JR38", "JR39", "JR40", "JR41", "JR42", "JR43", "JR44", "JR45", "JR46"]
+  },
+  {
+    "elector_size": 3952,
+    "polling_districts": ["YH01", "YH02"]
+  },
+  {
+    "elector_size": 29565,
+    "polling_districts": ["AM01", "AM02", "AM03", "AM04", "AM05", "AM06", "AM07", "AM08", "AM09", "AM10"]
+  },
+  {
+    "elector_size": 29433,
+    "polling_districts": ["HG01", "HG02", "HG03", "HG04", "HG05", "HG06", "HG07", "HG08", "HG09"]
+  },
+  {
+    "elector_size": 28857,
+    "polling_districts": ["TM25", "TM26", "TM27", "TM28", "TM30", "TM31", "TM32", "TM33", "TM34", "TM35", "TM36"]
+  },
+  {
+    "elector_size": 26364,
+    "polling_districts": ["CK29", "CK30", "CK31", "CK32", "CK33", "CK34", "CK35"]
+  },
+  {
+    "elector_size": 22910,
+    "polling_districts": ["RM01", "RM02", "RM03", "RM04", "RM05", "RM06", "RM07", "RM08", "RM09", "RM10"]
+  },
+  {
+    "elector_size": 2587,
+    "polling_districts": ["WE51"]
+  },
+  {
+    "elector_size": 25368,
+    "polling_districts": ["YK01", "YK02", "YK03", "YK04", "YK05", "YK06", "YK07", "YK08", "YK09"]
+  },
+  {
+    "elector_size": 25166,
+    "polling_districts": ["PI01", "PI02", "PI03", "PI04", "PI05", "PI06", "PI07", "PI08", "PI09"]
+  },
+  {
+    "elector_size": 24153,
+    "polling_districts": ["SB12", "SB18", "SB19", "SB20", "SB21", "SB23", "SB24"]
+  },
+  {
+    "elector_size": 23801,
+    "polling_districts": ["TP27", "TP28", "TP29", "TP30", "TP31", "TP33", "TP42", "TP43"]
+  },
+  {
+    "elector_size": 1,
+    "polling_districts": ["EC42"]
+  },
+  {
+    "elector_size": 23219,
+    "polling_districts": ["MR01", "MR02", "MR03", "MR04", "MR05", "MR06", "MR07"]
+  },
+  {
+    "elector_size": 22754,
+    "polling_districts": ["MB01", "MB02", "MB03", "MB04", "MB05", "MB07", "MB08"]
+  },
+  {
+    "elector_size": 22014,
+    "polling_districts": ["KR01", "KR02", "KR03", "KR04", "KR05", "KR06", "KR07", "KR08"]
+  },
+  {
+    "elector_size": 209,
+    "polling_districts": ["YK10"]
+  }
+]

@@ -57,6 +57,9 @@
       height: 10px;
       margin-right: 5px;
     }
+    .leaflet-tooltip {
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -194,21 +197,82 @@
     function parseGeoJSON(geojsonText, featureGroup, color) {
       try {
         const geojsonData = JSON.parse(geojsonText);
+        
+        // Log the first feature to debug property names
+        if (geojsonData.features && geojsonData.features.length > 0) {
+          console.log("Sample GeoJSON properties:", geojsonData.features[0].properties);
+        }
+        
         const layer = L.geoJSON(geojsonData, {
-          style: {
-            color: color,
-            weight: 2,
-            opacity: 0.7,
-            fillOpacity: 0.2
+          style: function(feature) {
+            return {
+              color: color,
+              weight: 2,
+              opacity: 0.7,
+              fillOpacity: 0.2
+            };
           },
           onEachFeature: function(feature, layer) {
-            if (feature.properties && feature.properties.name) {
-              layer.bindTooltip(feature.properties.name);
+            // Extract the name from properties and bind tooltip
+            let name = '';
+            if (feature.properties) {
+              if (feature.properties.name) {
+                name = feature.properties.name;
+              } else if (feature.properties.Name) {
+                name = feature.properties.Name;
+              } else if (feature.properties.NAME) {
+                name = feature.properties.NAME;
+              } else if (feature.properties.CONSTITUENCY) {
+                name = feature.properties.CONSTITUENCY;
+              } else if (feature.properties.constituency) {
+                name = feature.properties.constituency;
+              } else {
+                // Try to find any property that might be a name
+                for (const key in feature.properties) {
+                  if (key.toLowerCase().includes('name') || 
+                      key.toLowerCase().includes('title') ||
+                      key.toLowerCase().includes('id') ||
+                      key.toLowerCase().includes('constituency')) {
+                    name = feature.properties[key];
+                    break;
+                  }
+                }
+              }
             }
+            
+            if (name) {
+              layer.bindTooltip(name, {
+                permanent: false,
+                direction: 'center',
+                className: 'electoral-tooltip'
+              });
+            }
+            
+            // Add mouseover/mouseout events for highlighting
+            layer.on({
+              mouseover: function(e) {
+                const layer = e.target;
+                layer.setStyle({
+                  weight: 4,
+                  color: '#FFA500',  // Orange highlight
+                  fillOpacity: 0.4
+                });
+                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                  layer.bringToFront();
+                }
+              },
+              mouseout: function(e) {
+                layer.setStyle({
+                  weight: 2,
+                  color: color,
+                  fillOpacity: 0.2
+                });
+              }
+            });
           }
         }).addTo(featureGroup);
         
-        document.getElementById('status').textContent = "Loaded GeoJSON data";
+        document.getElementById('status').textContent = `Loaded GeoJSON with ${geojsonData.features ? geojsonData.features.length : 0} features`;
         
         // Fit the map to the boundaries
         if (featureGroup.getBounds().isValid()) {
@@ -230,8 +294,33 @@
       });
       
       if (name) {
-        polygon.bindTooltip(name);
+        polygon.bindTooltip(name, {
+          permanent: false,
+          direction: 'center'
+        });
       }
+      
+      // Add mouseover/mouseout events for highlighting
+      polygon.on({
+        mouseover: function(e) {
+          const layer = e.target;
+          layer.setStyle({
+            weight: 4,
+            color: '#FFA500',  // Orange highlight
+            fillOpacity: 0.4
+          });
+          if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+            layer.bringToFront();
+          }
+        },
+        mouseout: function(e) {
+          polygon.setStyle({
+            weight: 2,
+            color: color,
+            fillOpacity: 0.2
+          });
+        }
+      });
       
       featureGroup.addLayer(polygon);
     }
