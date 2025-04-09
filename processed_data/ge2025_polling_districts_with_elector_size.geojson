@@ -20829,7 +20829,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK20",
+        "name": "SK21",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -20939,7 +20939,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK22",
+        "name": "SK23",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -21029,7 +21029,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK21",
+        "name": "SK22",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -21104,9 +21104,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK33",
+        "name": "SK34",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3089
+        "elector_size": 3088
       },
       "geometry": {
         "type": "Polygon",
@@ -21239,7 +21239,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK32",
+        "name": "SK33",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -21344,7 +21344,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK31",
+        "name": "SK32",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -21389,7 +21389,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK30",
+        "name": "SK31",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -21444,7 +21444,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK40",
+        "name": "SK41",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3088
       },
@@ -21549,7 +21549,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK39",
+        "name": "SK40",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3088
       },
@@ -21629,7 +21629,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK38",
+        "name": "SK39",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3088
       },
@@ -21709,7 +21709,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK37",
+        "name": "SK38",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3088
       },
@@ -21789,7 +21789,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK36",
+        "name": "SK37",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3088
       },
@@ -22549,7 +22549,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK18",
+        "name": "SK19",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -22644,7 +22644,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK19",
+        "name": "SK20",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -22829,7 +22829,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK35",
+        "name": "SK36",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3088
       },
@@ -22924,7 +22924,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK34",
+        "name": "SK35",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3088
       },
@@ -52189,7 +52189,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK25",
+        "name": "SK26",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -52239,7 +52239,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK24",
+        "name": "SK25",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -52294,7 +52294,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK29",
+        "name": "SK30",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -52344,7 +52344,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK28",
+        "name": "SK29",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -52389,7 +52389,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK26",
+        "name": "SK27",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -68764,9 +68764,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "HN01a",
+        "name": "HN01",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 3397
       },
       "geometry": {
         "type": "Polygon",
@@ -86214,7 +86214,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK23",
+        "name": "SK24",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },
@@ -89284,7 +89284,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "HN01b",
+        "name": "HN17",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 0
       },
@@ -91839,7 +91839,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK27",
+        "name": "SK28",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089
       },

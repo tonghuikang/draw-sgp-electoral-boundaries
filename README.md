@@ -28,6 +28,15 @@ The 2025 Elector Size is processed from
 - https://www.eld.gov.sg/pdf/White_Paper_on_the_Report_of_the_Electoral_Boundaries_Review_Committee_2025.pdf
 
 
+# Inaccuracies
+
+- HN17 should be merged into HN01
+- NS21 should be craved from NS19
+- SK18 shoudl be craved from SK17, and also some rearrangements in SK19 to SK23
+
+For now I will work with the inaccuracies. This can be fixed later.
+
+
 # Data processing pipeline
 
 ```
