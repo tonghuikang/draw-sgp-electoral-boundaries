@@ -329,8 +329,8 @@
     async function loadAllLayers() {
       try {
         // GitHub raw URLs for the files
-        const electoralUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/ge2025_electoral_boundary.geojson';
-        const pollingUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/ge2025_polling_districts.kml';
+        const electoralUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/raw_data/ge2025_electoral_boundary.geojson';
+        const pollingUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/raw_data/ge2025_polling_districts.kml';
         
         // Load Electoral Boundaries (GeoJSON)
         const electoralGeoJSON = await fetchData(electoralUrl);
