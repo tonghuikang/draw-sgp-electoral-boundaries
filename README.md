@@ -23,6 +23,6 @@ The 2025 Electoral Boundary is downloaded from
 The 2025 Elector Size is processed from
 
 `raw_data/ge2025_electoral_divisions_and_polling_districts.json`
-`raw_data/ge2025_polling_districts_and_electoral_size.json`
+`raw_data/ge2025_polling_districts_and_elector_size.json`
 
 - https://www.eld.gov.sg/pdf/White_Paper_on_the_Report_of_the_Electoral_Boundaries_Review_Committee_2025.pdf

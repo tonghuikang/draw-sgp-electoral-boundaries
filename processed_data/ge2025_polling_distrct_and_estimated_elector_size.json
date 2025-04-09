@@ -1,0 +1,3814 @@
+[
+  {
+    "polling_district": "AM11",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM12",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM13",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM14",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM15",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM16",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM17",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM18",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM19",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM20",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM21",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM22",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM23",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM24",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM25",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM26",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM27",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM28",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM29",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM30",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM31",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM32",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM33",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM34",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM35",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM36",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM37",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM38",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM39",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM40",
+    "estimated_elector_size": 2932
+  },
+  {
+    "polling_district": "AM41",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM42",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM43",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM44",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM45",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM46",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM47",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM48",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM49",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM50",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM51",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM52",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM53",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM54",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM55",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM56",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM57",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM58",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM59",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM60",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM61",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM62",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM63",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM64",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "AM65",
+    "estimated_elector_size": 2931
+  },
+  {
+    "polling_district": "JR23",
+    "estimated_elector_size": 2958
+  },
+  {
+    "polling_district": "JR24",
+    "estimated_elector_size": 2958
+  },
+  {
+    "polling_district": "JR25",
+    "estimated_elector_size": 2958
+  },
+  {
+    "polling_district": "JR26",
+    "estimated_elector_size": 2958
+  },
+  {
+    "polling_district": "JR27",
+    "estimated_elector_size": 2958
+  },
+  {
+    "polling_district": "JR28",
+    "estimated_elector_size": 2958
+  },
+  {
+    "polling_district": "JR29",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "JR30",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "JR31",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "JR32",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "JR33",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "JR34",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "JR35",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "JR36",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "WE01",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE02",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE03",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE04",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE05",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE06",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE07",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE08",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE09",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE10",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE11",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE12",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE13",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE14",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE15",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE16",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE17",
+    "estimated_elector_size": 2930
+  },
+  {
+    "polling_district": "WE18",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE19",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE20",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE21",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE22",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE23",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE24",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE25",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE26",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE27",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE28",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE29",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE30",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE31",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE32",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE33",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE34",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE35",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE36",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE37",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE38",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE39",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "WE40",
+    "estimated_elector_size": 2929
+  },
+  {
+    "polling_district": "NS01",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS02",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS03",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS04",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS05",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS06",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS07",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS08",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS09",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS10",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS11",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS12",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS13",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS14",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS15",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS16",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS17",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS18",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS19",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS20",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS21",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS22",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS23",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS24",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS25",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS26",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS27",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS28",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS29",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS30",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS31",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS32",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS33",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS34",
+    "estimated_elector_size": 3033
+  },
+  {
+    "polling_district": "NS35",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS36",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS37",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS38",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS39",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS40",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS41",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS42",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS43",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS44",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS45",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS46",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS47",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS48",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS49",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "NS50",
+    "estimated_elector_size": 3032
+  },
+  {
+    "polling_district": "EC04",
+    "estimated_elector_size": 2896
+  },
+  {
+    "polling_district": "EC05",
+    "estimated_elector_size": 2896
+  },
+  {
+    "polling_district": "EC06",
+    "estimated_elector_size": 2896
+  },
+  {
+    "polling_district": "EC07",
+    "estimated_elector_size": 2896
+  },
+  {
+    "polling_district": "EC08",
+    "estimated_elector_size": 2896
+  },
+  {
+    "polling_district": "EC09",
+    "estimated_elector_size": 2896
+  },
+  {
+    "polling_district": "EC10",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC11",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC12",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC13",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC14",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC15",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC16",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC17",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC18",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC19",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC20",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC21",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC22",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC23",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC24",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC25",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC26",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC27",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC28",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC29",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC30",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC31",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC32",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC33",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC34",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC35",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC36",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC37",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC38",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC39",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC40",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "EC41",
+    "estimated_elector_size": 2895
+  },
+  {
+    "polling_district": "MA01",
+    "estimated_elector_size": 2712
+  },
+  {
+    "polling_district": "MA02",
+    "estimated_elector_size": 2712
+  },
+  {
+    "polling_district": "MA03",
+    "estimated_elector_size": 2712
+  },
+  {
+    "polling_district": "MA04",
+    "estimated_elector_size": 2712
+  },
+  {
+    "polling_district": "MA05",
+    "estimated_elector_size": 2712
+  },
+  {
+    "polling_district": "MA06",
+    "estimated_elector_size": 2712
+  },
+  {
+    "polling_district": "MA07",
+    "estimated_elector_size": 2712
+  },
+  {
+    "polling_district": "MA08",
+    "estimated_elector_size": 2712
+  },
+  {
+    "polling_district": "MA09",
+    "estimated_elector_size": 2712
+  },
+  {
+    "polling_district": "MA10",
+    "estimated_elector_size": 2712
+  },
+  {
+    "polling_district": "MA11",
+    "estimated_elector_size": 2711
+  },
+  {
+    "polling_district": "MA12",
+    "estimated_elector_size": 2711
+  },
+  {
+    "polling_district": "MA16",
+    "estimated_elector_size": 2711
+  },
+  {
+    "polling_district": "MA17",
+    "estimated_elector_size": 2711
+  },
+  {
+    "polling_district": "MA18",
+    "estimated_elector_size": 2711
+  },
+  {
+    "polling_district": "AJ52",
+    "estimated_elector_size": 1278
+  },
+  {
+    "polling_district": "AJ53",
+    "estimated_elector_size": 1278
+  },
+  {
+    "polling_district": "AJ54",
+    "estimated_elector_size": 1278
+  },
+  {
+    "polling_district": "TP01",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP02",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP03",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP04",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP05",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP06",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP07",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP08",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP09",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP10",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP11",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP12",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP13",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP14",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP15",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP16",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP17",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP18",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP19",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP20",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP21",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP22",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP23",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP24",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP25",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP26",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP32",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP34",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP35",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP36",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP37",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP38",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP39",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP40",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP41",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP44",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP45",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP46",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP47",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP48",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP49",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP50",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP51",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP52",
+    "estimated_elector_size": 3132
+  },
+  {
+    "polling_district": "TP53",
+    "estimated_elector_size": 3131
+  },
+  {
+    "polling_district": "TP60",
+    "estimated_elector_size": 3131
+  },
+  {
+    "polling_district": "AJ01",
+    "estimated_elector_size": 2825
+  },
+  {
+    "polling_district": "AJ02",
+    "estimated_elector_size": 2825
+  },
+  {
+    "polling_district": "AJ03",
+    "estimated_elector_size": 2825
+  },
+  {
+    "polling_district": "AJ04",
+    "estimated_elector_size": 2825
+  },
+  {
+    "polling_district": "AJ05",
+    "estimated_elector_size": 2825
+  },
+  {
+    "polling_district": "AJ06",
+    "estimated_elector_size": 2825
+  },
+  {
+    "polling_district": "AJ07",
+    "estimated_elector_size": 2825
+  },
+  {
+    "polling_district": "AJ08",
+    "estimated_elector_size": 2825
+  },
+  {
+    "polling_district": "AJ09",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ10",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ11",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ12",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ13",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ14",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ15",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ16",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ17",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ18",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ19",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ20",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ21",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ22",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ23",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ24",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ25",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ26",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ27",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ28",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ29",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ30",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ31",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ32",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ33",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ34",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ35",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ36",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ37",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ38",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ39",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ40",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ41",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ42",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ43",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ44",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ45",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ46",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ47",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ48",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ49",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ50",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "AJ51",
+    "estimated_elector_size": 2824
+  },
+  {
+    "polling_district": "BK01",
+    "estimated_elector_size": 2983
+  },
+  {
+    "polling_district": "BK02",
+    "estimated_elector_size": 2982
+  },
+  {
+    "polling_district": "BK03",
+    "estimated_elector_size": 2982
+  },
+  {
+    "polling_district": "BK04",
+    "estimated_elector_size": 2982
+  },
+  {
+    "polling_district": "BK05",
+    "estimated_elector_size": 2982
+  },
+  {
+    "polling_district": "BK06",
+    "estimated_elector_size": 2982
+  },
+  {
+    "polling_district": "BK07",
+    "estimated_elector_size": 2982
+  },
+  {
+    "polling_district": "BK08",
+    "estimated_elector_size": 2982
+  },
+  {
+    "polling_district": "BK09",
+    "estimated_elector_size": 2982
+  },
+  {
+    "polling_district": "BK10",
+    "estimated_elector_size": 2982
+  },
+  {
+    "polling_district": "HN01",
+    "estimated_elector_size": 3397
+  },
+  {
+    "polling_district": "HN02",
+    "estimated_elector_size": 3397
+  },
+  {
+    "polling_district": "HN03",
+    "estimated_elector_size": 3397
+  },
+  {
+    "polling_district": "HN04",
+    "estimated_elector_size": 3397
+  },
+  {
+    "polling_district": "HN05",
+    "estimated_elector_size": 3397
+  },
+  {
+    "polling_district": "HN06",
+    "estimated_elector_size": 3396
+  },
+  {
+    "polling_district": "HN07",
+    "estimated_elector_size": 3396
+  },
+  {
+    "polling_district": "HN08",
+    "estimated_elector_size": 3396
+  },
+  {
+    "polling_district": "HN09",
+    "estimated_elector_size": 3396
+  },
+  {
+    "polling_district": "HN10",
+    "estimated_elector_size": 3396
+  },
+  {
+    "polling_district": "JR02",
+    "estimated_elector_size": 2838
+  },
+  {
+    "polling_district": "JR03",
+    "estimated_elector_size": 2838
+  },
+  {
+    "polling_district": "JR04",
+    "estimated_elector_size": 2838
+  },
+  {
+    "polling_district": "JR05",
+    "estimated_elector_size": 2838
+  },
+  {
+    "polling_district": "JR06",
+    "estimated_elector_size": 2838
+  },
+  {
+    "polling_district": "JR07",
+    "estimated_elector_size": 2838
+  },
+  {
+    "polling_district": "JR08",
+    "estimated_elector_size": 2838
+  },
+  {
+    "polling_district": "JR09",
+    "estimated_elector_size": 2838
+  },
+  {
+    "polling_district": "JR10",
+    "estimated_elector_size": 2838
+  },
+  {
+    "polling_district": "JR11",
+    "estimated_elector_size": 2838
+  },
+  {
+    "polling_district": "JR12",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR13",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR14",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR15",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR16",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR17",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR18",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR19",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR20",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR21",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR22",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "JR47",
+    "estimated_elector_size": 2837
+  },
+  {
+    "polling_district": "YH03",
+    "estimated_elector_size": 2717
+  },
+  {
+    "polling_district": "YH04",
+    "estimated_elector_size": 2717
+  },
+  {
+    "polling_district": "YH05",
+    "estimated_elector_size": 2717
+  },
+  {
+    "polling_district": "YH06",
+    "estimated_elector_size": 2717
+  },
+  {
+    "polling_district": "YH07",
+    "estimated_elector_size": 2716
+  },
+  {
+    "polling_district": "YH08",
+    "estimated_elector_size": 2716
+  },
+  {
+    "polling_district": "TM01",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM02",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM03",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM04",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM05",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM06",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM07",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM08",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM09",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM10",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM11",
+    "estimated_elector_size": 2648
+  },
+  {
+    "polling_district": "TM12",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM13",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM14",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM15",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM16",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM17",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM18",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM19",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM20",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM21",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM22",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM23",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM24",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM29",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM37",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM38",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM39",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM40",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM41",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM42",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM43",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM44",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM45",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM46",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM47",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM48",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM49",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM50",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM51",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM52",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "TM53",
+    "estimated_elector_size": 2647
+  },
+  {
+    "polling_district": "WE41",
+    "estimated_elector_size": 2851
+  },
+  {
+    "polling_district": "WE42",
+    "estimated_elector_size": 2851
+  },
+  {
+    "polling_district": "WE43",
+    "estimated_elector_size": 2851
+  },
+  {
+    "polling_district": "WE44",
+    "estimated_elector_size": 2850
+  },
+  {
+    "polling_district": "WE45",
+    "estimated_elector_size": 2850
+  },
+  {
+    "polling_district": "WE46",
+    "estimated_elector_size": 2850
+  },
+  {
+    "polling_district": "WE47",
+    "estimated_elector_size": 2850
+  },
+  {
+    "polling_district": "WE48",
+    "estimated_elector_size": 2850
+  },
+  {
+    "polling_district": "WE49",
+    "estimated_elector_size": 2850
+  },
+  {
+    "polling_district": "WE50",
+    "estimated_elector_size": 2850
+  },
+  {
+    "polling_district": "SB01",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB02",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB03",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB04",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB05",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB06",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB07",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB08",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB09",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB10",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB11",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB13",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB14",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "SB15",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB16",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB17",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB22",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB25",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB26",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB27",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB28",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB29",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB30",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB31",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB32",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB33",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB34",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB35",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB36",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB37",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB38",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB39",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB40",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB41",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB42",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB43",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB44",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB45",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB46",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB47",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB48",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB49",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB50",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB51",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB52",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "SB53",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MA13",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA14",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA15",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA19",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA20",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA21",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA22",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA23",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA24",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA25",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA26",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA27",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA28",
+    "estimated_elector_size": 2893
+  },
+  {
+    "polling_district": "MA29",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA30",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA31",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA32",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA33",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA34",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA35",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA36",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA37",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA38",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA39",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA40",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA41",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA42",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA43",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA44",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA45",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA46",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA47",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA48",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MA49",
+    "estimated_elector_size": 2892
+  },
+  {
+    "polling_district": "MP01",
+    "estimated_elector_size": 2678
+  },
+  {
+    "polling_district": "MP02",
+    "estimated_elector_size": 2678
+  },
+  {
+    "polling_district": "MP03",
+    "estimated_elector_size": 2678
+  },
+  {
+    "polling_district": "MP04",
+    "estimated_elector_size": 2678
+  },
+  {
+    "polling_district": "MP05",
+    "estimated_elector_size": 2678
+  },
+  {
+    "polling_district": "MP06",
+    "estimated_elector_size": 2678
+  },
+  {
+    "polling_district": "MP07",
+    "estimated_elector_size": 2678
+  },
+  {
+    "polling_district": "MP08",
+    "estimated_elector_size": 2678
+  },
+  {
+    "polling_district": "MP09",
+    "estimated_elector_size": 2678
+  },
+  {
+    "polling_district": "MP10",
+    "estimated_elector_size": 2677
+  },
+  {
+    "polling_district": "MB06",
+    "estimated_elector_size": 4966
+  },
+  {
+    "polling_district": "PS11",
+    "estimated_elector_size": 704
+  },
+  {
+    "polling_district": "PS12",
+    "estimated_elector_size": 703
+  },
+  {
+    "polling_district": "SK01",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK02",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK03",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK04",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK05",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK06",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK07",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK08",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK09",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK10",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK11",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK12",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK13",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK14",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK15",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK16",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK17",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK18",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK19",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK20",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK21",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK22",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK23",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK24",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK25",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK26",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK27",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK28",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK29",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK30",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK31",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK32",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK33",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "SK34",
+    "estimated_elector_size": 3088
+  },
+  {
+    "polling_district": "SK35",
+    "estimated_elector_size": 3088
+  },
+  {
+    "polling_district": "SK36",
+    "estimated_elector_size": 3088
+  },
+  {
+    "polling_district": "SK37",
+    "estimated_elector_size": 3088
+  },
+  {
+    "polling_district": "SK38",
+    "estimated_elector_size": 3088
+  },
+  {
+    "polling_district": "SK39",
+    "estimated_elector_size": 3088
+  },
+  {
+    "polling_district": "SK40",
+    "estimated_elector_size": 3088
+  },
+  {
+    "polling_district": "SK41",
+    "estimated_elector_size": 3088
+  },
+  {
+    "polling_district": "PN30",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN31",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN32",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN33",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN34",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN35",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN36",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN37",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN38",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN39",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN40",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN41",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN42",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN43",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN44",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN45",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN46",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN47",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN48",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN49",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN50",
+    "estimated_elector_size": 2690
+  },
+  {
+    "polling_district": "PN51",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN52",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN53",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN54",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN55",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN56",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN57",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN58",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN59",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN60",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN61",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN62",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN63",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN64",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PN65",
+    "estimated_elector_size": 2689
+  },
+  {
+    "polling_district": "PW01",
+    "estimated_elector_size": 3819
+  },
+  {
+    "polling_district": "PW02",
+    "estimated_elector_size": 3819
+  },
+  {
+    "polling_district": "PW03",
+    "estimated_elector_size": 3819
+  },
+  {
+    "polling_district": "PW04",
+    "estimated_elector_size": 3819
+  },
+  {
+    "polling_district": "PW05",
+    "estimated_elector_size": 3819
+  },
+  {
+    "polling_district": "PW06",
+    "estimated_elector_size": 3819
+  },
+  {
+    "polling_district": "PW07",
+    "estimated_elector_size": 3818
+  },
+  {
+    "polling_district": "HT01",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT02",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT03",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT04",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT05",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT06",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT07",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT08",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT09",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT10",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT11",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT12",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT13",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT14",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT15",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT16",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT17",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT18",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT19",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT20",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT21",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT22",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT23",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT24",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT25",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT26",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT27",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT28",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT29",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT30",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT31",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT32",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT33",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT34",
+    "estimated_elector_size": 3080
+  },
+  {
+    "polling_district": "HT35",
+    "estimated_elector_size": 3079
+  },
+  {
+    "polling_district": "HT36",
+    "estimated_elector_size": 3079
+  },
+  {
+    "polling_district": "HT37",
+    "estimated_elector_size": 3079
+  },
+  {
+    "polling_district": "HT38",
+    "estimated_elector_size": 3079
+  },
+  {
+    "polling_district": "HT39",
+    "estimated_elector_size": 3079
+  },
+  {
+    "polling_district": "JR01",
+    "estimated_elector_size": 2776
+  },
+  {
+    "polling_district": "MY01",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "MY02",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY03",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY04",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY05",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY06",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY07",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY08",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY09",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY10",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY11",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY12",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY13",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY14",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY15",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY16",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY17",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY18",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY19",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY20",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY21",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY22",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY23",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY24",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY25",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY26",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY27",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY28",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY29",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY30",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY31",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY32",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY33",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY34",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY35",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY36",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY37",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY38",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY39",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY40",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "MY41",
+    "estimated_elector_size": 2911
+  },
+  {
+    "polling_district": "JB01",
+    "estimated_elector_size": 2527
+  },
+  {
+    "polling_district": "JB02",
+    "estimated_elector_size": 2527
+  },
+  {
+    "polling_district": "JB03",
+    "estimated_elector_size": 2527
+  },
+  {
+    "polling_district": "JB04",
+    "estimated_elector_size": 2527
+  },
+  {
+    "polling_district": "JB05",
+    "estimated_elector_size": 2527
+  },
+  {
+    "polling_district": "JB06",
+    "estimated_elector_size": 2527
+  },
+  {
+    "polling_district": "JB07",
+    "estimated_elector_size": 2527
+  },
+  {
+    "polling_district": "JB08",
+    "estimated_elector_size": 2527
+  },
+  {
+    "polling_district": "JB09",
+    "estimated_elector_size": 2527
+  },
+  {
+    "polling_district": "JB10",
+    "estimated_elector_size": 2527
+  },
+  {
+    "polling_district": "JB11",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB12",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB13",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB14",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB15",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB16",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB17",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB18",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB19",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB20",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB21",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB22",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB23",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB24",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB25",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB26",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB27",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB28",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB29",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB30",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB31",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB32",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB33",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB34",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB35",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB36",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB37",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB38",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB39",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB40",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB41",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "JB42",
+    "estimated_elector_size": 2526
+  },
+  {
+    "polling_district": "EC01",
+    "estimated_elector_size": 4291
+  },
+  {
+    "polling_district": "EC02",
+    "estimated_elector_size": 4290
+  },
+  {
+    "polling_district": "EC03",
+    "estimated_elector_size": 4290
+  },
+  {
+    "polling_district": "PN01",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN02",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN03",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN04",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN05",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN06",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN07",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN08",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN09",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN10",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN11",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN12",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN13",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN14",
+    "estimated_elector_size": 3027
+  },
+  {
+    "polling_district": "PN15",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN16",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN17",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN18",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN19",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN20",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN21",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN22",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN23",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN24",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN25",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN26",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN27",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN28",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "PN29",
+    "estimated_elector_size": 3026
+  },
+  {
+    "polling_district": "BS01",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS02",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS03",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS04",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS05",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS06",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS07",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS08",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS09",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS10",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS11",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS12",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS13",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS14",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS15",
+    "estimated_elector_size": 2815
+  },
+  {
+    "polling_district": "BS16",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS17",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS18",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS19",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS20",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS21",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS22",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS23",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS24",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS25",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS26",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS27",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS28",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS29",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS30",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS31",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS32",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS33",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS34",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "BS35",
+    "estimated_elector_size": 2814
+  },
+  {
+    "polling_district": "CK01",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK02",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK03",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK04",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK05",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK06",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK07",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK08",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK09",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK10",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK11",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK12",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK13",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK14",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK15",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK16",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK17",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK18",
+    "estimated_elector_size": 2913
+  },
+  {
+    "polling_district": "CK19",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "CK20",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "CK21",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "CK22",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "CK23",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "CK24",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "CK25",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "CK26",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "CK27",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "CK28",
+    "estimated_elector_size": 2912
+  },
+  {
+    "polling_district": "HN11",
+    "estimated_elector_size": 1937
+  },
+  {
+    "polling_district": "HN12",
+    "estimated_elector_size": 1937
+  },
+  {
+    "polling_district": "HN13",
+    "estimated_elector_size": 1937
+  },
+  {
+    "polling_district": "HN14",
+    "estimated_elector_size": 1937
+  },
+  {
+    "polling_district": "HN15",
+    "estimated_elector_size": 1937
+  },
+  {
+    "polling_district": "HN16",
+    "estimated_elector_size": 1936
+  },
+  {
+    "polling_district": "HT40",
+    "estimated_elector_size": 193
+  },
+  {
+    "polling_district": "BP01",
+    "estimated_elector_size": 2798
+  },
+  {
+    "polling_district": "BP02",
+    "estimated_elector_size": 2798
+  },
+  {
+    "polling_district": "BP03",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "BP04",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "BP05",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "BP06",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "BP07",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "BP08",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "BP09",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "BP10",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "BP11",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "BP12",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "PS01",
+    "estimated_elector_size": 3090
+  },
+  {
+    "polling_district": "PS02",
+    "estimated_elector_size": 3090
+  },
+  {
+    "polling_district": "PS03",
+    "estimated_elector_size": 3090
+  },
+  {
+    "polling_district": "PS04",
+    "estimated_elector_size": 3090
+  },
+  {
+    "polling_district": "PS05",
+    "estimated_elector_size": 3090
+  },
+  {
+    "polling_district": "PS06",
+    "estimated_elector_size": 3090
+  },
+  {
+    "polling_district": "PS07",
+    "estimated_elector_size": 3090
+  },
+  {
+    "polling_district": "PS08",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "PS09",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "PS10",
+    "estimated_elector_size": 3089
+  },
+  {
+    "polling_district": "JR37",
+    "estimated_elector_size": 2567
+  },
+  {
+    "polling_district": "JR38",
+    "estimated_elector_size": 2567
+  },
+  {
+    "polling_district": "JR39",
+    "estimated_elector_size": 2567
+  },
+  {
+    "polling_district": "JR40",
+    "estimated_elector_size": 2567
+  },
+  {
+    "polling_district": "JR41",
+    "estimated_elector_size": 2567
+  },
+  {
+    "polling_district": "JR42",
+    "estimated_elector_size": 2567
+  },
+  {
+    "polling_district": "JR43",
+    "estimated_elector_size": 2567
+  },
+  {
+    "polling_district": "JR44",
+    "estimated_elector_size": 2567
+  },
+  {
+    "polling_district": "JR45",
+    "estimated_elector_size": 2566
+  },
+  {
+    "polling_district": "JR46",
+    "estimated_elector_size": 2566
+  },
+  {
+    "polling_district": "YH01",
+    "estimated_elector_size": 1976
+  },
+  {
+    "polling_district": "YH02",
+    "estimated_elector_size": 1976
+  },
+  {
+    "polling_district": "AM01",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "AM02",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "AM03",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "AM04",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "AM05",
+    "estimated_elector_size": 2957
+  },
+  {
+    "polling_district": "AM06",
+    "estimated_elector_size": 2956
+  },
+  {
+    "polling_district": "AM07",
+    "estimated_elector_size": 2956
+  },
+  {
+    "polling_district": "AM08",
+    "estimated_elector_size": 2956
+  },
+  {
+    "polling_district": "AM09",
+    "estimated_elector_size": 2956
+  },
+  {
+    "polling_district": "AM10",
+    "estimated_elector_size": 2956
+  },
+  {
+    "polling_district": "HG01",
+    "estimated_elector_size": 3271
+  },
+  {
+    "polling_district": "HG02",
+    "estimated_elector_size": 3271
+  },
+  {
+    "polling_district": "HG03",
+    "estimated_elector_size": 3271
+  },
+  {
+    "polling_district": "HG04",
+    "estimated_elector_size": 3270
+  },
+  {
+    "polling_district": "HG05",
+    "estimated_elector_size": 3270
+  },
+  {
+    "polling_district": "HG06",
+    "estimated_elector_size": 3270
+  },
+  {
+    "polling_district": "HG07",
+    "estimated_elector_size": 3270
+  },
+  {
+    "polling_district": "HG08",
+    "estimated_elector_size": 3270
+  },
+  {
+    "polling_district": "HG09",
+    "estimated_elector_size": 3270
+  },
+  {
+    "polling_district": "TM25",
+    "estimated_elector_size": 2624
+  },
+  {
+    "polling_district": "TM26",
+    "estimated_elector_size": 2624
+  },
+  {
+    "polling_district": "TM27",
+    "estimated_elector_size": 2624
+  },
+  {
+    "polling_district": "TM28",
+    "estimated_elector_size": 2624
+  },
+  {
+    "polling_district": "TM30",
+    "estimated_elector_size": 2623
+  },
+  {
+    "polling_district": "TM31",
+    "estimated_elector_size": 2623
+  },
+  {
+    "polling_district": "TM32",
+    "estimated_elector_size": 2623
+  },
+  {
+    "polling_district": "TM33",
+    "estimated_elector_size": 2623
+  },
+  {
+    "polling_district": "TM34",
+    "estimated_elector_size": 2623
+  },
+  {
+    "polling_district": "TM35",
+    "estimated_elector_size": 2623
+  },
+  {
+    "polling_district": "TM36",
+    "estimated_elector_size": 2623
+  },
+  {
+    "polling_district": "CK29",
+    "estimated_elector_size": 3767
+  },
+  {
+    "polling_district": "CK30",
+    "estimated_elector_size": 3767
+  },
+  {
+    "polling_district": "CK31",
+    "estimated_elector_size": 3766
+  },
+  {
+    "polling_district": "CK32",
+    "estimated_elector_size": 3766
+  },
+  {
+    "polling_district": "CK33",
+    "estimated_elector_size": 3766
+  },
+  {
+    "polling_district": "CK34",
+    "estimated_elector_size": 3766
+  },
+  {
+    "polling_district": "CK35",
+    "estimated_elector_size": 3766
+  },
+  {
+    "polling_district": "RM01",
+    "estimated_elector_size": 2291
+  },
+  {
+    "polling_district": "RM02",
+    "estimated_elector_size": 2291
+  },
+  {
+    "polling_district": "RM03",
+    "estimated_elector_size": 2291
+  },
+  {
+    "polling_district": "RM04",
+    "estimated_elector_size": 2291
+  },
+  {
+    "polling_district": "RM05",
+    "estimated_elector_size": 2291
+  },
+  {
+    "polling_district": "RM06",
+    "estimated_elector_size": 2291
+  },
+  {
+    "polling_district": "RM07",
+    "estimated_elector_size": 2291
+  },
+  {
+    "polling_district": "RM08",
+    "estimated_elector_size": 2291
+  },
+  {
+    "polling_district": "RM09",
+    "estimated_elector_size": 2291
+  },
+  {
+    "polling_district": "RM10",
+    "estimated_elector_size": 2291
+  },
+  {
+    "polling_district": "WE51",
+    "estimated_elector_size": 2587
+  },
+  {
+    "polling_district": "YK01",
+    "estimated_elector_size": 2819
+  },
+  {
+    "polling_district": "YK02",
+    "estimated_elector_size": 2819
+  },
+  {
+    "polling_district": "YK03",
+    "estimated_elector_size": 2819
+  },
+  {
+    "polling_district": "YK04",
+    "estimated_elector_size": 2819
+  },
+  {
+    "polling_district": "YK05",
+    "estimated_elector_size": 2819
+  },
+  {
+    "polling_district": "YK06",
+    "estimated_elector_size": 2819
+  },
+  {
+    "polling_district": "YK07",
+    "estimated_elector_size": 2818
+  },
+  {
+    "polling_district": "YK08",
+    "estimated_elector_size": 2818
+  },
+  {
+    "polling_district": "YK09",
+    "estimated_elector_size": 2818
+  },
+  {
+    "polling_district": "PI01",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "PI02",
+    "estimated_elector_size": 2797
+  },
+  {
+    "polling_district": "PI03",
+    "estimated_elector_size": 2796
+  },
+  {
+    "polling_district": "PI04",
+    "estimated_elector_size": 2796
+  },
+  {
+    "polling_district": "PI05",
+    "estimated_elector_size": 2796
+  },
+  {
+    "polling_district": "PI06",
+    "estimated_elector_size": 2796
+  },
+  {
+    "polling_district": "PI07",
+    "estimated_elector_size": 2796
+  },
+  {
+    "polling_district": "PI08",
+    "estimated_elector_size": 2796
+  },
+  {
+    "polling_district": "PI09",
+    "estimated_elector_size": 2796
+  },
+  {
+    "polling_district": "SB12",
+    "estimated_elector_size": 3451
+  },
+  {
+    "polling_district": "SB18",
+    "estimated_elector_size": 3451
+  },
+  {
+    "polling_district": "SB19",
+    "estimated_elector_size": 3451
+  },
+  {
+    "polling_district": "SB20",
+    "estimated_elector_size": 3450
+  },
+  {
+    "polling_district": "SB21",
+    "estimated_elector_size": 3450
+  },
+  {
+    "polling_district": "SB23",
+    "estimated_elector_size": 3450
+  },
+  {
+    "polling_district": "SB24",
+    "estimated_elector_size": 3450
+  },
+  {
+    "polling_district": "TP27",
+    "estimated_elector_size": 2976
+  },
+  {
+    "polling_district": "TP28",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TP29",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TP30",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TP31",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TP33",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TP42",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TP43",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "EC42",
+    "estimated_elector_size": 1
+  },
+  {
+    "polling_district": "MR01",
+    "estimated_elector_size": 3317
+  },
+  {
+    "polling_district": "MR02",
+    "estimated_elector_size": 3317
+  },
+  {
+    "polling_district": "MR03",
+    "estimated_elector_size": 3317
+  },
+  {
+    "polling_district": "MR04",
+    "estimated_elector_size": 3317
+  },
+  {
+    "polling_district": "MR05",
+    "estimated_elector_size": 3317
+  },
+  {
+    "polling_district": "MR06",
+    "estimated_elector_size": 3317
+  },
+  {
+    "polling_district": "MR07",
+    "estimated_elector_size": 3317
+  },
+  {
+    "polling_district": "MB01",
+    "estimated_elector_size": 3251
+  },
+  {
+    "polling_district": "MB02",
+    "estimated_elector_size": 3251
+  },
+  {
+    "polling_district": "MB03",
+    "estimated_elector_size": 3251
+  },
+  {
+    "polling_district": "MB04",
+    "estimated_elector_size": 3251
+  },
+  {
+    "polling_district": "MB05",
+    "estimated_elector_size": 3250
+  },
+  {
+    "polling_district": "MB07",
+    "estimated_elector_size": 3250
+  },
+  {
+    "polling_district": "MB08",
+    "estimated_elector_size": 3250
+  },
+  {
+    "polling_district": "KR01",
+    "estimated_elector_size": 2752
+  },
+  {
+    "polling_district": "KR02",
+    "estimated_elector_size": 2752
+  },
+  {
+    "polling_district": "KR03",
+    "estimated_elector_size": 2752
+  },
+  {
+    "polling_district": "KR04",
+    "estimated_elector_size": 2752
+  },
+  {
+    "polling_district": "KR05",
+    "estimated_elector_size": 2752
+  },
+  {
+    "polling_district": "KR06",
+    "estimated_elector_size": 2752
+  },
+  {
+    "polling_district": "KR07",
+    "estimated_elector_size": 2751
+  },
+  {
+    "polling_district": "KR08",
+    "estimated_elector_size": 2751
+  },
+  {
+    "polling_district": "YK10",
+    "estimated_elector_size": 209
+  }
+]
