@@ -26,3 +26,12 @@ The 2025 Elector Size is processed from
 `raw_data/ge2025_polling_districts_and_elector_size.json`
 
 - https://www.eld.gov.sg/pdf/White_Paper_on_the_Report_of_the_Electoral_Boundaries_Review_Committee_2025.pdf
+
+
+# Data processing pipeline
+
+
+```
+python3 scripts/estimate_elector_size.py
+python3 scripts/add_elector_size_to_polling_districts.py
+```
