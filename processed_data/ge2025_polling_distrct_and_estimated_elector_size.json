@@ -1561,7 +1561,7 @@
   },
   {
     "polling_district": "TP29",
-    "estimated_elector_size": 2975
+    "estimated_elector_size": 2647
   },
   {
     "polling_district": "TP37",
@@ -1585,11 +1585,11 @@
   },
   {
     "polling_district": "TP42",
-    "estimated_elector_size": 2975
+    "estimated_elector_size": 2647
   },
   {
     "polling_district": "TP43",
-    "estimated_elector_size": 2975
+    "estimated_elector_size": 2647
   },
   {
     "polling_district": "TP44",
@@ -3497,19 +3497,19 @@
   },
   {
     "polling_district": "TP27",
-    "estimated_elector_size": 2976
+    "estimated_elector_size": 2624
   },
   {
     "polling_district": "TP28",
-    "estimated_elector_size": 2975
+    "estimated_elector_size": 2624
   },
   {
     "polling_district": "TP30",
-    "estimated_elector_size": 2975
+    "estimated_elector_size": 2623
   },
   {
     "polling_district": "TP31",
-    "estimated_elector_size": 2975
+    "estimated_elector_size": 2623
   },
   {
     "polling_district": "TP32",
@@ -3517,7 +3517,7 @@
   },
   {
     "polling_district": "TP33",
-    "estimated_elector_size": 2975
+    "estimated_elector_size": 2623
   },
   {
     "polling_district": "TP34",
@@ -3702,6 +3702,38 @@
   {
     "polling_district": "SB24",
     "estimated_elector_size": 3450
+  },
+  {
+    "polling_district": "TM27",
+    "estimated_elector_size": 2976
+  },
+  {
+    "polling_district": "TM28",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TM29",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TM30",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TM31",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TM33",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TM42",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TM43",
+    "estimated_elector_size": 2975
   },
   {
     "polling_district": "EC42",

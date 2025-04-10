@@ -185,7 +185,7 @@
   },
   {
     "elector_size": 23801,
-    "polling_districts": ["TP27", "TP28", "TP29", "TP30", "TP31", "TP33", "TP42", "TP43"]
+    "polling_districts": ["TM27", "TM28", "TM29", "TM30", "TM31", "TM33", "TM42", "TM43"]
   },
   {
     "elector_size": 1,
