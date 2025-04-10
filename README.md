@@ -40,6 +40,7 @@ For now I will work with the inaccuracies. This can be fixed later.
 # Data processing pipeline
 
 ```
+python3 scripts/fix_kml_boundaries.py
 python3 scripts/estimate_elector_size.py
 python3 scripts/validate_input_data.py
 python3 scripts/add_elector_size_to_polling_districts.py
