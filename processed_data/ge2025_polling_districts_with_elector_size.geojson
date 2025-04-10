@@ -12811,7 +12811,7 @@
       "properties": {
         "name": "TM25",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2624
+        "elector_size": 2771
       },
       "geometry": {
         "type": "Polygon",
@@ -12881,7 +12881,7 @@
       "properties": {
         "name": "TM26",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2624
+        "elector_size": 2771
       },
       "geometry": {
         "type": "Polygon",
@@ -12951,7 +12951,7 @@
       "properties": {
         "name": "TM27",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2624
+        "elector_size": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -13071,7 +13071,7 @@
       "properties": {
         "name": "TM28",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2624
+        "elector_size": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -13301,7 +13301,7 @@
       "properties": {
         "name": "TM30",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2623
+        "elector_size": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -13401,7 +13401,7 @@
       "properties": {
         "name": "TM31",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2623
+        "elector_size": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -13511,7 +13511,7 @@
       "properties": {
         "name": "TM32",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2623
+        "elector_size": 2771
       },
       "geometry": {
         "type": "Polygon",
@@ -13636,7 +13636,7 @@
       "properties": {
         "name": "TM33",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2623
+        "elector_size": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -13711,7 +13711,7 @@
       "properties": {
         "name": "TM34",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2623
+        "elector_size": 2771
       },
       "geometry": {
         "type": "Polygon",
@@ -14031,7 +14031,7 @@
       "properties": {
         "name": "TM35",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2623
+        "elector_size": 2771
       },
       "geometry": {
         "type": "Polygon",
@@ -14101,7 +14101,7 @@
       "properties": {
         "name": "TM36",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 2623
+        "elector_size": 2771
       },
       "geometry": {
         "type": "Polygon",
@@ -38531,7 +38531,7 @@
       "properties": {
         "name": "TP36",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2623
       },
       "geometry": {
         "type": "Polygon",
@@ -38616,7 +38616,7 @@
       "properties": {
         "name": "TP35",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2623
       },
       "geometry": {
         "type": "Polygon",
@@ -38736,7 +38736,7 @@
       "properties": {
         "name": "TP34",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2623
       },
       "geometry": {
         "type": "Polygon",
@@ -39216,7 +39216,7 @@
       "properties": {
         "name": "TP32",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2623
       },
       "geometry": {
         "type": "Polygon",
@@ -39301,7 +39301,7 @@
       "properties": {
         "name": "TP26",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2624
       },
       "geometry": {
         "type": "Polygon",
@@ -39371,7 +39371,7 @@
       "properties": {
         "name": "TP25",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 0
+        "elector_size": 2624
       },
       "geometry": {
         "type": "Polygon",

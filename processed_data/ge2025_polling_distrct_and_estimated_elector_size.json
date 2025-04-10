@@ -953,27 +953,27 @@
   },
   {
     "polling_district": "TM25",
-    "estimated_elector_size": 2624
+    "estimated_elector_size": 2771
   },
   {
     "polling_district": "TM26",
-    "estimated_elector_size": 2624
+    "estimated_elector_size": 2771
   },
   {
     "polling_district": "TM32",
-    "estimated_elector_size": 2623
+    "estimated_elector_size": 2771
   },
   {
     "polling_district": "TM34",
-    "estimated_elector_size": 2623
+    "estimated_elector_size": 2771
   },
   {
     "polling_district": "TM35",
-    "estimated_elector_size": 2623
+    "estimated_elector_size": 2771
   },
   {
     "polling_district": "TM36",
-    "estimated_elector_size": 2623
+    "estimated_elector_size": 2771
   },
   {
     "polling_district": "TM37",
@@ -3488,23 +3488,47 @@
     "estimated_elector_size": 3270
   },
   {
-    "polling_district": "TM27",
+    "polling_district": "TP25",
     "estimated_elector_size": 2624
   },
   {
-    "polling_district": "TM28",
+    "polling_district": "TP26",
     "estimated_elector_size": 2624
   },
   {
-    "polling_district": "TM30",
+    "polling_district": "TP27",
+    "estimated_elector_size": 2976
+  },
+  {
+    "polling_district": "TP28",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TP30",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TP31",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TP32",
     "estimated_elector_size": 2623
   },
   {
-    "polling_district": "TM31",
+    "polling_district": "TP33",
+    "estimated_elector_size": 2975
+  },
+  {
+    "polling_district": "TP34",
     "estimated_elector_size": 2623
   },
   {
-    "polling_district": "TM33",
+    "polling_district": "TP35",
+    "estimated_elector_size": 2623
+  },
+  {
+    "polling_district": "TP36",
     "estimated_elector_size": 2623
   },
   {
@@ -3678,26 +3702,6 @@
   {
     "polling_district": "SB24",
     "estimated_elector_size": 3450
-  },
-  {
-    "polling_district": "TP27",
-    "estimated_elector_size": 2976
-  },
-  {
-    "polling_district": "TP28",
-    "estimated_elector_size": 2975
-  },
-  {
-    "polling_district": "TP30",
-    "estimated_elector_size": 2975
-  },
-  {
-    "polling_district": "TP31",
-    "estimated_elector_size": 2975
-  },
-  {
-    "polling_district": "TP33",
-    "estimated_elector_size": 2975
   },
   {
     "polling_district": "EC42",
