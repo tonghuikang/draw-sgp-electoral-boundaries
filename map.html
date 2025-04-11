@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
+    /* --- CSS Styles (mostly unchanged) --- */
     #map {
       height: 100%;
       width: 100%;
@@ -37,7 +38,7 @@
       padding: 10px;
       border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      max-width: 80%; /* Prevent status from being too wide */
+      max-width: 80%;
     }
     .legend {
       position: absolute;
@@ -57,7 +58,7 @@
       width: 20px;
       height: 10px;
       margin-right: 5px;
-      vertical-align: middle; /* Align color box nicely */
+      vertical-align: middle;
     }
     .leaflet-tooltip {
       font-weight: bold;
@@ -65,27 +66,28 @@
     .polling-district-label div {
       text-align: center;
       white-space: nowrap;
-      pointer-events: none; /* Crucial: Prevent label from interfering */
-      font-size: 8px; /* Consistent font size */
+      pointer-events: none;
+      font-size: 8px;
       color: black;
-      background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+      background: rgba(255, 255, 255, 0.8);
       padding: 1px 3px;
       border-radius: 2px;
       box-shadow: 0 0 1px #000;
     }
-    /* Hide district labels by default */
     .district-label {
       display: none;
     }
-    /* Show labels at zoom level 14+ */
     .show-labels .district-label {
       display: block;
+    }
+    /* Style for adjacency lines */
+    .adjacency-line {
+        pointer-events: none; /* Lines shouldn't block clicks */
     }
   </style>
 </head>
 <body>
   <div id="map"></div>
-
   <div class="controls">
     <div>
       <input type="checkbox" id="electoral-toggle" checked>
@@ -96,11 +98,7 @@
       <label for="polling-toggle">Show Polling Districts</label>
     </div>
   </div>
-
-  <div id="status" class="status">
-    Initializing map...
-  </div>
-
+  <div id="status" class="status">Initializing map...</div>
   <div class="legend">
     <div class="legend-item">
       <span class="legend-color" style="background-color: #0066FF;"></span>
@@ -114,394 +112,312 @@
       <span class="legend-color" style="background-color: #FFA500; border: 1px solid #ccc;"></span>
       <span>Highlighted</span>
     </div>
+     <div class="legend-item">
+        <svg width="20" height="10" style="vertical-align: middle; margin-right: 5px;">
+            <line x1="0" y1="5" x2="20" y2="5" stroke="purple" stroke-width="2" stroke-dasharray="3, 3"/>
+        </svg>
+        <span>Adj. Districts Line</span>
+    </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
   <script>
-    // Initialize the map
+    // --- Global Scope Variables ---
     const map = L.map('map').setView([1.3521, 103.8198], 12);
-
-    // Add OpenStreetMap tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Create our layers
     let electoralLayer = L.featureGroup().addTo(map);
     let pollingLayer = L.featureGroup().addTo(map);
+    let adjacencyLinesLayer = L.layerGroup().addTo(map); // Layer for adjacency lines
 
-    // --- Highlighting Logic ---
     let activeHighlight = null; // { layer: L.Layer, defaultColor: string }
+    let pollingDistrictLayers = {}; // Stores { 'PD_Name': layer } mapping
+    let selectedDistrictForLines = null; // Track name of district selected for lines
 
-    // Function to ONLY reset the style of a layer
-    function resetHighlightStyle(layer, defaultColor) {
-      if (layer && typeof layer.setStyle === 'function') {
-          layer.setStyle({
-            weight: 2,
-            color: defaultColor,
-            fillOpacity: 0.2
-          });
-      }
+    // --- Highlighting Logic (unchanged) ---
+    function resetHighlightStyle(layer, defaultColor) { /* ... */
+       if (layer && typeof layer.setStyle === 'function') {
+          layer.setStyle({ weight: 2, color: defaultColor, fillOpacity: 0.2 });
+       }
     }
-
-    // Function to highlight a feature AND manage the active state
-    function highlightFeature(layer, defaultColor) {
-      // 1. Reset the *previous* highlight's style (if it exists and is different)
-      if (activeHighlight && activeHighlight.layer !== layer) {
-        resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
-      }
-
-      // 2. Apply highlight style to the *current* layer
-      layer.setStyle({
-        weight: 4,
-        color: '#FFA500', // Orange highlight
-        fillOpacity: 0.5 // Slightly more opaque highlight
-      });
-
-      // 3. Bring the *current* layer to front (helps visibility)
-      if (layer.bringToFront && typeof layer.bringToFront === 'function') {
-           // Avoid potential issues in older browsers
-           if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-             layer.bringToFront();
-           }
-      }
-
-      // 4. Update the active highlight state variable
-      activeHighlight = {
-        layer: layer,
-        defaultColor: defaultColor
-      };
+    function highlightFeature(layer, defaultColor) { /* ... */
+        if (activeHighlight && activeHighlight.layer !== layer) {
+            resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
+        }
+        layer.setStyle({ weight: 4, color: '#FFA500', fillOpacity: 0.5 });
+        if (layer.bringToFront && typeof layer.bringToFront === 'function') {
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+        }
+        activeHighlight = { layer: layer, defaultColor: defaultColor };
     }
     // --- End Highlighting Logic ---
 
-
-    // Parse GeoJSON
+    // --- Parse GeoJSON ---
     function parseGeoJSON(geojsonData, featureGroup, color, isPollingDistrict = false) {
-      // No try...catch here, let it be handled by the caller (loadAllLayers)
-      if (!geojsonData || !geojsonData.features) {
-          console.warn("Invalid or empty GeoJSON data provided for parsing.");
-          return; // Exit if data is invalid
-      }
+        if (!geojsonData || !geojsonData.features) {
+            console.warn("Invalid or empty GeoJSON data provided for parsing.");
+            return;
+        }
+        console.log(`Parsing GeoJSON for ${isPollingDistrict ? 'Polling Districts' : 'Electoral Boundaries'}...`);
 
-      console.log(`Parsing GeoJSON for ${isPollingDistrict ? 'Polling Districts' : 'Electoral Boundaries'} with color ${color}`);
-      // Log the first feature to debug property names
-      if (geojsonData.features.length > 0) {
-         // console.log("Sample GeoJSON properties:", geojsonData.features[0].properties);
-      }
+        const layer = L.geoJSON(geojsonData, {
+            style: feature => ({ color: color, weight: 2, opacity: 0.7, fillOpacity: 0.2 }),
+            onEachFeature: function(feature, layer) {
+                let tooltipText = '';
+                let labelText = '';
+                const props = feature.properties || {};
+                const pdName = props.name || props.Name || props.polling_district; // Get polling district name
 
-      const layer = L.geoJSON(geojsonData, {
-          style: function(feature) {
-            return { // Default style
-              color: color,
-              weight: 2,
-              opacity: 0.7,
-              fillOpacity: 0.2
-            };
-          },
-          onEachFeature: function(feature, layer) {
-            let tooltipText = '';
-            let labelText = ''; // For polling district labels
-
-            // Extract properties safely
-            const props = feature.properties || {};
-
-            if (isPollingDistrict) {
-                const pdName = props.name || props.Name || props.polling_district; // Common property names
-                const electorSize = props.elector_size;
-
-                if (pdName) {
-                    labelText = pdName; // Use for the map label
-                    tooltipText = pdName;
-                    if (electorSize !== undefined && electorSize !== null) {
-                       tooltipText += `: ${Number(electorSize).toLocaleString()} electors`;
+                // --- Tooltip and Label Logic (mostly unchanged) ---
+                if (isPollingDistrict) {
+                    const electorSize = props.elector_size;
+                    if (pdName) {
+                        labelText = pdName;
+                        tooltipText = pdName;
+                        if (electorSize !== undefined && electorSize !== null) {
+                           tooltipText += `: ${Number(electorSize).toLocaleString()} electors`;
+                        }
+                        if (props.adjacent_districts && Array.isArray(props.adjacent_districts) && props.adjacent_districts.length > 0) {
+                           tooltipText += `<br>Adjacent to: ${props.adjacent_districts.join(', ')}`;
+                        }
+                        // Store layer reference by name for line drawing
+                        pollingDistrictLayers[pdName] = layer; // *** NEW: Store layer reference ***
+                    } else {
+                        tooltipText = 'Polling District (No Name)';
                     }
-                    // Add adjacent districts info if available
-                    if (props.adjacent_districts && Array.isArray(props.adjacent_districts) && props.adjacent_districts.length > 0) {
-                       tooltipText += `<br>Adjacent to: ${props.adjacent_districts.join(', ')}`;
+                    if (labelText && layer.getBounds && layer.getBounds().isValid()) { /* ... label creation ... */
+                        const center = layer.getBounds().getCenter();
+                        L.marker(center, {
+                            icon: L.divIcon({
+                                className: 'polling-district-label',
+                                html: `<div class="district-label">${labelText}</div>`,
+                                iconSize: [30, 12], iconAnchor: [15, 6]
+                            }),
+                            interactive: false, keyboard: false
+                        }).addTo(map);
                     }
-                } else {
-                    tooltipText = 'Polling District (No Name)';
+                } else { // Electoral Boundaries
+                    tooltipText = props.name || props.Name || props.NAME || props.CONSTITUENCY || props.constituency || 'Electoral Boundary (No Name)';
+                }
+                // --- End Tooltip and Label Logic ---
+
+                if (tooltipText) {
+                    layer.bindTooltip(tooltipText, { permanent: false, direction: 'center', className: 'electoral-tooltip', sticky: true, opacity: 0.9, interactive: false, html: true });
                 }
 
-                // Add district code label marker if name exists
-                if (labelText && layer.getBounds && layer.getBounds().isValid()) {
-                    const center = layer.getBounds().getCenter();
-                    const label = L.marker(center, {
-                        icon: L.divIcon({
-                            className: 'polling-district-label', // Used for CSS styling
-                            // HTML structure includes the class for zoom control
-                            html: `<div class="district-label">${labelText}</div>`,
-                            iconSize: [30, 12], // Adjust size as needed
-                            iconAnchor: [15, 6] // Center the anchor
-                        }),
-                        interactive: false, // Label should not interfere with interactions
-                        keyboard: false // Ensure label isn't focusable/tabbable
-                    }).addTo(map); // Add label directly to map, not feature group
-                }
+                // --- Event Handlers ---
+                layer.on({
+                    mouseover: function(e) {
+                        highlightFeature(layer, color);
+                        L.DomEvent.stopPropagation(e);
+                    },
+                    click: function(e) {
+                        // Always handle highlight
+                        highlightFeature(layer, color);
+                        L.DomEvent.stopPropagation(e); // Prevent map click
 
-            } else { // Electoral Boundaries
-                 tooltipText = props.name || props.Name || props.NAME || props.CONSTITUENCY || props.constituency || 'Electoral Boundary (No Name)';
-            }
+                        // --- Adjacency Line Logic (only for polling districts) ---
+                        if (isPollingDistrict && pdName) {
+                            adjacencyLinesLayer.clearLayers(); // Clear existing lines first
 
+                            // Toggle behavior: If clicking the already selected district, deselect and clear lines
+                            if (selectedDistrictForLines === pdName) {
+                                selectedDistrictForLines = null; // Deselect
+                                console.log(`Deselected ${pdName} for adjacency lines.`);
+                            } else {
+                                // Otherwise, select this district and draw lines
+                                selectedDistrictForLines = pdName; // Select
+                                console.log(`Selected ${pdName} for adjacency lines. Adjacent:`, props.adjacent_districts);
 
-            // Bind Tooltip if text was generated
-            if (tooltipText) {
-              layer.bindTooltip(tooltipText, {
-                permanent: false,
-                direction: 'center',
-                className: 'electoral-tooltip',
-                sticky: true, // Follows mouse
-                opacity: 0.9,
-                interactive: false, // Tooltip itself shouldn't capture mouse events strongly
-                html: true // Allow HTML in tooltip
-              });
-            }
+                                const adjacentNames = props.adjacent_districts;
+                                if (adjacentNames && Array.isArray(adjacentNames) && layer.getBounds().isValid()) {
+                                    const startLatLng = layer.getBounds().getCenter();
 
-            // --- Simplified Event Handlers ---
-            layer.on({
-              mouseover: function(e) {
-                // This function now handles resetting the old one AND highlighting the new one
-                highlightFeature(layer, color); // Pass the default color
-                L.DomEvent.stopPropagation(e); // Prevent map mouseover event
-              },
-              // NO mouseout handler needed here for styling
+                                    adjacentNames.forEach(adjacentName => {
+                                        const adjacentLayer = pollingDistrictLayers[adjacentName];
+                                        if (adjacentLayer && adjacentLayer.getBounds().isValid()) {
+                                            const endLatLng = adjacentLayer.getBounds().getCenter();
+                                            const line = L.polyline([startLatLng, endLatLng], {
+                                                color: 'purple', // Choose a distinct color
+                                                weight: 2,
+                                                opacity: 0.8,
+                                                dashArray: '5, 5', // Dashed line style
+                                                className: 'adjacency-line' // Add class for potential styling/events
+                                            });
+                                            adjacencyLinesLayer.addLayer(line);
+                                        } else {
+                                            console.warn(`Could not find layer or valid bounds for adjacent district: ${adjacentName}`);
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                        // --- End Adjacency Line Logic ---
+                    }
+                }); // End layer.on
+            } // End onEachFeature
+        }).addTo(featureGroup);
+        console.log(`Added ${geojsonData.features.length} features.`);
+    } // End parseGeoJSON
 
-              click: function(e) {
-                 // Re-apply highlight ensures it stays on click if map click tries to clear it
-                 highlightFeature(layer, color);
-                 L.DomEvent.stopPropagation(e); // IMPORTANT: Prevent map click handler from firing immediately
-               }
-            });
-            // --- End Simplified Event Handlers ---
-          }
-        }).addTo(featureGroup); // Add the processed GeoJSON layer to the specified group
-
-        console.log(`Added ${geojsonData.features.length} features to the ${isPollingDistrict ? 'Polling Districts' : 'Electoral Boundaries'} layer.`);
-
-    } // End of parseGeoJSON
-
-
-    // Load GeoJSON data with local fallback
+    // --- Load All Layers (Local/Remote Fallback - unchanged) ---
     async function loadAllLayers() {
-        // Define URLs
         const localElectoralUrl = 'raw_data/ge2025_electoral_boundary.geojson';
         const remoteElectoralUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/raw_data/ge2025_electoral_boundary.geojson';
         const localPollingUrl = 'processed_data/ge2025_polling_districts_with_elector_size.geojson';
         const remotePollingUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/processed_data/ge2025_polling_districts_with_elector_size.geojson';
-
-        // Initialize status and data variables
         const statusElement = document.getElementById('status');
         statusElement.innerHTML = "Attempting to load local map data...";
-        statusElement.style.display = 'block'; // Ensure status is visible
-
+        statusElement.style.display = 'block';
         let bounds = L.latLngBounds();
         let electoralGeoJSON = null;
         let pollingGeoJSON = null;
-        let electoralSource = 'local'; // To track where data came from
-        let pollingSource = 'local';   // To track where data came from
+        let electoralSource = 'local';
+        let pollingSource = 'local';
+        pollingDistrictLayers = {}; // *** Reset the layer mapping on reload ***
 
         try {
-            // --- 1. Attempt to load Electoral Boundaries ---
-            try {
+            // Fetch Electoral
+            try { /* ... local fetch ... */
                 console.log(`Attempting local fetch: ${localElectoralUrl}`);
                 const response = await fetch(localElectoralUrl);
-                // Check if the fetch itself was successful AND the HTTP status is OK
-                if (!response.ok) {
-                    throw new Error(`HTTP status ${response.status} for local electoral boundaries`);
-                }
+                if (!response.ok) throw new Error(`HTTP status ${response.status} for local electoral`);
                 electoralGeoJSON = await response.json();
-                console.log("Successfully loaded electoral boundaries locally.");
-                statusElement.innerHTML = "Loaded local electoral data. Loading polling data...";
-
-            } catch (localError) {
-                console.warn(`Local fetch failed for electoral boundaries: ${localError.message}. Falling back to remote URL.`);
-                electoralSource = 'remote'; // Update source tracker
-                statusElement.innerHTML = "Local electoral data failed, trying remote...";
-
-                // Attempt remote fetch
-                console.log(`Attempting remote fetch: ${remoteElectoralUrl}`);
+                console.log("Loaded electoral boundaries locally.");
+                statusElement.innerHTML = "Loaded local electoral data...";
+            } catch (localError) { /* ... remote fallback ... */
+                console.warn(`Local fetch failed for electoral: ${localError.message}. Falling back.`);
+                electoralSource = 'remote';
+                statusElement.innerHTML = "Local electoral failed, trying remote...";
                 const remoteResponse = await fetch(remoteElectoralUrl);
-                if (!remoteResponse.ok) {
-                    throw new Error(`Remote fetch failed for electoral boundaries (HTTP status ${remoteResponse.status}) after local attempt also failed.`);
-                }
+                if (!remoteResponse.ok) throw new Error(`Remote fetch failed for electoral (HTTP ${remoteResponse.status})`);
                 electoralGeoJSON = await remoteResponse.json();
-                console.log("Successfully loaded electoral boundaries remotely.");
-                statusElement.innerHTML = "Loaded remote electoral data. Loading polling data...";
+                console.log("Loaded electoral boundaries remotely.");
             }
 
-            // --- 2. Attempt to load Polling Districts ---
-            try {
+            // Fetch Polling
+            try { /* ... local fetch ... */
                 console.log(`Attempting local fetch: ${localPollingUrl}`);
                 const response = await fetch(localPollingUrl);
-                 if (!response.ok) {
-                    throw new Error(`HTTP status ${response.status} for local polling districts`);
-                }
+                if (!response.ok) throw new Error(`HTTP status ${response.status} for local polling`);
                 pollingGeoJSON = await response.json();
-                console.log("Successfully loaded polling districts locally.");
-                 statusElement.innerHTML = "Loaded local polling data. Processing...";
-
-            } catch (localError) {
-                console.warn(`Local fetch failed for polling districts: ${localError.message}. Falling back to remote URL.`);
-                pollingSource = 'remote'; // Update source tracker
-                statusElement.innerHTML = "Local polling data failed, trying remote...";
-
-                 // Attempt remote fetch
-                console.log(`Attempting remote fetch: ${remotePollingUrl}`);
+                console.log("Loaded polling districts locally.");
+                statusElement.innerHTML = "Loaded local polling data...";
+            } catch (localError) { /* ... remote fallback ... */
+                console.warn(`Local fetch failed for polling: ${localError.message}. Falling back.`);
+                pollingSource = 'remote';
+                statusElement.innerHTML = "Local polling failed, trying remote...";
                 const remoteResponse = await fetch(remotePollingUrl);
-                if (!remoteResponse.ok) {
-                    throw new Error(`Remote fetch failed for polling districts (HTTP status ${remoteResponse.status}) after local attempt also failed.`);
-                }
+                if (!remoteResponse.ok) throw new Error(`Remote fetch failed for polling (HTTP ${remoteResponse.status})`);
                 pollingGeoJSON = await remoteResponse.json();
-                console.log("Successfully loaded polling districts remotely.");
-                statusElement.innerHTML = "Loaded remote polling data. Processing...";
+                console.log("Loaded polling districts remotely.");
             }
 
-            // --- 3. Parse and Add Layers ---
+            // Parse
             statusElement.textContent = "Processing map data...";
-
             if (electoralGeoJSON) {
                 parseGeoJSON(electoralGeoJSON, electoralLayer, '#0066FF', false);
-                if (electoralLayer.getBounds().isValid()) {
-                    bounds.extend(electoralLayer.getBounds());
-                } else {
-                     console.warn("Electoral layer bounds are invalid after parsing.");
-                }
-            } else {
-                 console.error("Electoral GeoJSON data is null after fetch attempts. Cannot parse.");
-                 // Update status to reflect this specific failure
-                 statusElement.textContent += " Failed to load electoral data.";
-            }
+                if (electoralLayer.getBounds().isValid()) bounds.extend(electoralLayer.getBounds());
+            } else { statusElement.textContent += " Failed to load electoral data."; }
 
             if (pollingGeoJSON) {
                 parseGeoJSON(pollingGeoJSON, pollingLayer, '#FF0000', true);
-                if (pollingLayer.getBounds().isValid()) {
-                    bounds.extend(pollingLayer.getBounds());
-                } else {
-                    console.warn("Polling layer bounds are invalid after parsing.");
-                }
-            } else {
-                console.error("Polling GeoJSON data is null after fetch attempts. Cannot parse.");
-                 // Update status to reflect this specific failure
-                 statusElement.textContent += " Failed to load polling data.";
-            }
+                if (pollingLayer.getBounds().isValid()) bounds.extend(pollingLayer.getBounds());
+            } else { statusElement.textContent += " Failed to load polling data."; }
 
-            // --- 4. Fit Map Bounds ---
-            if (bounds.isValid()) {
-                console.log("Fitting map to valid bounds:", bounds);
-                map.fitBounds(bounds);
-            } else {
-                console.warn("Could not determine valid bounds for loaded layers. Map might not be centered correctly. Setting default view.");
-                 // Set a default view if bounds are invalid after loading
-                 map.setView([1.3521, 103.8198], 12);
-            }
+            // Fit Map
+            if (bounds.isValid()) { map.fitBounds(bounds); }
+            else { console.warn("Invalid bounds. Setting default view."); map.setView([1.3521, 103.8198], 12); }
 
-            // --- 5. Final Status Update ---
+            // Final Status
             const finalStatus = `Map loaded (Electoral: ${electoralSource}, Polling: ${pollingSource})`;
-            statusElement.textContent = finalStatus;
-            console.log(finalStatus);
+            statusElement.textContent = finalStatus; console.log(finalStatus);
+            setTimeout(() => { /* ... hide status ... */
+                 const currentStatus = statusElement.textContent.toLowerCase();
+                 if (!currentStatus.includes('error') && !currentStatus.includes('failed')) {
+                     statusElement.style.display = 'none';
+                 }
+            }, 4000);
 
-            // Hide status only if it doesn't contain the word "Error" or "Failed"
-            setTimeout(() => {
-                const currentStatus = statusElement.textContent.toLowerCase();
-                if (!currentStatus.includes('error') && !currentStatus.includes('failed')) {
-                    statusElement.style.display = 'none';
-                }
-            }, 4000); // Increased timeout slightly
-
-        } catch (error) {
-            // This catches errors from the second (remote) fetch attempts, JSON parsing errors, or other unexpected issues
-            console.error("Fatal error during map loading or processing:", error);
+        } catch (error) { /* ... error handling ... */
+            console.error("Fatal error during map loading:", error);
             statusElement.textContent = `Error loading map: ${error.message}`;
-            // Keep the error message visible
             statusElement.style.display = 'block';
-        } finally {
-            // Ensure label visibility is set correctly after potential fitBounds or errors
-            handleZoomEnd();
-        }
-    } // End of loadAllLayers
+        } finally { handleZoomEnd(); }
+    }
+    // --- End Load All Layers ---
 
-
-    // Add toggle controls
+    // --- Toggle Controls ---
     document.getElementById('electoral-toggle').addEventListener('change', function() {
-      if (this.checked) {
-        map.addLayer(electoralLayer);
-      } else {
-        // If the currently highlighted layer is being removed, reset its style first
-        if (activeHighlight && electoralLayer.hasLayer(activeHighlight.layer)) {
-            resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
-            activeHighlight = null; // Clear the state as it's no longer visible/highlighted
+        if (this.checked) { map.addLayer(electoralLayer); }
+        else {
+            if (activeHighlight && electoralLayer.hasLayer(activeHighlight.layer)) {
+                resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
+                activeHighlight = null;
+            }
+            map.removeLayer(electoralLayer);
         }
-        map.removeLayer(electoralLayer);
-      }
     });
-
     document.getElementById('polling-toggle').addEventListener('change', function() {
-      if (this.checked) {
-        map.addLayer(pollingLayer);
-      } else {
-         // If the currently highlighted layer is being removed, reset its style first
-        if (activeHighlight && pollingLayer.hasLayer(activeHighlight.layer)) {
-            resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
-            activeHighlight = null; // Clear the state as it's no longer visible/highlighted
+        if (this.checked) { map.addLayer(pollingLayer); }
+        else {
+            if (activeHighlight && pollingLayer.hasLayer(activeHighlight.layer)) {
+                resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
+                activeHighlight = null;
+            }
+            // *** NEW: Clear lines and selection when polling layer is hidden ***
+            adjacencyLinesLayer.clearLayers();
+            selectedDistrictForLines = null;
+            map.removeLayer(pollingLayer);
         }
-        map.removeLayer(pollingLayer);
-      }
+    });
+    // --- End Toggle Controls ---
+
+    // --- Global Event Handlers ---
+    map.on('click', function() { // Clear highlight and lines on map click
+        if (activeHighlight) {
+            resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
+            activeHighlight = null;
+        }
+        // *** NEW: Clear lines and selection on map click ***
+        adjacencyLinesLayer.clearLayers();
+        selectedDistrictForLines = null;
     });
 
-    // --- Global Event Handlers for Clearing Highlight ---
-
-    // Clear highlight when clicking on the map background
-    map.on('click', function() {
-      if (activeHighlight) {
-        resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
-        activeHighlight = null; // Clear the state
-      }
-    });
-
-    // Clear highlight when mouse leaves the map container
-    // Attach to the map container element directly
-    const mapContainer = map.getContainer();
+    const mapContainer = map.getContainer(); // Clear highlight on map mouseout
     if (mapContainer) {
         mapContainer.addEventListener('mouseout', (e) => {
-            // Check if the mouse is truly leaving the map container, not just moving
-            // between the map and its child elements (like controls or popups).
-            // relatedTarget is the element the mouse is moving TO.
             if (!mapContainer.contains(e.relatedTarget)) {
                  if (activeHighlight) {
                     resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
-                    activeHighlight = null; // Clear the state
+                    activeHighlight = null;
                 }
+                // Note: We generally don't clear lines on map mouseout, only on clicks
             }
         });
-    } else {
-        console.error("Could not get map container to attach mouseout listener.");
-    }
+    } else { console.error("Could not get map container."); }
+    // --- End Global Event Handlers ---
 
-
-    // Function to handle label visibility based on zoom
-    function handleZoomEnd() {
+    // --- Zoom Handling (unchanged) ---
+    function handleZoomEnd() { /* ... */
         const zoom = map.getZoom();
-        const mapElement = document.getElementById('map'); // Target the map container for class toggling
-
-        // Add/remove class to control visibility via CSS
-        if (zoom >= 14) { // Show labels at zoom 14 and higher
-            mapElement.classList.add('show-labels');
-        } else {
-            mapElement.classList.remove('show-labels');
-        }
-        // console.log(`Zoom level: ${zoom}, Labels shown: ${zoom >= 14}`);
+        const mapElement = document.getElementById('map');
+        if (zoom >= 14) { mapElement.classList.add('show-labels'); }
+        else { mapElement.classList.remove('show-labels'); }
     }
-
-    // Attach zoom handler
     map.on('zoomend', handleZoomEnd);
+    // --- End Zoom Handling ---
 
-    // Load all layers when the page loads
+    // --- Initial Load ---
     document.addEventListener('DOMContentLoaded', function() {
-      // Initial status update before loading starts
-      document.getElementById('status').textContent = "Initializing...";
-      loadAllLayers(); // Start the loading process
+        document.getElementById('status').textContent = "Initializing...";
+        loadAllLayers();
     });
+    // --- End Initial Load ---
 
   </script>
 </body>
