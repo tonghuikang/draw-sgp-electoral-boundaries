@@ -10,19 +10,25 @@ import kml2geojson
 # Paths
 input_kml = "../processed_data/ge2025_polling_districts_fixed.kml"
 elector_size_json = "../processed_data/ge2025_polling_distrct_and_estimated_elector_size.json"
+adjacent_districts_json = "../processed_data/ge2025_polling_districts_to_adjacent_districts.json"
 output_geojson = "../processed_data/ge2025_polling_districts_with_elector_size.geojson"
 
 # Ensure paths are absolute
 script_dir = os.path.dirname(os.path.abspath(__file__))
 input_kml = os.path.abspath(os.path.join(script_dir, input_kml))
 elector_size_json = os.path.abspath(os.path.join(script_dir, elector_size_json))
+adjacent_districts_json = os.path.abspath(os.path.join(script_dir, adjacent_districts_json))
 output_geojson = os.path.abspath(os.path.join(script_dir, output_geojson))
 
-print(f"Converting KML to GeoJSON and adding elector sizes...")
+print(f"Converting KML to GeoJSON and adding elector sizes and adjacent districts...")
 
 # Load elector size data
 with open(elector_size_json, 'r') as f:
     elector_sizes = json.load(f)
+
+# Load adjacent districts data
+with open(adjacent_districts_json, 'r') as f:
+    adjacent_districts = json.load(f)
 
 # Create a lookup dictionary for faster access
 elector_size_dict = {item['polling_district']: item['estimated_elector_size'] for item in elector_sizes}
@@ -40,6 +46,10 @@ for feature_collection in geojson_data:
         if district_code:
             # Add elector size to properties
             feature['properties']['elector_size'] = elector_size_dict.get(district_code, 0)
+            
+            # Add adjacent districts to properties
+            feature['properties']['adjacent_districts'] = adjacent_districts.get(district_code, [])
+            
             features.append(feature)
 
 # Create the final GeoJSON structure
