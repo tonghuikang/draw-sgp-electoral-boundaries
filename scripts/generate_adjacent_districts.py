@@ -223,12 +223,31 @@ def remove_non_planar_edges(adjacency, edges_to_remove):
     
     return modified_adjacency
 
-def planarize_graph_iteratively(adjacency, max_iterations=500):
+def planarize_graph_iteratively(adjacency, max_iterations=500, protected_pairs=None):
     """
     Iteratively remove edges from the graph based on degree and shortest path criteria
     until the graph is planar.
+    
+    Parameters:
+    - adjacency: The adjacency list to planarize
+    - max_iterations: Maximum number of iterations to perform
+    - protected_pairs: List of district pairs (tuples) whose adjacency should be preserved
     """
     modified_adjacency = {k: list(v) for k, v in adjacency.items()}  # Deep copy
+    
+    # Ensure protected_pairs is a list
+    if protected_pairs is None:
+        protected_pairs = []
+    
+    # Normalize the protected pairs (ensure order doesn't matter)
+    normalized_protected_pairs = []
+    for a, b in protected_pairs:
+        if a > b:
+            normalized_protected_pairs.append((b, a))
+        else:
+            normalized_protected_pairs.append((a, b))
+    
+    print(f"Protected adjacency pairs: {normalized_protected_pairs}")
     
     # Keep track of removed edges for reporting
     all_removed_edges = []
@@ -415,6 +434,38 @@ def planarize_graph_iteratively(adjacency, max_iterations=500):
             break
         
         u, v = edge_to_remove
+        
+        # Check if this edge is protected
+        normalized_edge = (u, v) if u < v else (v, u)
+        if normalized_edge in normalized_protected_pairs:
+            print(f"Skipping protected edge {u} -- {v}")
+            
+            # To avoid infinite loops, we'll examine other edges for removal
+            # Let's remove another edge that's not protected
+            iterations += 1
+            
+            # Find an alternative edge
+            found_alternative = False
+            for non_protected_edge in G.edges():
+                alt_u, alt_v = non_protected_edge
+                alt_norm = (alt_u, alt_v) if alt_u < alt_v else (alt_v, alt_u)
+                
+                # Skip if this is a protected edge
+                if alt_norm in normalized_protected_pairs:
+                    continue
+                
+                # Found an unprotected edge to remove
+                u, v = alt_u, alt_v
+                print(f"Found alternative edge to remove: {u} -- {v}")
+                found_alternative = True
+                break
+                
+            # If no alternative found, cannot proceed with planarization
+            if not found_alternative:
+                print("No alternative edges found for removal - cannot proceed with planarization")
+                return modified_adjacency, all_removed_edges
+            
+            # If we found an alternative, continue with normal processing (no continue or break needed)
         
         # Remove the edge from our adjacency list
         if v in modified_adjacency.get(u, []):
@@ -735,7 +786,98 @@ def main():
         # Step 2: If still not planar, use iterative planarization
         if not is_planar:
             print("Applying iterative planarization...")
-            planar_adjacency, additional_edges_removed = planarize_graph_iteratively(intermediate_adjacency)
+            
+            # Use shared boundary length to determine important adjacencies to preserve
+            print("Analyzing all district borders to find significant adjacent pairs...")
+            critical_adjacencies = []
+            
+            # Collect shared boundary lengths for all adjacencies
+            boundary_lengths = {}
+            count = 0
+            total = sum(len(neighbors) for neighbors in adjacency.values()) // 2
+            print(f"Analyzing {total} district borders...")
+            
+            for district_a, neighbors in adjacency.items():
+                for district_b in neighbors:
+                    if district_a < district_b:  # Process each pair only once
+                        count += 1
+                        if count % 500 == 0:
+                            print(f"Processed {count}/{total} borders ({count/total*100:.1f}%)")
+                            
+                        pair = (district_a, district_b)
+                        
+                        # Calculate boundary length if both districts exist
+                        if district_a in districts and district_b in districts:
+                            try:
+                                # Buffer slightly to handle numerical precision
+                                buffered_a = districts[district_a].buffer(0.00001)
+                                buffered_b = districts[district_b].buffer(0.00001)
+                                
+                                # Get the intersection
+                                if buffered_a.intersects(buffered_b):
+                                    intersection = buffered_a.intersection(buffered_b)
+                                    
+                                    # If they share a boundary (not just a point)
+                                    if (intersection.geom_type in ['LineString', 'MultiLineString'] or
+                                        (hasattr(intersection, 'length') and intersection.length > 0)):
+                                        # Store the length as a measure of adjacency importance
+                                        boundary_lengths[pair] = intersection.length
+                            except Exception as e:
+                                # Silently continue to avoid cluttering output
+                                pass
+            
+            # Once we have all boundary lengths, decide which to preserve
+            if boundary_lengths:
+                # Find the distribution of boundary lengths
+                lengths = list(boundary_lengths.values())
+                lengths.sort()
+                
+                # Use a percentile-based approach - identify boundaries with significant shared borders
+                # These are likely more important to preserve for visualization and analysis
+                
+                # Get basic statistics
+                if len(lengths) > 1:
+                    min_length = lengths[0]
+                    max_length = lengths[-1]
+                    median_length = lengths[len(lengths) // 2]
+                    
+                    # We'll preserve boundaries that are at least 50% of the median length
+                    # This will keep important boundaries while removing trivial ones
+                    threshold = median_length * 0.5  
+                    significant_pairs = [(pair, length) for pair, length in boundary_lengths.items() 
+                                        if length >= threshold]
+                    
+                    # Sort by boundary length (descending)
+                    significant_pairs.sort(key=lambda x: x[1], reverse=True)
+                    
+                    # Take the top pairs, but cap at a very small number to keep planarization possible
+                    # Being extremely selective to avoid getting stuck in the algorithm
+                    max_preserved = min(50, len(significant_pairs))
+                    critical_adjacencies = [pair for pair, _ in significant_pairs[:max_preserved]]
+                    
+                    print(f"Preserving {len(critical_adjacencies)} adjacencies with significant shared borders")
+                    print(f"Border length threshold: {threshold:.6f}")
+                    if len(critical_adjacencies) > 0:
+                        print(f"Sample preserved adjacencies: {critical_adjacencies[:5]}")
+                        print(f"with border lengths: {[boundary_lengths[p] for p in critical_adjacencies[:5]]}")
+                else:
+                    print("Only one boundary length found, not enough for percentile calculation")
+            else:
+                print("Warning: No boundary lengths could be calculated")
+            
+            # Ensure critical adjacencies are present in intermediate_adjacency
+            for district_a, district_b in critical_adjacencies:
+                # Both districts must exist in the adjacency list
+                if district_a in intermediate_adjacency and district_b in intermediate_adjacency:
+                    if district_b not in intermediate_adjacency[district_a]:
+                        intermediate_adjacency[district_a].append(district_b)
+                    if district_a not in intermediate_adjacency[district_b]:
+                        intermediate_adjacency[district_b].append(district_a)
+            
+            planar_adjacency, additional_edges_removed = planarize_graph_iteratively(
+                intermediate_adjacency, 
+                protected_pairs=critical_adjacencies
+            )
             
             print(f"Removed {len(additional_edges_removed)} additional edges using iterative planarization")
             

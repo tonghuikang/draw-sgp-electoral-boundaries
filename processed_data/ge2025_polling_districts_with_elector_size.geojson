@@ -8,10 +8,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3251,
         "adjacent_districts": [
-          "MB02",
-          "MB03",
-          "MA27",
-          "MA28"
+          "MB02"
         ]
       },
       "geometry": {
@@ -115,9 +112,7 @@
         "elector_size": 3251,
         "adjacent_districts": [
           "MB01",
-          "MB03",
-          "MA28",
-          "JB16"
+          "MB03"
         ]
       },
       "geometry": {
@@ -250,13 +245,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3251,
         "adjacent_districts": [
-          "MB01",
           "MB02",
-          "MB04",
-          "MB05",
-          "MB08",
-          "MA27",
-          "JB32"
+          "MB04"
         ]
       },
       "geometry": {
@@ -520,8 +510,7 @@
         "elector_size": 3251,
         "adjacent_districts": [
           "MB03",
-          "MB05",
-          "MB08"
+          "MB05"
         ]
       },
       "geometry": {
@@ -629,11 +618,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3250,
         "adjacent_districts": [
-          "MB03",
           "MB04",
-          "MB06",
-          "MB07",
-          "MA27"
+          "MB06"
         ]
       },
       "geometry": {
@@ -772,11 +758,7 @@
         "elector_size": 4966,
         "adjacent_districts": [
           "MB05",
-          "MB07",
-          "MA24",
-          "MA25",
-          "MA26",
-          "MA27"
+          "MB07"
         ]
       },
       "geometry": {
@@ -914,9 +896,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3250,
         "adjacent_districts": [
-          "MB05",
           "MB06",
-          "MB08",
           "MA24"
         ]
       },
@@ -1100,11 +1080,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3250,
         "adjacent_districts": [
-          "MB03",
-          "MB04",
-          "MB07",
-          "JB32",
-          "JB33"
+          "JB32"
         ]
       },
       "geometry": {
@@ -1457,10 +1433,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2712,
         "adjacent_districts": [
-          "MA02",
-          "MA03",
-          "EC19",
-          "AJ08"
+          "MA02"
         ]
       },
       "geometry": {
@@ -1654,10 +1627,7 @@
         "elector_size": 2712,
         "adjacent_districts": [
           "MA01",
-          "MA03",
-          "MA05",
-          "EC21",
-          "EC20"
+          "MA03"
         ]
       },
       "geometry": {
@@ -1785,10 +1755,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2712,
         "adjacent_districts": [
-          "MA01",
           "MA02",
-          "MA04",
-          "MA05"
+          "MA04"
         ]
       },
       "geometry": {
@@ -2130,11 +2098,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2712,
         "adjacent_districts": [
-          "MA02",
-          "MA03",
           "MA04",
-          "MA06",
-          "EC21"
+          "MA06"
         ]
       },
       "geometry": {
@@ -2218,11 +2183,7 @@
         "elector_size": 2712,
         "adjacent_districts": [
           "MA05",
-          "MA07",
-          "MA08",
-          "MA12",
-          "EC34",
-          "EC41"
+          "MA07"
         ]
       },
       "geometry": {
@@ -2446,8 +2407,7 @@
         "elector_size": 2712,
         "adjacent_districts": [
           "MA06",
-          "MA08",
-          "MA12"
+          "MA08"
         ]
       },
       "geometry": {
@@ -2570,8 +2530,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2712,
         "adjacent_districts": [
-          "MA08",
-          "EC32"
+          "MA10"
         ]
       },
       "geometry": {
@@ -2674,11 +2633,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2712,
         "adjacent_districts": [
-          "MA06",
           "MA07",
-          "MA09",
-          "MA11",
-          "EC32"
+          "MA11"
         ]
       },
       "geometry": {
@@ -2756,8 +2712,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2712,
         "adjacent_districts": [
-          "MA18",
-          "MA19"
+          "MA09",
+          "MA18"
         ]
       },
       "geometry": {
@@ -2999,9 +2955,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2711,
         "adjacent_districts": [
-          "MA06",
-          "MA07",
-          "MA11"
+          "MA11",
+          "MA16"
         ]
       },
       "geometry": {
@@ -3169,10 +3124,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2893,
         "adjacent_districts": [
-          "MA15",
-          "MA16",
-          "AJ14",
-          "AJ15"
+          "MA15"
         ]
       },
       "geometry": {
@@ -3301,11 +3253,7 @@
         "elector_size": 2893,
         "adjacent_districts": [
           "MA14",
-          "MA16",
-          "MA32",
-          "MA34",
-          "AJ15",
-          "AJ16"
+          "MA32"
         ]
       },
       "geometry": {
@@ -3398,11 +3346,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2711,
         "adjacent_districts": [
-          "MA14",
-          "MA15",
-          "MA18",
+          "MA12",
           "MA25",
-          "MA31"
+          "MA17"
         ]
       },
       "geometry": {
@@ -3521,10 +3467,7 @@
         "elector_size": 2711,
         "adjacent_districts": [
           "MA10",
-          "MA16",
-          "MA19",
-          "MA20",
-          "MA17"
+          "MA19"
         ]
       },
       "geometry": {
@@ -3592,10 +3535,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2893,
         "adjacent_districts": [
-          "MA10",
           "MA18",
-          "MA20",
-          "MA21"
+          "MA20"
         ]
       },
       "geometry": {
@@ -3703,11 +3644,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2893,
         "adjacent_districts": [
-          "MA18",
           "MA19",
-          "MA21",
-          "MA22",
-          "MA17"
+          "MA21"
         ]
       },
       "geometry": {
@@ -3790,10 +3728,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2893,
         "adjacent_districts": [
-          "MA19",
           "MA20",
-          "MA22",
-          "MA24"
+          "MA22"
         ]
       },
       "geometry": {
@@ -3946,11 +3882,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2893,
         "adjacent_districts": [
-          "MA20",
           "MA21",
-          "MA23",
-          "MA24",
-          "MA17"
+          "MA23"
         ]
       },
       "geometry": {
@@ -4084,8 +4017,7 @@
         "elector_size": 2893,
         "adjacent_districts": [
           "MA22",
-          "MA24",
-          "MA25"
+          "MA24"
         ]
       },
       "geometry": {
@@ -4163,11 +4095,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2893,
         "adjacent_districts": [
-          "MB06",
           "MB07",
-          "MA21",
-          "MA22",
-          "MA23"
+          "MA23",
+          "MA25"
         ]
       },
       "geometry": {
@@ -4385,11 +4315,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2893,
         "adjacent_districts": [
-          "MB06",
           "MA16",
-          "MA23",
-          "MA26",
-          "MA17"
+          "MA24",
+          "MA26"
         ]
       },
       "geometry": {
@@ -4487,11 +4415,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2893,
         "adjacent_districts": [
-          "MB06",
           "MA25",
-          "MA29",
-          "MA30",
-          "MA31"
+          "MA27"
         ]
       },
       "geometry": {
@@ -4564,12 +4489,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2893,
         "adjacent_districts": [
-          "MB01",
-          "MB03",
-          "MB05",
-          "MB06",
-          "MA28",
-          "MA29"
+          "MA26",
+          "MA28"
         ]
       },
       "geometry": {
@@ -4697,13 +4618,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2893,
         "adjacent_districts": [
-          "MB01",
-          "MB02",
           "MA27",
-          "MA29",
-          "MP09",
-          "MP10",
-          "JB16"
+          "MA29"
         ]
       },
       "geometry": {
@@ -4796,12 +4712,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA26",
-          "MA27",
           "MA28",
-          "MA30",
-          "MA33",
-          "MP09"
+          "MA30"
         ]
       },
       "geometry": {
@@ -4914,10 +4826,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA26",
           "MA29",
-          "MA31",
-          "MA33"
+          "MA31"
         ]
       },
       "geometry": {
@@ -5000,8 +4910,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA16",
-          "MA26",
           "MA30",
           "MA32"
         ]
@@ -5078,8 +4986,7 @@
         "adjacent_districts": [
           "MA15",
           "MA31",
-          "MA33",
-          "MA34"
+          "MA33"
         ]
       },
       "geometry": {
@@ -5147,13 +5054,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA29",
-          "MA30",
           "MA32",
-          "MA34",
-          "MA38",
-          "MP08",
-          "MP09"
+          "MA34"
         ]
       },
       "geometry": {
@@ -5241,11 +5143,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA15",
-          "MA32",
           "MA33",
-          "MA35",
-          "MA38"
+          "MA35"
         ]
       },
       "geometry": {
@@ -5320,8 +5219,6 @@
         "adjacent_districts": [
           "MA34",
           "MA36",
-          "MA38",
-          "AJ16",
           "MA37"
         ]
       },
@@ -5451,10 +5348,7 @@
         "elector_size": 2892,
         "adjacent_districts": [
           "MA35",
-          "MA38",
-          "AJ16",
-          "AJ18",
-          "MA37"
+          "MA38"
         ]
       },
       "geometry": {
@@ -5542,12 +5436,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA33",
-          "MA34",
-          "MA35",
           "MA36",
-          "MP02",
-          "MA37"
+          "MA39"
         ]
       },
       "geometry": {
@@ -5670,10 +5560,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA49",
-          "AJ24",
-          "AJ25",
-          "AJ26",
+          "MA38",
+          "MA40",
           "AJ27"
         ]
       },
@@ -5968,9 +5856,7 @@
         "elector_size": 3090,
         "adjacent_districts": [
           "PS02",
-          "MP01",
-          "PS08",
-          "PS12"
+          "PS02"
         ]
       },
       "geometry": {
@@ -6054,12 +5940,7 @@
         "elector_size": 3090,
         "adjacent_districts": [
           "PS01",
-          "PS08",
-          "PS03",
-          "PS04",
-          "PS09",
-          "PS11",
-          "PS12"
+          "PS01"
         ]
       },
       "geometry": {
@@ -6212,10 +6093,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA41",
-          "MA49",
-          "PS03",
-          "PS11"
+          "MA39",
+          "MA41"
         ]
       },
       "geometry": {
@@ -6389,11 +6268,7 @@
         "elector_size": 2892,
         "adjacent_districts": [
           "MA40",
-          "MA42",
-          "MA47",
-          "MA49",
-          "PS03",
-          "PS04"
+          "MA42"
         ]
       },
       "geometry": {
@@ -6507,9 +6382,7 @@
         "elector_size": 2892,
         "adjacent_districts": [
           "MA41",
-          "MA43",
-          "MA44",
-          "MA47"
+          "MA43"
         ]
       },
       "geometry": {
@@ -6663,11 +6536,7 @@
         "elector_size": 2892,
         "adjacent_districts": [
           "MA42",
-          "MA44",
-          "MA45",
-          "AJ32",
-          "BS13",
-          "PS05"
+          "MA44"
         ]
       },
       "geometry": {
@@ -6865,11 +6734,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA42",
           "MA43",
-          "MA45",
-          "MA46",
-          "MA47"
+          "MA45"
         ]
       },
       "geometry": {
@@ -6967,11 +6833,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA43",
           "MA44",
-          "MA46",
-          "AJ32",
-          "AJ33"
+          "MA46"
         ]
       },
       "geometry": {
@@ -7079,7 +6942,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA44",
           "MA45",
           "MA47"
         ]
@@ -7154,12 +7016,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA41",
-          "MA42",
-          "MA44",
           "MA46",
-          "MA48",
-          "AJ30"
+          "MA48"
         ]
       },
       "geometry": {
@@ -7353,8 +7211,7 @@
         "elector_size": 2892,
         "adjacent_districts": [
           "MA47",
-          "MA49",
-          "AJ28"
+          "MA49"
         ]
       },
       "geometry": {
@@ -7437,9 +7294,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA39",
-          "MA40",
-          "MA41",
           "MA48",
           "AJ27"
         ]
@@ -7549,8 +7403,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2678,
         "adjacent_districts": [
-          "PS01",
-          "PS12"
+          "MP02"
         ]
       },
       "geometry": {
@@ -7683,10 +7536,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2678,
         "adjacent_districts": [
-          "MA38",
-          "MP03",
-          "MP04",
-          "MP05"
+          "MP01",
+          "MP03"
         ]
       },
       "geometry": {
@@ -7830,8 +7681,7 @@
         "elector_size": 2678,
         "adjacent_districts": [
           "MP02",
-          "MP04",
-          "MP05"
+          "MP04"
         ]
       },
       "geometry": {
@@ -7939,10 +7789,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2678,
         "adjacent_districts": [
-          "MP02",
           "MP03",
-          "MP05",
-          "MP06"
+          "MP05"
         ]
       },
       "geometry": {
@@ -8020,11 +7868,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2678,
         "adjacent_districts": [
-          "MP02",
-          "MP03",
           "MP04",
-          "MP06",
-          "MP08"
+          "MP06"
         ]
       },
       "geometry": {
@@ -8102,11 +7947,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2678,
         "adjacent_districts": [
-          "MP04",
           "MP05",
-          "MP07",
-          "MP08",
-          "JB15"
+          "MP07"
         ]
       },
       "geometry": {
@@ -8220,9 +8062,7 @@
         "elector_size": 2678,
         "adjacent_districts": [
           "MP06",
-          "MP08",
-          "MP10",
-          "JB15"
+          "MP08"
         ]
       },
       "geometry": {
@@ -8295,9 +8135,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2678,
         "adjacent_districts": [
-          "MA33",
-          "MP05",
-          "MP06",
           "MP07",
           "MP09"
         ]
@@ -8392,9 +8229,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2678,
         "adjacent_districts": [
-          "MA28",
-          "MA29",
-          "MA33",
           "MP08",
           "MP10"
         ]
@@ -8474,8 +8308,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2677,
         "adjacent_districts": [
-          "MA28",
-          "MP07",
           "MP09",
           "JB15"
         ]
@@ -8551,6 +8383,7 @@
         "elector_size": 1,
         "adjacent_districts": [
           "EC15",
+          "EC13",
           "TM42",
           "TM43",
           "TM45",
@@ -8710,8 +8543,8 @@
         "adjacent_districts": [
           "EC42",
           "EC13",
-          "EC14",
-          "EC16"
+          "EC16",
+          "EC14"
         ]
       },
       "geometry": {
@@ -8844,6 +8677,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
+          "EC42",
           "EC15",
           "EC08",
           "EC09",
@@ -8851,6 +8685,8 @@
           "EC12",
           "EC10",
           "EC31",
+          "EC16",
+          "EC28",
           "EC04"
         ]
       },
@@ -9033,6 +8869,7 @@
           "EC08",
           "EC06",
           "EC09",
+          "TM29",
           "TM30",
           "TM42",
           "TM43"
@@ -9090,7 +8927,8 @@
         "adjacent_districts": [
           "EC07",
           "EC09",
-          "EC05"
+          "EC05",
+          "TM29"
         ]
       },
       "geometry": {
@@ -9617,6 +9455,8 @@
         "adjacent_districts": [
           "EC06",
           "EC10",
+          "TM27",
+          "TM28",
           "EC04"
         ]
       },
@@ -9735,9 +9575,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 4290,
         "adjacent_districts": [
-          "EC01",
-          "EC02",
-          "TM27"
+          "EC01"
         ]
       },
       "geometry": {
@@ -9885,11 +9723,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 4291,
         "adjacent_districts": [
-          "EC03",
           "EC02",
           "TM25",
           "TM26",
-          "PN03"
+          "TM27",
+          "PN03",
+          "EC03"
         ]
       },
       "geometry": {
@@ -10037,11 +9876,15 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 4290,
         "adjacent_districts": [
-          "EC03",
           "EC01",
+          "EC31",
+          "PN65",
           "PN01",
           "PN02",
-          "PN20"
+          "PN03",
+          "PN20",
+          "PN29",
+          "EC04"
         ]
       },
       "geometry": {
@@ -10514,10 +10357,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
-          "MA09",
-          "MA08",
-          "EC33",
-          "EC34"
+          "EC31",
+          "EC33"
         ]
       },
       "geometry": {
@@ -10681,6 +10522,9 @@
         "elector_size": 2895,
         "adjacent_districts": [
           "EC13",
+          "EC02",
+          "EC32",
+          "EC30",
           "EC28",
           "EC04"
         ]
@@ -10865,6 +10709,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
+          "EC31",
+          "EC33",
           "EC36",
           "EC29"
         ]
@@ -11030,7 +10876,7 @@
         "elector_size": 2895,
         "adjacent_districts": [
           "EC32",
-          "EC34",
+          "EC30",
           "EC35"
         ]
       },
@@ -11119,11 +10965,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
-          "MA06",
-          "EC32",
-          "EC33",
-          "EC35",
-          "EC37",
           "EC40"
         ]
       },
@@ -11273,7 +11114,6 @@
         "elector_size": 2895,
         "adjacent_districts": [
           "EC33",
-          "EC34",
           "EC36"
         ]
       },
@@ -11347,7 +11187,8 @@
           "EC37",
           "EC38",
           "EC22",
-          "EC26"
+          "EC26",
+          "EC24"
         ]
       },
       "geometry": {
@@ -11435,7 +11276,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
-          "EC34",
           "EC36",
           "EC38",
           "EC39",
@@ -11712,7 +11552,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
-          "MA06",
           "EC39",
           "EC40",
           "EC21"
@@ -11808,11 +11647,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
-          "MA02",
-          "MA05",
           "EC39",
           "EC41",
-          "EC20"
+          "EC20",
+          "EC19",
+          "EC18",
+          "EC22"
         ]
       },
       "geometry": {
@@ -11915,7 +11755,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
-          "MA02",
           "EC21",
           "EC19"
         ]
@@ -12000,7 +11839,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
-          "MA01",
+          "EC21",
           "EC20",
           "EC18",
           "AJ03",
@@ -12067,6 +11906,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
+          "EC21",
           "EC19",
           "EC22",
           "EC17",
@@ -12141,6 +11981,7 @@
           "EC36",
           "EC38",
           "EC39",
+          "EC21",
           "EC18",
           "EC24",
           "EC23",
@@ -12227,7 +12068,13 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
-          "EC15"
+          "EC15",
+          "EC13",
+          "EC28",
+          "EC17",
+          "AJ02",
+          "EC27",
+          "EC14"
         ]
       },
       "geometry": {
@@ -12375,7 +12222,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
+          "EC13",
           "EC31",
+          "EC16",
           "EC29",
           "EC26",
           "EC27"
@@ -12650,7 +12499,8 @@
           "EC28",
           "EC29",
           "EC24",
-          "EC27"
+          "EC27",
+          "EC25"
         ]
       },
       "geometry": {
@@ -12748,6 +12598,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
+          "EC36",
           "EC22",
           "EC26",
           "EC23",
@@ -12877,6 +12728,7 @@
         "adjacent_districts": [
           "EC18",
           "EC22",
+          "EC16",
           "EC23",
           "EC27",
           "EC25"
@@ -12972,10 +12824,15 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2689,
         "adjacent_districts": [
+          "EC02",
+          "PN29",
           "PN33",
+          "PN59",
+          "PN34",
+          "PN62",
+          "PN60",
           "PN35",
-          "PN64",
-          "PN63"
+          "PN64"
         ]
       },
       "geometry": {
@@ -13118,6 +12975,7 @@
           "TM01",
           "TM07",
           "TM06",
+          "TM03",
           "TM04",
           "TM02"
         ]
@@ -13283,7 +13141,6 @@
         "elector_size": 2771,
         "adjacent_districts": [
           "TM24",
-          "TM23",
           "TM21",
           "PN12",
           "PN17",
@@ -13408,7 +13265,6 @@
         "adjacent_districts": [
           "TM20",
           "TM25",
-          "TM23",
           "PN03",
           "PN12"
         ]
@@ -13596,8 +13452,7 @@
           "EC01",
           "TM25",
           "TM27",
-          "TM34",
-          "TM23"
+          "TM34"
         ]
       },
       "geometry": {
@@ -13670,9 +13525,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2976,
         "adjacent_districts": [
-          "EC03",
+          "EC05",
+          "EC01",
           "TM26",
-          "TM28"
+          "TM28",
+          "TM33",
+          "TM34"
         ]
       },
       "geometry": {
@@ -13795,7 +13653,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2975,
         "adjacent_districts": [
+          "EC05",
           "TM27",
+          "TM29",
           "TM33"
         ]
       },
@@ -13904,6 +13764,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2975,
         "adjacent_districts": [
+          "EC07",
+          "EC06",
+          "TM28",
+          "TM30",
+          "TM31",
+          "TM32",
           "TM33"
         ]
       },
@@ -14033,6 +13899,7 @@
         "elector_size": 2975,
         "adjacent_districts": [
           "EC07",
+          "TM29",
           "TM31",
           "TM42"
         ]
@@ -14137,6 +14004,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2975,
         "adjacent_districts": [
+          "TM29",
           "TM30",
           "TM32",
           "TM42"
@@ -14252,10 +14120,13 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2771,
         "adjacent_districts": [
+          "TM29",
           "TM31",
+          "TM33",
           "TM36",
           "TM37",
           "TM38",
+          "TM40",
           "TM41"
         ]
       },
@@ -14384,8 +14255,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2975,
         "adjacent_districts": [
+          "TM27",
+          "TM28",
           "TM29",
-          "TM28"
+          "TM32",
+          "TM34"
         ]
       },
       "geometry": {
@@ -14464,7 +14338,8 @@
         "elector_size": 2771,
         "adjacent_districts": [
           "TM26",
-          "TM23",
+          "TM27",
+          "TM33",
           "TM35",
           "TM36"
         ]
@@ -14534,10 +14409,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2771,
         "adjacent_districts": [
-          "TM20",
-          "TM24",
-          "TM26",
-          "TM34",
           "TM22"
         ]
       },
@@ -14649,8 +14520,8 @@
           "TM20",
           "TM22",
           "TM17",
-          "TM18",
-          "TM19"
+          "TM19",
+          "TM18"
         ]
       },
       "geometry": {
@@ -14763,10 +14634,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2771,
         "adjacent_districts": [
-          "TM23",
           "TM21",
           "TM35",
-          "TM17"
+          "TM17",
+          "TM23"
         ]
       },
       "geometry": {
@@ -15336,7 +15207,6 @@
           "TM22",
           "TM35",
           "TM39",
-          "TM18",
           "TM16"
         ]
       },
@@ -15410,11 +15280,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2771,
         "adjacent_districts": [
-          "TM21",
-          "TM17",
-          "TM15",
-          "TM16",
-          "TM19"
+          "TM21"
         ]
       },
       "geometry": {
@@ -15497,11 +15363,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2771,
         "adjacent_districts": [
-          "TM18",
           "TM16",
           "TM40",
           "TM14",
-          "TM13",
           "TM19",
           "TM03"
         ]
@@ -15653,7 +15517,6 @@
         "adjacent_districts": [
           "TM39",
           "TM17",
-          "TM18",
           "TM15",
           "TM40"
         ]
@@ -15778,10 +15641,15 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2770,
         "adjacent_districts": [
+          "TM32",
           "TM38",
           "TM39",
           "TM15",
-          "TM16"
+          "TM16",
+          "TM41",
+          "TM44",
+          "TM48",
+          "TM14"
         ]
       },
       "geometry": {
@@ -15969,7 +15837,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2770,
         "adjacent_districts": [
-          "TM32"
+          "TM32",
+          "TM40",
+          "TM42",
+          "TM44"
         ]
       },
       "geometry": {
@@ -16061,6 +15932,7 @@
           "EC07",
           "TM30",
           "TM31",
+          "TM41",
           "TM43",
           "TM44"
         ]
@@ -16261,6 +16133,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2770,
         "adjacent_districts": [
+          "TM40",
+          "TM41",
           "TM42",
           "TM45",
           "TM46",
@@ -16461,7 +16335,8 @@
           "TM44",
           "TM45",
           "TM47",
-          "TM55"
+          "TM55",
+          "TM56"
         ]
       },
       "geometry": {
@@ -16625,6 +16500,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2770,
         "adjacent_districts": [
+          "TM40",
           "TM47",
           "TM14",
           "TM11",
@@ -16765,8 +16641,8 @@
         "elector_size": 2771,
         "adjacent_districts": [
           "TM15",
+          "TM40",
           "TM48",
-          "TM13",
           "TM12",
           "TM11"
         ]
@@ -16971,10 +16847,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2771,
         "adjacent_districts": [
-          "TM15",
-          "TM14",
-          "TM12",
-          "TM06"
+          "TM12"
         ]
       },
       "geometry": {
@@ -17053,10 +16926,10 @@
         "elector_size": 2771,
         "adjacent_districts": [
           "TM14",
-          "TM13",
           "TM11",
           "TM10",
-          "TM09"
+          "TM09",
+          "TM13"
         ]
       },
       "geometry": {
@@ -17399,7 +17272,8 @@
           "TM46",
           "TM47",
           "TM48",
-          "TM54"
+          "TM54",
+          "TM56"
         ]
       },
       "geometry": {
@@ -17507,8 +17381,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2770,
         "adjacent_districts": [
+          "TM46",
           "TM53",
           "TM54",
+          "TM55",
           "TM57",
           "TM58",
           "TM59",
@@ -17969,8 +17845,8 @@
         "adjacent_districts": [
           "TM12",
           "TM11",
+          "AJ19",
           "TM09",
-          "TM50",
           "TM51"
         ]
       },
@@ -18040,6 +17916,7 @@
         "elector_size": 2770,
         "adjacent_districts": [
           "TM59",
+          "AJ19",
           "TM51",
           "AJ52"
         ]
@@ -18094,7 +17971,7 @@
           "PN07",
           "PN08",
           "PN09",
-          "PN15"
+          "PN20"
         ]
       },
       "geometry": {
@@ -18271,7 +18148,6 @@
           "PN01",
           "PN03",
           "PN05",
-          "PN06",
           "PN07"
         ]
       },
@@ -18371,6 +18247,7 @@
         "elector_size": 3027,
         "adjacent_districts": [
           "EC01",
+          "EC02",
           "TM24",
           "PN02",
           "PN04",
@@ -18555,8 +18432,8 @@
         "adjacent_districts": [
           "PN02",
           "PN04",
-          "PN06",
-          "PN10"
+          "PN10",
+          "PN06"
         ]
       },
       "geometry": {
@@ -18619,10 +18496,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3027,
         "adjacent_districts": [
-          "PN02",
-          "PN05",
-          "PN07",
-          "PN10"
+          "PN05"
         ]
       },
       "geometry": {
@@ -18717,7 +18591,6 @@
         "adjacent_districts": [
           "PN01",
           "PN02",
-          "PN06",
           "PN08"
         ]
       },
@@ -19000,7 +18873,6 @@
         "elector_size": 3027,
         "adjacent_districts": [
           "PN05",
-          "PN06",
           "PN08",
           "PN09",
           "PN11",
@@ -19229,7 +19101,8 @@
           "PN04",
           "PN11",
           "PN13",
-          "PN17"
+          "PN17",
+          "TM03"
         ]
       },
       "geometry": {
@@ -19396,7 +19269,6 @@
           "PN09",
           "PN10",
           "PN13",
-          "PN15",
           "PN16"
         ]
       },
@@ -19500,10 +19372,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3026,
         "adjacent_districts": [
-          "PN01",
-          "PN09",
-          "PN14",
-          "PN16"
+          "PN09"
         ]
       },
       "geometry": {
@@ -19587,7 +19456,6 @@
         "elector_size": 3026,
         "adjacent_districts": [
           "PN14",
-          "PN15",
           "PN17",
           "PN18",
           "PN20"
@@ -19767,7 +19635,8 @@
           "PN12",
           "PN13",
           "PN16",
-          "PN18"
+          "PN18",
+          "TM03"
         ]
       },
       "geometry": {
@@ -20124,8 +19993,11 @@
         "elector_size": 3026,
         "adjacent_districts": [
           "EC02",
+          "PN01",
           "PN16",
-          "PN19"
+          "PN19",
+          "PN21",
+          "PN29"
         ]
       },
       "geometry": {
@@ -20303,6 +20175,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3026,
         "adjacent_districts": [
+          "PN20",
           "PN22",
           "PN26",
           "PN23"
@@ -20366,6 +20239,7 @@
           "PN21",
           "PN27",
           "PN26",
+          "PN29",
           "PN23"
         ]
       },
@@ -20447,7 +20321,8 @@
           "PN22",
           "PN26",
           "PN25",
-          "PN28"
+          "PN28",
+          "PN29"
         ]
       },
       "geometry": {
@@ -20650,6 +20525,8 @@
         "adjacent_districts": [
           "PN27",
           "PN26",
+          "PN28",
+          "PN29",
           "PN24",
           "TM01"
         ]
@@ -20734,7 +20611,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3026,
         "adjacent_districts": [
-          "PN27"
+          "PN27",
+          "PN25",
+          "PN29"
         ]
       },
       "geometry": {
@@ -20822,9 +20701,20 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3026,
         "adjacent_districts": [
+          "EC02",
+          "PN65",
+          "PN20",
+          "PN22",
+          "PN27",
+          "PN25",
+          "PN28",
           "PN41",
           "PN43",
           "PN44",
+          "SK17",
+          "AJ44",
+          "PN33",
+          "TM01",
           "PN30"
         ]
       },
@@ -21158,7 +21048,8 @@
           "PN41",
           "PN42",
           "PN48",
-          "PN49"
+          "PN49",
+          "PN45"
         ]
       },
       "geometry": {
@@ -21228,6 +21119,7 @@
         "adjacent_districts": [
           "PN29",
           "SK17",
+          "AJ44",
           "PN45"
         ]
       },
@@ -21285,7 +21177,8 @@
           "PN51",
           "SK03",
           "SK02",
-          "SK01"
+          "SK01",
+          "PN45"
         ]
       },
       "geometry": {
@@ -21340,7 +21233,8 @@
         "adjacent_districts": [
           "PN46",
           "PN48",
-          "PN51"
+          "PN51",
+          "PN45"
         ]
       },
       "geometry": {
@@ -21800,8 +21694,7 @@
         "adjacent_districts": [
           "PN51",
           "SK04",
-          "PN53",
-          "PW07"
+          "PN53"
         ]
       },
       "geometry": {
@@ -21968,7 +21861,6 @@
         "adjacent_districts": [
           "PW04",
           "PW06",
-          "PW02",
           "PW01"
         ]
       },
@@ -22030,8 +21922,7 @@
           "SK04",
           "SK21",
           "SK13",
-          "SK05",
-          "SK11"
+          "SK05"
         ]
       },
       "geometry": {
@@ -22122,6 +22013,7 @@
           "SK12",
           "SK23",
           "SK22",
+          "SK19",
           "SK24"
         ]
       },
@@ -22333,7 +22225,6 @@
         "adjacent_districts": [
           "SK21",
           "SK23",
-          "SK34",
           "SK19",
           "SK20"
         ]
@@ -22413,10 +22304,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
-          "SK22",
-          "SK33",
-          "SK39",
-          "SK35"
+          "SK33"
         ]
       },
       "geometry": {
@@ -22555,9 +22443,9 @@
         "elector_size": 3166,
         "adjacent_districts": [
           "SK23",
-          "SK34",
           "SK32",
-          "SK39"
+          "SK39",
+          "SK34"
         ]
       },
       "geometry": {
@@ -22666,9 +22554,9 @@
         "elector_size": 3166,
         "adjacent_districts": [
           "SK33",
+          "SK31",
           "SK40",
-          "SK24",
-          "SK31"
+          "SK24"
         ]
       },
       "geometry": {
@@ -22716,7 +22604,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
-          "SK32"
+          "SK32",
+          "SK41",
+          "AM15",
+          "SK30",
+          "SK24"
         ]
       },
       "geometry": {
@@ -22774,8 +22666,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
+          "SK31",
           "SK40",
           "SK38",
+          "AM15",
           "AM49",
           "AM50",
           "SK30"
@@ -22972,7 +22866,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
-          "SK34",
           "SK33",
           "SK40",
           "SK38",
@@ -23152,7 +23045,8 @@
           "SK36",
           "SK35",
           "AJ44",
-          "AM51"
+          "AM51",
+          "AJ51"
         ]
       },
       "geometry": {
@@ -23716,7 +23610,8 @@
           "SK02",
           "SK15",
           "SK16",
-          "SK17"
+          "SK17",
+          "PN45"
         ]
       },
       "geometry": {
@@ -23961,6 +23856,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
+          "SK21",
           "SK22",
           "SK13",
           "SK14",
@@ -24145,12 +24041,14 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
+          "PN29",
           "PN44",
           "SK01",
           "SK16",
           "SK19",
           "SK20",
-          "SK36"
+          "SK36",
+          "AJ44"
         ]
       },
       "geometry": {
@@ -24365,7 +24263,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
-          "SK34",
           "SK37",
           "SK20",
           "SK36"
@@ -24579,6 +24476,7 @@
         "elector_size": 2825,
         "adjacent_districts": [
           "EC18",
+          "EC16",
           "AJ01",
           "AJ03",
           "AJ05"
@@ -24718,7 +24616,7 @@
           "EC19",
           "AJ03",
           "AJ05",
-          "AJ08"
+          "AJ07"
         ]
       },
       "geometry": {
@@ -24785,6 +24683,7 @@
           "AJ02",
           "AJ03",
           "AJ04",
+          "AJ07",
           "AJ06"
         ]
       },
@@ -24863,6 +24762,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2825,
         "adjacent_districts": [
+          "AJ04",
+          "AJ05",
+          "AJ08",
+          "AJ06",
           "AJ09"
         ]
       },
@@ -24946,8 +24849,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2825,
         "adjacent_districts": [
-          "MA01",
-          "AJ04"
+          "AJ07",
+          "AJ09"
         ]
       },
       "geometry": {
@@ -25062,6 +24965,8 @@
         "adjacent_districts": [
           "AJ01",
           "AJ05",
+          "AJ07",
+          "AJ09",
           "AJ50"
         ]
       },
@@ -25140,7 +25045,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "AJ07"
+          "AJ07",
+          "AJ08",
+          "AJ06",
+          "AJ10",
+          "AJ50"
         ]
       },
       "geometry": {
@@ -25293,6 +25202,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
+          "AJ09",
           "AJ11",
           "AJ12",
           "AJ18"
@@ -25649,6 +25559,7 @@
           "AJ11",
           "AJ12",
           "AJ14",
+          "AJ16",
           "AJ17",
           "AJ18"
         ]
@@ -25768,7 +25679,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA14",
           "AJ11",
           "AJ13",
           "AJ15",
@@ -25881,8 +25791,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA14",
-          "MA15",
           "AJ14",
           "AJ16"
         ]
@@ -26017,12 +25925,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA15",
-          "MA35",
-          "MA36",
+          "AJ13",
           "AJ14",
           "AJ15",
-          "AJ17"
+          "AJ17",
+          "AJ18"
         ]
       },
       "geometry": {
@@ -26300,11 +26207,14 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA36",
           "AJ10",
           "AJ12",
           "AJ13",
-          "AJ17"
+          "AJ16",
+          "AJ17",
+          "AJ19",
+          "AJ50",
+          "AJ52"
         ]
       },
       "geometry": {
@@ -26477,9 +26387,18 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "AJ23",
+          "TM10",
+          "TM60",
+          "AJ18",
+          "AJ20",
           "AJ24",
-          "AJ25"
+          "AJ25",
+          "AJ44",
+          "HG06",
+          "TM01",
+          "TM09",
+          "TM51",
+          "AJ54"
         ]
       },
       "geometry": {
@@ -26812,6 +26731,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
+          "AJ19",
           "AJ21",
           "AJ42"
         ]
@@ -26888,6 +26808,7 @@
         "adjacent_districts": [
           "AJ20",
           "AJ22",
+          "AJ23",
           "AJ39",
           "AJ41",
           "AJ42"
@@ -26969,6 +26890,8 @@
         "elector_size": 2824,
         "adjacent_districts": [
           "AJ21",
+          "AJ23",
+          "AJ26",
           "AJ39"
         ]
       },
@@ -27057,7 +26980,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "AJ19",
+          "AJ21",
+          "AJ22",
           "AJ24",
           "AJ25",
           "AJ26"
@@ -27138,7 +27062,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA39",
           "AJ19",
           "AJ23",
           "AJ25"
@@ -27199,7 +27122,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA39",
           "AJ19",
           "AJ23",
           "AJ24",
@@ -27266,10 +27188,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA39",
+          "AJ22",
           "AJ23",
-          "AJ25",
-          "AJ27"
+          "AJ25"
         ]
       },
       "geometry": {
@@ -27352,10 +27273,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA39",
           "MA49",
-          "AJ26",
-          "AJ28"
+          "MA39"
         ]
       },
       "geometry": {
@@ -27458,10 +27377,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA48",
-          "AJ27",
           "AJ29",
-          "AJ30"
+          "AJ30",
+          "AJ34",
+          "AJ38",
+          "AJ39"
         ]
       },
       "geometry": {
@@ -27591,7 +27511,7 @@
         "adjacent_districts": [
           "AJ28",
           "AJ30",
-          "AJ33",
+          "AJ31",
           "AJ34"
         ]
       },
@@ -27765,7 +27685,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA47",
           "AJ28",
           "AJ29",
           "AJ31"
@@ -27916,8 +27835,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "AJ30",
-          "AJ33"
+          "AJ29",
+          "AJ30"
         ]
       },
       "geometry": {
@@ -28030,8 +27949,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA43",
-          "MA45",
           "PS05",
           "BS12",
           "AM60"
@@ -28217,10 +28134,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
-          "MA45",
-          "AJ29",
-          "AJ31",
-          "AM60",
           "AM65"
         ]
       },
@@ -28419,11 +28332,13 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
+          "AJ28",
           "AJ29",
           "AJ35",
           "AJ36",
           "AJ37",
-          "AM65"
+          "AJ38",
+          "AM32"
         ]
       },
       "geometry": {
@@ -28664,6 +28579,8 @@
           "AJ34",
           "AJ36",
           "AJ37",
+          "AJ38",
+          "AM32",
           "AM34",
           "AM35"
         ]
@@ -28910,7 +28827,8 @@
         "adjacent_districts": [
           "AJ34",
           "AJ35",
-          "AJ36"
+          "AJ36",
+          "AJ38"
         ]
       },
       "geometry": {
@@ -29053,6 +28971,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
+          "AJ28",
+          "AJ34",
+          "AJ35",
+          "AJ37",
           "AJ39",
           "AJ40",
           "AM36",
@@ -29196,6 +29118,7 @@
         "adjacent_districts": [
           "AJ21",
           "AJ22",
+          "AJ28",
           "AJ38",
           "AJ40",
           "AJ41"
@@ -29621,6 +29544,7 @@
           "AJ21",
           "AJ41",
           "AJ43",
+          "HG06",
           "HG09"
         ]
       },
@@ -29776,11 +29700,19 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2824,
         "adjacent_districts": [
+          "PN29",
+          "PN44",
           "SK37",
+          "SK17",
           "SK36",
+          "AJ19",
           "HG01",
           "HG02",
-          "HG04"
+          "HG04",
+          "HG05",
+          "HG06",
+          "AJ51",
+          "TM01"
         ]
       },
       "geometry": {
@@ -30074,7 +30006,8 @@
           "AJ49",
           "HG02",
           "HG03",
-          "HG07"
+          "HG07",
+          "AJ51"
         ]
       },
       "geometry": {
@@ -30505,6 +30438,8 @@
         "adjacent_districts": [
           "AJ01",
           "AJ06",
+          "AJ09",
+          "AJ18",
           "EC14",
           "AJ53",
           "AJ52"
@@ -30964,6 +30899,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3270,
         "adjacent_districts": [
+          "AJ44",
           "HG03",
           "HG04",
           "HG06",
@@ -31025,7 +30961,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3270,
         "adjacent_districts": [
+          "AJ19",
+          "AJ42",
           "AJ43",
+          "AJ44",
           "HG05",
           "HG07",
           "HG08"
@@ -31120,7 +31059,9 @@
           "AJ46",
           "AJ49",
           "HG05",
-          "HG06"
+          "HG06",
+          "HG08",
+          "AM38"
         ]
       },
       "geometry": {
@@ -31266,6 +31207,7 @@
           "AJ40",
           "AJ43",
           "HG06",
+          "HG07",
           "HG09",
           "AM38"
         ]
@@ -31512,9 +31454,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2815,
         "adjacent_districts": [
-          "MA43",
+          "PS05",
           "BS12",
-          "BS08",
           "BS14",
           "BS27",
           "BS29",
@@ -31621,9 +31562,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3090,
         "adjacent_districts": [
-          "MA43",
           "AJ32",
+          "BS13",
           "PS06",
+          "BS12",
           "PS04",
           "PS10",
           "PS09"
@@ -31780,7 +31722,8 @@
         "elector_size": 3090,
         "adjacent_districts": [
           "PS06",
-          "PS08",
+          "JB08",
+          "JB14",
           "BS30",
           "BS31"
         ]
@@ -31911,8 +31854,7 @@
         "elector_size": 3090,
         "adjacent_districts": [
           "PS05",
-          "PS07",
-          "PS08"
+          "PS07"
         ]
       },
       "geometry": {
@@ -32020,11 +31962,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089,
         "adjacent_districts": [
-          "PS01",
-          "PS02",
-          "PS07",
-          "PS06",
-          "PS09"
+          "PS09",
+          "JB15"
         ]
       },
       "geometry": {
@@ -32147,9 +32086,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2527,
         "adjacent_districts": [
-          "JB04",
-          "JB06",
-          "JB07",
+          "BS31",
+          "BS35",
+          "JB01",
           "JB02"
         ]
       },
@@ -32223,7 +32162,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2527,
         "adjacent_districts": [
-          "JB03",
           "JB05",
           "JB06",
           "JB02"
@@ -32307,7 +32245,8 @@
           "JB04",
           "JB06",
           "JB24",
-          "JB25"
+          "JB25",
+          "JB02"
         ]
       },
       "geometry": {
@@ -32395,7 +32334,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2527,
         "adjacent_districts": [
-          "JB03",
           "JB04",
           "JB05",
           "JB07",
@@ -32472,10 +32410,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2527,
         "adjacent_districts": [
-          "JB03",
           "JB06",
           "JB08",
-          "JB10"
+          "JB10",
+          "BS31"
         ]
       },
       "geometry": {
@@ -32593,10 +32531,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2527,
         "adjacent_districts": [
+          "PS07",
           "JB07",
           "JB09",
           "JB10",
-          "JB11"
+          "JB11",
+          "JB14"
         ]
       },
       "geometry": {
@@ -33157,10 +33097,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
+          "PS07",
+          "JB08",
           "JB11",
           "JB12",
           "JB13",
-          "JB15",
+          "JB16",
           "JB17"
         ]
       },
@@ -33279,11 +33221,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
-          "MP06",
-          "MP07",
           "MP10",
-          "JB14",
-          "JB16"
+          "PS08"
         ]
       },
       "geometry": {
@@ -33371,9 +33310,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
-          "MB02",
-          "MA28",
-          "JB15",
+          "JB14",
           "JB17",
           "JB18"
         ]
@@ -33511,7 +33448,6 @@
           "JB13",
           "JB14",
           "JB16",
-          "JB19",
           "JB22",
           "JB18"
         ]
@@ -33641,10 +33577,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
-          "JB17",
-          "JB20",
           "JB21",
-          "JB30",
           "JB31",
           "JB18"
         ]
@@ -33794,10 +33727,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
-          "JB19",
           "JB21",
-          "JB26",
-          "JB30"
+          "JB26"
         ]
       },
       "geometry": {
@@ -34263,9 +34194,11 @@
         "adjacent_districts": [
           "JB05",
           "JB24",
+          "JB26",
           "TP07",
           "TP08",
-          "TP09"
+          "TP09",
+          "JB02"
         ]
       },
       "geometry": {
@@ -34335,6 +34268,7 @@
         "adjacent_districts": [
           "JB20",
           "JB21",
+          "JB25",
           "JB27",
           "JB29",
           "TP09"
@@ -34548,7 +34482,8 @@
         "adjacent_districts": [
           "JB27",
           "JB29",
-          "JB33"
+          "JB33",
+          "TP10"
         ]
       },
       "geometry": {
@@ -34634,7 +34569,6 @@
           "JB26",
           "JB27",
           "JB28",
-          "JB30",
           "JB33"
         ]
       },
@@ -34708,12 +34642,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
-          "JB19",
-          "JB20",
-          "JB29",
-          "JB31",
-          "JB32",
-          "JB33"
+          "JB31"
         ]
       },
       "geometry": {
@@ -34817,8 +34746,7 @@
         "elector_size": 2526,
         "adjacent_districts": [
           "JB19",
-          "JB30",
-          "JB32"
+          "JB30"
         ]
       },
       "geometry": {
@@ -34896,11 +34824,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
-          "MB03",
-          "MB08",
-          "JB30",
-          "JB31",
-          "JB33"
+          "MB08"
         ]
       },
       "geometry": {
@@ -35163,11 +35087,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
-          "MB08",
           "JB28",
           "JB29",
-          "JB30",
-          "JB32"
+          "JB34",
+          "JB35",
+          "TP10",
+          "TP11"
         ]
       },
       "geometry": {
@@ -35410,6 +35335,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
+          "JB33",
           "JB35",
           "JB36"
         ]
@@ -35519,10 +35445,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
+          "JB33",
           "JB34",
           "JB36",
           "TP50",
-          "TP53",
           "WE51"
         ]
       },
@@ -35759,7 +35685,7 @@
           "JB34",
           "JB35",
           "JB37",
-          "TP53",
+          "TP11",
           "TP49"
         ]
       },
@@ -35906,6 +35832,7 @@
           "JB36",
           "JB38",
           "JB41",
+          "TP11",
           "TP44",
           "TP43",
           "TP12"
@@ -36582,7 +36509,9 @@
           "TP03",
           "TP04",
           "BS17",
+          "BS18",
           "JB01",
+          "JB02",
           "HT22",
           "TP06"
         ]
@@ -36739,7 +36668,8 @@
         "adjacent_districts": [
           "JB25",
           "TP08",
-          "JB02"
+          "JB02",
+          "TP06"
         ]
       },
       "geometry": {
@@ -36824,7 +36754,9 @@
         "adjacent_districts": [
           "JB25",
           "TP07",
-          "TP09"
+          "TP09",
+          "TP10",
+          "TP06"
         ]
       },
       "geometry": {
@@ -36950,7 +36882,8 @@
           "JB25",
           "JB26",
           "JB27",
-          "TP08"
+          "TP08",
+          "TP10"
         ]
       },
       "geometry": {
@@ -37018,9 +36951,13 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2648,
         "adjacent_districts": [
+          "TP02",
           "TP16",
           "TP17",
-          "HT24"
+          "HT24",
+          "HT25",
+          "HT36",
+          "HT37"
         ]
       },
       "geometry": {
@@ -37273,7 +37210,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2648,
         "adjacent_districts": [
-          "HT23"
+          "TP01",
+          "TP03",
+          "TP16",
+          "HT23",
+          "HT24"
         ]
       },
       "geometry": {
@@ -37507,8 +37448,10 @@
         "elector_size": 2648,
         "adjacent_districts": [
           "TP05",
+          "TP02",
           "TP04",
           "TP13",
+          "TP15",
           "HT22",
           "HT23"
         ]
@@ -38015,9 +37958,13 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2648,
         "adjacent_districts": [
+          "JB28",
+          "JB33",
+          "TP08",
+          "TP09",
           "TP04",
-          "TP06",
-          "TP11"
+          "TP11",
+          "TP06"
         ]
       },
       "geometry": {
@@ -38150,7 +38097,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2648,
         "adjacent_districts": [
-          "TP10"
+          "JB33",
+          "JB36",
+          "JB37",
+          "TP10",
+          "TP13",
+          "TP12"
         ]
       },
       "geometry": {
@@ -38400,7 +38352,6 @@
         "adjacent_districts": [
           "JB35",
           "TP51",
-          "TP53",
           "TP49",
           "RM07",
           "RM09",
@@ -38665,7 +38616,6 @@
         "adjacent_districts": [
           "TP50",
           "TP52",
-          "TP53",
           "TP49"
         ]
       },
@@ -38848,10 +38798,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2647,
         "adjacent_districts": [
-          "JB35",
-          "JB36",
-          "TP50",
-          "TP51",
           "TP52"
         ]
       },
@@ -39005,7 +38951,8 @@
           "TP51",
           "TP48",
           "TP47",
-          "TP44"
+          "TP44",
+          "RM07"
         ]
       },
       "geometry": {
@@ -39149,6 +39096,7 @@
         "elector_size": 2647,
         "adjacent_districts": [
           "TP49",
+          "TP46",
           "TP47",
           "RM04",
           "RM07"
@@ -39239,7 +39187,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2647,
         "adjacent_districts": [
-          "TP45"
+          "TP48",
+          "TP45",
+          "TP47",
+          "TP41",
+          "RM04"
         ]
       },
       "geometry": {
@@ -39292,11 +39244,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2647,
         "adjacent_districts": [
+          "TP46",
           "TP47",
           "TP44",
-          "TP41",
-          "TP46",
-          "TP42"
+          "TP42",
+          "TP41"
         ]
       },
       "geometry": {
@@ -39376,6 +39328,7 @@
         "adjacent_districts": [
           "TP49",
           "TP48",
+          "TP46",
           "TP45",
           "TP44"
         ]
@@ -39449,6 +39402,7 @@
           "TP49",
           "TP45",
           "TP47",
+          "TP42",
           "TP43"
         ]
       },
@@ -39577,7 +39531,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2647,
         "adjacent_districts": [
-          "TP45"
+          "TP45",
+          "TP44",
+          "TP41",
+          "TP39",
+          "TP43"
         ]
       },
       "geometry": {
@@ -39660,7 +39618,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2647,
         "adjacent_districts": [
+          "TP46",
           "TP45",
+          "TP42",
           "TP40",
           "TP39",
           "RM04"
@@ -39787,6 +39747,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2647,
         "adjacent_districts": [
+          "TP42",
           "TP41",
           "TP40",
           "TP38",
@@ -39938,10 +39899,13 @@
           "JB41",
           "TP39",
           "TP38",
+          "TP43",
           "TP13",
           "TP30",
           "TP36",
-          "RM01"
+          "RM01",
+          "RM02",
+          "TP12"
         ]
       },
       "geometry": {
@@ -40043,7 +40007,9 @@
           "JB38",
           "JB39",
           "JB40",
-          "TP44"
+          "TP44",
+          "TP42",
+          "TP37"
         ]
       },
       "geometry": {
@@ -40168,6 +40134,7 @@
         "adjacent_districts": [
           "TP03",
           "TP04",
+          "TP11",
           "TP37",
           "TP15",
           "TP29",
@@ -40410,9 +40377,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2647,
         "adjacent_districts": [
+          "TP03",
           "TP13",
           "TP26",
-          "TP21",
           "TP20",
           "TP16",
           "TP14",
@@ -41638,7 +41605,6 @@
         "adjacent_districts": [
           "TP15",
           "TP31",
-          "TP21",
           "TP27"
         ]
       },
@@ -42123,8 +42089,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2647,
         "adjacent_districts": [
-          "TP15",
-          "TP26",
           "TP22",
           "TP20"
         ]
@@ -42202,6 +42166,7 @@
           "TP15",
           "TP21",
           "TP18",
+          "TP19",
           "TP16",
           "WE44"
         ]
@@ -42292,10 +42257,10 @@
         "elector_size": 2647,
         "adjacent_districts": [
           "TP20",
+          "TP19",
           "TP16",
           "TP17",
-          "WE44",
-          "TP19"
+          "WE44"
         ]
       },
       "geometry": {
@@ -42343,7 +42308,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2647,
         "adjacent_districts": [
-          "TP18"
+          "TP20",
+          "TP18",
+          "TP16"
         ]
       },
       "geometry": {
@@ -42417,9 +42384,11 @@
         "elector_size": 2647,
         "adjacent_districts": [
           "TP01",
+          "TP02",
           "TP15",
           "TP20",
           "TP18",
+          "TP19",
           "TP17"
         ]
       },
@@ -42591,6 +42560,7 @@
           "TP01",
           "TP18",
           "TP16",
+          "WE44",
           "HT37"
         ]
       },
@@ -42829,6 +42799,7 @@
           "TP40",
           "TP39",
           "TP38",
+          "TP37",
           "RM01",
           "RM03"
         ]
@@ -43050,6 +43021,7 @@
         "elector_size": 2291,
         "adjacent_districts": [
           "TP48",
+          "TP46",
           "TP41",
           "TP40",
           "RM03",
@@ -43331,6 +43303,7 @@
         "elector_size": 2291,
         "adjacent_districts": [
           "TP50",
+          "TP49",
           "TP48",
           "RM04",
           "RM06",
@@ -43715,9 +43688,9 @@
           "RM05",
           "RM08",
           "RM09",
-          "WE45",
           "WE46",
-          "WE48"
+          "WE48",
+          "WE51"
         ]
       },
       "geometry": {
@@ -43924,7 +43897,9 @@
           "BS03",
           "MR06",
           "BS05",
-          "KR02"
+          "BS17",
+          "KR02",
+          "HT02"
         ]
       },
       "geometry": {
@@ -44528,6 +44503,7 @@
           "BS02",
           "BS03",
           "BS05",
+          "MR05",
           "MR01",
           "MR02",
           "AM53",
@@ -44681,8 +44657,8 @@
         "adjacent_districts": [
           "BS04",
           "MR06",
-          "BS06",
           "BS16",
+          "BS17",
           "MR07"
         ]
       },
@@ -44791,13 +44767,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2815,
         "adjacent_districts": [
-          "BS05",
-          "MR04",
-          "MR03",
-          "BS10",
-          "BS07",
-          "BS15",
-          "BS16",
           "MR07"
         ]
       },
@@ -44901,7 +44870,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3317,
         "adjacent_districts": [
-          "MR01"
+          "MR06",
+          "MR01",
+          "MR04"
         ]
       },
       "geometry": {
@@ -45035,9 +45006,9 @@
         "elector_size": 3317,
         "adjacent_districts": [
           "MR06",
+          "MR05",
           "MR02",
-          "MR04",
-          "MR05"
+          "MR04"
         ]
       },
       "geometry": {
@@ -45129,6 +45100,7 @@
           "MR01",
           "MR04",
           "MR03",
+          "BS12",
           "AM54",
           "AM57",
           "AM58"
@@ -45294,7 +45266,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3317,
         "adjacent_districts": [
-          "BS06",
+          "MR05",
           "MR01",
           "MR02",
           "MR03"
@@ -45455,7 +45427,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3317,
         "adjacent_districts": [
-          "BS06",
           "MR02",
           "MR04",
           "BS12"
@@ -45553,9 +45524,13 @@
         "adjacent_districts": [
           "AJ32",
           "BS13",
+          "PS05",
+          "MR02",
           "MR03",
           "BS11",
-          "AM59"
+          "BS10",
+          "AM59",
+          "AM60"
         ]
       },
       "geometry": {
@@ -45802,10 +45777,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2815,
         "adjacent_districts": [
-          "BS06",
+          "BS12",
           "BS11",
           "BS09",
-          "BS08",
           "BS07"
         ]
       },
@@ -45925,8 +45899,8 @@
         "elector_size": 2815,
         "adjacent_districts": [
           "BS10",
-          "BS08",
-          "BS07"
+          "BS07",
+          "BS08"
         ]
       },
       "geometry": {
@@ -46009,11 +45983,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2815,
         "adjacent_districts": [
-          "BS13",
-          "BS10",
-          "BS09",
-          "BS07",
-          "BS14"
+          "BS09"
         ]
       },
       "geometry": {
@@ -46126,10 +46096,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2815,
         "adjacent_districts": [
-          "BS06",
           "BS10",
           "BS09",
-          "BS08",
           "BS14"
         ]
       },
@@ -46199,9 +46167,9 @@
         "elector_size": 2815,
         "adjacent_districts": [
           "BS13",
-          "BS08",
           "BS07",
           "BS15",
+          "BS23",
           "BS26",
           "BS27"
         ]
@@ -46296,10 +46264,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2815,
         "adjacent_districts": [
-          "BS06",
           "BS14",
           "BS16",
-          "BS22"
+          "BS22",
+          "BS23"
         ]
       },
       "geometry": {
@@ -46403,8 +46371,10 @@
         "elector_size": 2814,
         "adjacent_districts": [
           "BS05",
-          "BS06",
           "BS15",
+          "BS17",
+          "BS18",
+          "BS21",
           "BS22"
         ]
       },
@@ -46514,8 +46484,15 @@
         "elector_size": 2814,
         "adjacent_districts": [
           "TP05",
+          "BS04",
+          "BS05",
+          "BS16",
+          "BS18",
           "JB01",
+          "HT02",
+          "HT19",
           "HT20",
+          "HT21",
           "HT22"
         ]
       },
@@ -46704,10 +46681,14 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2814,
         "adjacent_districts": [
+          "TP05",
+          "BS16",
+          "BS17",
           "BS19",
           "BS20",
           "BS21",
-          "BS35"
+          "BS35",
+          "JB01"
         ]
       },
       "geometry": {
@@ -47012,8 +46993,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2814,
         "adjacent_districts": [
+          "BS16",
           "BS18",
           "BS20",
+          "BS22",
           "BS24"
         ]
       },
@@ -47094,8 +47077,9 @@
         "adjacent_districts": [
           "BS15",
           "BS16",
-          "BS24",
-          "BS23"
+          "BS21",
+          "BS23",
+          "BS24"
         ]
       },
       "geometry": {
@@ -47173,7 +47157,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2814,
         "adjacent_districts": [
-          "BS22"
+          "BS14",
+          "BS15",
+          "BS22",
+          "BS24",
+          "BS25",
+          "BS26"
         ]
       },
       "geometry": {
@@ -47259,8 +47248,10 @@
           "BS20",
           "BS21",
           "BS22",
+          "BS23",
           "BS25",
-          "BS34"
+          "BS34",
+          "BS35"
         ]
       },
       "geometry": {
@@ -47348,6 +47339,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2814,
         "adjacent_districts": [
+          "BS23",
           "BS24",
           "BS26",
           "BS34"
@@ -47434,6 +47426,7 @@
         "elector_size": 2814,
         "adjacent_districts": [
           "BS14",
+          "BS23",
           "BS25",
           "BS27",
           "BS33"
@@ -47619,6 +47612,7 @@
           "BS27",
           "BS29",
           "BS30",
+          "BS32",
           "BS33"
         ]
       },
@@ -47936,9 +47930,12 @@
         "elector_size": 2814,
         "adjacent_districts": [
           "PS07",
+          "JB03",
+          "JB07",
           "BS30",
+          "BS32",
           "BS33",
-          "BS32"
+          "BS35"
         ]
       },
       "geometry": {
@@ -48066,7 +48063,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2814,
         "adjacent_districts": [
-          "BS31"
+          "BS28",
+          "BS31",
+          "BS33"
         ]
       },
       "geometry": {
@@ -48162,7 +48161,9 @@
           "BS26",
           "BS28",
           "BS31",
-          "BS34"
+          "BS32",
+          "BS34",
+          "BS35"
         ]
       },
       "geometry": {
@@ -48361,10 +48362,15 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2814,
         "adjacent_districts": [
+          "JB03",
           "BS18",
           "BS19",
           "BS20",
-          "BS34"
+          "BS24",
+          "BS31",
+          "BS33",
+          "BS34",
+          "JB01"
         ]
       },
       "geometry": {
@@ -48462,8 +48468,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2527,
         "adjacent_districts": [
+          "JB03",
           "TP05",
-          "BS17"
+          "BS17",
+          "BS18",
+          "BS35",
+          "JB02"
         ]
       },
       "geometry": {
@@ -48568,7 +48578,12 @@
         "adjacent_districts": [
           "JB03",
           "JB04",
-          "TP07"
+          "JB05",
+          "JB25",
+          "TP05",
+          "TP07",
+          "JB01",
+          "TP06"
         ]
       },
       "geometry": {
@@ -48704,7 +48719,9 @@
           "YK01",
           "YK02",
           "KR02",
+          "NS50",
           "NS48",
+          "HT02",
           "YK10"
         ]
       },
@@ -48819,8 +48836,11 @@
         "elector_size": 2819,
         "adjacent_districts": [
           "KR01",
+          "AM03",
+          "AM25",
           "YK03",
           "NS48",
+          "NS47",
           "YK10"
         ]
       },
@@ -48894,7 +48914,13 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2957,
         "adjacent_districts": [
+          "YK01",
           "AM05",
+          "AM22",
+          "AM24",
+          "AM25",
+          "NS20",
+          "NS47",
           "PW04",
           "PN57",
           "PW05",
@@ -48902,7 +48928,8 @@
           "PW01",
           "AM04",
           "AM10",
-          "AM11"
+          "AM11",
+          "PN60"
         ]
       },
       "geometry": {
@@ -49176,6 +49203,7 @@
         "elector_size": 2932,
         "adjacent_districts": [
           "AM09",
+          "AM21",
           "AM13",
           "AM20",
           "AM11"
@@ -49241,7 +49269,14 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2932,
         "adjacent_districts": [
+          "SK31",
+          "SK41",
+          "SK30",
+          "SK29",
+          "SK27",
+          "AM14",
           "AM20",
+          "AM19",
           "AM16",
           "SK28"
         ]
@@ -49342,8 +49377,8 @@
         "elector_size": 2932,
         "adjacent_districts": [
           "AM18",
-          "AM16",
-          "AM19"
+          "AM19",
+          "AM16"
         ]
       },
       "geometry": {
@@ -49422,8 +49457,10 @@
         "elector_size": 2932,
         "adjacent_districts": [
           "AM17",
+          "AM21",
           "AM43",
           "AM20",
+          "AM19",
           "AM16"
         ]
       },
@@ -49527,10 +49564,14 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2932,
         "adjacent_districts": [
+          "AM12",
+          "AM18",
           "AM22",
           "AM23",
+          "AM32",
           "AM33",
-          "AM32"
+          "AM20",
+          "AM11"
         ]
       },
       "geometry": {
@@ -49593,6 +49634,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2932,
         "adjacent_districts": [
+          "AM03",
           "AM21",
           "AM23",
           "AM24"
@@ -49655,7 +49697,8 @@
         "adjacent_districts": [
           "AM21",
           "AM22",
-          "AM24"
+          "AM24",
+          "AM32"
         ]
       },
       "geometry": {
@@ -49733,8 +49776,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2932,
         "adjacent_districts": [
+          "AM03",
           "AM22",
           "AM23",
+          "AM25",
           "AM28",
           "AM31"
         ]
@@ -49834,9 +49879,14 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2932,
         "adjacent_districts": [
+          "YK01",
+          "AM03",
+          "AM24",
           "YK03",
           "YK07",
           "AM26",
+          "AM27",
+          "AM28",
           "YK04"
         ]
       },
@@ -50019,9 +50069,9 @@
         "adjacent_districts": [
           "YK03",
           "YK02",
+          "YK06",
           "YK07",
-          "YK04",
-          "YK06"
+          "YK04"
         ]
       },
       "geometry": {
@@ -50102,6 +50152,7 @@
           "KR01",
           "YK03",
           "YK05",
+          "YK06",
           "KR03",
           "KR02",
           "YK10"
@@ -50182,7 +50233,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2819,
         "adjacent_districts": [
-          "YK05"
+          "YK05",
+          "YK02",
+          "YK07",
+          "KR03"
         ]
       },
       "geometry": {
@@ -50277,9 +50331,9 @@
         "adjacent_districts": [
           "AM25",
           "YK05",
+          "YK06",
           "AM26",
           "YK08",
-          "KR04",
           "KR05",
           "YK04"
         ]
@@ -51078,6 +51132,7 @@
           "AM56",
           "AM57",
           "AM59",
+          "AM61",
           "AM62"
         ]
       },
@@ -51158,7 +51213,8 @@
         "adjacent_districts": [
           "BS12",
           "AM58",
-          "AM60"
+          "AM60",
+          "AM61"
         ]
       },
       "geometry": {
@@ -51267,10 +51323,10 @@
         "elector_size": 2931,
         "adjacent_districts": [
           "AJ32",
-          "AJ33",
+          "BS12",
           "AM59",
-          "AM64",
-          "AM65"
+          "AM61",
+          "AM64"
         ]
       },
       "geometry": {
@@ -51388,7 +51444,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2931,
         "adjacent_districts": [
-          "AM63"
+          "AM58",
+          "AM59",
+          "AM60",
+          "AM62",
+          "AM63",
+          "AM64"
         ]
       },
       "geometry": {
@@ -51458,6 +51519,7 @@
         "adjacent_districts": [
           "AM56",
           "AM58",
+          "AM61",
           "AM63",
           "AM64",
           "AM29",
@@ -51534,9 +51596,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2931,
         "adjacent_districts": [
+          "AM61",
           "AM62",
-          "AM64",
-          "AM61"
+          "AM64"
         ]
       },
       "geometry": {
@@ -51600,9 +51662,9 @@
         "elector_size": 2931,
         "adjacent_districts": [
           "AM60",
+          "AM61",
           "AM62",
           "AM63",
-          "AM65",
           "AM29"
         ]
       },
@@ -51672,9 +51734,6 @@
         "elector_size": 2931,
         "adjacent_districts": [
           "AJ33",
-          "AJ34",
-          "AM60",
-          "AM64",
           "AM30"
         ]
       },
@@ -51776,7 +51835,8 @@
           "AM65",
           "AM29",
           "AM28",
-          "AM31"
+          "AM31",
+          "AM32"
         ]
       },
       "geometry": {
@@ -51962,6 +52022,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2932,
         "adjacent_districts": [
+          "AM25",
           "AM26",
           "AM62",
           "AM29",
@@ -52059,6 +52120,7 @@
         "elector_size": 2932,
         "adjacent_districts": [
           "AM24",
+          "AM25",
           "AM30",
           "AM29",
           "AM27",
@@ -52138,7 +52200,8 @@
           "AM24",
           "AM30",
           "AM29",
-          "AM28"
+          "AM28",
+          "AM32"
         ]
       },
       "geometry": {
@@ -52231,7 +52294,14 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2932,
         "adjacent_districts": [
-          "AM21"
+          "AJ34",
+          "AJ35",
+          "AM21",
+          "AM23",
+          "AM30",
+          "AM31",
+          "AM33",
+          "AM34"
         ]
       },
       "geometry": {
@@ -52355,8 +52425,11 @@
         "elector_size": 2932,
         "adjacent_districts": [
           "AM21",
+          "AM32",
           "AM34",
-          "AM35"
+          "AM35",
+          "AM42",
+          "AM43"
         ]
       },
       "geometry": {
@@ -52480,6 +52553,7 @@
         "elector_size": 2932,
         "adjacent_districts": [
           "AJ35",
+          "AM32",
           "AM33",
           "AM35"
         ]
@@ -52591,7 +52665,9 @@
         "adjacent_districts": [
           "AJ35",
           "AM33",
-          "AM34"
+          "AM34",
+          "AM36",
+          "AM41"
         ]
       },
       "geometry": {
@@ -52660,7 +52736,9 @@
         "elector_size": 2932,
         "adjacent_districts": [
           "AJ38",
+          "AM35",
           "AM37",
+          "AM39",
           "AM40",
           "AM41"
         ]
@@ -52773,7 +52851,8 @@
           "AJ38",
           "AJ40",
           "AM36",
-          "AM38"
+          "AM38",
+          "AM39"
         ]
       },
       "geometry": {
@@ -52858,8 +52937,10 @@
         "adjacent_districts": [
           "AJ40",
           "AJ49",
+          "HG07",
           "HG08",
-          "AM37"
+          "AM37",
+          "AM39"
         ]
       },
       "geometry": {
@@ -52957,7 +53038,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2932,
         "adjacent_districts": [
-          "AM40"
+          "AM36",
+          "AM37",
+          "AM38",
+          "AM40",
+          "AM45",
+          "AM46"
         ]
       },
       "geometry": {
@@ -53051,9 +53137,9 @@
         "elector_size": 2932,
         "adjacent_districts": [
           "AM36",
+          "AM39",
           "AM41",
-          "AM45",
-          "AM39"
+          "AM45"
         ]
       },
       "geometry": {
@@ -53151,6 +53237,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2931,
         "adjacent_districts": [
+          "AM35",
           "AM36",
           "AM40",
           "AM42",
@@ -53252,6 +53339,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2931,
         "adjacent_districts": [
+          "AM33",
           "AM41",
           "AM43",
           "AM45"
@@ -53333,6 +53421,7 @@
         "elector_size": 2931,
         "adjacent_districts": [
           "AM18",
+          "AM33",
           "AM42",
           "AM44",
           "AM45"
@@ -53459,6 +53548,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2931,
         "adjacent_districts": [
+          "AM39",
           "AM40",
           "AM41",
           "AM42",
@@ -53538,6 +53628,7 @@
         "elector_size": 2931,
         "adjacent_districts": [
           "AJ49",
+          "AM39",
           "AM45",
           "AM47",
           "AM48"
@@ -53809,7 +53900,8 @@
           "AM46",
           "AM47",
           "AM49",
-          "AM50"
+          "AM50",
+          "AM16"
         ]
       },
       "geometry": {
@@ -54002,7 +54094,8 @@
           "AJ48",
           "AM47",
           "AM48",
-          "AM49"
+          "AM49",
+          "AM51"
         ]
       },
       "geometry": {
@@ -54108,6 +54201,7 @@
           "SK38",
           "SK37",
           "AJ47",
+          "AM50",
           "AJ51"
         ]
       },
@@ -54207,9 +54301,10 @@
         "elector_size": 2752,
         "adjacent_districts": [
           "YK02",
-          "KR04",
+          "YK06",
           "KR07",
-          "KR02"
+          "KR02",
+          "KR04"
         ]
       },
       "geometry": {
@@ -54352,10 +54447,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2752,
         "adjacent_districts": [
-          "YK07",
-          "KR03",
-          "KR05",
-          "KR06"
+          "KR03"
         ]
       },
       "geometry": {
@@ -54522,7 +54614,6 @@
           "YK08",
           "YK09",
           "AM52",
-          "KR04",
           "KR06"
         ]
       },
@@ -54592,7 +54683,6 @@
         "elector_size": 2752,
         "adjacent_districts": [
           "AM52",
-          "KR04",
           "KR05",
           "KR07",
           "KR08"
@@ -54800,7 +54890,8 @@
           "YK02",
           "KR03",
           "KR07",
-          "KR08"
+          "KR08",
+          "HT02"
         ]
       },
       "geometry": {
@@ -55146,8 +55237,8 @@
         "elector_size": 2957,
         "adjacent_districts": [
           "SK09",
-          "AM07",
-          "AM02"
+          "AM02",
+          "AM07"
         ]
       },
       "geometry": {
@@ -55271,9 +55362,8 @@
           "SK07",
           "SK09",
           "SK26",
-          "SK25",
-          "SK11",
-          "SK24"
+          "SK24",
+          "SK25"
         ]
       },
       "geometry": {
@@ -55391,7 +55481,6 @@
         "adjacent_districts": [
           "SK10",
           "SK09",
-          "SK25",
           "SK29",
           "SK27"
         ]
@@ -55446,10 +55535,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
-          "SK10",
-          "SK26",
-          "SK30",
-          "SK24"
+          "SK10"
         ]
       },
       "geometry": {
@@ -55507,8 +55593,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
+          "SK31",
           "SK41",
-          "SK25",
+          "AM15",
           "SK29"
         ]
       },
@@ -55562,6 +55649,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
+          "AM15",
           "SK26",
           "SK30",
           "SK28"
@@ -55612,9 +55700,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
+          "AM15",
           "SK09",
           "SK26",
-          "AM07",
           "SK28"
         ]
       },
@@ -55683,11 +55771,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2956,
         "adjacent_districts": [
-          "AM01",
-          "SK27",
-          "AM14",
-          "AM06",
-          "AM08"
+          "AM01"
         ]
       },
       "geometry": {
@@ -55760,7 +55844,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2932,
         "adjacent_districts": [
-          "AM07",
+          "AM15",
           "AM13",
           "AM20"
         ]
@@ -55912,7 +55996,6 @@
         "elector_size": 2956,
         "adjacent_districts": [
           "AM05",
-          "AM07",
           "AM02",
           "AM08"
         ]
@@ -56812,6 +56895,7 @@
           "SB34",
           "NS50",
           "SB28",
+          "SB29",
           "SB32",
           "SB33"
         ]
@@ -56963,6 +57047,7 @@
           "SB47",
           "SB30",
           "SB35",
+          "NS50",
           "SB36",
           "NS01",
           "SB32",
@@ -57084,15 +57169,21 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3094,
         "adjacent_districts": [
+          "KR01",
           "SB30",
+          "SB34",
           "NS06",
           "NS08",
           "NS29",
+          "NS49",
+          "NS48",
           "SB01",
           "SB03",
           "SB26",
           "SB27",
-          "SB28"
+          "SB28",
+          "MY07",
+          "HT02"
         ]
       },
       "geometry": {
@@ -57995,12 +58086,16 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3095,
         "adjacent_districts": [
+          "AM03",
           "NS02",
           "NS03",
           "NS13",
           "NS14",
           "NS18",
           "NS41",
+          "NS47",
+          "SB45",
+          "NS01",
           "NS19",
           "NS22",
           "NS23",
@@ -60513,12 +60608,15 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3094,
         "adjacent_districts": [
+          "NS50",
           "NS29",
           "NS30",
           "NS44",
           "NS34",
           "NS32",
-          "NS46"
+          "NS48",
+          "NS46",
+          "NS47"
         ]
       },
       "geometry": {
@@ -60617,7 +60715,10 @@
         "elector_size": 3094,
         "adjacent_districts": [
           "KR01",
-          "YK01"
+          "YK01",
+          "NS50",
+          "NS49",
+          "NS47"
         ]
       },
       "geometry": {
@@ -60806,9 +60907,14 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3094,
         "adjacent_districts": [
+          "YK01",
+          "AM03",
+          "NS20",
           "NS41",
           "NS42",
           "NS45",
+          "NS49",
+          "NS48",
           "NS46",
           "NS43"
         ]
@@ -61129,7 +61235,6 @@
           "SB14",
           "SB16",
           "SB29",
-          "MY22",
           "MY23",
           "MY24",
           "MY14"
@@ -63128,7 +63233,8 @@
           "SB20",
           "SB21",
           "SB22",
-          "SB24"
+          "SB24",
+          "SB29"
         ]
       },
       "geometry": {
@@ -63217,6 +63323,7 @@
           "SB19",
           "SB20",
           "SB23",
+          "SB29",
           "SB25"
         ]
       },
@@ -63619,13 +63726,17 @@
           "SB53",
           "SB52",
           "SB49",
+          "SB30",
           "SB15",
           "SB18",
           "SB20",
           "SB21",
           "SB22",
+          "SB23",
+          "SB24",
           "SB27",
-          "SB28"
+          "SB28",
+          "SB45"
         ]
       },
       "geometry": {
@@ -63811,6 +63922,8 @@
           "SB53",
           "SB52",
           "SB51",
+          "NS20",
+          "SB29",
           "SB46",
           "SB44",
           "SB42",
@@ -64714,7 +64827,6 @@
         "elector_size": 2911,
         "adjacent_districts": [
           "MY13",
-          "MY22",
           "MY20",
           "MY16",
           "MY14"
@@ -64845,12 +64957,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
-          "SB15",
-          "MY15",
-          "MY23",
-          "MY21",
-          "MY20",
-          "MY14"
+          "MY23"
         ]
       },
       "geometry": {
@@ -64979,9 +65086,9 @@
         "elector_size": 2911,
         "adjacent_districts": [
           "SB15",
-          "MY22",
           "MY24",
-          "MY21"
+          "MY21",
+          "MY22"
         ]
       },
       "geometry": {
@@ -65105,6 +65212,7 @@
           "MY17",
           "MY09",
           "MY25",
+          "MY26",
           "MY18"
         ]
       },
@@ -65318,7 +65426,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
-          "MY22",
           "MY23",
           "MY24",
           "MY20",
@@ -65417,7 +65524,6 @@
         "elector_size": 2911,
         "adjacent_districts": [
           "MY15",
-          "MY22",
           "MY21",
           "MY16",
           "MY19"
@@ -66256,6 +66362,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
+          "NS50",
           "SB01",
           "MY13",
           "MY12",
@@ -66264,6 +66371,7 @@
           "MY09",
           "MY08",
           "MY25",
+          "HT02",
           "MY06"
         ]
       },
@@ -66425,7 +66533,9 @@
           "MY24",
           "MY09",
           "MY08",
-          "MY07"
+          "MY07",
+          "MY26",
+          "HT02"
         ]
       },
       "geometry": {
@@ -66553,7 +66663,14 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
-          "MY27"
+          "MY24",
+          "MY25",
+          "MY27",
+          "MY28",
+          "MY30",
+          "MY33",
+          "CK02",
+          "HT02"
         ]
       },
       "geometry": {
@@ -66841,10 +66958,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
+          "MY26",
           "MY28",
           "MY29",
-          "MY30",
-          "MY26"
+          "MY30"
         ]
       },
       "geometry": {
@@ -66917,6 +67034,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
+          "MY26",
           "MY27",
           "MY29",
           "MY33"
@@ -67053,9 +67171,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
+          "MY26",
           "MY27",
           "MY29",
-          "MY31"
+          "MY31",
+          "HT02"
         ]
       },
       "geometry": {
@@ -67165,10 +67285,9 @@
         "adjacent_districts": [
           "MY29",
           "MY30",
-          "MY32",
           "MY33",
           "MY37",
-          "MY38"
+          "HT02"
         ]
       },
       "geometry": {
@@ -67261,11 +67380,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
-          "MY31",
-          "MY33",
-          "MY34",
-          "MY36",
-          "MY37",
+          "MY38",
           "MY38"
         ]
       },
@@ -67349,9 +67464,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
+          "MY26",
           "MY28",
           "MY31",
-          "MY32",
           "MY34",
           "CK02"
         ]
@@ -67421,11 +67536,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
-          "MY32",
           "MY33",
           "MY35",
           "MY36",
-          "MY37"
+          "MY37",
+          "CK02"
         ]
       },
       "geometry": {
@@ -67599,7 +67714,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
-          "MY32",
           "MY34",
           "MY35",
           "MY37",
@@ -67693,10 +67807,8 @@
         "elector_size": 2911,
         "adjacent_districts": [
           "MY31",
-          "MY32",
           "MY34",
           "MY36",
-          "MY38",
           "MY39",
           "MY40"
         ]
@@ -67821,10 +67933,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
-          "MY31",
           "MY32",
-          "MY37",
-          "MY39"
+          "MY32"
         ]
       },
       "geometry": {
@@ -67949,7 +68059,9 @@
         "adjacent_districts": [
           "MY36",
           "MY37",
-          "MY38"
+          "MY40",
+          "CK05",
+          "HT02"
         ]
       },
       "geometry": {
@@ -68104,7 +68216,11 @@
         "adjacent_districts": [
           "MY35",
           "MY36",
-          "MY37"
+          "MY37",
+          "MY39",
+          "MY41",
+          "CK02",
+          "CK04"
         ]
       },
       "geometry": {
@@ -68227,6 +68343,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2911,
         "adjacent_districts": [
+          "MY40",
+          "CK02",
           "CK04"
         ]
       },
@@ -68580,8 +68698,10 @@
           "WE02",
           "WE03",
           "WE05",
+          "WE14",
           "PI01",
-          "PI02"
+          "PI02",
+          "WE01"
         ]
       },
       "geometry": {
@@ -68709,6 +68829,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2930,
         "adjacent_districts": [
+          "WE04",
           "WE13",
           "WE07",
           "WE06",
@@ -68953,7 +69074,8 @@
           "WE05",
           "WE14",
           "WE07",
-          "WE08"
+          "WE08",
+          "WE01"
         ]
       },
       "geometry": {
@@ -69064,7 +69186,8 @@
           "WE07",
           "WE06",
           "WE11",
-          "WE09"
+          "WE09",
+          "WE01"
         ]
       },
       "geometry": {
@@ -69167,10 +69290,19 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
+          "MY26",
           "MY33",
+          "MY34",
           "MY35",
+          "MY40",
+          "MY41",
           "CK03",
-          "CK14"
+          "CK13",
+          "CK14",
+          "WE27",
+          "CK01",
+          "WE01",
+          "HN11"
         ]
       },
       "geometry": {
@@ -69569,7 +69701,9 @@
         "elector_size": 2913,
         "adjacent_districts": [
           "CK02",
+          "CK04",
           "CK10",
+          "CK11",
           "CK13"
         ]
       },
@@ -69623,9 +69757,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
+          "MY40",
           "MY41",
+          "CK03",
           "CK05",
-          "CK05"
+          "CK10",
+          "CK11"
         ]
       },
       "geometry": {
@@ -69698,8 +69835,13 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
+          "MY39",
           "CK04",
-          "CK04"
+          "CK06",
+          "CK08",
+          "CK09",
+          "CK10",
+          "HT40"
         ]
       },
       "geometry": {
@@ -69807,6 +69949,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
+          "CK05",
+          "CK07",
+          "CK08",
           "CK28",
           "HT40"
         ]
@@ -69896,6 +70041,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
+          "CK06",
+          "CK08",
           "CK23",
           "CK28",
           "CK24"
@@ -70001,8 +70148,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
+          "CK05",
+          "CK06",
+          "CK07",
           "CK09",
-          "CK23"
+          "CK23",
+          "CK22"
         ]
       },
       "geometry": {
@@ -70090,6 +70241,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
+          "CK05",
           "CK08",
           "CK10",
           "CK21",
@@ -70152,7 +70304,11 @@
         "elector_size": 2913,
         "adjacent_districts": [
           "CK03",
+          "CK04",
+          "CK05",
           "CK09",
+          "CK11",
+          "CK19",
           "CK21"
         ]
       },
@@ -70201,8 +70357,13 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
+          "CK03",
+          "CK04",
+          "CK10",
+          "CK12",
+          "CK13",
           "CK19",
-          "CK19"
+          "CK21"
         ]
       },
       "geometry": {
@@ -70270,8 +70431,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
+          "CK11",
           "CK13",
-          "CK18"
+          "CK18",
+          "CK19"
         ]
       },
       "geometry": {
@@ -70329,7 +70492,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
+          "CK02",
           "CK03",
+          "CK11",
           "CK12",
           "CK14",
           "CK17"
@@ -70412,7 +70577,8 @@
         "adjacent_districts": [
           "CK02",
           "CK13",
-          "CK15"
+          "CK15",
+          "HN11"
         ]
       },
       "geometry": {
@@ -70624,6 +70790,7 @@
         "adjacent_districts": [
           "CK12",
           "CK17",
+          "CK19",
           "CK20",
           "CK16"
         ]
@@ -70728,8 +70895,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2912,
         "adjacent_districts": [
+          "CK10",
           "CK11",
-          "CK11"
+          "CK12",
+          "CK18",
+          "CK21",
+          "CK20"
         ]
       },
       "geometry": {
@@ -70819,6 +70990,8 @@
         "adjacent_districts": [
           "CK09",
           "CK10",
+          "CK11",
+          "CK19",
           "CK20",
           "CK22"
         ]
@@ -70884,6 +71057,7 @@
         "elector_size": 2912,
         "adjacent_districts": [
           "CK18",
+          "CK19",
           "CK21",
           "CK27",
           "CK26"
@@ -71037,8 +71211,16 @@
         "adjacent_districts": [
           "CK06",
           "CK07",
+          "CK31",
+          "CK30",
+          "CK29",
+          "CK24",
+          "CK27",
+          "HT11",
           "HT15",
-          "HT16"
+          "HT16",
+          "HT18",
+          "HT40"
         ]
       },
       "geometry": {
@@ -71186,10 +71368,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3766,
         "adjacent_districts": [
+          "CK28",
           "CK32",
           "CK34",
           "CK30",
-          "HN01",
           "HN02"
         ]
       },
@@ -71703,6 +71885,8 @@
           "CK31",
           "CK32",
           "CK33",
+          "CK30",
+          "CK35",
           "JR06"
         ]
       },
@@ -71836,8 +72020,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3767,
         "adjacent_districts": [
+          "CK28",
           "CK31",
-          "CK33"
+          "CK33",
+          "CK34",
+          "CK29",
+          "CK35"
         ]
       },
       "geometry": {
@@ -71940,6 +72128,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3767,
         "adjacent_districts": [
+          "CK28",
+          "CK30",
+          "CK35",
           "HT18"
         ]
       },
@@ -72078,8 +72269,17 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3766,
         "adjacent_districts": [
+          "CK34",
+          "CK30",
+          "CK29",
+          "JR01",
+          "JR02",
           "JR03",
-          "JR03"
+          "JR04",
+          "JR05",
+          "JR06",
+          "HT18",
+          "HT19"
         ]
       },
       "geometry": {
@@ -72229,6 +72429,7 @@
         "adjacent_districts": [
           "CK07",
           "CK23",
+          "CK28",
           "CK25",
           "CK27",
           "CK22"
@@ -72316,7 +72517,8 @@
         "adjacent_districts": [
           "CK24",
           "CK27",
-          "CK22"
+          "CK22",
+          "CK26"
         ]
       },
       "geometry": {
@@ -72387,6 +72589,7 @@
           "CK15",
           "CK17",
           "CK18",
+          "CK27",
           "HN17"
         ]
       },
@@ -72456,8 +72659,11 @@
         "elector_size": 2912,
         "adjacent_districts": [
           "CK20",
+          "CK28",
           "CK24",
           "CK25",
+          "CK16",
+          "CK26",
           "HN17"
         ]
       },
@@ -72774,7 +72980,15 @@
         "elector_size": 2930,
         "adjacent_districts": [
           "WE11",
-          "WE09"
+          "WE09",
+          "JR42",
+          "JR34",
+          "JR33",
+          "WE21",
+          "WE22",
+          "CK01",
+          "WE23",
+          "HN11"
         ]
       },
       "geometry": {
@@ -72917,10 +73131,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3088,
         "adjacent_districts": [
-          "HN04",
-          "HN01",
           "HN03",
-          "HN06"
+          "HN06",
+          "HN17"
         ]
       },
       "geometry": {
@@ -73028,9 +73241,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3088,
         "adjacent_districts": [
-          "HN05",
           "HN01",
-          "HN03"
+          "HN01"
         ]
       },
       "geometry": {
@@ -73118,10 +73330,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3088,
         "adjacent_districts": [
-          "CK31",
-          "HN05",
           "HN04",
-          "HN02"
+          "HN04"
         ]
       },
       "geometry": {
@@ -73261,7 +73471,6 @@
         "adjacent_districts": [
           "CK31",
           "CK32",
-          "HN01",
           "HN03"
         ]
       },
@@ -73343,7 +73552,6 @@
           "CK32",
           "CK33",
           "HN05",
-          "HN04",
           "HN02",
           "HN06"
         ]
@@ -74035,7 +74243,10 @@
           "BK10",
           "BK08",
           "BK09",
-          "JR08"
+          "JR08",
+          "YH04",
+          "JR09",
+          "BK06"
         ]
       },
       "geometry": {
@@ -74125,6 +74336,7 @@
         "adjacent_districts": [
           "BK07",
           "BK09",
+          "YH04",
           "HN08",
           "HN13"
         ]
@@ -74381,6 +74593,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2776,
         "adjacent_districts": [
+          "CK35",
           "JR02",
           "HT19",
           "HT27",
@@ -74493,7 +74706,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2838,
         "adjacent_districts": [
+          "CK35",
           "JR01",
+          "JR03",
           "HT29",
           "HT30"
         ]
@@ -74574,7 +74789,11 @@
         "elector_size": 2838,
         "adjacent_districts": [
           "CK35",
-          "CK35"
+          "JR02",
+          "JR04",
+          "JR08",
+          "JR05",
+          "HT30"
         ]
       },
       "geometry": {
@@ -74732,6 +74951,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2838,
         "adjacent_districts": [
+          "CK35",
+          "JR03",
           "JR08",
           "JR05"
         ]
@@ -74803,6 +75024,7 @@
         "adjacent_districts": [
           "BK05",
           "BK07",
+          "JR03",
           "JR04",
           "JR11",
           "HT30",
@@ -74936,9 +75158,15 @@
         "elector_size": 2838,
         "adjacent_districts": [
           "JR08",
+          "JR47",
           "YH08",
           "WE30",
-          "JR10"
+          "JR12",
+          "HT27",
+          "HT30",
+          "HT31",
+          "JR09",
+          "WE31"
         ]
       },
       "geometry": {
@@ -75146,7 +75374,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2838,
         "adjacent_districts": [
+          "CK35",
           "BK05",
+          "JR03",
           "JR04",
           "JR06",
           "JR07"
@@ -75218,6 +75448,7 @@
         "elector_size": 2838,
         "adjacent_districts": [
           "CK34",
+          "CK35",
           "JR05",
           "JR07"
         ]
@@ -75381,6 +75612,7 @@
           "JR45",
           "JR44",
           "YH02",
+          "YH04",
           "HN13"
         ]
       },
@@ -75578,7 +75810,9 @@
           "JR45",
           "JR43",
           "YH01",
-          "HN12"
+          "HN13",
+          "HN12",
+          "HN11"
         ]
       },
       "geometry": {
@@ -75669,7 +75903,8 @@
           "JR44",
           "JR38",
           "JR42",
-          "JR41"
+          "JR41",
+          "HN11"
         ]
       },
       "geometry": {
@@ -75974,6 +76209,8 @@
           "JR39",
           "JR40",
           "JR36",
+          "JR31",
+          "JR47",
           "YH02"
         ]
       },
@@ -76199,9 +76436,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2567,
         "adjacent_districts": [
+          "WE10",
           "JR43",
           "JR41",
-          "JR34"
+          "JR34",
+          "HN11"
         ]
       },
       "geometry": {
@@ -76366,6 +76605,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2957,
         "adjacent_districts": [
+          "WE10",
           "JR42",
           "JR35",
           "JR33"
@@ -76528,11 +76768,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2957,
         "adjacent_districts": [
+          "WE10",
           "JR34",
           "JR35",
+          "JR32",
           "WE24",
-          "WE23",
-          "JR32"
+          "WE23"
         ]
       },
       "geometry": {
@@ -76605,7 +76846,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2957,
         "adjacent_districts": [
-          "JR33"
+          "JR33",
+          "JR36",
+          "JR31",
+          "WE24"
         ]
       },
       "geometry": {
@@ -76676,6 +76920,7 @@
           "JR37",
           "JR40",
           "JR35",
+          "JR32",
           "JR31"
         ]
       },
@@ -76779,6 +77024,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2957,
         "adjacent_districts": [
+          "JR37",
+          "JR32",
           "JR36",
           "JR30",
           "WE24",
@@ -76872,6 +77119,7 @@
         "adjacent_districts": [
           "JR31",
           "JR29",
+          "JR47",
           "WE26"
         ]
       },
@@ -76953,7 +77201,8 @@
           "JR30",
           "JR27",
           "JR28",
-          "JR47"
+          "JR47",
+          "WE27"
         ]
       },
       "geometry": {
@@ -77054,6 +77303,7 @@
           "JR29",
           "JR28",
           "JR26",
+          "WE27",
           "JR23"
         ]
       },
@@ -77183,10 +77433,18 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2837,
         "adjacent_districts": [
+          "JR11",
+          "JR37",
+          "JR30",
           "JR29",
           "JR28",
           "JR24",
+          "YH02",
+          "YH07",
+          "YH08",
+          "WE27",
           "WE29",
+          "WE30",
           "JR25",
           "JR23"
         ]
@@ -77438,6 +77696,7 @@
         "adjacent_districts": [
           "JR27",
           "JR24",
+          "WE27",
           "JR25",
           "JR23"
         ]
@@ -77702,6 +77961,7 @@
           "JR45",
           "JR38",
           "JR37",
+          "JR47",
           "YH01",
           "YH03"
         ]
@@ -77812,6 +78072,7 @@
         "elector_size": 2717,
         "adjacent_districts": [
           "YH02",
+          "YH04",
           "YH05",
           "YH06",
           "YH07"
@@ -77887,7 +78148,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2717,
         "adjacent_districts": [
-          "YH05"
+          "BK07",
+          "BK08",
+          "JR46",
+          "YH03",
+          "YH05",
+          "JR09"
         ]
       },
       "geometry": {
@@ -78016,9 +78282,9 @@
         "elector_size": 2717,
         "adjacent_districts": [
           "YH03",
+          "YH04",
           "YH06",
-          "JR09",
-          "YH04"
+          "JR09"
         ]
       },
       "geometry": {
@@ -78232,6 +78498,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2716,
         "adjacent_districts": [
+          "JR47",
           "YH03",
           "YH06",
           "YH08"
@@ -78363,8 +78630,8 @@
         "elector_size": 2716,
         "adjacent_districts": [
           "JR11",
-          "YH07",
-          "JR10"
+          "JR47",
+          "YH07"
         ]
       },
       "geometry": {
@@ -78526,7 +78793,8 @@
           "WE13",
           "WE16",
           "WE17",
-          "PI02"
+          "PI02",
+          "PI04"
         ]
       },
       "geometry": {
@@ -78928,6 +79196,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2929,
         "adjacent_districts": [
+          "WE10",
           "WE19",
           "WE20",
           "WE22",
@@ -78999,6 +79268,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2929,
         "adjacent_districts": [
+          "WE10",
           "WE21",
           "WE25",
           "WE23"
@@ -79085,6 +79355,7 @@
         "elector_size": 2929,
         "adjacent_districts": [
           "JR33",
+          "JR32",
           "JR31",
           "WE25",
           "WE26",
@@ -79262,7 +79533,8 @@
           "JR31",
           "JR30",
           "WE24",
-          "WE25"
+          "WE25",
+          "WE27"
         ]
       },
       "geometry": {
@@ -79375,10 +79647,24 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2929,
         "adjacent_districts": [
+          "CK02",
+          "JR29",
+          "JR27",
+          "JR47",
+          "JR26",
           "JR24",
+          "WE26",
           "WE29",
           "WE30",
+          "WE32",
+          "WE36",
           "WE28",
+          "PI01",
+          "PI06",
+          "PI07",
+          "PI08",
+          "PI09",
+          "WE01",
           "WE31"
         ]
       },
@@ -80004,6 +80290,7 @@
         "elector_size": 2929,
         "adjacent_districts": [
           "JR11",
+          "JR47",
           "WE27",
           "WE29",
           "WE28",
@@ -80130,6 +80417,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2929,
         "adjacent_districts": [
+          "WE27",
           "JR12",
           "WE33",
           "WE34",
@@ -80257,6 +80545,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2837,
         "adjacent_districts": [
+          "JR11",
           "WE32",
           "JR13",
           "WE33",
@@ -80370,6 +80659,7 @@
         "adjacent_districts": [
           "JR12",
           "JR14",
+          "JR16",
           "WE33",
           "HT32"
         ]
@@ -80471,6 +80761,7 @@
         "adjacent_districts": [
           "JR13",
           "JR15",
+          "JR16",
           "JR22",
           "WE33"
         ]
@@ -80651,10 +80942,12 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2837,
         "adjacent_districts": [
+          "JR13",
+          "JR14",
           "JR15",
           "JR17",
-          "JR18",
-          "JR19"
+          "JR19",
+          "HT32"
         ]
       },
       "geometry": {
@@ -80758,9 +81051,9 @@
         "elector_size": 2837,
         "adjacent_districts": [
           "JR16",
-          "JR18",
           "HT32",
-          "HT33"
+          "HT33",
+          "JR18"
         ]
       },
       "geometry": {
@@ -80823,9 +81116,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2837,
         "adjacent_districts": [
-          "JR16",
-          "JR17",
-          "JR19"
+          "JR17"
         ]
       },
       "geometry": {
@@ -80890,8 +81181,9 @@
         "adjacent_districts": [
           "JR15",
           "JR16",
-          "JR18",
-          "JR20"
+          "JR20",
+          "JR22",
+          "HT39"
         ]
       },
       "geometry": {
@@ -80971,6 +81263,7 @@
         "adjacent_districts": [
           "JR19",
           "JR22",
+          "WE42",
           "JR21"
         ]
       },
@@ -81025,9 +81318,11 @@
         "elector_size": 2837,
         "adjacent_districts": [
           "JR14",
+          "JR19",
           "JR20",
           "WE38",
           "WE39",
+          "WE41",
           "JR21"
         ]
       },
@@ -81529,6 +81824,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2929,
         "adjacent_districts": [
+          "WE27",
           "WE32",
           "WE34",
           "WE35",
@@ -81674,7 +81970,8 @@
           "JR22",
           "WE38",
           "WE37",
-          "WE36"
+          "WE36",
+          "WE40"
         ]
       },
       "geometry": {
@@ -81767,9 +82064,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2851,
         "adjacent_districts": [
+          "JR22",
           "WE42",
           "WE43",
-          "WE40"
+          "WE44",
+          "JR21"
         ]
       },
       "geometry": {
@@ -81942,9 +82241,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2851,
         "adjacent_districts": [
+          "JR20",
           "WE41",
           "WE43",
-          "HT39"
+          "HT39",
+          "JR21"
         ]
       },
       "geometry": {
@@ -82225,8 +82526,9 @@
           "TP22",
           "TP20",
           "TP18",
+          "TP17",
+          "WE41",
           "WE43",
-          "WE40",
           "HT37",
           "WE51"
         ]
@@ -82781,9 +83083,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2850,
         "adjacent_districts": [
-          "RM10",
-          "WE46",
-          "WE49",
           "WE50"
         ]
       },
@@ -82933,7 +83232,6 @@
         "elector_size": 2850,
         "adjacent_districts": [
           "RM10",
-          "WE45",
           "WE47",
           "WE49",
           "WE48",
@@ -83110,7 +83408,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2850,
         "adjacent_districts": [
-          "WE45",
           "WE46",
           "WE47",
           "WE48",
@@ -83304,9 +83601,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2929,
         "adjacent_districts": [
-          "WE41",
-          "WE44",
-          "WE51"
+          "WE39"
         ]
       },
       "geometry": {
@@ -83785,9 +84080,11 @@
         "elector_size": 2797,
         "adjacent_districts": [
           "WE04",
+          "WE27",
           "PI02",
           "PI03",
-          "PI09"
+          "PI09",
+          "WE01"
         ]
       },
       "geometry": {
@@ -84028,6 +84325,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2796,
         "adjacent_districts": [
+          "WE15",
           "PI02",
           "PI03",
           "PI05",
@@ -84143,6 +84441,7 @@
           "WE18",
           "WE19",
           "WE25",
+          "WE27",
           "PI05",
           "PI07"
         ]
@@ -84247,6 +84546,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2796,
         "adjacent_districts": [
+          "WE27",
           "PI05",
           "PI06",
           "PI08"
@@ -84327,6 +84627,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2796,
         "adjacent_districts": [
+          "WE27",
           "PI04",
           "PI07",
           "PI09"
@@ -84382,6 +84683,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2796,
         "adjacent_districts": [
+          "WE27",
           "PI01",
           "PI03",
           "PI08"
@@ -84432,15 +84734,31 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
+          "BS04",
+          "BS17",
+          "KR01",
+          "KR02",
+          "NS50",
+          "MY07",
+          "MY25",
+          "MY26",
+          "MY30",
+          "MY31",
+          "MY39",
           "HT03",
+          "HT04",
           "HT05",
           "HT07",
           "HT08",
+          "HT09",
           "HT10",
+          "HT18",
+          "HT19",
           "BP07",
           "BP08",
           "BP09",
-          "HT01"
+          "HT01",
+          "HT40"
         ]
       },
       "geometry": {
@@ -85163,6 +85481,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
+          "HT02",
           "HT03",
           "HT05",
           "BP01",
@@ -85582,9 +85901,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
+          "HT02",
           "HT08",
           "HT10",
           "HT11",
+          "HT13",
           "HT12"
         ]
       },
@@ -85804,9 +86125,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
+          "CK28",
           "HT09",
           "HT10",
-          "HT12",
           "HT13",
           "HT14",
           "HT15",
@@ -85914,9 +86235,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
-          "HT09",
-          "HT11",
-          "HT13"
+          "HT09"
         ]
       },
       "geometry": {
@@ -85996,8 +86315,8 @@
         "adjacent_districts": [
           "HT06",
           "HT07",
+          "HT09",
           "HT11",
-          "HT12",
           "HT14",
           "BP05"
         ]
@@ -86381,7 +86700,6 @@
           "HT16",
           "HT18",
           "BP10",
-          "BP11",
           "BP12"
         ]
       },
@@ -86445,10 +86763,15 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
+          "CK28",
           "CK29",
+          "CK35",
+          "HT02",
           "HT16",
           "HT17",
-          "BP09"
+          "HT19",
+          "BP09",
+          "BP10"
         ]
       },
       "geometry": {
@@ -86706,7 +87029,13 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
+          "BS17",
+          "CK35",
           "JR01",
+          "HT02",
+          "HT18",
+          "HT20",
+          "HT24",
           "HT25",
           "HT26"
         ]
@@ -86997,8 +87326,9 @@
         "elector_size": 3080,
         "adjacent_districts": [
           "BS17",
-          "HT24",
-          "HT21"
+          "HT19",
+          "HT21",
+          "HT24"
         ]
       },
       "geometry": {
@@ -87201,7 +87531,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
-          "HT20"
+          "BS17",
+          "HT20",
+          "HT22",
+          "HT23",
+          "HT24"
         ]
       },
       "geometry": {
@@ -87406,7 +87740,8 @@
         "adjacent_districts": [
           "TP05",
           "TP03",
-          "BS17"
+          "BS17",
+          "HT21"
         ]
       },
       "geometry": {
@@ -87514,9 +87849,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
+          "TP02",
           "TP03",
-          "HT24",
-          "TP02"
+          "HT21",
+          "HT24"
         ]
       },
       "geometry": {
@@ -87615,8 +87951,12 @@
         "elector_size": 3080,
         "adjacent_districts": [
           "TP01",
+          "TP02",
+          "HT19",
           "HT20",
-          "HT23"
+          "HT21",
+          "HT23",
+          "HT25"
         ]
       },
       "geometry": {
@@ -87799,10 +88139,14 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
+          "TP01",
           "HT19",
+          "HT24",
           "HT26",
           "HT27",
-          "HT34"
+          "HT34",
+          "HT35",
+          "HT36"
         ]
       },
       "geometry": {
@@ -88096,9 +88440,12 @@
         "elector_size": 3080,
         "adjacent_districts": [
           "JR01",
+          "JR11",
           "HT25",
           "HT26",
           "HT28",
+          "HT30",
+          "HT33",
           "HT34"
         ]
       },
@@ -88375,7 +88722,10 @@
         "elector_size": 3080,
         "adjacent_districts": [
           "JR02",
+          "JR03",
           "JR08",
+          "JR11",
+          "HT27",
           "HT28",
           "HT29"
         ]
@@ -88525,6 +88875,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3080,
         "adjacent_districts": [
+          "JR11",
           "JR12",
           "HT32",
           "HT33"
@@ -88597,6 +88948,7 @@
         "adjacent_districts": [
           "JR13",
           "JR15",
+          "JR16",
           "JR17",
           "HT31",
           "HT33"
@@ -88683,6 +89035,7 @@
         "elector_size": 3080,
         "adjacent_districts": [
           "JR17",
+          "HT27",
           "HT31",
           "HT32",
           "HT34"
@@ -88854,7 +89207,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3079,
         "adjacent_districts": [
-          "HT34"
+          "HT25",
+          "HT34",
+          "HT36",
+          "HT39"
         ]
       },
       "geometry": {
@@ -88982,6 +89338,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3079,
         "adjacent_districts": [
+          "TP01",
+          "HT25",
+          "HT35",
           "HT37",
           "HT38",
           "HT39"
@@ -89147,6 +89506,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3079,
         "adjacent_districts": [
+          "TP01",
           "TP17",
           "WE43",
           "WE44",
@@ -89344,8 +89704,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3079,
         "adjacent_districts": [
+          "JR19",
           "WE42",
           "WE43",
+          "HT35",
           "HT36",
           "HT38"
         ]
@@ -89697,7 +90059,6 @@
           "BP03",
           "BP04",
           "BP06",
-          "BP11",
           "BP12"
         ]
       },
@@ -90084,6 +90445,7 @@
         "elector_size": 2797,
         "adjacent_districts": [
           "HT17",
+          "HT18",
           "BP08",
           "BP09",
           "BP11"
@@ -90169,8 +90531,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2797,
         "adjacent_districts": [
-          "HT17",
-          "BP05",
           "BP06",
           "BP10",
           "BP12"
@@ -90303,7 +90663,10 @@
         "elector_size": 2824,
         "adjacent_districts": [
           "SK38",
+          "SK37",
+          "AJ44",
           "AJ45",
+          "AJ46",
           "HG01",
           "AM51"
         ]
@@ -90398,11 +90761,13 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2912,
         "adjacent_districts": [
+          "CK08",
           "CK09",
           "CK21",
           "CK23",
           "CK24",
-          "CK25"
+          "CK25",
+          "CK26"
         ]
       },
       "geometry": {
@@ -90535,9 +90900,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2838,
         "adjacent_districts": [
+          "BK07",
           "JR08",
-          "YH05",
-          "JR10"
+          "JR11",
+          "YH04",
+          "YH05"
         ]
       },
       "geometry": {
@@ -90615,10 +90982,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2838,
         "adjacent_districts": [
-          "JR11",
-          "YH06",
-          "YH08",
-          "JR09"
+          "YH06"
         ]
       },
       "geometry": {
@@ -90863,6 +91227,8 @@
         "elector_size": 2690,
         "adjacent_districts": [
           "PN65",
+          "PN29",
+          "PN34",
           "PN30",
           "PN32"
         ]
@@ -90932,6 +91298,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2689,
         "adjacent_districts": [
+          "PN65",
           "PN55",
           "PN57",
           "PN62",
@@ -91100,9 +91467,9 @@
           "PN37",
           "PN54",
           "PN59",
-          "PW02",
           "PW01",
-          "PN56"
+          "PN56",
+          "PN35"
         ]
       },
       "geometry": {
@@ -91382,9 +91749,7 @@
           "PW03",
           "SK06",
           "PW04",
-          "PW07",
-          "PW05",
-          "PW02"
+          "PW05"
         ]
       },
       "geometry": {
@@ -91442,10 +91807,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3818,
         "adjacent_districts": [
-          "PN52",
-          "PN54",
-          "PW06",
-          "SK05"
+          "PN54"
         ]
       },
       "geometry": {
@@ -91525,9 +91887,7 @@
         "adjacent_districts": [
           "SK04",
           "SK12",
-          "SK06",
-          "PW07",
-          "SK11"
+          "SK06"
         ]
       },
       "geometry": {
@@ -91580,10 +91940,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
-          "SK12",
-          "SK10",
-          "SK06",
-          "SK05"
+          "SK06"
         ]
       },
       "geometry": {
@@ -91634,8 +91991,8 @@
           "SK21",
           "SK23",
           "SK32",
-          "SK10",
-          "SK25"
+          "SK31",
+          "SK10"
         ]
       },
       "geometry": {
@@ -91871,6 +92228,7 @@
           "NS06",
           "NS02",
           "NS04",
+          "NS20",
           "SB36",
           "NS05",
           "SB37",
@@ -92219,7 +92577,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2690,
         "adjacent_districts": [
-          "PN32"
+          "PN65",
+          "PN33",
+          "PN31",
+          "PN32",
+          "PN35"
         ]
       },
       "geometry": {
@@ -92274,6 +92636,7 @@
         "adjacent_districts": [
           "AM03",
           "PN59",
+          "PW01",
           "PN58",
           "PN60",
           "PN56"
@@ -92329,7 +92692,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2690,
         "adjacent_districts": [
-          "PN44"
+          "PN43",
+          "PN44",
+          "PN46",
+          "PN47",
+          "SK01"
         ]
       },
       "geometry": {
@@ -92545,7 +92912,6 @@
         "adjacent_districts": [
           "AM05",
           "AM09",
-          "AM07",
           "AM13",
           "AM06"
         ]
@@ -92600,7 +92966,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2913,
         "adjacent_districts": [
-          "WE01"
+          "CK02",
+          "WE10",
+          "WE01",
+          "HN11"
         ]
       },
       "geometry": {
@@ -92856,7 +93225,8 @@
           "HN03",
           "HN07",
           "HN10",
-          "HN09"
+          "HN09",
+          "HN11"
         ]
       },
       "geometry": {
@@ -93434,6 +93804,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2929,
         "adjacent_districts": [
+          "WE10",
           "JR33",
           "WE22",
           "WE24",
@@ -93681,7 +94052,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2912,
         "adjacent_districts": [
-          "CK20"
+          "CK20",
+          "CK25",
+          "CK27",
+          "CK22"
         ]
       },
       "geometry": {
@@ -93850,6 +94224,7 @@
           "BK04",
           "BK05",
           "BK10",
+          "BK07",
           "JR08"
         ]
       },
@@ -93933,6 +94308,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
+          "EC16",
           "EC28",
           "EC26",
           "EC17",
@@ -94044,6 +94420,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2895,
         "adjacent_districts": [
+          "EC26",
           "EC24",
           "EC23",
           "EC17",
@@ -94197,8 +94574,11 @@
         "elector_size": 2648,
         "adjacent_districts": [
           "TP05",
+          "TP07",
+          "TP08",
           "TP04",
-          "TP10"
+          "TP10",
+          "JB02"
         ]
       },
       "geometry": {
@@ -94324,8 +94704,10 @@
           "AM12",
           "AM15",
           "AM18",
+          "AM21",
           "AM14",
-          "AM13"
+          "AM13",
+          "AM19"
         ]
       },
       "geometry": {
@@ -94504,10 +94886,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3819,
         "adjacent_districts": [
-          "PN54",
-          "PW03",
-          "PN55",
-          "PW06"
+          "PN54"
         ]
       },
       "geometry": {
@@ -94554,6 +94933,7 @@
           "AM03",
           "PN55",
           "PW04",
+          "PN57",
           "PN56"
         ]
       },
@@ -94619,8 +94999,10 @@
         "adjacent_districts": [
           "TM05",
           "PN25",
+          "PN29",
+          "AJ19",
+          "AJ44",
           "PN24",
-          "TM02",
           "AJ54"
         ]
       },
@@ -94952,7 +95334,9 @@
         "adjacent_districts": [
           "CK15",
           "CK16",
-          "CK27"
+          "CK27",
+          "HN05",
+          "HN11"
         ]
       },
       "geometry": {
@@ -95063,6 +95447,12 @@
           "WE02",
           "WE03",
           "WE05",
+          "WE04",
+          "WE06",
+          "WE08",
+          "CK02",
+          "WE27",
+          "PI01",
           "CK01"
         ]
       },
@@ -95501,8 +95891,7 @@
           "SB15",
           "MY01",
           "MY13",
-          "MY15",
-          "MY22"
+          "MY15"
         ]
       },
       "geometry": {
@@ -95607,6 +95996,7 @@
         "adjacent_districts": [
           "TM12",
           "TM10",
+          "AJ19",
           "TM07",
           "TM08",
           "TM06",
@@ -95673,9 +96063,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3090,
         "adjacent_districts": [
-          "PS02",
-          "MA40",
-          "MA41",
           "PS04",
           "PS11"
         ]
@@ -95775,8 +96162,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3090,
         "adjacent_districts": [
-          "PS02",
-          "MA41",
           "PS05",
           "PS03",
           "PS10"
@@ -95922,7 +96307,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3089,
         "adjacent_districts": [
-          "PS02",
           "PS05",
           "PS08",
           "PS10"
@@ -96153,6 +96537,7 @@
           "AM03",
           "AM09",
           "AM12",
+          "AM21",
           "AM10"
         ]
       },
@@ -96196,7 +96581,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2932,
         "adjacent_districts": [
-          "AM17"
+          "AM15",
+          "AM17",
+          "AM18",
+          "AM20",
+          "AM16"
         ]
       },
       "geometry": {
@@ -96283,7 +96672,9 @@
           "AM17",
           "AM18",
           "AM44",
-          "AM49"
+          "AM48",
+          "AM49",
+          "AM19"
         ]
       },
       "geometry": {
@@ -96388,7 +96779,8 @@
         "adjacent_districts": [
           "HN06",
           "HN09",
-          "HN08"
+          "HN08",
+          "HN11"
         ]
       },
       "geometry": {
@@ -96487,7 +96879,9 @@
         "elector_size": 2837,
         "adjacent_districts": [
           "JR20",
-          "JR22"
+          "JR22",
+          "WE41",
+          "WE42"
         ]
       },
       "geometry": {
@@ -96555,9 +96949,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2892,
         "adjacent_districts": [
-          "MA35",
-          "MA36",
-          "MA38"
+          "MA35"
         ]
       },
       "geometry": {
@@ -96919,8 +97311,10 @@
         "adjacent_districts": [
           "PN41",
           "PN40",
+          "PN34",
           "PN30",
-          "PN32"
+          "PN32",
+          "PN35"
         ]
       },
       "geometry": {
@@ -97040,8 +97434,8 @@
         "elector_size": 2690,
         "adjacent_districts": [
           "PN33",
-          "PN31",
-          "PN34"
+          "PN34",
+          "PN31"
         ]
       },
       "geometry": {
@@ -97094,11 +97488,11 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2689,
         "adjacent_districts": [
+          "PN65",
           "PN59",
           "PN61",
           "PN60",
-          "PN64",
-          "PN63"
+          "PN64"
         ]
       },
       "geometry": {
@@ -97296,6 +97690,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2689,
         "adjacent_districts": [
+          "PN65",
+          "AM03",
           "PN59",
           "PN57",
           "PN62",
@@ -97888,7 +98284,6 @@
         "elector_size": 2771,
         "adjacent_districts": [
           "TM05",
-          "TM13",
           "TM09",
           "TM08",
           "TM03"
@@ -97961,8 +98356,8 @@
         "adjacent_districts": [
           "TM20",
           "TM21",
-          "TM18",
-          "TM15"
+          "TM15",
+          "TM03"
         ]
       },
       "geometry": {
@@ -98070,9 +98465,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2770,
         "adjacent_districts": [
-          "TM49",
-          "TM10",
-          "TM51"
+          "TM49"
         ]
       },
       "geometry": {
@@ -98118,7 +98511,7 @@
           "TM52",
           "TM10",
           "TM60",
-          "TM50"
+          "AJ19"
         ]
       },
       "geometry": {
@@ -98439,8 +98832,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 704,
         "adjacent_districts": [
-          "PS02",
-          "MA40",
           "PS03",
           "PS12"
         ]
@@ -98515,9 +98906,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 703,
         "adjacent_districts": [
-          "PS01",
-          "PS02",
-          "MP01",
           "PS11"
         ]
       },
@@ -98730,9 +99118,11 @@
         "adjacent_districts": [
           "BK08",
           "JR46",
+          "JR44",
           "HN08",
           "HN12",
-          "HN14"
+          "HN14",
+          "HN11"
         ]
       },
       "geometry": {
@@ -98852,7 +99242,8 @@
         "adjacent_districts": [
           "JR44",
           "HN13",
-          "HN15"
+          "HN15",
+          "HN11"
         ]
       },
       "geometry": {
@@ -98961,7 +99352,8 @@
         "elector_size": 1937,
         "adjacent_districts": [
           "HN13",
-          "HN15"
+          "HN15",
+          "HN11"
         ]
       },
       "geometry": {
@@ -99048,6 +99440,19 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 1937,
         "adjacent_districts": [
+          "CK02",
+          "CK14",
+          "WE10",
+          "JR44",
+          "JR43",
+          "JR42",
+          "CK01",
+          "HN06",
+          "HN17",
+          "HN10",
+          "HN13",
+          "HN12",
+          "HN14",
           "HN16"
         ]
       },
@@ -99238,9 +99643,9 @@
         "adjacent_districts": [
           "JB35",
           "TP50",
+          "RM10",
           "WE44",
-          "WE48",
-          "WE40"
+          "WE48"
         ]
       },
       "geometry": {
@@ -99418,6 +99823,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2929,
         "adjacent_districts": [
+          "JR11",
           "WE27",
           "WE30",
           "WE32"
@@ -99491,6 +99897,8 @@
           "JB37",
           "JB41",
           "JB42",
+          "TP11",
+          "TP37",
           "TP13"
         ]
       },
@@ -99669,11 +100077,15 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2771,
         "adjacent_districts": [
+          "TM05",
           "TM20",
           "TM15",
+          "PN12",
+          "PN17",
           "PN18",
           "PN19",
           "TM06",
+          "TM19",
           "TM04"
         ]
       },
@@ -99902,7 +100314,6 @@
         "elector_size": 2771,
         "adjacent_districts": [
           "TM05",
-          "TM01",
           "TM09",
           "TM07",
           "AJ54"
@@ -100015,7 +100426,10 @@
         "adjacent_districts": [
           "PN65",
           "PN59",
-          "PN36"
+          "PN55",
+          "PN36",
+          "PN34",
+          "PN31"
         ]
       },
       "geometry": {
@@ -100138,8 +100552,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2689,
         "adjacent_districts": [
-          "PN65",
-          "PN62",
           "PN64"
         ]
       },
@@ -100183,10 +100595,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2711,
         "adjacent_districts": [
-          "MA18",
-          "MA20",
-          "MA22",
-          "MA25"
+          "MA16"
         ]
       },
       "geometry": {
@@ -100477,7 +100886,10 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 193,
         "adjacent_districts": [
+          "CK05",
           "CK06",
+          "CK28",
+          "HT02",
           "HT11",
           "HT01"
         ]
@@ -100569,6 +100981,7 @@
         "adjacent_districts": [
           "EC42",
           "EC15",
+          "EC16",
           "AJ01",
           "AJ50"
         ]
@@ -100666,6 +101079,7 @@
           "EC13",
           "EC10",
           "EC05",
+          "EC02",
           "EC31"
         ]
       },
@@ -100874,6 +101288,7 @@
           "TM58",
           "TM59",
           "TM60",
+          "AJ18",
           "AJ50",
           "AJ53"
         ]
@@ -100943,6 +101358,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 1278,
         "adjacent_districts": [
+          "AJ19",
           "TM01",
           "TM02"
         ]
