@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    /* --- CSS Styles (mostly unchanged) --- */
+    /* --- CSS Styles --- */
     #map {
       height: 100%;
       width: 100%;
@@ -59,6 +59,7 @@
       height: 10px;
       margin-right: 5px;
       vertical-align: middle;
+      border: 1px solid #555; /* Add border for visibility since fill is gone */
     }
     .leaflet-tooltip {
       font-weight: bold;
@@ -80,9 +81,8 @@
     .show-labels .district-label {
       display: block;
     }
-    /* Style for adjacency lines */
     .adjacency-line {
-        pointer-events: none; /* Lines shouldn't block clicks */
+        pointer-events: none;
     }
   </style>
 </head>
@@ -99,31 +99,19 @@
     </div>
   </div>
   <div id="status" class="status">Initializing map...</div>
-  <!-- MODIFIED LEGEND -->
+  <!-- SIMPLIFIED LEGEND -->
   <div class="legend">
     <div class="legend-item">
-      <span class="legend-color" style="background-color: #0066FF;"></span>
+      <span class="legend-color" style="background-color: transparent; border-color: #0066FF;"></span>
       <span>Electoral Boundaries</span>
     </div>
     <div class="legend-item">
-      <span class="legend-color" style="background-color: #FF0000;"></span>
+      <span class="legend-color" style="background-color: transparent; border-color: #FF0000;"></span>
       <span>Polling Districts</span>
     </div>
-    <!-- Updated line legends -->
-     <div class="legend-item">
-        <svg width="20" height="10" style="vertical-align: middle; margin-right: 5px;">
-            <line x1="0" y1="5" x2="20" y2="5" stroke="purple" stroke-width="2" stroke-dasharray="5, 5"/>
-        </svg>
-        <span>Direct Adj. (A->B)</span> <!-- More descriptive label -->
-    </div>
-     <div class="legend-item">
-        <svg width="20" height="10" style="vertical-align: middle; margin-right: 5px;">
-            <line x1="0" y1="5" x2="20" y2="5" stroke="green" stroke-width="2" stroke-dasharray="2, 4"/>
-        </svg>
-        <span>Indirect Adj. (B->C)</span> <!-- More descriptive label -->
-    </div>
+    <!-- Removed Adjacency Line Legend Items -->
   </div>
-  <!-- END MODIFIED LEGEND -->
+  <!-- END SIMPLIFIED LEGEND -->
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
@@ -135,24 +123,26 @@
 
     let electoralLayer = L.featureGroup().addTo(map);
     let pollingLayer = L.featureGroup().addTo(map);
-    let adjacencyLinesLayer = L.layerGroup().addTo(map); // Layer for adjacency lines
+    let adjacencyLinesLayer = L.layerGroup().addTo(map);
 
-    let activeHighlight = null; // { layer: L.Layer, defaultColor: string }
-    let pollingDistrictLayers = {}; // Stores { 'PD_Name': layer } mapping
-    let pollingDistrictProperties = {}; // *** NEW: Store properties { 'PD_Name': properties } ***
-    let selectedDistrictForLines = null; // Track name of district selected for lines
+    let activeHighlight = null;
+    let pollingDistrictLayers = {};
+    let pollingDistrictProperties = {};
+    let selectedDistrictForLines = null;
 
-    // --- Highlighting Logic (unchanged) ---
+    // --- Highlighting Logic ---
     function resetHighlightStyle(layer, defaultColor) {
        if (layer && typeof layer.setStyle === 'function') {
-          layer.setStyle({ weight: 2, color: defaultColor, fillOpacity: 0.2 });
+          // Reset to original style (transparent fill)
+          layer.setStyle({ weight: 2, color: defaultColor, fillOpacity: 0, opacity: 0.7 });
        }
     }
     function highlightFeature(layer, defaultColor) {
         if (activeHighlight && activeHighlight.layer !== layer) {
             resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
         }
-        layer.setStyle({ weight: 4, color: '#FFA500', fillOpacity: 0.5 }); // Highlight color remains orange
+        // Highlight with slight fill and thicker border
+        layer.setStyle({ weight: 4, color: '#FFA500', fillOpacity: 0.2, opacity: 0.9 });
         if (layer.bringToFront && typeof layer.bringToFront === 'function') {
             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
                 layer.bringToFront();
@@ -171,31 +161,34 @@
         console.log(`Parsing GeoJSON for ${isPollingDistrict ? 'Polling Districts' : 'Electoral Boundaries'}...`);
 
         const layer = L.geoJSON(geojsonData, {
-            style: feature => ({ color: color, weight: 2, opacity: 0.7, fillOpacity: 0.2 }),
+            // *** MODIFIED STYLE: Set fillOpacity to 0 ***
+            style: feature => ({
+                color: color,         // Outline color
+                weight: 2,            // Outline thickness
+                opacity: 0.7,         // Outline opacity
+                fillOpacity: 0        // Make fill transparent
+            }),
             onEachFeature: function(feature, layer) {
                 let tooltipText = '';
                 let labelText = '';
                 const props = feature.properties || {};
-                const pdName = props.name || props.Name || props.polling_district; // Get polling district name
+                const pdName = props.name || props.Name || props.polling_district;
 
-                // --- Tooltip and Label Logic ---
+                // Tooltip and Label Logic (unchanged from previous)
                 if (isPollingDistrict) {
                     const electorSize = props.elector_size;
                     if (pdName) {
                         labelText = pdName;
-                        tooltipText = pdName; // Start with just the name
+                        tooltipText = pdName;
                         if (electorSize !== undefined && electorSize !== null) {
-                           tooltipText += `: ${Number(electorSize).toLocaleString()} electors`; // Add elector size
+                           tooltipText += `: ${Number(electorSize).toLocaleString()} electors`;
                         }
-
-                        // Store layer reference AND properties by name
                         pollingDistrictLayers[pdName] = layer;
-                        pollingDistrictProperties[pdName] = props; // *** Store properties ***
-
+                        pollingDistrictProperties[pdName] = props;
                     } else {
                         tooltipText = 'Polling District (No Name)';
                     }
-                    if (labelText && layer.getBounds && layer.getBounds().isValid()) { // label creation
+                    if (labelText && layer.getBounds && layer.getBounds().isValid()) {
                         const center = layer.getBounds().getCenter();
                         L.marker(center, {
                             icon: L.divIcon({
@@ -206,110 +199,94 @@
                             interactive: false, keyboard: false
                         }).addTo(map);
                     }
-                } else { // Electoral Boundaries
+                } else {
                     tooltipText = props.name || props.Name || props.NAME || props.CONSTITUENCY || props.constituency || 'Electoral Boundary (No Name)';
                 }
-                // --- End Tooltip and Label Logic ---
 
                 if (tooltipText) {
                     layer.bindTooltip(tooltipText, { permanent: false, direction: 'center', className: 'electoral-tooltip', sticky: true, opacity: 0.9, interactive: false, html: true });
                 }
 
-                // --- Event Handlers ---
+                // Event Handlers (unchanged from previous)
                 layer.on({
                     mouseover: function(e) {
-                        highlightFeature(layer, color); // Highlight on hover
+                        // Pass the original outline color for reset
+                        highlightFeature(layer, color);
                         L.DomEvent.stopPropagation(e);
                     },
-                    // --- REVISED CLICK HANDLER ---
                     click: function(e) {
-                        highlightFeature(layer, color); // Highlight on click
-                        L.DomEvent.stopPropagation(e); // Prevent map click
+                        // Pass the original outline color for reset
+                        highlightFeature(layer, color);
+                        L.DomEvent.stopPropagation(e);
 
                         if (isPollingDistrict && pdName) {
-                            adjacencyLinesLayer.clearLayers(); // Clear previous lines
+                            adjacencyLinesLayer.clearLayers();
 
-                            // Toggle behavior: If clicking the same district again, deselect and clear lines
                             if (selectedDistrictForLines === pdName) {
                                 selectedDistrictForLines = null;
                                 console.log(`Deselected ${pdName} for adjacency lines.`);
                             } else {
-                                // Otherwise, select this district and draw lines
-                                selectedDistrictForLines = pdName; // This is District 'A'
+                                selectedDistrictForLines = pdName;
                                 const propsA = pollingDistrictProperties[pdName];
                                 const layerA = pollingDistrictLayers[pdName];
 
                                 if (!layerA || !layerA.getBounds().isValid() || !propsA) {
                                     console.error(`Missing data or invalid bounds for clicked district: ${pdName}`);
-                                    return; // Cannot proceed
+                                    return;
                                 }
 
                                 const centerA = layerA.getBounds().getCenter();
-                                const directAdjacentNames = propsA.adjacent_districts || []; // These are the 'B's
+                                const directAdjacentNames = propsA.adjacent_districts || [];
 
                                 console.log(`Selected ${pdName} (A). Direct Adjacent (B):`, directAdjacentNames);
 
                                 // 1. Process Direct Adjacencies (A -> B)
-                                directAdjacentNames.forEach(nameB => { // nameB is a 'B'
+                                directAdjacentNames.forEach(nameB => {
                                     const layerB = pollingDistrictLayers[nameB];
                                     const propsB = pollingDistrictProperties[nameB];
 
                                     if (layerB && layerB.getBounds().isValid() && propsB) {
                                         const centerB = layerB.getBounds().getCenter();
-
-                                        // Draw line from A to B
                                         console.log(`  Drawing A->B: ${pdName} -> ${nameB}`);
                                         L.polyline([centerA, centerB], {
-                                            color: 'purple', // Style for A -> B
-                                            weight: 2,
-                                            opacity: 0.8,
-                                            dashArray: '5, 5',
-                                            className: 'adjacency-line'
+                                            color: 'purple', weight: 2, opacity: 0.8, dashArray: '5, 5', className: 'adjacency-line'
                                         }).addTo(adjacencyLinesLayer);
 
-                                        // 2. Process Indirect Adjacencies (B -> C) for *this* B
-                                        const secondaryAdjacentNames = propsB.adjacent_districts || []; // These are the 'C's for this B
+                                        // 2. Process Indirect Adjacencies (B -> C)
+                                        const secondaryAdjacentNames = propsB.adjacent_districts || [];
                                         console.log(`    Neighbors of ${nameB} (B) are (C):`, secondaryAdjacentNames);
 
-                                        secondaryAdjacentNames.forEach(nameC => { // nameC is a 'C'
-                                            // *** IMPORTANT: Do not draw line from B back to A ***
+                                        secondaryAdjacentNames.forEach(nameC => {
                                             if (nameC === pdName) {
                                                 console.log(`      Skipping B->C line back to A: ${nameB} -> ${nameC}`);
-                                                return; // Skip this iteration
+                                                return;
                                             }
 
                                             const layerC = pollingDistrictLayers[nameC];
                                             if (layerC && layerC.getBounds().isValid()) {
                                                 const centerC = layerC.getBounds().getCenter();
-
-                                                // Draw line from B to C
                                                 console.log(`      Drawing B->C: ${nameB} -> ${nameC}`);
-                                                L.polyline([centerB, centerC], { // Line starts from B's center
-                                                    color: 'green', // Style for B -> C
-                                                    weight: 2,
-                                                    opacity: 0.7,
-                                                    dashArray: '2, 4', // Different dash pattern
-                                                    className: 'adjacency-line'
+                                                L.polyline([centerB, centerC], {
+                                                    color: 'green', weight: 2, opacity: 0.7, dashArray: '2, 4', className: 'adjacency-line'
                                                 }).addTo(adjacencyLinesLayer);
                                             } else {
                                                 console.warn(`      Could not find layer/bounds for indirect adjacent (C): ${nameC}`);
                                             }
-                                        }); // End loop for C's
-
+                                        });
                                     } else {
                                         console.warn(`  Could not find layer/bounds/props for direct adjacent (B): ${nameB}`);
                                     }
-                                }); // End loop for B's
-                            } // End else (district was newly selected)
-                        } // End if (isPollingDistrict)
-                    } // --- END REVISED CLICK HANDLER ---
-                }); // End layer.on
-            } // End onEachFeature
+                                });
+                            }
+                        }
+                    }
+                });
+            }
         }).addTo(featureGroup);
         console.log(`Added ${geojsonData.features.length} features.`);
     } // End parseGeoJSON
 
-    // --- Load All Layers (Local/Remote Fallback) ---
+    // --- Load All Layers (unchanged from previous) ---
     async function loadAllLayers() {
         const localElectoralUrl = 'raw_data/ge2025_electoral_boundary.geojson';
         const remoteElectoralUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/raw_data/ge2025_electoral_boundary.geojson';
@@ -323,19 +300,19 @@
         let pollingGeoJSON = null;
         let electoralSource = 'local';
         let pollingSource = 'local';
-        pollingDistrictLayers = {}; // Reset the layer mapping on reload
-        pollingDistrictProperties = {}; // *** Reset properties mapping ***
+        pollingDistrictLayers = {};
+        pollingDistrictProperties = {};
 
         try {
-            // Fetch Electoral (unchanged)
-            try { /* ... local fetch ... */
+            // Fetch Electoral
+            try {
                 console.log(`Attempting local fetch: ${localElectoralUrl}`);
                 const response = await fetch(localElectoralUrl);
                 if (!response.ok) throw new Error(`HTTP status ${response.status} for local electoral`);
                 electoralGeoJSON = await response.json();
                 console.log("Loaded electoral boundaries locally.");
                 statusElement.innerHTML = "Loaded local electoral data...";
-            } catch (localError) { /* ... remote fallback ... */
+            } catch (localError) {
                 console.warn(`Local fetch failed for electoral: ${localError.message}. Falling back.`);
                 electoralSource = 'remote';
                 statusElement.innerHTML = "Local electoral failed, trying remote...";
@@ -345,15 +322,15 @@
                 console.log("Loaded electoral boundaries remotely.");
             }
 
-            // Fetch Polling (unchanged)
-            try { /* ... local fetch ... */
+            // Fetch Polling
+            try {
                 console.log(`Attempting local fetch: ${localPollingUrl}`);
                 const response = await fetch(localPollingUrl);
                 if (!response.ok) throw new Error(`HTTP status ${response.status} for local polling`);
                 pollingGeoJSON = await response.json();
                 console.log("Loaded polling districts locally.");
                 statusElement.innerHTML = "Loaded local polling data...";
-            } catch (localError) { /* ... remote fallback ... */
+            } catch (localError) {
                 console.warn(`Local fetch failed for polling: ${localError.message}. Falling back.`);
                 pollingSource = 'remote';
                 statusElement.innerHTML = "Local polling failed, trying remote...";
@@ -363,33 +340,33 @@
                 console.log("Loaded polling districts remotely.");
             }
 
-            // Parse (unchanged logic, but now populates pollingDistrictProperties)
+            // Parse
             statusElement.textContent = "Processing map data...";
             if (electoralGeoJSON) {
-                parseGeoJSON(electoralGeoJSON, electoralLayer, '#0066FF', false);
+                parseGeoJSON(electoralGeoJSON, electoralLayer, '#0066FF', false); // Blue outline
                 if (electoralLayer.getBounds().isValid()) bounds.extend(electoralLayer.getBounds());
             } else { statusElement.textContent += " Failed to load electoral data."; }
 
             if (pollingGeoJSON) {
-                parseGeoJSON(pollingGeoJSON, pollingLayer, '#FF0000', true);
+                parseGeoJSON(pollingGeoJSON, pollingLayer, '#FF0000', true); // Red outline
                 if (pollingLayer.getBounds().isValid()) bounds.extend(pollingLayer.getBounds());
             } else { statusElement.textContent += " Failed to load polling data."; }
 
-            // Fit Map (unchanged)
+            // Fit Map
             if (bounds.isValid()) { map.fitBounds(bounds); }
             else { console.warn("Invalid bounds. Setting default view."); map.setView([1.3521, 103.8198], 12); }
 
-            // Final Status (unchanged)
+            // Final Status
             const finalStatus = `Map loaded (Electoral: ${electoralSource}, Polling: ${pollingSource})`;
             statusElement.textContent = finalStatus; console.log(finalStatus);
-            setTimeout(() => { /* ... hide status ... */
+            setTimeout(() => {
                  const currentStatus = statusElement.textContent.toLowerCase();
                  if (!currentStatus.includes('error') && !currentStatus.includes('failed')) {
                      statusElement.style.display = 'none';
                  }
             }, 4000);
 
-        } catch (error) { /* ... error handling ... */
+        } catch (error) {
             console.error("Fatal error during map loading:", error);
             statusElement.textContent = `Error loading map: ${error.message}`;
             statusElement.style.display = 'block';
@@ -415,33 +392,31 @@
                 resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
                 activeHighlight = null;
             }
-            adjacencyLinesLayer.clearLayers(); // Clear lines when polling layer hidden
-            selectedDistrictForLines = null; // Clear selection
+            adjacencyLinesLayer.clearLayers();
+            selectedDistrictForLines = null;
             map.removeLayer(pollingLayer);
         }
     });
     // --- End Toggle Controls ---
 
     // --- Global Event Handlers (unchanged) ---
-    map.on('click', function() { // Clear highlight and lines on map click
+    map.on('click', function() {
         if (activeHighlight) {
             resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
             activeHighlight = null;
         }
-        adjacencyLinesLayer.clearLayers(); // Clear lines on map click
-        selectedDistrictForLines = null; // Clear selection
+        adjacencyLinesLayer.clearLayers();
+        selectedDistrictForLines = null;
     });
 
-    const mapContainer = map.getContainer(); // Clear highlight on map mouseout (unchanged)
+    const mapContainer = map.getContainer();
     if (mapContainer) {
         mapContainer.addEventListener('mouseout', (e) => {
-            // Only reset if mouse leaves the map container entirely
             if (!mapContainer.contains(e.relatedTarget)) {
                  if (activeHighlight) {
                     resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
                     activeHighlight = null;
                 }
-                // Lines are intentionally NOT cleared on mouseout, only on clicks
             }
         });
     } else { console.error("Could not get map container."); }
