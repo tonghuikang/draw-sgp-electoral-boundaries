@@ -137,12 +137,12 @@
     let selectedDistrictForLines = null; // Track name of district selected for lines
 
     // --- Highlighting Logic (unchanged) ---
-    function resetHighlightStyle(layer, defaultColor) { /* ... */
+    function resetHighlightStyle(layer, defaultColor) {
        if (layer && typeof layer.setStyle === 'function') {
           layer.setStyle({ weight: 2, color: defaultColor, fillOpacity: 0.2 });
        }
     }
-    function highlightFeature(layer, defaultColor) { /* ... */
+    function highlightFeature(layer, defaultColor) {
         if (activeHighlight && activeHighlight.layer !== layer) {
             resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
         }
@@ -172,24 +172,27 @@
                 const props = feature.properties || {};
                 const pdName = props.name || props.Name || props.polling_district; // Get polling district name
 
-                // --- Tooltip and Label Logic (mostly unchanged) ---
+                // --- Tooltip and Label Logic ---
                 if (isPollingDistrict) {
                     const electorSize = props.elector_size;
                     if (pdName) {
                         labelText = pdName;
-                        tooltipText = pdName;
+                        tooltipText = pdName; // Start with just the name
                         if (electorSize !== undefined && electorSize !== null) {
-                           tooltipText += `: ${Number(electorSize).toLocaleString()} electors`;
+                           tooltipText += `: ${Number(electorSize).toLocaleString()} electors`; // Add elector size
                         }
+                        /* // --- MODIFICATION START: Commented out adjacency info for tooltip ---
                         if (props.adjacent_districts && Array.isArray(props.adjacent_districts) && props.adjacent_districts.length > 0) {
                            tooltipText += `<br>Adjacent to: ${props.adjacent_districts.join(', ')}`;
                         }
+                        // --- MODIFICATION END --- */
+
                         // Store layer reference by name for line drawing
-                        pollingDistrictLayers[pdName] = layer; // *** NEW: Store layer reference ***
+                        pollingDistrictLayers[pdName] = layer;
                     } else {
                         tooltipText = 'Polling District (No Name)';
                     }
-                    if (labelText && layer.getBounds && layer.getBounds().isValid()) { /* ... label creation ... */
+                    if (labelText && layer.getBounds && layer.getBounds().isValid()) { // label creation
                         const center = layer.getBounds().getCenter();
                         L.marker(center, {
                             icon: L.divIcon({
@@ -278,18 +281,18 @@
         let pollingGeoJSON = null;
         let electoralSource = 'local';
         let pollingSource = 'local';
-        pollingDistrictLayers = {}; // *** Reset the layer mapping on reload ***
+        pollingDistrictLayers = {}; // Reset the layer mapping on reload
 
         try {
             // Fetch Electoral
-            try { /* ... local fetch ... */
+            try { // local fetch
                 console.log(`Attempting local fetch: ${localElectoralUrl}`);
                 const response = await fetch(localElectoralUrl);
                 if (!response.ok) throw new Error(`HTTP status ${response.status} for local electoral`);
                 electoralGeoJSON = await response.json();
                 console.log("Loaded electoral boundaries locally.");
                 statusElement.innerHTML = "Loaded local electoral data...";
-            } catch (localError) { /* ... remote fallback ... */
+            } catch (localError) { // remote fallback
                 console.warn(`Local fetch failed for electoral: ${localError.message}. Falling back.`);
                 electoralSource = 'remote';
                 statusElement.innerHTML = "Local electoral failed, trying remote...";
@@ -300,14 +303,14 @@
             }
 
             // Fetch Polling
-            try { /* ... local fetch ... */
+            try { // local fetch
                 console.log(`Attempting local fetch: ${localPollingUrl}`);
                 const response = await fetch(localPollingUrl);
                 if (!response.ok) throw new Error(`HTTP status ${response.status} for local polling`);
                 pollingGeoJSON = await response.json();
                 console.log("Loaded polling districts locally.");
                 statusElement.innerHTML = "Loaded local polling data...";
-            } catch (localError) { /* ... remote fallback ... */
+            } catch (localError) { // remote fallback
                 console.warn(`Local fetch failed for polling: ${localError.message}. Falling back.`);
                 pollingSource = 'remote';
                 statusElement.innerHTML = "Local polling failed, trying remote...";
@@ -336,14 +339,14 @@
             // Final Status
             const finalStatus = `Map loaded (Electoral: ${electoralSource}, Polling: ${pollingSource})`;
             statusElement.textContent = finalStatus; console.log(finalStatus);
-            setTimeout(() => { /* ... hide status ... */
+            setTimeout(() => { // hide status
                  const currentStatus = statusElement.textContent.toLowerCase();
                  if (!currentStatus.includes('error') && !currentStatus.includes('failed')) {
                      statusElement.style.display = 'none';
                  }
             }, 4000);
 
-        } catch (error) { /* ... error handling ... */
+        } catch (error) { // error handling
             console.error("Fatal error during map loading:", error);
             statusElement.textContent = `Error loading map: ${error.message}`;
             statusElement.style.display = 'block';
@@ -351,7 +354,7 @@
     }
     // --- End Load All Layers ---
 
-    // --- Toggle Controls ---
+    // --- Toggle Controls (unchanged) ---
     document.getElementById('electoral-toggle').addEventListener('change', function() {
         if (this.checked) { map.addLayer(electoralLayer); }
         else {
@@ -369,7 +372,6 @@
                 resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
                 activeHighlight = null;
             }
-            // *** NEW: Clear lines and selection when polling layer is hidden ***
             adjacencyLinesLayer.clearLayers();
             selectedDistrictForLines = null;
             map.removeLayer(pollingLayer);
@@ -377,13 +379,12 @@
     });
     // --- End Toggle Controls ---
 
-    // --- Global Event Handlers ---
+    // --- Global Event Handlers (unchanged) ---
     map.on('click', function() { // Clear highlight and lines on map click
         if (activeHighlight) {
             resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
             activeHighlight = null;
         }
-        // *** NEW: Clear lines and selection on map click ***
         adjacencyLinesLayer.clearLayers();
         selectedDistrictForLines = null;
     });
@@ -396,14 +397,13 @@
                     resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
                     activeHighlight = null;
                 }
-                // Note: We generally don't clear lines on map mouseout, only on clicks
             }
         });
     } else { console.error("Could not get map container."); }
     // --- End Global Event Handlers ---
 
     // --- Zoom Handling (unchanged) ---
-    function handleZoomEnd() { /* ... */
+    function handleZoomEnd() {
         const zoom = map.getZoom();
         const mapElement = document.getElementById('map');
         if (zoom >= 14) { mapElement.classList.add('show-labels'); }
@@ -412,7 +412,7 @@
     map.on('zoomend', handleZoomEnd);
     // --- End Zoom Handling ---
 
-    // --- Initial Load ---
+    // --- Initial Load (unchanged) ---
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('status').textContent = "Initializing...";
         loadAllLayers();
