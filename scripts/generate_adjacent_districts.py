@@ -63,6 +63,7 @@ def find_adjacent_districts(districts):
     district_ids = list(districts.keys())
     total_pairs = len(district_ids) * (len(district_ids) - 1) // 2
     processed = 0
+    skipped = 0
     
     print(f"Processing {total_pairs} district pairs...")
     
@@ -73,9 +74,24 @@ def find_adjacent_districts(districts):
             
             processed += 1
             if processed % 10000 == 0:
-                print(f"Processed {processed}/{total_pairs} pairs ({processed/total_pairs*100:.1f}%)")
+                print(f"Processed {processed}/{total_pairs} pairs ({processed/total_pairs*100:.1f}%), skipped {skipped}")
             
             try:
+                # Quick check if polygons are far apart using bounding boxes
+                bbox_a = districts[id_a].bounds
+                bbox_b = districts[id_b].bounds
+                
+                # Calculate maximum possible distance between bounding boxes
+                min_x_a, min_y_a, max_x_a, max_y_a = bbox_a
+                min_x_b, min_y_b, max_x_b, max_y_b = bbox_b
+                
+                # If bounding boxes are far apart, skip the detailed check
+                # Using a threshold of 0.01 degrees (roughly 1.1 km at the equator)
+                if (min_x_a > max_x_b + 0.01 or max_x_a < min_x_b - 0.01 or
+                    min_y_a > max_y_b + 0.01 or max_y_a < min_y_b - 0.01):
+                    skipped += 1
+                    continue
+                
                 # Buffer polygons slightly to handle numerical precision issues
                 buffered_a = districts[id_a].buffer(0.00001)
                 buffered_b = districts[id_b].buffer(0.00001)
