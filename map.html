@@ -406,9 +406,7 @@
     // --- Load All Layers ---
     async function loadAllLayers() {
         const localAssignmentsUrl = 'assignments/official_ge_2025.json';
-        const remoteAssignmentsUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/assignments/official_ge_2025.json';
         const localPollingUrl = 'processed_data/ge2025_polling_districts_with_elector_size.geojson';
-        const remotePollingUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/processed_data/ge2025_polling_districts_with_elector_size.geojson';
         const statusElement = document.getElementById('status');
         statusElement.innerHTML = "Attempting to load local map data...";
         statusElement.style.display = 'block';
@@ -431,13 +429,8 @@
                 console.log("Loaded assignments locally.");
                 statusElement.innerHTML = "Loaded local assignments data...";
             } catch (localError) {
-                console.warn(`Local fetch failed for assignments: ${localError.message}. Falling back.`);
-                assignmentsSource = 'remote';
-                statusElement.innerHTML = "Local assignments failed, trying remote...";
-                const remoteResponse = await fetch(remoteAssignmentsUrl);
-                if (!remoteResponse.ok) throw new Error(`Remote fetch failed for assignments (HTTP ${remoteResponse.status})`);
-                assignmentsData = await remoteResponse.json();
-                console.log("Loaded assignments remotely.");
+                console.error(`Failed to load local assignments: ${localError.message}`);
+                statusElement.innerHTML = "Failed to load local assignments data.";
             }
 
             // Fetch Polling
@@ -449,13 +442,8 @@
                 console.log("Loaded polling districts locally.");
                 statusElement.innerHTML = "Loaded local polling data...";
             } catch (localError) {
-                console.warn(`Local fetch failed for polling: ${localError.message}. Falling back.`);
-                pollingSource = 'remote';
-                statusElement.innerHTML = "Local polling failed, trying remote...";
-                const remoteResponse = await fetch(remotePollingUrl);
-                if (!remoteResponse.ok) throw new Error(`Remote fetch failed for polling (HTTP ${remoteResponse.status})`);
-                pollingGeoJSON = await remoteResponse.json();
-                console.log("Loaded polling districts remotely.");
+                console.error(`Failed to load local polling districts: ${localError.message}`);
+                statusElement.innerHTML = "Failed to load local polling data.";
             }
 
             // Construct Electoral Boundaries from Assignments and Polling Districts
@@ -485,7 +473,7 @@
             else { console.warn("Invalid bounds. Setting default view."); map.setView([1.3521, 103.8198], 12); }
 
             // Final Status
-            const finalStatus = `Map loaded (Assignments: ${assignmentsSource}, Polling: ${pollingSource})`;
+            const finalStatus = `Map loaded (Local files only)`;
             statusElement.textContent = finalStatus; console.log(finalStatus);
             setTimeout(() => {
                  const currentStatus = statusElement.textContent.toLowerCase();
