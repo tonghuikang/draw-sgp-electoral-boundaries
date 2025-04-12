@@ -109,6 +109,10 @@
       <input type="checkbox" id="polling-toggle" checked>
       <label for="polling-toggle">Show Polling Districts</label>
     </div>
+    <div>
+      <input type="checkbox" id="elector-count-toggle">
+      <label for="elector-count-toggle">Show Elector Count</label>
+    </div>
   </div>
   <div id="status" class="status">Initializing map...</div>
   <!-- SIMPLIFIED LEGEND -->
@@ -140,6 +144,7 @@
     let pollingDistrictLayers = {};
     let pollingDistrictProperties = {};
     let selectedDistrictForLines = null;
+    let showElectorCount = false;
 
     // --- Highlighting Logic (unchanged) ---
     function resetHighlightStyle(layer, defaultColor) {
@@ -184,24 +189,30 @@
                     if (pdName) {
                         labelText = pdName; // For high-zoom label
                         // Prepare content for the popup (shown on click)
-                        popupContent = `<b>${pdName}</b>`;
-                        if (electorSize !== undefined && electorSize !== null) {
-                           popupContent += `<br>${Number(electorSize).toLocaleString()} electors`;
-                        } else {
-                           popupContent += `<br>(No elector data)`;
+                        if (showElectorCount) {
+                            popupContent = `<b>${pdName}</b>`;
+                            if (electorSize !== undefined && electorSize !== null) {
+                                popupContent += `<br>${Number(electorSize).toLocaleString()} electors`;
+                            } else {
+                                popupContent += `<br>(No elector data)`;
+                            }
                         }
 
                         // Store references
                         pollingDistrictLayers[pdName] = layer;
                         pollingDistrictProperties[pdName] = props;
 
-                        // *** Bind Popup instead of Tooltip ***
-                        layer.bindPopup(popupContent);
+                        // *** Bind Popup only if showElectorCount is true ***
+                        if (showElectorCount) {
+                            layer.bindPopup(popupContent);
+                        }
 
                     } else {
                         // Fallback for unnamed polling districts
-                        popupContent = 'Polling District (No Name)';
-                        layer.bindPopup(popupContent);
+                        if (showElectorCount) {
+                            popupContent = 'Polling District (No Name)';
+                            layer.bindPopup(popupContent);
+                        }
                     }
 
                     // Add high-zoom label marker (unchanged)
@@ -424,6 +435,34 @@
             map.closePopup();
             map.removeLayer(pollingLayer);
         }
+    });
+    // Add event listener for elector count toggle
+    document.getElementById('elector-count-toggle').addEventListener('change', function() {
+        showElectorCount = this.checked;
+        map.closePopup(); // Close any open popups
+        
+        // Rebuild all popups based on current toggle state
+        Object.keys(pollingDistrictLayers).forEach(pdName => {
+            const layer = pollingDistrictLayers[pdName];
+            const props = pollingDistrictProperties[pdName];
+            
+            if (layer && props) {
+                // First unbind any existing popup
+                layer.unbindPopup();
+                
+                // If toggle is on, add popup
+                if (showElectorCount) {
+                    const electorSize = props.elector_size;
+                    let popupContent = `<b>${pdName}</b>`;
+                    if (electorSize !== undefined && electorSize !== null) {
+                        popupContent += `<br>${Number(electorSize).toLocaleString()} electors`;
+                    } else {
+                        popupContent += `<br>(No elector data)`;
+                    }
+                    layer.bindPopup(popupContent);
+                }
+            }
+        });
     });
     // --- End Toggle Controls ---
 

@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 from shapely.geometry import Polygon, LineString
 import json
 import os
+import math
 
 def extract_districts_from_kml(kml_path):
     # Register the KML namespace
@@ -52,12 +53,111 @@ def extract_districts_from_kml(kml_path):
     
     return districts
 
+def find_district_intersections(districts):
+    """
+    Find all points where multiple districts intersect.
+    Returns a dict of point coordinates to list of district IDs that share that point.
+    """
+    from shapely.geometry import Point
+    from collections import defaultdict
+    
+    corners = defaultdict(list)
+    
+    # Extract the vertices (corners) from each district polygon
+    print("Extracting vertices from polygons...")
+    for district_id, polygon in districts.items():
+        # Get exterior coordinates
+        for x, y in polygon.exterior.coords:
+            # Round coordinates to handle floating point precision issues
+            key = (round(x, 6), round(y, 6))
+            corners[key].append(district_id)
+            
+        # Get any interior hole coordinates
+        for interior in polygon.interiors:
+            for x, y in interior.coords:
+                key = (round(x, 6), round(y, 6))
+                corners[key].append(district_id)
+    
+    # Keep only points where 3 or more unique districts meet
+    multi_corners = {point: districts for point, districts in corners.items() if len(set(districts)) >= 3}
+    
+    print(f"Found {len(multi_corners)} points where 3 or more unique districts meet")
+    return multi_corners
+
 def find_adjacent_districts(districts):
     adjacency = {}
     
     # Initialize adjacency list for each district
     for district_id in districts:
         adjacency[district_id] = []
+    
+    # Find multi-district intersection points (potential quadripoints)
+    multi_corners = find_district_intersections(districts)
+    
+    # Dictionary to track pairs to exclude (opposite corners of quadripoints)
+    exclude_pairs = set()
+    
+    # Map from quadripoints to districts that meet there
+    quadripoints = {}
+    
+    # Identify quadripoints
+    for point, district_ids in multi_corners.items():
+        unique_districts = set(district_ids)
+        if len(unique_districts) >= 4:
+            # For points with 4+ unique districts, these are quadripoints
+            sorted_districts = sorted(list(unique_districts))
+            print(f"Found potential quadripoint with districts: {sorted_districts}")
+            quadripoints[point] = sorted_districts
+            
+            # For each quadripoint, we need to identify which districts are opposite each other
+            # and exclude those pairs (they're diagonals in the quadrilateral)
+            if len(unique_districts) == 4:
+                # To determine which districts are opposite each other at a quadripoint,
+                # we can look at the order they appear around the point
+                
+                # We need to determine the arrangement of districts around this point
+                # This requires geometric analysis to find their relative positions
+                
+                # Extract the districts at this point
+                districts_at_point = list(unique_districts)
+                
+                # Get the center of each district (for simple approximation)
+                centers = {}
+                for district_id in districts_at_point:
+                    polygon = districts[district_id]
+                    centroid = polygon.centroid
+                    centers[district_id] = (centroid.x, centroid.y)
+                
+                # Calculate angles from the intersection point to each district centroid
+                angles = {}
+                for district_id in districts_at_point:
+                    dx = centers[district_id][0] - point[0]
+                    dy = centers[district_id][1] - point[1]
+                    angle = math.atan2(dy, dx)
+                    angles[district_id] = angle
+                
+                # Sort districts by their angle around the point
+                sorted_by_angle = sorted(districts_at_point, key=lambda d: angles[d])
+                
+                # Districts opposite each other will be at index 0,2 and 1,3 in the sorted array
+                diags = [
+                    (sorted_by_angle[0], sorted_by_angle[2]),
+                    (sorted_by_angle[1], sorted_by_angle[3])
+                ]
+                
+                # Hardcoded exception for YK08 and AM26 which need to remain connected
+                if ('YK08' in districts_at_point and 'AM26' in districts_at_point):
+                    print(f"  Special case: YK08 and AM26 will remain connected")
+                    # Remove the pair from the diagonals if it exists
+                    diags = [(d1, d2) for d1, d2 in diags if not (
+                        (d1 == 'YK08' and d2 == 'AM26') or 
+                        (d1 == 'AM26' and d2 == 'YK08'))]
+                
+                for d1, d2 in diags:
+                    exclude_pairs.add((d1, d2))
+                    exclude_pairs.add((d2, d1))
+                print(f"  Districts arranged around point: {sorted_by_angle}")
+                print(f"  Marked opposite pairs for exclusion: {diags}")
     
     # Check each pair of districts
     district_ids = list(districts.keys())
@@ -75,6 +175,11 @@ def find_adjacent_districts(districts):
             processed += 1
             if processed % 10000 == 0:
                 print(f"Processed {processed}/{total_pairs} pairs ({processed/total_pairs*100:.1f}%), skipped {skipped}")
+            
+            # Skip if this pair is in the exclude list
+            if (id_a, id_b) in exclude_pairs or (id_b, id_a) in exclude_pairs:
+                skipped += 1
+                continue
             
             try:
                 # Quick check if polygons are far apart using bounding boxes
@@ -102,11 +207,50 @@ def find_adjacent_districts(districts):
                     
                     # Only consider it adjacent if they share a line segment, not just a point
                     if intersection.geom_type in ['LineString', 'MultiLineString'] or hasattr(intersection, 'length') and intersection.length > 0:
+                        # Add to adjacency lists
                         adjacency[id_a].append(id_b)
                         adjacency[id_b].append(id_a)
+                    elif intersection.geom_type == 'Point' or intersection.geom_type == 'MultiPoint':
+                        # They only share a point - look if these belong to a quadripoint
+                        point_coords = None
+                        if intersection.geom_type == 'Point':
+                            point_coords = (round(intersection.x, 6), round(intersection.y, 6))
+                        elif intersection.geom_type == 'MultiPoint':
+                            # For MultiPoint, we need to check each point
+                            point_coords = [(round(p.x, 6), round(p.y, 6)) for p in intersection.geoms]
+                        
+                        # Check if these districts meet at a multi-corner and don't share a boundary
+                        for corner, corner_districts in multi_corners.items():
+                            # For point intersections
+                            if point_coords and isinstance(point_coords, tuple) and \
+                               abs(corner[0] - point_coords[0]) < 0.000001 and \
+                               abs(corner[1] - point_coords[1]) < 0.000001 and \
+                               id_a in corner_districts and id_b in corner_districts and \
+                               len(set(corner_districts)) >= 4:  # Only exclude for quadripoints (4+ unique districts)
+                                
+                                # Found a quadripoint where both districts meet
+                                print(f"Districts {id_a} and {id_b} meet at a corner with {len(corner_districts)} districts, not considering adjacent")
+                                # Mark the pair to exclude
+                                exclude_pairs.add((id_a, id_b))
+                                break
+                            
+                            # For multi-point intersections, check each point
+                            elif point_coords and isinstance(point_coords, list):
+                                for p in point_coords:
+                                    if abs(corner[0] - p[0]) < 0.000001 and \
+                                       abs(corner[1] - p[1]) < 0.000001 and \
+                                       id_a in corner_districts and id_b in corner_districts and \
+                                       len(set(corner_districts)) >= 4:  # Only exclude for quadripoints (4+ unique districts)
+                                        
+                                        # Found a quadripoint
+                                        print(f"Districts {id_a} and {id_b} meet at a multipoint corner with {len(corner_districts)} districts, not considering adjacent")
+                                        # Mark the pair to exclude
+                                        exclude_pairs.add((id_a, id_b))
+                                        break
             except Exception as e:
                 print(f"Error checking adjacency between {id_a} and {id_b}: {e}")
     
+    print(f"Excluded {len(exclude_pairs)} district pairs that only meet at corners")
     return adjacency
 
 def main():
