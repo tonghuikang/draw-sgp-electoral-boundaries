@@ -301,10 +301,15 @@ def main():
     print(f"Total adjacency relationships: {total_adjacencies}")
     print(f"Average adjacencies per district: {total_adjacencies / len(districts):.2f}")
     
+    # Sort the adjacency lists and create a sorted dictionary by district ID
+    sorted_adjacency = {}
+    for district_id in sorted(adjacency.keys()):
+        sorted_adjacency[district_id] = sorted(adjacency[district_id])
+    
     # Write to JSON
     print(f"Writing results to {output_path}...")
     with open(output_path, 'w') as f:
-        json.dump(adjacency, f, indent=2)
+        json.dump(sorted_adjacency, f, indent=2)
     
     print("Done!")
 
