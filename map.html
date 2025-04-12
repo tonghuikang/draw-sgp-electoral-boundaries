@@ -156,17 +156,25 @@
     let selectedDistrictForLines = null;
     let showElectorCount = false;
 
-    // --- Highlighting Logic (unchanged) ---
+    // --- Highlighting Logic ---
     function resetHighlightStyle(layer, defaultColor) {
        if (layer && typeof layer.setStyle === 'function') {
-          layer.setStyle({ weight: 2, color: defaultColor, fillOpacity: 0, opacity: 0.7 });
+          // Check if this is an electoral boundary (blue) or polling district (red)
+          const isElectoralBoundary = defaultColor === '#0066FF';
+          // Use weight 4 for electoral boundaries, 2 for polling districts
+          const weight = isElectoralBoundary ? 4 : 2;
+          layer.setStyle({ weight: weight, color: defaultColor, fillOpacity: 0, opacity: 0.7 });
        }
     }
     function highlightFeature(layer, defaultColor) {
         if (activeHighlight && activeHighlight.layer !== layer) {
             resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
         }
-        layer.setStyle({ weight: 4, color: '#FFA500', fillOpacity: 0.2, opacity: 0.9 });
+        // Check if this is an electoral boundary (blue) or polling district (red)
+        const isElectoralBoundary = defaultColor === '#0066FF';
+        // Use weight 6 for electoral boundaries, 4 for polling districts when highlighted
+        const highlightWeight = isElectoralBoundary ? 6 : 4;
+        layer.setStyle({ weight: highlightWeight, color: '#FFA500', fillOpacity: 0.2, opacity: 0.9 });
         if (layer.bringToFront && typeof layer.bringToFront === 'function') {
             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
                 layer.bringToFront();
@@ -185,7 +193,12 @@
         console.log(`Parsing GeoJSON for ${isPollingDistrict ? 'Polling Districts' : 'Electoral Boundaries'}...`);
 
         const layer = L.geoJSON(geojsonData, {
-            style: feature => ({ color: color, weight: 2, opacity: 0.7, fillOpacity: 0 }),
+            style: feature => ({ 
+                color: color, 
+                weight: isPollingDistrict ? 2 : 4, // Only electoral boundaries are bolder (4), polling districts stay at 2
+                opacity: 0.7, 
+                fillOpacity: 0 
+            }),
             onEachFeature: function(feature, layer) {
                 let labelText = ''; // Label for high zoom
                 let popupContent = ''; // Content for click popup
@@ -444,7 +457,8 @@
                     throw new Error("Could not extract outline coordinates");
                 }
                 
-                // Create a feature with the outline as a LineString
+                // Create a feature with the outline as a Polygon (not LineString)
+                // This allows tooltips to work when hovering over the area, not just the edge
                 const constituencyFeature = {
                     type: "Feature",
                     properties: {
@@ -454,8 +468,8 @@
                         polling_districts: pollingDistricts
                     },
                     geometry: {
-                        type: "LineString",
-                        coordinates: outlineCoordinates
+                        type: "Polygon",
+                        coordinates: [outlineCoordinates] // Wrap in array as Polygon requires array of rings
                     }
                 };
                 
