@@ -106,7 +106,7 @@
       <label for="electoral-toggle">Show Electoral Boundaries</label>
     </div>
     <div>
-      <input type="checkbox" id="polling-toggle" checked>
+      <input type="checkbox" id="polling-toggle">
       <label for="polling-toggle">Show Polling Districts</label>
     </div>
     <div>
@@ -136,9 +136,18 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    let electoralLayer = L.featureGroup().addTo(map);
-    let pollingLayer = L.featureGroup().addTo(map);
+    // Create layers without adding them to the map yet
+    let electoralLayer = L.featureGroup();
+    let pollingLayer = L.featureGroup();
     let adjacencyLinesLayer = L.layerGroup().addTo(map);
+    
+    // Add layers based on checkbox state
+    if (document.getElementById('electoral-toggle').checked) {
+      electoralLayer.addTo(map);
+    }
+    if (document.getElementById('polling-toggle').checked) {
+      pollingLayer.addTo(map);
+    }
 
     let activeHighlight = null;
     let pollingDistrictLayers = {};
