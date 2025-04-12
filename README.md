@@ -59,4 +59,5 @@ python -m http.server
 (to be verified)
 
 - The dual of a planar graph is planar.
-- There are _ quadripoints and _ quintipoints
+- There are _ quadripoints and _ quintipoints.
+- There _ pairs of boundaries that are opposite at quadripoints / quintipoints but are still adjacent somewhere.

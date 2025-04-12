@@ -162,14 +162,6 @@ def find_adjacent_districts(districts):
                         for j in range(i+2, min(i+n-1, i+n//2+1)):
                             diags.append((sorted_by_angle[i], sorted_by_angle[j % n]))
                 
-                # Hardcoded exception for YK08 and AM26 which need to remain connected
-                if ('YK08' in districts_at_point and 'AM26' in districts_at_point):
-                    print(f"  Special case: YK08 and AM26 will remain connected")
-                    # Remove the pair from the diagonals if it exists
-                    diags = [(d1, d2) for d1, d2 in diags if not (
-                        (d1 == 'YK08' and d2 == 'AM26') or 
-                        (d1 == 'AM26' and d2 == 'YK08'))]
-                
                 for d1, d2 in diags:
                     exclude_pairs.add((d1, d2))
                     exclude_pairs.add((d2, d1))
