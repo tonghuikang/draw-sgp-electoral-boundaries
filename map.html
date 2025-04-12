@@ -349,7 +349,7 @@
         // Create electoral boundaries based on assignments
         const electoralFeatures = [];
         
-        assignments.assignment.forEach(constituency => {
+        for (const constituency of assignments.assignment) {
             const constituencyName = constituency.constituency_name;
             const memberSize = constituency.member_size;
             const electorSize = constituency.elector_size;
@@ -358,68 +358,93 @@
             // Skip if no polling districts
             if (!pollingDistricts || pollingDistricts.length === 0) {
                 console.warn(`No polling districts for ${constituencyName}`);
-                return;
+                continue;
             }
             
-            // Collect all features for this constituency
-            const districtFeatures = [];
-            pollingDistricts.forEach(pdName => {
-                const pdFeature = pollingDistrictMap[pdName];
-                if (pdFeature && pdFeature.geometry) {
-                    districtFeatures.push(pdFeature);
-                } else {
-                    console.warn(`Could not find geometry for polling district: ${pdName}`);
-                }
-            });
-            
-            // Skip if no features found
-            if (districtFeatures.length === 0) {
-                console.warn(`No geometries found for ${constituencyName}`);
-                return;
-            }
+            console.log(`Processing constituency: ${constituencyName}`);
             
             try {
-                // Use Turf.js to merge all the polling district polygons into a single polygon
-                // This will dissolve internal boundaries and only keep the external boundary
-                let mergedPolygon = null;
+                // Collect all valid polygon features for this constituency
+                const validPolygons = [];
                 
-                // Start with the first feature
-                if (districtFeatures.length > 0) {
-                    mergedPolygon = districtFeatures[0];
+                for (const pdName of pollingDistricts) {
+                    const pdFeature = pollingDistrictMap[pdName];
+                    if (!pdFeature || !pdFeature.geometry) {
+                        console.warn(`Could not find geometry for polling district: ${pdName}`);
+                        continue;
+                    }
                     
-                    // Union with remaining features
-                    for (let i = 1; i < districtFeatures.length; i++) {
-                        try {
-                            mergedPolygon = turf.union(mergedPolygon, districtFeatures[i]);
-                        } catch (unionError) {
-                            console.warn(`Error merging polygon ${i} for ${constituencyName}:`, unionError);
-                            // Continue with the next polygon
-                        }
+                    // Convert any MultiPolygon to individual Polygons
+                    if (pdFeature.geometry.type === "MultiPolygon") {
+                        pdFeature.geometry.coordinates.forEach(polygonCoords => {
+                            validPolygons.push({
+                                type: "Feature",
+                                properties: pdFeature.properties,
+                                geometry: {
+                                    type: "Polygon",
+                                    coordinates: polygonCoords
+                                }
+                            });
+                        });
+                    } else if (pdFeature.geometry.type === "Polygon") {
+                        validPolygons.push(pdFeature);
                     }
                 }
                 
-                if (mergedPolygon) {
-                    // Create a feature for this constituency with the merged geometry
-                    const constituencyFeature = {
-                        type: "Feature",
-                        properties: {
-                            name: constituencyName,
-                            member_size: memberSize,
-                            elector_size: electorSize,
-                            polling_districts: pollingDistricts
-                        },
-                        geometry: mergedPolygon.geometry
-                    };
-                    
-                    electoralFeatures.push(constituencyFeature);
+                if (validPolygons.length === 0) {
+                    console.warn(`No valid polygons found for ${constituencyName}`);
+                    continue;
                 }
-            } catch (error) {
-                console.error(`Error processing constituency ${constituencyName}:`, error);
                 
-                // Fallback to original method if Turf.js union fails
-                console.warn(`Falling back to original method for ${constituencyName}`);
+                // Start with the first polygon
+                let mergedPolygon = validPolygons[0];
                 
-                // Create a MultiPolygon feature for this constituency (fallback)
+                // Merge all polygons into one
+                for (let i = 1; i < validPolygons.length; i++) {
+                    try {
+                        mergedPolygon = turf.union(mergedPolygon, validPolygons[i]);
+                    } catch (unionError) {
+                        console.warn(`Error merging polygon ${i} for ${constituencyName}: ${unionError.message}`);
+                        // Continue with the current merged polygon
+                    }
+                }
+                
+                // Extract the outline coordinates
+                let outlineCoordinates;
+                
+                if (mergedPolygon.geometry.type === "Polygon") {
+                    // Use only the outer ring (first ring) of the polygon
+                    outlineCoordinates = mergedPolygon.geometry.coordinates[0];
+                } else if (mergedPolygon.geometry.type === "MultiPolygon") {
+                    // For MultiPolygon, we'll use the largest polygon's outer ring
+                    let largestArea = 0;
+                    let largestPolygon = null;
+                    
+                    for (const polygon of mergedPolygon.geometry.coordinates) {
+                        const polygonFeature = {
+                            type: "Feature",
+                            properties: {},
+                            geometry: {
+                                type: "Polygon",
+                                coordinates: polygon
+                            }
+                        };
+                        
+                        const area = turf.area(polygonFeature);
+                        if (area > largestArea) {
+                            largestArea = area;
+                            largestPolygon = polygon;
+                        }
+                    }
+                    
+                    outlineCoordinates = largestPolygon ? largestPolygon[0] : null;
+                }
+                
+                if (!outlineCoordinates) {
+                    throw new Error("Could not extract outline coordinates");
+                }
+                
+                // Create a feature with the outline as a LineString
                 const constituencyFeature = {
                     type: "Feature",
                     properties: {
@@ -429,26 +454,93 @@
                         polling_districts: pollingDistricts
                     },
                     geometry: {
-                        type: "MultiPolygon",
-                        coordinates: []
+                        type: "LineString",
+                        coordinates: outlineCoordinates
                     }
                 };
                 
-                // Add all polygon coordinates to the MultiPolygon
-                districtFeatures.forEach(feature => {
-                    const geometry = feature.geometry;
-                    if (geometry.type === "Polygon") {
-                        constituencyFeature.geometry.coordinates.push(geometry.coordinates);
-                    } else if (geometry.type === "MultiPolygon") {
-                        geometry.coordinates.forEach(polygon => {
-                            constituencyFeature.geometry.coordinates.push(polygon);
-                        });
-                    }
-                });
-                
                 electoralFeatures.push(constituencyFeature);
+                console.log(`Successfully created outline for ${constituencyName}`);
+                
+            } catch (error) {
+                console.error(`Error processing constituency ${constituencyName}:`, error);
+                
+                // Fallback: create a convex hull as a simple outline
+                try {
+                    console.log(`Using convex hull as fallback for ${constituencyName}`);
+                    
+                    // Collect all points from all polling districts
+                    const allPoints = [];
+                    
+                    for (const pdName of pollingDistricts) {
+                        const pdFeature = pollingDistrictMap[pdName];
+                        if (!pdFeature || !pdFeature.geometry) continue;
+                        
+                        if (pdFeature.geometry.type === "Polygon") {
+                            pdFeature.geometry.coordinates[0].forEach(point => {
+                                allPoints.push(point);
+                            });
+                        } else if (pdFeature.geometry.type === "MultiPolygon") {
+                            pdFeature.geometry.coordinates.forEach(polygon => {
+                                polygon[0].forEach(point => {
+                                    allPoints.push(point);
+                                });
+                            });
+                        }
+                    }
+                    
+                    if (allPoints.length === 0) {
+                        console.warn(`No points found for ${constituencyName}`);
+                        continue;
+                    }
+                    
+                    // Create a feature collection of points
+                    const pointFeatures = allPoints.map(point => ({
+                        type: "Feature",
+                        properties: {},
+                        geometry: {
+                            type: "Point",
+                            coordinates: point
+                        }
+                    }));
+                    
+                    const featureCollection = {
+                        type: "FeatureCollection",
+                        features: pointFeatures
+                    };
+                    
+                    // Create a convex hull
+                    const hull = turf.convex(featureCollection);
+                    
+                    if (hull) {
+                        // Extract just the outline as a LineString
+                        const outline = hull.geometry.coordinates[0];
+                        
+                        // Create a feature with the outline
+                        const constituencyFeature = {
+                            type: "Feature",
+                            properties: {
+                                name: constituencyName,
+                                member_size: memberSize,
+                                elector_size: electorSize,
+                                polling_districts: pollingDistricts
+                            },
+                            geometry: {
+                                type: "LineString",
+                                coordinates: outline
+                            }
+                        };
+                        
+                        electoralFeatures.push(constituencyFeature);
+                        console.log(`Created convex hull outline for ${constituencyName}`);
+                    } else {
+                        throw new Error("Failed to create convex hull");
+                    }
+                } catch (convexError) {
+                    console.error(`Convex hull failed for ${constituencyName}:`, convexError);
+                }
             }
-        });
+        }
         
         return {
             type: "FeatureCollection",
