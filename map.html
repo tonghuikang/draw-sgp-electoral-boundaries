@@ -129,6 +129,7 @@
   <!-- END SIMPLIFIED LEGEND -->
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
   <script>
     // --- Global Scope Variables ---
     const map = L.map('map').setView([1.3521, 103.8198], 12);
@@ -360,50 +361,93 @@
                 return;
             }
             
-            // Collect all geometries for this constituency
-            const geometries = [];
+            // Collect all features for this constituency
+            const districtFeatures = [];
             pollingDistricts.forEach(pdName => {
                 const pdFeature = pollingDistrictMap[pdName];
                 if (pdFeature && pdFeature.geometry) {
-                    geometries.push(pdFeature.geometry);
+                    districtFeatures.push(pdFeature);
                 } else {
                     console.warn(`Could not find geometry for polling district: ${pdName}`);
                 }
             });
             
-            // Skip if no geometries found
-            if (geometries.length === 0) {
+            // Skip if no features found
+            if (districtFeatures.length === 0) {
                 console.warn(`No geometries found for ${constituencyName}`);
                 return;
             }
             
-            // Create a MultiPolygon feature for this constituency
-            const constituencyFeature = {
-                type: "Feature",
-                properties: {
-                    name: constituencyName,
-                    member_size: memberSize,
-                    elector_size: electorSize,
-                    polling_districts: pollingDistricts
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: []
+            try {
+                // Use Turf.js to merge all the polling district polygons into a single polygon
+                // This will dissolve internal boundaries and only keep the external boundary
+                let mergedPolygon = null;
+                
+                // Start with the first feature
+                if (districtFeatures.length > 0) {
+                    mergedPolygon = districtFeatures[0];
+                    
+                    // Union with remaining features
+                    for (let i = 1; i < districtFeatures.length; i++) {
+                        try {
+                            mergedPolygon = turf.union(mergedPolygon, districtFeatures[i]);
+                        } catch (unionError) {
+                            console.warn(`Error merging polygon ${i} for ${constituencyName}:`, unionError);
+                            // Continue with the next polygon
+                        }
+                    }
                 }
-            };
-            
-            // Add all polygon coordinates to the MultiPolygon
-            geometries.forEach(geometry => {
-                if (geometry.type === "Polygon") {
-                    constituencyFeature.geometry.coordinates.push(geometry.coordinates);
-                } else if (geometry.type === "MultiPolygon") {
-                    geometry.coordinates.forEach(polygon => {
-                        constituencyFeature.geometry.coordinates.push(polygon);
-                    });
+                
+                if (mergedPolygon) {
+                    // Create a feature for this constituency with the merged geometry
+                    const constituencyFeature = {
+                        type: "Feature",
+                        properties: {
+                            name: constituencyName,
+                            member_size: memberSize,
+                            elector_size: electorSize,
+                            polling_districts: pollingDistricts
+                        },
+                        geometry: mergedPolygon.geometry
+                    };
+                    
+                    electoralFeatures.push(constituencyFeature);
                 }
-            });
-            
-            electoralFeatures.push(constituencyFeature);
+            } catch (error) {
+                console.error(`Error processing constituency ${constituencyName}:`, error);
+                
+                // Fallback to original method if Turf.js union fails
+                console.warn(`Falling back to original method for ${constituencyName}`);
+                
+                // Create a MultiPolygon feature for this constituency (fallback)
+                const constituencyFeature = {
+                    type: "Feature",
+                    properties: {
+                        name: constituencyName,
+                        member_size: memberSize,
+                        elector_size: electorSize,
+                        polling_districts: pollingDistricts
+                    },
+                    geometry: {
+                        type: "MultiPolygon",
+                        coordinates: []
+                    }
+                };
+                
+                // Add all polygon coordinates to the MultiPolygon
+                districtFeatures.forEach(feature => {
+                    const geometry = feature.geometry;
+                    if (geometry.type === "Polygon") {
+                        constituencyFeature.geometry.coordinates.push(geometry.coordinates);
+                    } else if (geometry.type === "MultiPolygon") {
+                        geometry.coordinates.forEach(polygon => {
+                            constituencyFeature.geometry.coordinates.push(polygon);
+                        });
+                    }
+                });
+                
+                electoralFeatures.push(constituencyFeature);
+            }
         });
         
         return {
