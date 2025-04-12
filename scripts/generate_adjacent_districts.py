@@ -162,6 +162,26 @@ def find_adjacent_districts(districts):
                         for j in range(i+2, min(i+n-1, i+n//2+1)):
                             diags.append((sorted_by_angle[i], sorted_by_angle[j % n]))
                 
+                # Rather than hardcoding exceptions, check if the districts actually share a boundary
+                # This is a more general way to determine if districts meeting at a point
+                # should be considered adjacent
+                filtered_diags = []
+                for d1, d2 in diags:
+                    # Check if these two districts share a boundary anywhere
+                    poly1 = districts[d1]
+                    poly2 = districts[d2]
+                    intersection = poly1.intersection(poly2)
+                    
+                    # If they share a line segment (not just a point), they're adjacent regardless
+                    # of their arrangement around this particular point
+                    if intersection.geom_type in ['LineString', 'MultiLineString'] or hasattr(intersection, 'length') and intersection.length > 0:
+                        print(f"  Districts {d1} and {d2} meet diagonally at this point but also share a boundary elsewhere, keeping them adjacent")
+                    else:
+                        # Only exclude truly diagonal districts that only meet at this point
+                        filtered_diags.append((d1, d2))
+                
+                diags = filtered_diags
+                
                 for d1, d2 in diags:
                     exclude_pairs.add((d1, d2))
                     exclude_pairs.add((d2, d1))
@@ -210,15 +230,17 @@ def find_adjacent_districts(districts):
                 buffered_a = districts[id_a].buffer(0.00001)
                 buffered_b = districts[id_b].buffer(0.00001)
                 
-                # Check if they share a boundary (not just a point)
+                # Check if they share a boundary or a point
                 if buffered_a.intersects(buffered_b):
                     intersection = buffered_a.intersection(buffered_b)
                     
-                    # Only consider it adjacent if they share a line segment, not just a point
-                    if intersection.geom_type in ['LineString', 'MultiLineString'] or hasattr(intersection, 'length') and intersection.length > 0:
+                    # Consider adjacent only if they share a boundary line
+                    if (intersection.geom_type in ['LineString', 'MultiLineString'] or 
+                        (hasattr(intersection, 'length') and intersection.length > 0)):
                         # Add to adjacency lists
                         adjacency[id_a].append(id_b)
                         adjacency[id_b].append(id_a)
+                    # This else branch should logically never execute now, but keeping structure for safety
                     elif intersection.geom_type == 'Point' or intersection.geom_type == 'MultiPoint':
                         # They only share a point - look if these belong to a quadripoint
                         point_coords = None
