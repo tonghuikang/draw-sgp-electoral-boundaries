@@ -323,40 +323,121 @@
         console.log(`Added ${geojsonData.features.length} features.`);
     } // End parseGeoJSON
 
-    // --- Load All Layers (unchanged) ---
+    // --- Construct Electoral Boundaries from Assignments ---
+    async function constructElectoralBoundaries(pollingGeoJSON, assignments) {
+        console.log("Constructing electoral boundaries from assignments...");
+        
+        // Create a mapping of polling district codes to their GeoJSON features
+        const pollingDistrictMap = {};
+        pollingGeoJSON.features.forEach(feature => {
+            const pdName = feature.properties.name || feature.properties.Name || feature.properties.polling_district;
+            if (pdName) {
+                pollingDistrictMap[pdName] = feature;
+            }
+        });
+        
+        // Create electoral boundaries based on assignments
+        const electoralFeatures = [];
+        
+        assignments.assignment.forEach(constituency => {
+            const constituencyName = constituency.constituency_name;
+            const memberSize = constituency.member_size;
+            const electorSize = constituency.elector_size;
+            const pollingDistricts = constituency.polling_districts;
+            
+            // Skip if no polling districts
+            if (!pollingDistricts || pollingDistricts.length === 0) {
+                console.warn(`No polling districts for ${constituencyName}`);
+                return;
+            }
+            
+            // Collect all geometries for this constituency
+            const geometries = [];
+            pollingDistricts.forEach(pdName => {
+                const pdFeature = pollingDistrictMap[pdName];
+                if (pdFeature && pdFeature.geometry) {
+                    geometries.push(pdFeature.geometry);
+                } else {
+                    console.warn(`Could not find geometry for polling district: ${pdName}`);
+                }
+            });
+            
+            // Skip if no geometries found
+            if (geometries.length === 0) {
+                console.warn(`No geometries found for ${constituencyName}`);
+                return;
+            }
+            
+            // Create a MultiPolygon feature for this constituency
+            const constituencyFeature = {
+                type: "Feature",
+                properties: {
+                    name: constituencyName,
+                    member_size: memberSize,
+                    elector_size: electorSize,
+                    polling_districts: pollingDistricts
+                },
+                geometry: {
+                    type: "MultiPolygon",
+                    coordinates: []
+                }
+            };
+            
+            // Add all polygon coordinates to the MultiPolygon
+            geometries.forEach(geometry => {
+                if (geometry.type === "Polygon") {
+                    constituencyFeature.geometry.coordinates.push(geometry.coordinates);
+                } else if (geometry.type === "MultiPolygon") {
+                    geometry.coordinates.forEach(polygon => {
+                        constituencyFeature.geometry.coordinates.push(polygon);
+                    });
+                }
+            });
+            
+            electoralFeatures.push(constituencyFeature);
+        });
+        
+        return {
+            type: "FeatureCollection",
+            features: electoralFeatures
+        };
+    }
+
+    // --- Load All Layers ---
     async function loadAllLayers() {
-        const localElectoralUrl = 'raw_data/ge2025_electoral_boundary.geojson';
-        const remoteElectoralUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/raw_data/ge2025_electoral_boundary.geojson';
+        const localAssignmentsUrl = 'assignments/official_ge_2025.json';
+        const remoteAssignmentsUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/assignments/official_ge_2025.json';
         const localPollingUrl = 'processed_data/ge2025_polling_districts_with_elector_size.geojson';
         const remotePollingUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/processed_data/ge2025_polling_districts_with_elector_size.geojson';
         const statusElement = document.getElementById('status');
         statusElement.innerHTML = "Attempting to load local map data...";
         statusElement.style.display = 'block';
         let bounds = L.latLngBounds();
-        let electoralGeoJSON = null;
+        let assignmentsData = null;
         let pollingGeoJSON = null;
-        let electoralSource = 'local';
+        let electoralGeoJSON = null;
+        let assignmentsSource = 'local';
         let pollingSource = 'local';
         pollingDistrictLayers = {};
         pollingDistrictProperties = {};
 
         try {
-            // Fetch Electoral
+            // Fetch Assignments
             try {
-                console.log(`Attempting local fetch: ${localElectoralUrl}`);
-                const response = await fetch(localElectoralUrl);
-                if (!response.ok) throw new Error(`HTTP status ${response.status} for local electoral`);
-                electoralGeoJSON = await response.json();
-                console.log("Loaded electoral boundaries locally.");
-                statusElement.innerHTML = "Loaded local electoral data...";
+                console.log(`Attempting local fetch: ${localAssignmentsUrl}`);
+                const response = await fetch(localAssignmentsUrl);
+                if (!response.ok) throw new Error(`HTTP status ${response.status} for local assignments`);
+                assignmentsData = await response.json();
+                console.log("Loaded assignments locally.");
+                statusElement.innerHTML = "Loaded local assignments data...";
             } catch (localError) {
-                console.warn(`Local fetch failed for electoral: ${localError.message}. Falling back.`);
-                electoralSource = 'remote';
-                statusElement.innerHTML = "Local electoral failed, trying remote...";
-                const remoteResponse = await fetch(remoteElectoralUrl);
-                if (!remoteResponse.ok) throw new Error(`Remote fetch failed for electoral (HTTP ${remoteResponse.status})`);
-                electoralGeoJSON = await remoteResponse.json();
-                console.log("Loaded electoral boundaries remotely.");
+                console.warn(`Local fetch failed for assignments: ${localError.message}. Falling back.`);
+                assignmentsSource = 'remote';
+                statusElement.innerHTML = "Local assignments failed, trying remote...";
+                const remoteResponse = await fetch(remoteAssignmentsUrl);
+                if (!remoteResponse.ok) throw new Error(`Remote fetch failed for assignments (HTTP ${remoteResponse.status})`);
+                assignmentsData = await remoteResponse.json();
+                console.log("Loaded assignments remotely.");
             }
 
             // Fetch Polling
@@ -377,6 +458,16 @@
                 console.log("Loaded polling districts remotely.");
             }
 
+            // Construct Electoral Boundaries from Assignments and Polling Districts
+            if (assignmentsData && pollingGeoJSON) {
+                statusElement.textContent = "Constructing electoral boundaries...";
+                electoralGeoJSON = await constructElectoralBoundaries(pollingGeoJSON, assignmentsData);
+                console.log("Successfully constructed electoral boundaries from assignments.");
+            } else {
+                console.error("Missing data needed to construct electoral boundaries");
+                statusElement.textContent += " Failed to construct electoral boundaries.";
+            }
+
             // Parse
             statusElement.textContent = "Processing map data...";
             if (electoralGeoJSON) {
@@ -394,7 +485,7 @@
             else { console.warn("Invalid bounds. Setting default view."); map.setView([1.3521, 103.8198], 12); }
 
             // Final Status
-            const finalStatus = `Map loaded (Electoral: ${electoralSource}, Polling: ${pollingSource})`;
+            const finalStatus = `Map loaded (Assignments: ${assignmentsSource}, Polling: ${pollingSource})`;
             statusElement.textContent = finalStatus; console.log(finalStatus);
             setTimeout(() => {
                  const currentStatus = statusElement.textContent.toLowerCase();
