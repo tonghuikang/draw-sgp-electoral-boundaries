@@ -6715,9 +6715,7 @@
           "MA44",
           "MA45",
           "AJ32",
-          "BS13",
-          "PS05",
-          "BS12"
+          "PS05"
         ]
       },
       "geometry": {
@@ -28288,8 +28286,6 @@
           "MA43",
           "MA45",
           "AJ33",
-          "BS13",
-          "PS05",
           "BS12",
           "AM60"
         ]
@@ -31802,8 +31798,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2815,
         "adjacent_districts": [
-          "MA43",
-          "AJ32",
           "PS05",
           "BS12",
           "BS08",
@@ -31915,11 +31909,9 @@
         "adjacent_districts": [
           "MA42",
           "MA43",
-          "AJ32",
           "BS13",
           "PS07",
           "PS06",
-          "BS12",
           "PS04",
           "PS10",
           "PS09"
@@ -32079,8 +32071,6 @@
           "PS06",
           "PS08",
           "JB08",
-          "JB11",
-          "JB14",
           "BS30",
           "BS31"
         ]
@@ -32325,8 +32315,6 @@
           "MP01",
           "PS07",
           "PS06",
-          "JB08",
-          "JB11",
           "JB14",
           "JB15",
           "JB16",
@@ -32905,12 +32893,10 @@
         "elector_size": 2527,
         "adjacent_districts": [
           "PS07",
-          "PS08",
           "JB07",
           "JB09",
           "JB10",
-          "JB11",
-          "JB14"
+          "JB11"
         ]
       },
       "geometry": {
@@ -33196,8 +33182,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
-          "PS07",
-          "PS08",
           "JB08",
           "JB10",
           "JB12",
@@ -33473,9 +33457,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
-          "PS07",
           "PS08",
-          "JB08",
           "JB11",
           "JB12",
           "JB13",
@@ -36648,10 +36630,8 @@
         "adjacent_districts": [
           "JB39",
           "JB41",
-          "JB42",
           "TP37",
-          "TP43",
-          "TP12"
+          "TP43"
         ]
       },
       "geometry": {
@@ -36733,9 +36713,7 @@
           "JB38",
           "JB39",
           "JB40",
-          "JB42",
-          "TP37",
-          "TP12"
+          "JB42"
         ]
       },
       "geometry": {
@@ -36858,9 +36836,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2526,
         "adjacent_districts": [
-          "JB40",
           "JB41",
-          "TP37",
           "TP12"
         ]
       },
@@ -40320,8 +40296,6 @@
         "elector_size": 2647,
         "adjacent_districts": [
           "JB40",
-          "JB41",
-          "JB42",
           "TP39",
           "TP38",
           "TP43",
@@ -45970,10 +45944,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2815,
         "adjacent_districts": [
-          "MA43",
           "AJ32",
           "BS13",
-          "PS05",
           "MR02",
           "MR03",
           "BS11",
@@ -71883,8 +71855,6 @@
         "adjacent_districts": [
           "CK28",
           "CK32",
-          "CK33",
-          "CK34",
           "CK30",
           "HN01",
           "HN02"
@@ -72007,8 +71977,6 @@
         "adjacent_districts": [
           "CK31",
           "CK33",
-          "CK34",
-          "CK30",
           "HN02",
           "HN03"
         ]
@@ -72173,10 +72141,8 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3766,
         "adjacent_districts": [
-          "CK31",
           "CK32",
           "CK34",
-          "CK30",
           "HN03",
           "BK03",
           "JR07",
@@ -72399,8 +72365,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3766,
         "adjacent_districts": [
-          "CK31",
-          "CK32",
           "CK33",
           "CK30",
           "CK35",
@@ -72539,8 +72503,6 @@
         "adjacent_districts": [
           "CK28",
           "CK31",
-          "CK32",
-          "CK33",
           "CK34",
           "CK29",
           "CK35"
@@ -81191,8 +81153,6 @@
         "adjacent_districts": [
           "JR12",
           "JR14",
-          "JR15",
-          "JR16",
           "WE33",
           "HT32"
         ]
@@ -81294,10 +81254,8 @@
         "adjacent_districts": [
           "JR13",
           "JR15",
-          "JR16",
           "JR22",
-          "WE33",
-          "HT32"
+          "WE33"
         ]
       },
       "geometry": {
@@ -81400,11 +81358,9 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2837,
         "adjacent_districts": [
-          "JR13",
           "JR14",
           "JR16",
-          "JR19",
-          "HT32"
+          "JR19"
         ]
       },
       "geometry": {
@@ -81477,8 +81433,6 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2837,
         "adjacent_districts": [
-          "JR13",
-          "JR14",
           "JR15",
           "JR17",
           "JR18",
@@ -89515,8 +89469,6 @@
         "elector_size": 3080,
         "adjacent_districts": [
           "JR13",
-          "JR14",
-          "JR15",
           "JR16",
           "JR17",
           "HT31",
@@ -100523,8 +100475,6 @@
         "elector_size": 2647,
         "adjacent_districts": [
           "JB37",
-          "JB40",
-          "JB41",
           "JB42",
           "TP11",
           "TP37",

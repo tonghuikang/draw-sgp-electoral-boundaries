@@ -109,14 +109,11 @@ def find_adjacent_districts(districts):
             print(f"Found potential quadripoint with districts: {sorted_districts}")
             quadripoints[point] = sorted_districts
             
-            # For each quadripoint, we need to identify which districts are opposite each other
-            # and exclude those pairs (they're diagonals in the quadrilateral)
-            if len(unique_districts) == 4:
-                # To determine which districts are opposite each other at a quadripoint,
-                # we can look at the order they appear around the point
-                
+            # For each multi-point, we need to identify which districts are not adjacent
+            # (i.e., they only meet at this point)
+            if len(unique_districts) >= 4:
                 # We need to determine the arrangement of districts around this point
-                # This requires geometric analysis to find their relative positions
+                # using geometric analysis to find their relative positions
                 
                 # Extract the districts at this point
                 districts_at_point = list(unique_districts)
@@ -136,14 +133,34 @@ def find_adjacent_districts(districts):
                     angle = math.atan2(dy, dx)
                     angles[district_id] = angle
                 
-                # Sort districts by their angle around the point
+                # Sort districts by their angle around the point (clockwise or counterclockwise)
                 sorted_by_angle = sorted(districts_at_point, key=lambda d: angles[d])
                 
-                # Districts opposite each other will be at index 0,2 and 1,3 in the sorted array
-                diags = [
-                    (sorted_by_angle[0], sorted_by_angle[2]),
-                    (sorted_by_angle[1], sorted_by_angle[3])
-                ]
+                # For a point with n districts, districts that are not adjacent on the 
+                # perimeter should not be considered adjacent
+                diags = []
+                
+                if len(unique_districts) == 4:
+                    # For quadripoints: districts opposite each other are at index 0,2 and 1,3
+                    diags = [
+                        (sorted_by_angle[0], sorted_by_angle[2]),
+                        (sorted_by_angle[1], sorted_by_angle[3])
+                    ]
+                elif len(unique_districts) == 5:
+                    # For quintipoints: non-adjacent districts are those separated by at least one district
+                    diags = [
+                        (sorted_by_angle[0], sorted_by_angle[2]),
+                        (sorted_by_angle[0], sorted_by_angle[3]),
+                        (sorted_by_angle[1], sorted_by_angle[3]),
+                        (sorted_by_angle[1], sorted_by_angle[4]),
+                        (sorted_by_angle[2], sorted_by_angle[4])
+                    ]
+                elif len(unique_districts) > 5:
+                    # For points with more than 5 districts, generate all non-adjacent pairs
+                    n = len(sorted_by_angle)
+                    for i in range(n):
+                        for j in range(i+2, min(i+n-1, i+n//2+1)):
+                            diags.append((sorted_by_angle[i], sorted_by_angle[j % n]))
                 
                 # Hardcoded exception for YK08 and AM26 which need to remain connected
                 if ('YK08' in districts_at_point and 'AM26' in districts_at_point):
@@ -157,7 +174,7 @@ def find_adjacent_districts(districts):
                     exclude_pairs.add((d1, d2))
                     exclude_pairs.add((d2, d1))
                 print(f"  Districts arranged around point: {sorted_by_angle}")
-                print(f"  Marked opposite pairs for exclusion: {diags}")
+                print(f"  Marked non-adjacent pairs for exclusion: {diags}")
     
     # Check each pair of districts
     district_ids = list(districts.keys())

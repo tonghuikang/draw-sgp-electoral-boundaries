@@ -53,3 +53,10 @@ python3 scripts/add_elector_size_to_polling_districts.py
 ```
 python -m http.server
 ```
+
+# Fun facts
+
+(to be verified)
+
+- The dual of a planar graph is planar.
+- There are _ quadripoints and _ quintipoints
