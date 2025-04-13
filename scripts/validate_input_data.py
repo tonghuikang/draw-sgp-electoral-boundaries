@@ -2,12 +2,14 @@
 
 import json
 
-# Load the raw data with all electoral divisions and polling districts
-with open('raw_data/ge2025_electoral_divisions_and_polling_districts.json') as f:
+# Load the raw data with all polling districts and elector size
+with open('raw_data/ge2025_polling_districts_and_elector_size.json') as f:
     raw = json.load(f)
 
 # Extract all polling districts from raw data
-raw_districts = [pd for const in raw for pd in const['polling_districts']]
+raw_districts = []
+for item in raw:
+    raw_districts.extend(item['polling_districts'])
 print(f'Total raw districts: {len(raw_districts)}')
 print(f'Unique raw districts: {len(set(raw_districts))}')
 
@@ -32,25 +34,22 @@ print(f'Districts in processed data but missing from raw data count: {len(missin
 print('Districts in processed data but missing from raw data:')
 print(sorted(missing_from_raw))
 
-# Find electoral divisions with polling districts that are in ge2025_electoral_divisions_and_polling_districts.json
+# Find polling districts that are in ge2025_polling_districts_and_elector_size.json
 # but missing from the processed ge2025_polling_districts_with_elector_size.geojson
 if missing_from_processed:
-    print('\nElectoral divisions with polling districts found in ge2025_electoral_divisions_and_polling_districts.json')
+    print('\nPolling districts found in ge2025_polling_districts_and_elector_size.json')
     print('but missing from ge2025_polling_districts_with_elector_size.geojson:')
-    for const in raw:
-        const_missing = set(const['polling_districts']) & missing_from_processed
-        if const_missing:
-            print(f"{const['constituency_name']}: {sorted(const_missing)}")
+    print(sorted(missing_from_processed))
 
 # Report on polling districts in ge2025_polling_districts_with_elector_size.geojson 
-# but not found in any electoral division in ge2025_electoral_divisions_and_polling_districts.json
+# but not found in ge2025_polling_districts_and_elector_size.json
 if missing_from_raw:
     print('\nPolling districts found in ge2025_polling_districts_with_elector_size.geojson')
-    print('but not present in any electoral division in ge2025_electoral_divisions_and_polling_districts.json:')
+    print('but not present in ge2025_polling_districts_and_elector_size.json:')
     print(sorted(missing_from_raw))
 
-# Check for duplicate polling districts in ge2025_electoral_divisions_and_polling_districts.json
-print("\nDuplicate polling districts in ge2025_electoral_divisions_and_polling_districts.json:")
+# Check for duplicate polling districts in ge2025_polling_districts_and_elector_size.json
+print("\nDuplicate polling districts in ge2025_polling_districts_and_elector_size.json:")
 raw_counts = {}
 for district in raw_districts:
     raw_counts[district] = raw_counts.get(district, 0) + 1
@@ -58,10 +57,6 @@ duplicates_raw = {d: count for d, count in raw_counts.items() if count > 1}
 if duplicates_raw:
     for district, count in sorted(duplicates_raw.items()):
         print(f"{district}: appears {count} times")
-        # Show which constituencies have this duplicate
-        for const in raw:
-            if district in const['polling_districts']:
-                print(f"  - Found in {const['constituency_name']}")
 else:
     print("None")
 
