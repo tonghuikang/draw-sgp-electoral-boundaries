@@ -325,11 +325,14 @@
                             // Format coordinates as "longitude,latitude,0"
                             const coordText = `${nearestVertex.lng.toFixed(6)},${nearestVertex.lat.toFixed(6)},0`;
                             
-                            // Show popup with coordinates
-                            coordPopup
-                                .setLatLng(nearestVertex)
-                                .setContent(`<div><strong>Coordinates:</strong><br>${coordText}</div>`)
-                                .openOn(map);
+                            // Only show coordinates popup if "Show Polling Districts" is checked
+                            if (document.getElementById('polling-toggle').checked) {
+                                // Show popup with coordinates
+                                coordPopup
+                                    .setLatLng(nearestVertex)
+                                    .setContent(`<div><strong>Coordinates:</strong><br>${coordText}</div>`)
+                                    .openOn(map);
+                            }
                                 
                             console.log(`Vertex clicked: ${coordText}`);
                         }
