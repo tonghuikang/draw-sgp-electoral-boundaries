@@ -9,7 +9,7 @@ import re # Import regular expressions
 # --- Configuration ---
 INPUT_KML_FILE = Path("raw_data/ge2025_polling_districts.kml")
 OUTPUT_KML_FILE = Path("processed_data/ge2025_polling_districts_fixed.kml")
-SNAP_TOLERANCE = 1e-5  # Further increased tolerance for finding close vertices
+SNAP_TOLERANCE = 1e-4  # Further increased tolerance for finding close vertices
 INDENT_SPACES = "  " # Define the desired indent unit
 MIN_AREA_THRESHOLD = 1e-7  # Minimum area for valid polygons
 MIN_VERTICES = 4  # Minimum number of vertices for a valid polygon
