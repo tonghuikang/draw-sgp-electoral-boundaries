@@ -28,6 +28,10 @@ The 2025 Elector Size is processed from
 - https://www.eld.gov.sg/pdf/White_Paper_on_the_Report_of_the_Electoral_Boundaries_Review_Committee_2025.pdf
 
 
+- https://en.wikipedia.org/wiki/List_of_Singapore_MRT_stations
+- https://data.humdata.org/dataset/hotosm_sgp_roads
+
+
 # Inaccuracies
 
 - HN17 should be merged into HN01
@@ -60,5 +64,12 @@ python -m http.server
 (to be verified)
 
 - The dual of a planar graph is planar.
-- There are _ quadripoints and _ quintipoints.
+- There are approximately _ quadripoints and _ quintipoints.
 - There _ pairs of boundaries that are opposite at quadripoints / quintipoints but are still adjacent somewhere.
+- We give names to contituencies
+
+
+# Comments appreciated
+
+- If you think there is a criteria you think that you should factor in
+- Tell me if you disagree if a polling district should belong to a certain area (TBC)
