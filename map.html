@@ -100,6 +100,67 @@
     .adjacency-line {
         pointer-events: none;
     }
+    /* --- Leaflet Popup Overrides (Crucial) --- */
+    .leaflet-popup-content-wrapper {
+        /* Optional: Add specific width if auto doesn't work */
+        /* width: 250px !important; */
+        border-radius: 5px !important; /* Keep your border radius if desired */
+    }
+    .leaflet-popup-content {
+        margin: 0 !important; /* Remove default Leaflet margin */
+        width: auto !important; /* Allow content to determine width */
+        min-width: 210px; /* Set a minimum width to prevent squishing */
+    }
+    /* --- End Leaflet Popup Overrides --- */
+
+    /* --- Popup Table Styles (Attempt 4 - Combined with Overrides) --- */
+    .stats-popup-container {
+        font-family: Arial, sans-serif;
+        padding: 10px; /* Add padding INSIDE our container now */
+        line-height: 1.5;
+    }
+    .stats-popup-header {
+        text-align: center;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #0066FF;
+        padding-bottom: 6px;
+    }
+    .stats-popup-title {
+        color: #0066FF;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .stats-table {
+        width: 100%; /* Table takes full width of its container */
+        border-collapse: collapse;
+        font-size: 12px;
+        table-layout: auto; /* Let browser size columns based on content */
+    }
+    .stats-table tr {
+        border-bottom: 1px solid #eee;
+    }
+    .stats-table tr:last-child {
+        border-bottom: none;
+    }
+    .stats-table td {
+        padding: 5px 4px;
+        vertical-align: middle; /* Middle align vertically */
+        /* display: table-cell !important; */ /* Still optional, try without first */
+    }
+    .stats-label {
+        font-weight: bold;
+        padding-right: 10px; /* Space between label and value */
+        text-align: left;
+        /* No width property */
+    }
+    .stats-value {
+        text-align: right;
+        /* No width property */
+    }
+    .stats-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    /* --- End Popup Table Styles --- */
   </style>
 </head>
 <body>
@@ -819,16 +880,40 @@
         const constituencyData = electoralStatistics[constituencyName];
         
         if (constituencyData) {
-            let content = `<b>${constituencyName}</b><br>`;
-            content += `Member Size: ${constituencyData.member_size}<br>`;
-            content += `Elector Size: ${Number(constituencyData.elector_size).toLocaleString()}<br>`;
-            content += `Contiguous: ${constituencyData.contiguous ? 'Yes' : 'No'}<br>`;
-            content += `Is Enclave: ${constituencyData.is_enclave ? 'Yes' : 'No'}<br>`;
-            content += `Compactness: ${(constituencyData.compactness * 100).toFixed(2)}%`;
+            // Create a proper table with better styling using CSS classes
+            let content = `
+                <div class="stats-popup-container">
+                    <div class="stats-popup-header">
+                        <span class="stats-popup-title">${constituencyName}</span>
+                    </div>
+                    <table class="stats-table">
+                        <tr>
+                            <td class="stats-label">Member Size:</td>
+                            <td class="stats-value">${constituencyData.member_size}</td>
+                        </tr>
+                        <tr>
+                            <td class="stats-label">Elector Size:</td>
+                            <td class="stats-value">${Number(constituencyData.elector_size).toLocaleString()}</td>
+                        </tr>
+                        <tr>
+                            <td class="stats-label">Contiguous:</td>
+                            <td class="stats-value">${constituencyData.contiguous ? 'Yes' : 'No'}</td>
+                        </tr>
+                        <tr>
+                            <td class="stats-label">Is Enclave:</td>
+                            <td class="stats-value">${constituencyData.is_enclave ? 'Yes' : 'No'}</td>
+                        </tr>
+                        <tr>
+                            <td class="stats-label">Compactness:</td>
+                            <td class="stats-value">${(constituencyData.compactness * 100).toFixed(2)}%</td>
+                        </tr>
+                    </table>
+                </div>
+            `;
             
             popupElement.innerHTML = content;
         } else {
-            popupElement.innerHTML = `<b>${constituencyName}</b><br>No statistics available`;
+            popupElement.innerHTML = `<div style="text-align: center; padding: 10px;"><strong>${constituencyName}</strong><br>No statistics available</div>`;
         }
     }
 
