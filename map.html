@@ -136,6 +136,13 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+    
+    // Coordinate display popup
+    const coordPopup = L.popup({
+      closeButton: true,
+      autoClose: true,
+      className: 'coord-popup'
+    });
 
     // Create layers without adding them to the map yet
     let electoralLayer = L.featureGroup();
@@ -184,6 +191,42 @@
     }
     // --- End Highlighting Logic ---
 
+    // Function to detect if a click is near a vertex
+    function findNearestVertex(latlng, layer, tolerance = 10) {
+        // Convert map click to pixel coordinates
+        const clickPoint = map.latLngToContainerPoint(latlng);
+        let closestDistance = Infinity;
+        let closestVertex = null;
+        
+        // Helper function to process coordinates
+        function processCoordinates(coords) {
+            for (let i = 0; i < coords.length; i++) {
+                // For Polygon, coords[0] is outer ring, the rest are holes
+                if (Array.isArray(coords[i][0])) {
+                    processCoordinates(coords[i]);
+                } else {
+                    // This is a vertex
+                    const vertexLatLng = L.latLng(coords[i][1], coords[i][0]);
+                    const vertexPoint = map.latLngToContainerPoint(vertexLatLng);
+                    const distance = clickPoint.distanceTo(vertexPoint);
+                    
+                    if (distance < closestDistance && distance <= tolerance) {
+                        closestDistance = distance;
+                        closestVertex = vertexLatLng;
+                    }
+                }
+            }
+        }
+        
+        // Process all coordinates in the layer
+        if (layer.feature && layer.feature.geometry) {
+            const coords = layer.feature.geometry.coordinates;
+            processCoordinates(coords);
+        }
+        
+        return closestVertex;
+    }
+    
     // --- Parse GeoJSON ---
     function parseGeoJSON(geojsonData, featureGroup, color, isPollingDistrict = false) {
         if (!geojsonData || !geojsonData.features) {
@@ -275,6 +318,21 @@
                         // Stop propagation so the map click doesn't immediately clear lines/highlight
                         // and allows the popup to open.
                         L.DomEvent.stopPropagation(e);
+                        
+                        // Check if click is near a vertex
+                        const nearestVertex = findNearestVertex(e.latlng, layer);
+                        if (nearestVertex) {
+                            // Format coordinates as "longitude,latitude,0"
+                            const coordText = `${nearestVertex.lng.toFixed(6)},${nearestVertex.lat.toFixed(6)},0`;
+                            
+                            // Show popup with coordinates
+                            coordPopup
+                                .setLatLng(nearestVertex)
+                                .setContent(`<div><strong>Coordinates:</strong><br>${coordText}</div>`)
+                                .openOn(map);
+                                
+                            console.log(`Vertex clicked: ${coordText}`);
+                        }
 
                         // Draw adjacency lines ONLY for polling districts
                         if (isPollingDistrict && pdName) {
