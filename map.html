@@ -64,6 +64,10 @@
     /* --- Tooltip/Popup Styles --- */
     .leaflet-tooltip { /* Style for hover tooltips (now only for Electoral Boundaries) */
       font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 2px solid #FFA500;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      z-index: 1500 !important; /* Force high z-index */
     }
     .leaflet-popup-content-wrapper { /* Style popup */
         border-radius: 5px;
@@ -138,8 +142,10 @@
     // This ensures smaller constituencies are rendered on top of larger ones
     map.createPane('defaultPane');
     map.createPane('smcPane'); // Single Member Constituencies pane
+    map.createPane('labelPane'); // Special pane for labels and tooltips
     map.getPane('smcPane').style.zIndex = 650; // Higher than the default overlay pane (600)
     map.getPane('defaultPane').style.zIndex = 600; // Same as default overlay pane
+    map.getPane('labelPane').style.zIndex = 3000; // Very high z-index to ensure labels are on top of everything
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -149,7 +155,8 @@
     const coordPopup = L.popup({
       closeButton: true,
       autoClose: true,
-      className: 'coord-popup'
+      className: 'coord-popup',
+      pane: 'labelPane' // Use the special pane for popups
     });
 
     // Create layers without adding them to the map yet
@@ -228,8 +235,8 @@
                 color: '#FFA500', // Orange highlight color
                 fillOpacity: 0.2, 
                 opacity: 0.9,
-                // Ensure the entire layer is highlighted by setting a high z-index
-                zIndex: 1000
+                // Ensure the entire layer is highlighted by setting a very high z-index
+                zIndex: 2000 // Increased from 1000 to ensure it's above all other elements
             });
             
             // Bring the layer to the front to ensure it's visible
@@ -382,7 +389,16 @@
                     // --- Electoral Boundary Logic (Keep hover tooltip) ---
                     tooltipContent = props.name || props.Name || props.NAME || props.CONSTITUENCY || props.constituency || 'Electoral Boundary (No Name)';
                     if (tooltipContent) {
-                        layer.bindTooltip(tooltipContent, { permanent: false, direction: 'center', className: 'electoral-tooltip', sticky: true, opacity: 0.9, interactive: false });
+                        layer.bindTooltip(tooltipContent, { 
+                            permanent: false, 
+                            direction: 'center', 
+                            className: 'electoral-tooltip', 
+                            sticky: true, 
+                            opacity: 0.9, 
+                            interactive: false,
+                            zIndexOffset: 3000, // Ensure tooltips appear above all other elements
+                            pane: 'labelPane' // Use the special pane for tooltips
+                        });
                     }
                     // --- End Electoral Boundary Logic ---
                 }
