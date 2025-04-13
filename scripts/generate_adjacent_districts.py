@@ -290,8 +290,8 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Define input and output paths
-    kml_path = os.path.join(script_dir, "../processed_data/ge2025_polling_districts_fixed.kml")
-    output_path = os.path.join(script_dir, "../processed_data/ge2025_polling_districts_to_adjacent_districts.json")
+    kml_path = os.path.join(script_dir, "../intermediate_data/ge2025_polling_districts_fixed.kml")
+    output_path = os.path.join(script_dir, "../intermediate_data/ge2025_polling_districts_to_adjacent_districts.json")
     
     # Extract districts from KML
     print("Extracting districts from KML...")

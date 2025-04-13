@@ -8,9 +8,9 @@ from shapely.geometry import shape, mapping
 import kml2geojson
 
 # Paths
-input_kml = "../processed_data/ge2025_polling_districts_fixed.kml"
-elector_size_json = "../processed_data/ge2025_polling_distrct_and_estimated_elector_size.json"
-adjacent_districts_json = "../processed_data/ge2025_polling_districts_to_adjacent_districts.json"
+input_kml = "../intermediate_data/ge2025_polling_districts_fixed.kml"
+elector_size_json = "../intermediate_data/ge2025_polling_distrct_and_estimated_elector_size.json"
+adjacent_districts_json = "../intermediate_data/ge2025_polling_districts_to_adjacent_districts.json"
 output_geojson = "../processed_data/ge2025_polling_districts_with_elector_size.geojson"
 
 # Ensure paths are absolute

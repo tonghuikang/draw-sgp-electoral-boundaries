@@ -5,7 +5,7 @@ import os
 # Input and output file paths
 script_dir = os.path.dirname(os.path.abspath(__file__))
 input_file = os.path.join(script_dir, '../raw_data/ge2025_polling_districts_and_elector_size.json')
-output_file = os.path.join(script_dir, '../processed_data/ge2025_polling_distrct_and_estimated_elector_size.json')
+output_file = os.path.join(script_dir, '../intermediate_data/ge2025_polling_distrct_and_estimated_elector_size.json')
 
 # Create a dictionary to store the estimated elector size for each polling district
 district_to_size = {}

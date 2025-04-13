@@ -144,7 +144,7 @@ def calculate_compactness(constituency_districts, geojson_data):
 def main():
     # Load data
     assignment_data = load_json("assignments/official_ge_2025.json")
-    adjacency_data = load_json("processed_data/ge2025_polling_districts_to_adjacent_districts.json")
+    adjacency_data = load_json("intermediate_data/ge2025_polling_districts_to_adjacent_districts.json")
     
     # Load GeoJSON data for compactness calculation
     with open("processed_data/ge2025_polling_districts_with_elector_size.geojson", 'r') as f:
