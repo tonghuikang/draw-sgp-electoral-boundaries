@@ -133,6 +133,14 @@
   <script>
     // --- Global Scope Variables ---
     const map = L.map('map').setView([1.3521, 103.8198], 12);
+    
+    // Create custom panes with different z-index values
+    // This ensures smaller constituencies are rendered on top of larger ones
+    map.createPane('defaultPane');
+    map.createPane('smcPane'); // Single Member Constituencies pane
+    map.getPane('smcPane').style.zIndex = 650; // Higher than the default overlay pane (600)
+    map.getPane('defaultPane').style.zIndex = 600; // Same as default overlay pane
+    
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
@@ -170,23 +178,69 @@
           const isElectoralBoundary = defaultColor === '#0066FF';
           // Use weight 4 for electoral boundaries, 2 for polling districts
           const weight = isElectoralBoundary ? 4 : 2;
-          layer.setStyle({ weight: weight, color: defaultColor, fillOpacity: 0, opacity: 0.7 });
+          
+          // Determine which pane to use based on whether this is an SMC
+          let pane = 'defaultPane';
+          if (isElectoralBoundary && layer.feature && layer.feature.properties && layer.feature.properties.member_size === 1) {
+              pane = 'smcPane';
+          }
+          
+          // Calculate z-index for electoral boundaries based on polling district count
+          let zIndex = 0;
+          if (isElectoralBoundary && layer.feature && layer.feature.properties && layer.feature.properties.polling_districts) {
+              const maxPdCount = 100; // Assuming no constituency has more than 100 polling districts
+              const pdCount = layer.feature.properties.polling_districts.length;
+              zIndex = maxPdCount - pdCount; // Smaller constituencies get higher z-index
+              
+              // For single-member constituencies (SMCs), give them an even higher z-index
+              if (layer.feature.properties.member_size === 1) {
+                  zIndex += 200; // Add a large offset to ensure SMCs are always on top
+              }
+          }
+          
+          // Reset the style of the entire layer
+          layer.setStyle({ 
+              weight: weight, 
+              color: defaultColor, 
+              fillOpacity: 0, 
+              opacity: 0.7,
+              zIndex: zIndex,
+              pane: pane
+          });
        }
     }
     function highlightFeature(layer, defaultColor) {
+        // First, clear any existing highlight
         if (activeHighlight && activeHighlight.layer !== layer) {
             resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
         }
+        
         // Check if this is an electoral boundary (blue) or polling district (red)
         const isElectoralBoundary = defaultColor === '#0066FF';
         // Use weight 6 for electoral boundaries, 4 for polling districts when highlighted
         const highlightWeight = isElectoralBoundary ? 6 : 4;
-        layer.setStyle({ weight: highlightWeight, color: '#FFA500', fillOpacity: 0.2, opacity: 0.9 });
-        if (layer.bringToFront && typeof layer.bringToFront === 'function') {
-            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                layer.bringToFront();
+        
+        // Apply highlight style to the entire layer
+        if (layer && typeof layer.setStyle === 'function') {
+            // For MultiPolygon or complex shapes, ensure the entire layer is highlighted
+            layer.setStyle({ 
+                weight: highlightWeight, 
+                color: '#FFA500', // Orange highlight color
+                fillOpacity: 0.2, 
+                opacity: 0.9,
+                // Ensure the entire layer is highlighted by setting a high z-index
+                zIndex: 1000
+            });
+            
+            // Bring the layer to the front to ensure it's visible
+            if (layer.bringToFront && typeof layer.bringToFront === 'function') {
+                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                    layer.bringToFront();
+                }
             }
         }
+        
+        // Store the active highlight for later reference
         activeHighlight = { layer: layer, defaultColor: defaultColor };
     }
     // --- End Highlighting Logic ---
@@ -235,13 +289,42 @@
         }
         console.log(`Parsing GeoJSON for ${isPollingDistrict ? 'Polling Districts' : 'Electoral Boundaries'}...`);
 
+        // Store references to individual layers for electoral boundaries
+        const individualLayers = [];
+
         const layer = L.geoJSON(geojsonData, {
-            style: feature => ({ 
-                color: color, 
-                weight: isPollingDistrict ? 2 : 4, // Only electoral boundaries are bolder (4), polling districts stay at 2
-                opacity: 0.7, 
-                fillOpacity: 0 
-            }),
+            style: feature => {
+                // Calculate z-index for electoral boundaries based on polling district count
+                let zIndex = 0;
+                let isSMC = false;
+                
+                if (!isPollingDistrict && feature.properties && feature.properties.polling_districts) {
+                    // Smaller constituencies (fewer polling districts) get higher z-index
+                    // This ensures they are rendered on top of larger constituencies
+                    const maxPdCount = 100; // Assuming no constituency has more than 100 polling districts
+                    const pdCount = feature.properties.polling_districts.length;
+                    zIndex = maxPdCount - pdCount; // Smaller constituencies get higher z-index
+                    
+                    // Check if this is a Single Member Constituency (SMC)
+                    isSMC = feature.properties.member_size === 1;
+                    if (isSMC) {
+                        zIndex += 200; // Add a large offset to ensure SMCs are always on top
+                    }
+                }
+                
+                // Determine which pane to use
+                const pane = !isPollingDistrict && isSMC ? 'smcPane' : 'defaultPane';
+                
+                return { 
+                    color: color, 
+                    weight: isPollingDistrict ? 2 : 4, // Only electoral boundaries are bolder (4), polling districts stay at 2
+                    opacity: 0.7, 
+                    fillOpacity: 0,
+                    zIndex: zIndex, // Add z-index based on polling district count
+                    pane: pane, // Use the appropriate pane
+                    interactive: true // Ensure the layer is clickable
+                };
+            },
             onEachFeature: function(feature, layer) {
                 let labelText = ''; // Label for high zoom
                 let popupContent = ''; // Content for click popup
@@ -405,6 +488,49 @@
             } // end onEachFeature
         }).addTo(featureGroup);
         console.log(`Added ${geojsonData.features.length} features.`);
+
+        // If these are electoral boundaries, ensure smaller constituencies are on top
+        if (!isPollingDistrict && geojsonData.features) {
+            // The features are already sorted by polling district count (ascending)
+            // Bring each layer to front in reverse order (smallest to largest)
+            layer.eachLayer(function(l) {
+                if (l.feature && l.feature.properties && l.feature.properties.polling_districts) {
+                    // Store reference to layer and its polling district count
+                    const memberSize = l.feature.properties.member_size || 0;
+                    individualLayers.push({
+                        layer: l,
+                        count: l.feature.properties.polling_districts.length,
+                        isSMC: memberSize === 1 // Flag for Single Member Constituencies
+                    });
+                }
+            });
+
+            // Sort layers by polling district count (ascending) and prioritize SMCs
+            individualLayers.sort((a, b) => {
+                // First prioritize SMCs over GRCs
+                if (a.isSMC && !b.isSMC) return 1; // SMCs should be last in the array so they're brought to front last
+                if (!a.isSMC && b.isSMC) return -1;
+                // Then sort by polling district count (ascending)
+                return a.count - b.count;
+            });
+
+            // Bring smaller constituencies to front
+            individualLayers.forEach(item => {
+                if (item.layer.bringToFront) {
+                    item.layer.bringToFront();
+                }
+            });
+            
+            // Log which constituencies are on top
+            console.log("Layer order (top to bottom):");
+            individualLayers.slice().reverse().forEach((item, index) => {
+                if (item.layer.feature && item.layer.feature.properties) {
+                    const name = item.layer.feature.properties.name || "Unknown";
+                    const memberSize = item.layer.feature.properties.member_size || "Unknown";
+                    console.log(`${index + 1}. ${name} (Member size: ${memberSize}, PD count: ${item.count})`);
+                }
+            });
+        }
     } // End parseGeoJSON
 
     // --- Construct Electoral Boundaries from Assignments ---
@@ -421,7 +547,7 @@
         });
         
         // Create electoral boundaries based on assignments
-        const electoralFeatures = [];
+        let electoralFeatures = [];
         
         for (const constituency of assignments.assignment) {
             const constituencyName = constituency.constituency_name;
@@ -616,6 +742,28 @@
                 }
             }
         }
+        
+        // Sort electoral features by member size and polling district count
+        // This ensures SMCs and smaller constituencies are rendered on top of larger ones
+        electoralFeatures.sort((a, b) => {
+            const aIsSMC = a.properties.member_size === 1;
+            const bIsSMC = b.properties.member_size === 1;
+            
+            // First prioritize SMCs over GRCs
+            if (aIsSMC && !bIsSMC) return 1; // SMCs should be last in the array so they're processed last
+            if (!aIsSMC && bIsSMC) return -1;
+            
+            // Then sort by polling district count (ascending)
+            const aPollingDistrictsCount = a.properties.polling_districts ? a.properties.polling_districts.length : 0;
+            const bPollingDistrictsCount = b.properties.polling_districts ? b.properties.polling_districts.length : 0;
+            return aPollingDistrictsCount - bPollingDistrictsCount; // Ascending order (smaller on top)
+        });
+        
+        // Log the sorted order of constituencies
+        console.log("Constituency processing order (bottom to top):");
+        electoralFeatures.forEach((feature, index) => {
+            console.log(`${index + 1}. ${feature.properties.name} (Member size: ${feature.properties.member_size}, PD count: ${feature.properties.polling_districts.length})`);
+        });
         
         return {
             type: "FeatureCollection",
