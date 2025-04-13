@@ -398,6 +398,21 @@
                             zIndexOffset: 3000, // Ensure tooltips appear above all other elements
                             pane: 'labelPane' // Use the special pane for tooltips
                         });
+                        
+                        // Add popup for electoral boundaries with statistics
+                        const constituencyName = tooltipContent;
+                        // Create popup content with preloaded statistics
+                        const popupId = `electoral-popup-${constituencyName.replace(/\s+/g, '-')}`;
+                        const popupContent = `<div id="${popupId}" class="electoral-popup"></div>`;
+                        layer.bindPopup(popupContent);
+                        
+                        // Pre-populate popup content when binding
+                        layer.on('popupopen', function() {
+                            const popupElement = document.getElementById(popupId);
+                            if (popupElement) {
+                                getElectoralStatistics(constituencyName, popupElement);
+                            }
+                        });
                     }
                     // --- End Electoral Boundary Logic ---
                 }
@@ -416,6 +431,20 @@
                         // Stop propagation so the map click doesn't immediately clear lines/highlight
                         // and allows the popup to open.
                         L.DomEvent.stopPropagation(e);
+                        
+                        // For electoral boundaries, show statistics
+                        if (!isPollingDistrict) {
+                            const constituencyName = props.name || props.Name || props.NAME || props.CONSTITUENCY || props.constituency;
+                            if (constituencyName) {
+                                // When popup opens, show the statistics
+                                layer.on('popupopen', function() {
+                                    const popupElement = document.getElementById(`electoral-popup-${constituencyName.replace(/\s+/g, '-')}`);
+                                    if (popupElement) {
+                                        getElectoralStatistics(constituencyName, popupElement);
+                                    }
+                                });
+                            }
+                        }
                         
                         // Check if click is near a vertex
                         const nearestVertex = findNearestVertex(e.latlng, layer);
@@ -760,6 +789,49 @@
         };
     }
 
+    // Store preloaded statistics
+    let electoralStatistics = {};
+    
+    // Function to preload all statistics from annotations file
+    async function preloadElectoralStatistics() {
+        try {
+            const response = await fetch('annotations/official_ge_2025.json');
+            if (!response.ok) {
+                throw new Error(`HTTP status ${response.status}`);
+            }
+            
+            const data = await response.json();
+            // Store all statistics in a map for quick access
+            data.annotations.forEach(constituency => {
+                electoralStatistics[constituency.constituency_name] = constituency;
+            });
+            
+            console.log("Electoral statistics preloaded successfully");
+            return true;
+        } catch (error) {
+            console.error("Error preloading statistics:", error);
+            return false;
+        }
+    }
+    
+    // Function to get statistics for a constituency
+    function getElectoralStatistics(constituencyName, popupElement) {
+        const constituencyData = electoralStatistics[constituencyName];
+        
+        if (constituencyData) {
+            let content = `<b>${constituencyName}</b><br>`;
+            content += `Member Size: ${constituencyData.member_size}<br>`;
+            content += `Elector Size: ${Number(constituencyData.elector_size).toLocaleString()}<br>`;
+            content += `Contiguous: ${constituencyData.contiguous ? 'Yes' : 'No'}<br>`;
+            content += `Is Enclave: ${constituencyData.is_enclave ? 'Yes' : 'No'}<br>`;
+            content += `Compactness: ${(constituencyData.compactness * 100).toFixed(2)}%`;
+            
+            popupElement.innerHTML = content;
+        } else {
+            popupElement.innerHTML = `<b>${constituencyName}</b><br>No statistics available`;
+        }
+    }
+
     // --- Load All Layers ---
     async function loadAllLayers() {
         const localAssignmentsUrl = 'assignments/official_ge_2025.json';
@@ -965,9 +1037,14 @@
     map.on('zoomend', handleZoomEnd);
     // --- End Zoom Handling ---
 
-    // --- Initial Load (unchanged) ---
-    document.addEventListener('DOMContentLoaded', function() {
+    // --- Initial Load ---
+    document.addEventListener('DOMContentLoaded', async function() {
         document.getElementById('status').textContent = "Initializing...";
+        
+        // Preload electoral statistics
+        await preloadElectoralStatistics();
+        
+        // Load map layers
         loadAllLayers();
     });
     // --- End Initial Load ---
