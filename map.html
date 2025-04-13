@@ -143,11 +143,9 @@
     map.createPane('defaultPane');
     map.createPane('smcPane'); // Single Member Constituencies pane
     map.createPane('labelPane'); // Special pane for labels and tooltips
-    map.createPane('highlightPane'); // Special pane for highlighted features
     map.getPane('smcPane').style.zIndex = 650; // Higher than the default overlay pane (600)
     map.getPane('defaultPane').style.zIndex = 600; // Same as default overlay pane
-    map.getPane('highlightPane').style.zIndex = 4000; // Very high z-index for highlighted features
-    map.getPane('labelPane').style.zIndex = 5000; // Extremely high z-index to ensure labels are above everything else
+    map.getPane('labelPane').style.zIndex = 3000; // Very high z-index to ensure labels are on top of everything
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -181,50 +179,43 @@
     let showElectorCount = false;
 
     // --- Highlighting Logic ---
-    // Create a separate layer group for highlighted features
-    let highlightLayer = L.layerGroup().addTo(map);
-    
     function resetHighlightStyle(layer, defaultColor) {
-        // Remove any existing highlight overlay
-        highlightLayer.clearLayers();
-        
-        if (layer && typeof layer.setStyle === 'function') {
-            // Check if this is an electoral boundary (blue) or polling district (red)
-            const isElectoralBoundary = defaultColor === '#0066FF';
-            // Use weight 4 for electoral boundaries, 2 for polling districts
-            const weight = isElectoralBoundary ? 4 : 2;
-            
-            // Determine which pane to use based on whether this is an SMC
-            let pane = 'defaultPane';
-            if (isElectoralBoundary && layer.feature && layer.feature.properties && layer.feature.properties.member_size === 1) {
-                pane = 'smcPane';
-            }
-            
-            // Calculate z-index for electoral boundaries based on polling district count
-            let zIndex = 0;
-            if (isElectoralBoundary && layer.feature && layer.feature.properties && layer.feature.properties.polling_districts) {
-                const maxPdCount = 100; // Assuming no constituency has more than 100 polling districts
-                const pdCount = layer.feature.properties.polling_districts.length;
-                zIndex = maxPdCount - pdCount; // Smaller constituencies get higher z-index
-                
-                // For single-member constituencies (SMCs), give them an even higher z-index
-                if (layer.feature.properties.member_size === 1) {
-                    zIndex += 200; // Add a large offset to ensure SMCs are always on top
-                }
-            }
-            
-            // Reset the style of the original layer
-            layer.setStyle({ 
-                weight: weight, 
-                color: defaultColor, 
-                fillOpacity: 0, 
-                opacity: 0.7,
-                zIndex: zIndex,
-                pane: pane
-            });
-        }
+       if (layer && typeof layer.setStyle === 'function') {
+          // Check if this is an electoral boundary (blue) or polling district (red)
+          const isElectoralBoundary = defaultColor === '#0066FF';
+          // Use weight 4 for electoral boundaries, 2 for polling districts
+          const weight = isElectoralBoundary ? 4 : 2;
+          
+          // Determine which pane to use based on whether this is an SMC
+          let pane = 'defaultPane';
+          if (isElectoralBoundary && layer.feature && layer.feature.properties && layer.feature.properties.member_size === 1) {
+              pane = 'smcPane';
+          }
+          
+          // Calculate z-index for electoral boundaries based on polling district count
+          let zIndex = 0;
+          if (isElectoralBoundary && layer.feature && layer.feature.properties && layer.feature.properties.polling_districts) {
+              const maxPdCount = 100; // Assuming no constituency has more than 100 polling districts
+              const pdCount = layer.feature.properties.polling_districts.length;
+              zIndex = maxPdCount - pdCount; // Smaller constituencies get higher z-index
+              
+              // For single-member constituencies (SMCs), give them an even higher z-index
+              if (layer.feature.properties.member_size === 1) {
+                  zIndex += 200; // Add a large offset to ensure SMCs are always on top
+              }
+          }
+          
+          // Reset the style of the entire layer
+          layer.setStyle({ 
+              weight: weight, 
+              color: defaultColor, 
+              fillOpacity: 0, 
+              opacity: 0.7,
+              zIndex: zIndex,
+              pane: pane
+          });
+       }
     }
-    
     function highlightFeature(layer, defaultColor) {
         // First, clear any existing highlight
         if (activeHighlight && activeHighlight.layer !== layer) {
@@ -236,51 +227,24 @@
         // Use weight 6 for electoral boundaries, 4 for polling districts when highlighted
         const highlightWeight = isElectoralBoundary ? 6 : 4;
         
-        if (layer && layer.feature) {
-            // Create a new GeoJSON layer with the same geometry but in the highlight pane
-            const highlightFeature = {
-                type: "Feature",
-                properties: layer.feature.properties,
-                geometry: layer.feature.geometry
-            };
-            
-            // Create a new layer with the highlight style in the highlightPane
-            const highlightGeoJSON = L.geoJSON(highlightFeature, {
-                style: {
-                    weight: highlightWeight,
-                    color: '#FFA500', // Orange highlight color
-                    fillOpacity: 0.2,
-                    opacity: 0.9,
-                    pane: 'highlightPane' // Use the special pane for highlighted features
-                }
+        // Apply highlight style to the entire layer
+        if (layer && typeof layer.setStyle === 'function') {
+            // For MultiPolygon or complex shapes, ensure the entire layer is highlighted
+            layer.setStyle({ 
+                weight: highlightWeight, 
+                color: '#FFA500', // Orange highlight color
+                fillOpacity: 0.2, 
+                opacity: 0.9,
+                // Ensure the entire layer is highlighted by setting a very high z-index
+                zIndex: 2000 // Increased from 1000 to ensure it's above all other elements
             });
             
-            // Add the tooltip to the highlight layer if this is an electoral boundary
-            if (isElectoralBoundary) {
-                // Get the constituency name from the properties
-                const props = layer.feature.properties || {};
-                const tooltipContent = props.name || props.Name || props.NAME || props.CONSTITUENCY || props.constituency || 'Electoral Boundary (No Name)';
-                
-                // Add tooltip to the highlight layer
-                highlightGeoJSON.bindTooltip(tooltipContent, { 
-                    permanent: false, 
-                    direction: 'center', 
-                    className: 'electoral-tooltip', 
-                    sticky: true, 
-                    opacity: 0.9, 
-                    interactive: false,
-                    zIndexOffset: 3000,
-                    pane: 'labelPane'
-                });
-                
-                // Open the tooltip immediately
-                highlightGeoJSON.eachLayer(function(l) {
-                    l.openTooltip();
-                });
+            // Bring the layer to the front to ensure it's visible
+            if (layer.bringToFront && typeof layer.bringToFront === 'function') {
+                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                    layer.bringToFront();
+                }
             }
-            
-            // Add the highlight layer to the map
-            highlightGeoJSON.addTo(highlightLayer);
         }
         
         // Store the active highlight for later reference
@@ -330,7 +294,6 @@
             console.warn("Invalid or empty GeoJSON data provided for parsing.");
             return;
         }
-        console.log(`Parsing GeoJSON for ${isPollingDistrict ? 'Polling Districts' : 'Electoral Boundaries'}...`);
 
         // Store references to individual layers for electoral boundaries
         const individualLayers = [];
@@ -469,8 +432,7 @@
                                     .openOn(map);
                             }
                                 
-                            console.log(`Vertex clicked: ${coordText}`);
-                        }
+                            }
 
                         // Draw adjacency lines ONLY for polling districts
                         if (isPollingDistrict && pdName) {
@@ -478,7 +440,6 @@
 
                             if (selectedDistrictForLines === pdName) {
                                 selectedDistrictForLines = null;
-                                console.log(`Deselected ${pdName} for adjacency lines.`);
                                 // Optional: Close the popup if clicking the selected district again
                                 // layer.closePopup();
                             } else {
@@ -494,7 +455,6 @@
                                 const centerA = layerA.getBounds().getCenter();
                                 const directAdjacentNames = propsA.adjacent_districts || [];
 
-                                console.log(`Selected ${pdName} (A). Direct Adjacent (B):`, directAdjacentNames);
 
                                 // Draw A->B lines
                                 directAdjacentNames.forEach(nameB => {
@@ -503,21 +463,18 @@
 
                                     if (layerB && layerB.getBounds().isValid() && propsB) {
                                         const centerB = layerB.getBounds().getCenter();
-                                        console.log(`  Drawing A->B: ${pdName} -> ${nameB}`);
                                         L.polyline([centerA, centerB], {
                                             color: 'purple', weight: 2, opacity: 0.8, dashArray: '5, 5', className: 'adjacency-line'
                                         }).addTo(adjacencyLinesLayer);
 
                                         // Draw B->C lines
                                         const secondaryAdjacentNames = propsB.adjacent_districts || [];
-                                        console.log(`    Neighbors of ${nameB} (B) are (C):`, secondaryAdjacentNames);
                                         secondaryAdjacentNames.forEach(nameC => {
                                             if (nameC === pdName) { return; } // Skip B->A line
 
                                             const layerC = pollingDistrictLayers[nameC];
                                             if (layerC && layerC.getBounds().isValid()) {
                                                 const centerC = layerC.getBounds().getCenter();
-                                                console.log(`      Drawing B->C: ${nameB} -> ${nameC}`);
                                                 L.polyline([centerB, centerC], {
                                                     color: 'green', weight: 2, opacity: 0.7, dashArray: '2, 4', className: 'adjacency-line'
                                                 }).addTo(adjacencyLinesLayer);
@@ -539,7 +496,6 @@
                 }); // end layer.on
             } // end onEachFeature
         }).addTo(featureGroup);
-        console.log(`Added ${geojsonData.features.length} features.`);
 
         // If these are electoral boundaries, ensure smaller constituencies are on top
         if (!isPollingDistrict && geojsonData.features) {
@@ -573,21 +529,11 @@
                 }
             });
             
-            // Log which constituencies are on top
-            console.log("Layer order (top to bottom):");
-            individualLayers.slice().reverse().forEach((item, index) => {
-                if (item.layer.feature && item.layer.feature.properties) {
-                    const name = item.layer.feature.properties.name || "Unknown";
-                    const memberSize = item.layer.feature.properties.member_size || "Unknown";
-                    console.log(`${index + 1}. ${name} (Member size: ${memberSize}, PD count: ${item.count})`);
-                }
-            });
         }
     } // End parseGeoJSON
 
     // --- Construct Electoral Boundaries from Assignments ---
     async function constructElectoralBoundaries(pollingGeoJSON, assignments) {
-        console.log("Constructing electoral boundaries from assignments...");
         
         // Create a mapping of polling district codes to their GeoJSON features
         const pollingDistrictMap = {};
@@ -613,7 +559,6 @@
                 continue;
             }
             
-            console.log(`Processing constituency: ${constituencyName}`);
             
             try {
                 // Collect all valid polygon features for this constituency
@@ -713,14 +658,12 @@
                 };
                 
                 electoralFeatures.push(constituencyFeature);
-                console.log(`Successfully created outline for ${constituencyName}`);
                 
             } catch (error) {
                 console.error(`Error processing constituency ${constituencyName}:`, error);
                 
                 // Fallback: create a convex hull as a simple outline
                 try {
-                    console.log(`Using convex hull as fallback for ${constituencyName}`);
                     
                     // Collect all points from all polling districts
                     const allPoints = [];
@@ -785,7 +728,6 @@
                         };
                         
                         electoralFeatures.push(constituencyFeature);
-                        console.log(`Created convex hull outline for ${constituencyName}`);
                     } else {
                         throw new Error("Failed to create convex hull");
                     }
@@ -811,11 +753,6 @@
             return aPollingDistrictsCount - bPollingDistrictsCount; // Ascending order (smaller on top)
         });
         
-        // Log the sorted order of constituencies
-        console.log("Constituency processing order (bottom to top):");
-        electoralFeatures.forEach((feature, index) => {
-            console.log(`${index + 1}. ${feature.properties.name} (Member size: ${feature.properties.member_size}, PD count: ${feature.properties.polling_districts.length})`);
-        });
         
         return {
             type: "FeatureCollection",
@@ -846,11 +783,9 @@
         try {
             // Fetch Assignments with fallback
             try {
-                console.log(`Attempting local fetch: ${localAssignmentsUrl}`);
                 const response = await fetch(localAssignmentsUrl);
                 if (!response.ok) throw new Error(`HTTP status ${response.status} for local assignments`);
                 assignmentsData = await response.json();
-                console.log("Loaded assignments locally.");
                 statusElement.innerHTML = "Loaded local assignments data...";
                 assignmentsSource = 'local';
             } catch (localError) {
@@ -858,11 +793,9 @@
                 statusElement.innerHTML = "Local assignments not available, trying GitHub...";
                 
                 try {
-                    console.log(`Attempting GitHub fetch: ${githubAssignmentsUrl}`);
                     const githubResponse = await fetch(githubAssignmentsUrl);
                     if (!githubResponse.ok) throw new Error(`HTTP status ${githubResponse.status} for GitHub assignments`);
                     assignmentsData = await githubResponse.json();
-                    console.log("Loaded assignments from GitHub.");
                     statusElement.innerHTML = "Loaded assignments data from GitHub...";
                     assignmentsSource = 'github';
                 } catch (githubError) {
@@ -873,11 +806,9 @@
 
             // Fetch Polling with fallback
             try {
-                console.log(`Attempting local fetch: ${localPollingUrl}`);
                 const response = await fetch(localPollingUrl);
                 if (!response.ok) throw new Error(`HTTP status ${response.status} for local polling`);
                 pollingGeoJSON = await response.json();
-                console.log("Loaded polling districts locally.");
                 statusElement.innerHTML = "Loaded local polling data...";
                 pollingSource = 'local';
             } catch (localError) {
@@ -885,11 +816,9 @@
                 statusElement.innerHTML = "Local polling data not available, trying GitHub...";
                 
                 try {
-                    console.log(`Attempting GitHub fetch: ${githubPollingUrl}`);
                     const githubResponse = await fetch(githubPollingUrl);
                     if (!githubResponse.ok) throw new Error(`HTTP status ${githubResponse.status} for GitHub polling`);
                     pollingGeoJSON = await githubResponse.json();
-                    console.log("Loaded polling districts from GitHub.");
                     statusElement.innerHTML = "Loaded polling data from GitHub...";
                     pollingSource = 'github';
                 } catch (githubError) {
@@ -902,7 +831,6 @@
             if (assignmentsData && pollingGeoJSON) {
                 statusElement.textContent = "Constructing electoral boundaries...";
                 electoralGeoJSON = await constructElectoralBoundaries(pollingGeoJSON, assignmentsData);
-                console.log("Successfully constructed electoral boundaries from assignments.");
             } else {
                 console.error("Missing data needed to construct electoral boundaries");
                 statusElement.textContent += " Failed to construct electoral boundaries.";
@@ -932,7 +860,6 @@
                 finalStatus += "Partial data only)";
             }
             statusElement.textContent = finalStatus; 
-            console.log(finalStatus);
             setTimeout(() => {
                  const currentStatus = statusElement.textContent.toLowerCase();
                  if (!currentStatus.includes('error') && !currentStatus.includes('failed')) {
