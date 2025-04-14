@@ -12,8 +12,10 @@ def label_mrt_stations():
     # Load the station data
     df = pd.read_csv(stations_path)
 
-    # Label "minor" stations: opened and >8000 passengers
-    df['is_minor_mrt'] = df['is_opened'] & (df['passengers'] > 8000)
+    # Label "minor" stations: opened and >6000 passengers
+    # 6000 is kind of arbitrary
+    # Marymount and Mountbatten footfall is slightly more than 6000
+    df['is_minor_mrt'] = df['is_opened'] & (df['passengers'] > 6000)
 
     # -- Prepare a helper dataframe to break down station_code into its line components.
     # Some stations may belong to multiple lines (e.g. "NS22 TE14")

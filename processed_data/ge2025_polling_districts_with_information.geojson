@@ -14,10 +14,10 @@
           "MB03"
         ],
         "nearest_minor_mrt": {
-          "name": "Aljunied",
-          "distance": 0.007361618599919059,
-          "lat": 1.3164417,
-          "long": 103.8829806
+          "name": "Dakota",
+          "distance": 0.002601914503790975,
+          "lat": 1.308289,
+          "long": 103.888253
         },
         "nearest_major_mrt": {
           "name": "Paya Lebar",
@@ -132,10 +132,10 @@
           "MB03"
         ],
         "nearest_minor_mrt": {
-          "name": "Stadium",
-          "distance": 0.008058186980080626,
-          "lat": 1.302856,
-          "long": 103.875306
+          "name": "Mountbatten",
+          "distance": 0.0023957497856731194,
+          "lat": 1.306306,
+          "long": 103.882531
         },
         "nearest_major_mrt": {
           "name": "Stadium",
@@ -561,10 +561,10 @@
           "MB08"
         ],
         "nearest_minor_mrt": {
-          "name": "Stadium",
-          "distance": 0.008085474311794438,
-          "lat": 1.302856,
-          "long": 103.875306
+          "name": "Mountbatten",
+          "distance": 0.004257328787095348,
+          "lat": 1.306306,
+          "long": 103.882531
         },
         "nearest_major_mrt": {
           "name": "Stadium",
@@ -685,10 +685,10 @@
           "MB07"
         ],
         "nearest_minor_mrt": {
-          "name": "Paya Lebar",
-          "distance": 0.013570073715405969,
-          "lat": 1.317767,
-          "long": 103.892381
+          "name": "Dakota",
+          "distance": 0.004924340866856207,
+          "lat": 1.308289,
+          "long": 103.888253
         },
         "nearest_major_mrt": {
           "name": "Paya Lebar",
@@ -840,10 +840,10 @@
           "MB07"
         ],
         "nearest_minor_mrt": {
-          "name": "Paya Lebar",
-          "distance": 0.01568661299400068,
-          "lat": 1.317767,
-          "long": 103.892381
+          "name": "Dakota",
+          "distance": 0.011906494646327082,
+          "lat": 1.308289,
+          "long": 103.888253
         },
         "nearest_major_mrt": {
           "name": "Paya Lebar",
@@ -993,10 +993,10 @@
           "MB08"
         ],
         "nearest_minor_mrt": {
-          "name": "Stadium",
-          "distance": 0.01804936733198894,
-          "lat": 1.302856,
-          "long": 103.875306
+          "name": "Dakota",
+          "distance": 0.012663668513640904,
+          "lat": 1.308289,
+          "long": 103.888253
         },
         "nearest_major_mrt": {
           "name": "Stadium",
@@ -1564,10 +1564,10 @@
           "MA13"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.010229842490114513,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok North",
+          "distance": 0.007741893362724309,
+          "lat": 1.33639,
+          "long": 103.91778
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -4984,10 +4984,10 @@
           "MB06"
         ],
         "nearest_minor_mrt": {
-          "name": "Paya Lebar",
-          "distance": 0.006779240523417803,
-          "lat": 1.317767,
-          "long": 103.892381
+          "name": "Dakota",
+          "distance": 0.006271404697635375,
+          "lat": 1.308289,
+          "long": 103.888253
         },
         "nearest_major_mrt": {
           "name": "Paya Lebar",
@@ -9406,10 +9406,10 @@
           "TM45"
         ],
         "nearest_minor_mrt": {
-          "name": "Simei",
-          "distance": 0.012356138634189153,
-          "lat": 1.3434444,
-          "long": 103.9531722
+          "name": "Tampines West",
+          "distance": 0.005325422648519067,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -9573,10 +9573,10 @@
           "EC42"
         ],
         "nearest_minor_mrt": {
-          "name": "Tanah Merah",
-          "distance": 0.012286127683692834,
-          "lat": 1.3273583,
-          "long": 103.9463444
+          "name": "Bedok Reservoir",
+          "distance": 0.004523759144424744,
+          "lat": 1.33639,
+          "long": 103.93306
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -13482,10 +13482,10 @@
           "EC28"
         ],
         "nearest_minor_mrt": {
-          "name": "Tanah Merah",
-          "distance": 0.010892682151474938,
-          "lat": 1.3273583,
-          "long": 103.9463444
+          "name": "Bedok Reservoir",
+          "distance": 0.005243833816105683,
+          "lat": 1.33639,
+          "long": 103.93306
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -14211,10 +14211,10 @@
           "EC27"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.009671331749415034,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok Reservoir",
+          "distance": 0.006485237049528197,
+          "lat": 1.33639,
+          "long": 103.93306
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -18127,10 +18127,10 @@
           "TM57"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.009717355401014415,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.0020691929164613617,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -18231,10 +18231,10 @@
           "TM56"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.00771281183122614,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.003216121825354202,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -18324,10 +18324,10 @@
           "TM55"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.005796558366320619,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.0053787141896565705,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -19076,10 +19076,10 @@
           "TM53"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.010829459346930961,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.01011297570672202,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -19160,10 +19160,10 @@
           "TM56"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.009870435192991701,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.007246691850075432,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -19218,10 +19218,10 @@
           "TM56"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.008899730485500048,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.006298797071932222,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -19292,10 +19292,10 @@
           "TM56"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.0075870551855722335,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.005467009562922582,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -19419,10 +19419,10 @@
           "TM59"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.010737628210459347,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.004102698924752507,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -19553,10 +19553,10 @@
           "TM58"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.011324102291656287,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.001296758359219444,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -19651,10 +19651,10 @@
           "TM59"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.012846491521758582,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.005118271952949262,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -19775,10 +19775,10 @@
           "TM60"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.014402848589325189,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.008770825662140023,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -19869,10 +19869,10 @@
           "TM59"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.012307565020835525,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.008788547541412253,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -20022,10 +20022,10 @@
           "TM59"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.01636280717804177,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.011517225680815434,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -27334,10 +27334,10 @@
           "EC14"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.013008001346500712,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok Reservoir",
+          "distance": 0.003520799557611279,
+          "lat": 1.33639,
+          "long": 103.93306
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -27458,10 +27458,10 @@
           "EC18"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.009231533624896504,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok Reservoir",
+          "distance": 0.0034871030291347338,
+          "lat": 1.33639,
+          "long": 103.93306
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -27536,10 +27536,10 @@
           "EC19"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.008088970014164093,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok Reservoir",
+          "distance": 0.005743177032795625,
+          "lat": 1.33639,
+          "long": 103.93306
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -27620,10 +27620,10 @@
           "EC19"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.00790533958030281,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok Reservoir",
+          "distance": 0.007598866970339966,
+          "lat": 1.33639,
+          "long": 103.93306
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -27700,10 +27700,10 @@
           "AJ07"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.010535923717324428,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok Reservoir",
+          "distance": 0.005282641332050569,
+          "lat": 1.33639,
+          "long": 103.93306
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -27794,10 +27794,10 @@
           "AJ09"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.010337196495562289,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok North",
+          "distance": 0.0076117219512810315,
+          "lat": 1.33639,
+          "long": 103.91778
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -27892,10 +27892,10 @@
           "MA01"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.010093748319950175,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok North",
+          "distance": 0.007306313711270498,
+          "lat": 1.33639,
+          "long": 103.91778
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -28021,10 +28021,10 @@
           "AJ50"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.013611738921391281,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok North",
+          "distance": 0.006735611492010145,
+          "lat": 1.33639,
+          "long": 103.91778
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -28115,10 +28115,10 @@
           "AJ50"
         ],
         "nearest_minor_mrt": {
-          "name": "Kaki Bukit",
-          "distance": 0.011579741333038336,
-          "lat": 1.334929,
-          "long": 103.908976
+          "name": "Bedok North",
+          "distance": 0.0029760291501782265,
+          "lat": 1.33639,
+          "long": 103.91778
         },
         "nearest_major_mrt": {
           "name": "Kaki Bukit",
@@ -28284,10 +28284,10 @@
           "MA01"
         ],
         "nearest_minor_mrt": {
-          "name": "Kaki Bukit",
-          "distance": 0.007601873647337779,
-          "lat": 1.334929,
-          "long": 103.908976
+          "name": "Bedok North",
+          "distance": 0.0017013708985159771,
+          "lat": 1.33639,
+          "long": 103.91778
         },
         "nearest_major_mrt": {
           "name": "Kaki Bukit",
@@ -28443,10 +28443,10 @@
           "MA13"
         ],
         "nearest_minor_mrt": {
-          "name": "Kaki Bukit",
-          "distance": 0.006996036342042294,
-          "lat": 1.334929,
-          "long": 103.908976
+          "name": "Bedok North",
+          "distance": 0.004822483426370306,
+          "lat": 1.33639,
+          "long": 103.91778
         },
         "nearest_major_mrt": {
           "name": "Kaki Bukit",
@@ -34026,10 +34026,10 @@
           "EC14"
         ],
         "nearest_minor_mrt": {
-          "name": "Kaki Bukit",
-          "distance": 0.017983877193750525,
-          "lat": 1.334929,
-          "long": 103.908976
+          "name": "Bedok Reservoir",
+          "distance": 0.009513702765167147,
+          "lat": 1.33639,
+          "long": 103.93306
         },
         "nearest_major_mrt": {
           "name": "Kaki Bukit",
@@ -40047,10 +40047,10 @@
           "TP44"
         ],
         "nearest_minor_mrt": {
-          "name": "Chinatown",
-          "distance": 0.008084783283542021,
-          "lat": 1.2849,
-          "long": 103.84396
+          "name": "Havelock",
+          "distance": 0.0030539189409126573,
+          "lat": 1.2877,
+          "long": 103.8337
         },
         "nearest_major_mrt": {
           "name": "Chinatown",
@@ -40255,10 +40255,10 @@
           "TP43"
         ],
         "nearest_minor_mrt": {
-          "name": "Tiong Bahru",
-          "distance": 0.005638120069124273,
-          "lat": 1.2860806,
-          "long": 103.8269583
+          "name": "Havelock",
+          "distance": 0.0017113970048746978,
+          "lat": 1.2877,
+          "long": 103.8337
         },
         "nearest_major_mrt": {
           "name": "Outram Park",
@@ -40576,10 +40576,10 @@
           "TP12"
         ],
         "nearest_minor_mrt": {
-          "name": "Tiong Bahru",
-          "distance": 0.005565217879103946,
-          "lat": 1.2860806,
-          "long": 103.8269583
+          "name": "Havelock",
+          "distance": 0.004532750412468165,
+          "lat": 1.2877,
+          "long": 103.8337
         },
         "nearest_major_mrt": {
           "name": "Orchard",
@@ -40793,10 +40793,10 @@
           "TP06"
         ],
         "nearest_minor_mrt": {
-          "name": "Novena",
-          "distance": 0.010218853139646532,
-          "lat": 1.3203944,
-          "long": 103.8436889
+          "name": "Stevens",
+          "distance": 0.008451787590803861,
+          "lat": 1.320069,
+          "long": 103.825997
         },
         "nearest_major_mrt": {
           "name": "Newton",
@@ -41805,10 +41805,10 @@
           "TP15"
         ],
         "nearest_minor_mrt": {
-          "name": "Orchard",
-          "distance": 0.018093348587311545,
-          "lat": 1.30306,
-          "long": 103.83139
+          "name": "Botanic Gardens",
+          "distance": 0.008578291223332944,
+          "lat": 1.322519,
+          "long": 103.815406
         },
         "nearest_major_mrt": {
           "name": "Orchard",
@@ -43917,10 +43917,10 @@
           "TP49"
         ],
         "nearest_minor_mrt": {
-          "name": "Tiong Bahru",
-          "distance": 0.005789221330127764,
-          "lat": 1.2860806,
-          "long": 103.8269583
+          "name": "Havelock",
+          "distance": 0.0037786745063801952,
+          "lat": 1.2877,
+          "long": 103.8337
         },
         "nearest_major_mrt": {
           "name": "Outram Park",
@@ -49703,10 +49703,10 @@
           "MR07"
         ],
         "nearest_minor_mrt": {
-          "name": "Upper Thomson",
-          "distance": 0.00493430827580683,
-          "lat": 1.3542,
-          "long": 103.8332
+          "name": "Marymount",
+          "distance": 0.004426163077043394,
+          "lat": 1.349078,
+          "long": 103.839492
         },
         "nearest_major_mrt": {
           "name": "Bishan",
@@ -49833,10 +49833,10 @@
           "MR07"
         ],
         "nearest_minor_mrt": {
-          "name": "Bishan",
-          "distance": 0.005236604558022219,
-          "lat": 1.351236,
-          "long": 103.848456
+          "name": "Marymount",
+          "distance": 0.004078121805350244,
+          "lat": 1.349078,
+          "long": 103.839492
         },
         "nearest_major_mrt": {
           "name": "Bishan",
@@ -80484,10 +80484,10 @@
           "HT18"
         ],
         "nearest_minor_mrt": {
-          "name": "Bukit Gombak",
-          "distance": 0.014540171398977564,
-          "lat": 1.358702,
-          "long": 103.751787
+          "name": "Hillview",
+          "distance": 0.001865504362810116,
+          "lat": 1.362472,
+          "long": 103.767389
         },
         "nearest_major_mrt": {
           "name": "Beauty World",
@@ -80643,10 +80643,10 @@
           "JR06"
         ],
         "nearest_minor_mrt": {
-          "name": "Bukit Gombak",
-          "distance": 0.014695865211094034,
-          "lat": 1.358702,
-          "long": 103.751787
+          "name": "Hillview",
+          "distance": 0.010614869552545739,
+          "lat": 1.362472,
+          "long": 103.767389
         },
         "nearest_major_mrt": {
           "name": "Beauty World",
@@ -91475,10 +91475,10 @@
           "WE40"
         ],
         "nearest_minor_mrt": {
-          "name": "Clementi",
-          "distance": 0.016035829699232142,
-          "lat": 1.3153028,
-          "long": 103.7652444
+          "name": "Dover",
+          "distance": 0.015614084370112883,
+          "lat": 1.3113139,
+          "long": 103.7786583
         },
         "nearest_major_mrt": {
           "name": "Clementi",
@@ -91585,10 +91585,10 @@
           "WE44"
         ],
         "nearest_minor_mrt": {
-          "name": "one-north",
-          "distance": 0.009517826620227418,
-          "lat": 1.299331,
-          "long": 103.787067
+          "name": "Dover",
+          "distance": 0.00797532900012364,
+          "lat": 1.3113139,
+          "long": 103.7786583
         },
         "nearest_major_mrt": {
           "name": "Kent Ridge",
@@ -91774,10 +91774,10 @@
           "WE43"
         ],
         "nearest_minor_mrt": {
-          "name": "Buona Vista",
-          "distance": 0.012762320232899645,
-          "lat": 1.306817,
-          "long": 103.790428
+          "name": "Dover",
+          "distance": 0.00204043461745574,
+          "lat": 1.3113139,
+          "long": 103.7786583
         },
         "nearest_major_mrt": {
           "name": "Buona Vista",
@@ -93245,10 +93245,10 @@
           "WE51"
         ],
         "nearest_minor_mrt": {
-          "name": "Kent Ridge",
-          "distance": 0.08683127408832868,
-          "lat": 1.293383,
-          "long": 103.784394
+          "name": "Haw Par Villa",
+          "distance": 0.07612303342879966,
+          "lat": 1.28278,
+          "long": 103.78167
         },
         "nearest_major_mrt": {
           "name": "Kent Ridge",
@@ -96745,10 +96745,10 @@
           "HT19"
         ],
         "nearest_minor_mrt": {
-          "name": "Bukit Panjang",
-          "distance": 0.017190202345304828,
-          "lat": 1.378436,
-          "long": 103.761767
+          "name": "Hillview",
+          "distance": 0.004591661079406268,
+          "lat": 1.362472,
+          "long": 103.767389
         },
         "nearest_major_mrt": {
           "name": "Beauty World",
@@ -97326,10 +97326,10 @@
           "HT24"
         ],
         "nearest_minor_mrt": {
-          "name": "Holland Village",
-          "distance": 0.02232753226692478,
-          "lat": 1.312078,
-          "long": 103.796208
+          "name": "Botanic Gardens",
+          "distance": 0.015575605466411537,
+          "lat": 1.322519,
+          "long": 103.815406
         },
         "nearest_major_mrt": {
           "name": "Beauty World",
@@ -97545,10 +97545,10 @@
           "HT24"
         ],
         "nearest_minor_mrt": {
-          "name": "Holland Village",
-          "distance": 0.023599556925703383,
-          "lat": 1.312078,
-          "long": 103.796208
+          "name": "Botanic Gardens",
+          "distance": 0.008678066625408971,
+          "lat": 1.322519,
+          "long": 103.815406
         },
         "nearest_major_mrt": {
           "name": "Buona Vista",
@@ -97763,10 +97763,10 @@
           "TP05"
         ],
         "nearest_minor_mrt": {
-          "name": "Newton",
-          "distance": 0.022782098007603356,
-          "lat": 1.312956,
-          "long": 103.838442
+          "name": "Botanic Gardens",
+          "distance": 0.005826724470703826,
+          "lat": 1.322519,
+          "long": 103.815406
         },
         "nearest_major_mrt": {
           "name": "Newton",
@@ -97886,10 +97886,10 @@
           "TP03"
         ],
         "nearest_minor_mrt": {
-          "name": "Holland Village",
-          "distance": 0.014940654976421818,
-          "lat": 1.312078,
-          "long": 103.796208
+          "name": "Botanic Gardens",
+          "distance": 0.00724160503490331,
+          "lat": 1.322519,
+          "long": 103.815406
         },
         "nearest_major_mrt": {
           "name": "Buona Vista",
@@ -98204,10 +98204,10 @@
           "TP01"
         ],
         "nearest_minor_mrt": {
-          "name": "Holland Village",
-          "distance": 0.017147633626112567,
-          "lat": 1.312078,
-          "long": 103.796208
+          "name": "Dover",
+          "distance": 0.013227758114812417,
+          "lat": 1.3113139,
+          "long": 103.7786583
         },
         "nearest_major_mrt": {
           "name": "Buona Vista",
@@ -99388,10 +99388,10 @@
           "HT39"
         ],
         "nearest_minor_mrt": {
-          "name": "Clementi",
-          "distance": 0.011954008305981551,
-          "lat": 1.3153028,
-          "long": 103.7652444
+          "name": "Dover",
+          "distance": 0.0077554634775723105,
+          "lat": 1.3113139,
+          "long": 103.7786583
         },
         "nearest_major_mrt": {
           "name": "Clementi",
@@ -99533,10 +99533,10 @@
           "TP01"
         ],
         "nearest_minor_mrt": {
-          "name": "Buona Vista",
-          "distance": 0.011471903286281157,
-          "lat": 1.306817,
-          "long": 103.790428
+          "name": "Dover",
+          "distance": 0.0052071853500121395,
+          "lat": 1.3113139,
+          "long": 103.7786583
         },
         "nearest_major_mrt": {
           "name": "Buona Vista",
@@ -99936,10 +99936,10 @@
           "WE43"
         ],
         "nearest_minor_mrt": {
-          "name": "Buona Vista",
-          "distance": 0.013119735018991332,
-          "lat": 1.306817,
-          "long": 103.790428
+          "name": "Dover",
+          "distance": 0.001145491961796469,
+          "lat": 1.3113139,
+          "long": 103.7786583
         },
         "nearest_major_mrt": {
           "name": "Buona Vista",
@@ -100665,10 +100665,10 @@
           "HT18"
         ],
         "nearest_minor_mrt": {
-          "name": "Bukit Panjang",
-          "distance": 0.017182681855326218,
-          "lat": 1.378436,
-          "long": 103.761767
+          "name": "Hillview",
+          "distance": 0.012072406559728379,
+          "lat": 1.362472,
+          "long": 103.767389
         },
         "nearest_major_mrt": {
           "name": "Beauty World",
@@ -106307,10 +106307,10 @@
           "MR06"
         ],
         "nearest_minor_mrt": {
-          "name": "Upper Thomson",
-          "distance": 0.0056510844428854685,
-          "lat": 1.3542,
-          "long": 103.8332
+          "name": "Marymount",
+          "distance": 0.0024703290050661388,
+          "lat": 1.349078,
+          "long": 103.839492
         },
         "nearest_major_mrt": {
           "name": "Bishan",
@@ -110057,10 +110057,10 @@
           "TM51"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.012769039836633363,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.012129887803966405,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -110116,10 +110116,10 @@
           "TM60"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.014355630087232434,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.012503304076436583,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -111707,10 +111707,10 @@
           "TP37"
         ],
         "nearest_minor_mrt": {
-          "name": "Orchard",
-          "distance": 0.008187152813109621,
-          "lat": 1.30306,
-          "long": 103.83139
+          "name": "Great World",
+          "distance": 0.006312626465714338,
+          "lat": 1.295,
+          "long": 103.83333
         },
         "nearest_major_mrt": {
           "name": "Orchard",
@@ -112928,10 +112928,10 @@
           "EC42"
         ],
         "nearest_minor_mrt": {
-          "name": "Bedok",
-          "distance": 0.014112975280642882,
-          "lat": 1.3240389,
-          "long": 103.9300361
+          "name": "Bedok Reservoir",
+          "distance": 0.002192202137599123,
+          "lat": 1.33639,
+          "long": 103.93306
         },
         "nearest_major_mrt": {
           "name": "Bedok",
@@ -113196,10 +113196,10 @@
           "TM57"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.01463077955373548,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.003711695290278887,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",
@@ -113272,10 +113272,10 @@
           "TM60"
         ],
         "nearest_minor_mrt": {
-          "name": "Tampines",
-          "distance": 0.015863948076734885,
-          "lat": 1.3549,
-          "long": 103.94399
+          "name": "Tampines West",
+          "distance": 0.0074103300409920775,
+          "lat": 1.345595,
+          "long": 103.938258
         },
         "nearest_major_mrt": {
           "name": "Tampines",

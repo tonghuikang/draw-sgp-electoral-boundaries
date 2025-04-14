@@ -1,11 +1,14 @@
 name,lat,long,is_minor_mrt,is_major_mrt
 Marsiling,1.4326361,103.7742833,True,False
+Dakota,1.308289,103.888253,True,False
 Bedok,1.3240389,103.9300361,True,True
+Bedok Reservoir,1.33639,103.93306,True,False
 Outram Park,1.28056,103.84,True,True
 Admiralty,1.4406889,103.8009333,True,False
 Chinatown,1.2849,103.84396,True,True
 Bugis,1.300194,103.85615,True,True
 Kallang,1.3114694,103.8714,True,False
+Botanic Gardens,1.322519,103.815406,True,False
 Beauty World,1.341133,103.775797,True,True
 Bayfront,1.2825,103.85944,True,True
 Lavender,1.3071667,103.8630083,True,False
@@ -32,17 +35,23 @@ Clementi,1.3153028,103.7652444,True,True
 Tanah Merah,1.3273583,103.9463444,True,False
 Buangkok,1.3828701,103.8931226,True,False
 Redhill,1.2897333,103.81675,True,False
+Bencoolen,1.29889,103.85028,True,False
 Joo Koon,1.3277389,103.6784861,True,False
 Khatib,1.4171667,103.8329,True,False
+Marymount,1.349078,103.839492,True,False
+Stevens,1.320069,103.825997,True,False
 Woodlands South,1.4273,103.7938,True,False
 Buona Vista,1.306817,103.790428,True,True
 HarbourFront,1.26528,103.82222,True,True
 Chinese Garden,1.3425,103.7325,True,False
+Dover,1.3113139,103.7786583,True,False
 Tai Seng,1.335833,103.887942,True,True
 Braddell,1.3403389,103.846725,True,False
 Lakeside,1.3445889,103.7211389,True,False
+Mountbatten,1.306306,103.882531,True,False
 Farrer Park,1.312314,103.854028,True,True
 Serangoon,1.3491,103.87358,True,True
+Tampines West,1.345595,103.938258,True,False
 Tanjong Pagar,1.2764389,103.8457111,True,False
 Changi Airport,1.3575,103.98833,True,False
 Potong Pasir,1.331161,103.869058,True,False
@@ -54,19 +63,23 @@ MacPherson,1.32665,103.890019,True,True
 Yew Tee,1.3969861,103.7472389,True,False
 Bukit Gombak,1.358702,103.751787,True,False
 Toa Payoh,1.33278,103.8475,True,False
+Hillview,1.362472,103.767389,True,False
 Queenstown,1.2944417,103.8061139,True,False
 Tiong Bahru,1.2860806,103.8269583,True,False
 Esplanade,1.29333,103.85556,True,False
 Dhoby Ghaut,1.2994,103.84504,True,True
+Bedok North,1.33639,103.91778,True,False
 Raffles Place,1.28389,103.85139,True,True
 Expo,1.33528,103.96194,True,True
 Kembangan,1.3209833,103.9128417,True,False
 Maxwell,1.2803,103.844,True,False
+Great World,1.295,103.83333,True,False
 Downtown,1.279458,103.852931,True,False
 Little India,1.3068002,103.8496471,True,False
 Newton,1.312956,103.838442,True,True
 Ubi,1.330011,103.899958,True,False
 Boon Keng,1.319483,103.861722,True,False
+Shenton Way,1.2775,103.8507,True,False
 Kaki Bukit,1.334929,103.908976,True,True
 Telok Ayer,1.282125,103.848472,True,False
 Canberra,1.44306,103.82972,True,False
@@ -77,8 +90,10 @@ one-north,1.299331,103.787067,True,False
 Bukit Batok,1.349073,103.749664,True,False
 Boon Lay,1.33861,103.70583,True,True
 Pioneer,1.3375778,103.6972167,True,False
+Havelock,1.2877,103.8337,True,False
 Hougang,1.371292,103.892161,True,True
 Aljunied,1.3164417,103.8829806,True,False
+Haw Par Villa,1.28278,103.78167,True,False
 Pasir Ris,1.3724111,103.9493694,True,True
 Ang Mo Kio,1.3700167,103.84945,True,True
 Woodlands,1.4370944,103.7864833,True,True
