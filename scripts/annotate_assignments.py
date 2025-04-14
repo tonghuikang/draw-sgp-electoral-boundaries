@@ -5,6 +5,7 @@ import warnings
 import sys
 import subprocess
 from typing import Dict, List, Set, Union, Optional, Any, Tuple
+from pydrake.geometry.optimization import AffineBall
 
 # Check if running in a virtual environment
 in_venv = sys.prefix != sys.base_prefix
@@ -114,7 +115,7 @@ def is_enclave(constituency_districts: List[str], all_constituencies: Dict[str, 
     return False
 
 def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
-    """Calculate compactness as area of shape over area of minimum bounding box."""
+    """Calculate compactness as area of shape over area of minimum bounding ellipsoid."""
     # Extract geometries for the constituency districts
     constituency_features: List[Dict[str, Any]] = [f for f in geojson_data['features'] 
                            if f['properties']['name'] in constituency_districts]
@@ -123,24 +124,15 @@ def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[
         return None
     
     # Create a single geometry for the constituency
-    try:
-        geometries: List[Union[MultiPolygon, Polygon]] = [shape(feature['geometry']) for feature in constituency_features]
-        constituency_geometry: Union[MultiPolygon, Polygon] = shapely.ops.unary_union(geometries)
-        
-        # Calculate area of the constituency
-        constituency_area: float = constituency_geometry.area
-        
-        min_circle = shapely.minimum_bounding_circle(constituency_geometry)
-        
-        # Compactness ratio (0 to 1, higher is more compact)
-        if min_circle and min_circle.area > 0:
-            return constituency_area / min_circle.area
-        else:
-            return 0.0
-    except Exception as e:
-        print(f"Error calculating compactness for districts {constituency_districts}: {str(e)}")
-        return 0.0
-
+    geometries: List[Union[MultiPolygon, Polygon]] = [shape(feature['geometry']) for feature in constituency_features]
+    constituency_geometry: Union[MultiPolygon, Polygon] = shapely.ops.unary_union(geometries)
+    constituency_area: float = constituency_geometry.area
+    convex_hull = shapely.convex_hull(constituency_geometry)
+    coords = np.array(convex_hull.exterior.coords)[:,:2].T  # exclude z-axie
+    ellipsoid = AffineBall.MinimumVolumeCircumscribedEllipsoid(coords, rank_tol=0.001)
+    B_matrix = ellipsoid.B()
+    ellipse_area = math.pi * abs(np.linalg.det(B_matrix))
+    return constituency_area / ellipse_area
 
 def calculate_convexity(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
     """Calculate convexity as area of shape over area of convex hull."""
