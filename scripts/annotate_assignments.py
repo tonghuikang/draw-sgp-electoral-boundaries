@@ -130,13 +130,11 @@ def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[
         # Calculate area of the constituency
         constituency_area: float = constituency_geometry.area
         
-        # Use the envelope (bounding box) for a more stable measurement
-        # This avoids the warnings from minimum_rotated_rectangle
-        min_box: Union[MultiPolygon, Polygon] = constituency_geometry.envelope
+        min_circle = shapely.minimum_bounding_circle(constituency_geometry)
         
         # Compactness ratio (0 to 1, higher is more compact)
-        if min_box and min_box.area > 0:
-            return constituency_area / min_box.area
+        if min_circle and min_circle.area > 0:
+            return constituency_area / min_circle.area
         else:
             return 0.0
     except Exception as e:
