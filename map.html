@@ -969,10 +969,6 @@
                             <td class="stats-value">${(constituencyData.elector_balance * 100).toFixed(2)}%</td>
                         </tr>
                         <tr>
-                            <td class="stats-label">Contiguous</td>
-                            <td class="stats-value">${constituencyData.contiguous ? 'Yes' : 'No'}</td>
-                        </tr>
-                        <tr>
                             <td class="stats-label">Nonenclavity</td>
                             <td class="stats-value">${(constituencyData.nonenclavity * 100).toFixed(2)}%</td>
                         </tr>
@@ -987,6 +983,14 @@
                         <tr>
                             <td class="stats-label">Relevance</td>
                             <td class="stats-value">${(constituencyData.relevance * 100).toFixed(2)}%</td>
+                        </tr>
+                        <tr>
+                            <td class="stats-label">Contiguous</td>
+                            <td class="stats-value">${constituencyData.contiguous ? 'Yes' : 'No'}</td>
+                        </tr>
+                        <tr>
+                            <td class="stats-label">Overall Score</td>
+                            <td class="stats-value">${(constituencyData.overall_score * 100).toFixed(2)}%</td>
                         </tr>
                     </table>
                 </div>

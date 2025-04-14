@@ -274,6 +274,7 @@ def main() -> None:
 
         # Check if enclave
         is_enclave_result = is_enclave(polling_districts, constituencies, adjacency_data)
+        nonenclavity = 1 if not is_enclave_result else 0
 
         # Calculate compactness
         compactness = calculate_compactness(polling_districts, geojson_data)
@@ -294,7 +295,7 @@ def main() -> None:
                 "member_size": item["member_size"],
                 "elector_size": total_elector_size,
                 "contiguous": contiguous,
-                "nonenclavity": 1 if not is_enclave_result else 0,
+                "nonenclavity": nonenclavity,
                 "compactness": compactness,
                 "convexity": convexity,
                 "relevance": relevance,
@@ -308,6 +309,16 @@ def main() -> None:
         full_member_size += result["member_size"]
     for result in results:
         result["elector_balance"] = calculate_geometric_score(result["elector_size"] / result["member_size"], full_elector_size / full_member_size)
+
+    for result in results:
+        overall_score = (
+            result["nonenclavity"]
+            + result["compactness"]
+            + result["convexity"]
+            + result["relevance"]
+            + result["elector_balance"]
+        )
+        result["overall_score"] = overall_score / 5
 
     # Use the same name as the input file for output
     input_filename = os.path.basename("assignments/official_ge_2025.json")
