@@ -124,6 +124,7 @@
         margin-bottom: 10px;
         border-bottom: 1px solid #0066FF;
         padding-bottom: 6px;
+        white-space: nowrap; /* Prevent line breaks in labels */
     }
     .stats-popup-title {
         color: #0066FF;
@@ -960,11 +961,15 @@
                             <td class="stats-value">${Number(constituencyData.elector_size).toLocaleString()}</td>
                         </tr>
                         <tr>
+                            <td class="stats-label">Elector per Member</td>
+                            <td class="stats-value">${(constituencyData.elector_size / constituencyData.member_size).toFixed(2)}</td>
+                        </tr>
+                        <tr>
                             <td class="stats-label">Contiguous</td>
                             <td class="stats-value">${constituencyData.contiguous ? 'Yes' : 'No'}</td>
                         </tr>
                         <tr>
-                            <td class="stats-label">Is Enclave</td>
+                            <td class="stats-label">Enclave</td>
                             <td class="stats-value">${constituencyData.is_enclave ? 'Yes' : 'No'}</td>
                         </tr>
                         <tr>
