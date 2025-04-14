@@ -24585,7 +24585,7 @@
           "SK05",
           "SK11",
           "SK13",
-          "SK21"
+          "SK23"
         ],
         "nearest_minor_mrt": {
           "name": "Sengkang",
@@ -24681,14 +24681,14 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK21",
+        "name": "SK23",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
           "SK12",
-          "SK19",
+          "SK20",
+          "SK21",
           "SK22",
-          "SK23",
           "SK24"
         ],
         "nearest_minor_mrt": {
@@ -24810,12 +24810,12 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK23",
+        "name": "SK22",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
           "SK21",
-          "SK22",
+          "SK23",
           "SK24",
           "SK33"
         ],
@@ -24918,13 +24918,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK22",
+        "name": "SK21",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
           "SK19",
           "SK20",
-          "SK21",
+          "SK22",
           "SK23",
           "SK34"
         ],
@@ -25016,7 +25016,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
-          "SK22",
+          "SK21",
           "SK33",
           "SK35",
           "SK39"
@@ -25169,7 +25169,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
-          "SK23",
+          "SK22",
           "SK32",
           "SK34",
           "SK39"
@@ -26062,7 +26062,7 @@
           "SK03",
           "SK12",
           "SK14",
-          "SK19"
+          "SK20"
         ],
         "nearest_minor_mrt": {
           "name": "Sengkang",
@@ -26665,7 +26665,7 @@
           "SK13",
           "SK15",
           "SK16",
-          "SK19"
+          "SK20"
         ],
         "nearest_minor_mrt": {
           "name": "Sengkang",
@@ -26756,16 +26756,16 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK19",
+        "name": "SK20",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
           "SK13",
           "SK14",
           "SK17",
-          "SK20",
+          "SK19",
           "SK21",
-          "SK22"
+          "SK23"
         ],
         "nearest_minor_mrt": {
           "name": "Sengkang",
@@ -26871,13 +26871,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SK20",
+        "name": "SK19",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
           "SK17",
-          "SK19",
-          "SK22",
+          "SK20",
+          "SK21",
           "SK35",
           "SK36"
         ],
@@ -27102,7 +27102,7 @@
         "adjacent_districts": [
           "AJ44",
           "SK17",
-          "SK20",
+          "SK19",
           "SK35",
           "SK37"
         ],
@@ -27214,7 +27214,7 @@
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 3166,
         "adjacent_districts": [
-          "SK20",
+          "SK19",
           "SK34",
           "SK36",
           "SK37"
@@ -102580,7 +102580,7 @@
         "adjacent_districts": [
           "SK10",
           "SK11",
-          "SK21",
+          "SK22",
           "SK23",
           "SK25",
           "SK31",

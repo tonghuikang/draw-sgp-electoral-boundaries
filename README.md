@@ -29,7 +29,7 @@ The landmark data is processed from
 # Inaccuracies
 
 - NS21 should be craved from NS19
-- SK18 should be craved from SK17, and also some rearrangements in SK19 to SK23
+- SK18 should be craved from SK17
 
 For now I will work with the inaccuracies. This can be fixed later.
 

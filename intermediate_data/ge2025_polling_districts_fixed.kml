@@ -6206,7 +6206,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>SK21</name>
+      <name>SK23</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -6238,7 +6238,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>SK23</name>
+      <name>SK22</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -6266,7 +6266,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>SK22</name>
+      <name>SK21</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -6740,7 +6740,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>SK19</name>
+      <name>SK20</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -6769,7 +6769,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>SK20</name>
+      <name>SK19</name>
       <styleUrl>#poly-000000-796-77-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
