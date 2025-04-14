@@ -485,6 +485,60 @@
                         // Highlight still happens on hover for both types
                         highlightFeature(layer, color);
                         L.DomEvent.stopPropagation(e);
+                        
+                        // Draw adjacency lines ONLY for polling districts on mouseover
+                        if (isPollingDistrict && pdName) {
+                            adjacencyLinesLayer.clearLayers();
+                            selectedDistrictForLines = pdName;
+                            const propsA = pollingDistrictProperties[pdName];
+                            const layerA = pollingDistrictLayers[pdName];
+
+                            if (!layerA || !layerA.getBounds().isValid() || !propsA) {
+                                console.error(`Missing data or invalid bounds for hovered district: ${pdName}`);
+                                return;
+                            }
+
+                            const centerA = layerA.getBounds().getCenter();
+                            const directAdjacentNames = propsA.adjacent_districts || [];
+
+                            // Draw A->B lines
+                            directAdjacentNames.forEach(nameB => {
+                                const layerB = pollingDistrictLayers[nameB];
+                                const propsB = pollingDistrictProperties[nameB];
+
+                                if (layerB && layerB.getBounds().isValid() && propsB) {
+                                    const centerB = layerB.getBounds().getCenter();
+                                    L.polyline([centerA, centerB], {
+                                        color: 'purple', weight: 2, opacity: 0.8, dashArray: '5, 5', className: 'adjacency-line'
+                                    }).addTo(adjacencyLinesLayer);
+
+                                    // Draw B->C lines
+                                    const secondaryAdjacentNames = propsB.adjacent_districts || [];
+                                    secondaryAdjacentNames.forEach(nameC => {
+                                        if (nameC === pdName) { return; } // Skip B->A line
+
+                                        const layerC = pollingDistrictLayers[nameC];
+                                        if (layerC && layerC.getBounds().isValid()) {
+                                            const centerC = layerC.getBounds().getCenter();
+                                            L.polyline([centerB, centerC], {
+                                                color: 'green', weight: 2, opacity: 0.7, dashArray: '2, 4', className: 'adjacency-line'
+                                            }).addTo(adjacencyLinesLayer);
+                                        } else {
+                                            console.warn(`      Could not find layer/bounds for indirect adjacent (C): ${nameC}`);
+                                        }
+                                    });
+                                } else {
+                                    console.warn(`  Could not find layer/bounds/props for direct adjacent (B): ${nameB}`);
+                                }
+                            });
+                        }
+                    },
+                    mouseout: function(e) {
+                        // Clear adjacency lines when mouse leaves the district
+                        if (isPollingDistrict) {
+                            adjacencyLinesLayer.clearLayers();
+                            selectedDistrictForLines = null;
+                        }
                     },
                     click: function(e) {
                         // Highlight happens on click
@@ -521,67 +575,10 @@
                                     .setContent(`<div><strong>Coordinates:</strong><br>${coordText}</div>`)
                                     .openOn(map);
                             }
-                                
-                            }
-
-                        // Draw adjacency lines ONLY for polling districts
-                        if (isPollingDistrict && pdName) {
-                            adjacencyLinesLayer.clearLayers();
-
-                            if (selectedDistrictForLines === pdName) {
-                                selectedDistrictForLines = null;
-                                // Optional: Close the popup if clicking the selected district again
-                                // layer.closePopup();
-                            } else {
-                                selectedDistrictForLines = pdName;
-                                const propsA = pollingDistrictProperties[pdName];
-                                const layerA = pollingDistrictLayers[pdName];
-
-                                if (!layerA || !layerA.getBounds().isValid() || !propsA) {
-                                    console.error(`Missing data or invalid bounds for clicked district: ${pdName}`);
-                                    return;
-                                }
-
-                                const centerA = layerA.getBounds().getCenter();
-                                const directAdjacentNames = propsA.adjacent_districts || [];
-
-
-                                // Draw A->B lines
-                                directAdjacentNames.forEach(nameB => {
-                                    const layerB = pollingDistrictLayers[nameB];
-                                    const propsB = pollingDistrictProperties[nameB];
-
-                                    if (layerB && layerB.getBounds().isValid() && propsB) {
-                                        const centerB = layerB.getBounds().getCenter();
-                                        L.polyline([centerA, centerB], {
-                                            color: 'purple', weight: 2, opacity: 0.8, dashArray: '5, 5', className: 'adjacency-line'
-                                        }).addTo(adjacencyLinesLayer);
-
-                                        // Draw B->C lines
-                                        const secondaryAdjacentNames = propsB.adjacent_districts || [];
-                                        secondaryAdjacentNames.forEach(nameC => {
-                                            if (nameC === pdName) { return; } // Skip B->A line
-
-                                            const layerC = pollingDistrictLayers[nameC];
-                                            if (layerC && layerC.getBounds().isValid()) {
-                                                const centerC = layerC.getBounds().getCenter();
-                                                L.polyline([centerB, centerC], {
-                                                    color: 'green', weight: 2, opacity: 0.7, dashArray: '2, 4', className: 'adjacency-line'
-                                                }).addTo(adjacencyLinesLayer);
-                                            } else {
-                                                console.warn(`      Could not find layer/bounds for indirect adjacent (C): ${nameC}`);
-                                            }
-                                        });
-                                    } else {
-                                        console.warn(`  Could not find layer/bounds/props for direct adjacent (B): ${nameB}`);
-                                    }
-                                });
-                            } // end else (new district selected)
-                        } // end if (isPollingDistrict)
+                        }
 
                         // Note: The popup bound with layer.bindPopup() will open automatically
                         // on click due to Leaflet's default behavior. No extra code needed here for that.
-
                     } // end click function
                 }); // end layer.on
             } // end onEachFeature
@@ -1089,13 +1086,11 @@
 
     // --- Global Event Handlers ---
     map.on('click', function() {
-        // Clear highlight and lines on map click
+        // Clear highlight on map click
         if (activeHighlight) {
             resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
             activeHighlight = null;
         }
-        adjacencyLinesLayer.clearLayers();
-        selectedDistrictForLines = null;
         // Popups are automatically closed by Leaflet on map click, usually.
     });
 
