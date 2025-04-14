@@ -174,6 +174,7 @@ def get_name_aliases() -> Dict[str, List[str]]:
 
     return alias_map
 
+
 def calculate_relevance(constituency_name: str, polling_districts: List[str], geojson_data: Dict[str, Any], district_to_elector_size: Dict[str, int]) -> float:
     """Calculate relevance based on constituency name and MRT station names.
 

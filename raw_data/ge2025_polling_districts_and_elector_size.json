@@ -41,7 +41,7 @@
   },
   {
     "elector_size": 33965,
-    "polling_districts": ["HN17", "HN01", "HN02", "HN03", "HN04", "HN05", "HN06", "HN07", "HN08", "HN09", "HN10"]
+    "polling_districts": ["HN01", "HN02", "HN03", "HN04", "HN05", "HN06", "HN07", "HN08", "HN09", "HN10"]
   },
   {
     "elector_size": 62424,

@@ -28,7 +28,6 @@ The landmark data is processed from
 
 # Inaccuracies
 
-- HN17 should be merged into HN01
 - NS21 should be craved from NS19
 - SK18 should be craved from SK17, and also some rearrangements in SK19 to SK23
 
@@ -38,6 +37,12 @@ For now I will work with the inaccuracies. This can be fixed later.
 # Data processing pipeline
 
 ```
+rm intermediate_data/ge2025_polling_districts_fixed.kml
+rm intermediate_data/mrt_stations_labeled.csv
+rm intermediate_data/ge2025_polling_distrct_and_estimated_elector_size.json
+rm intermediate_data/ge2025_polling_districts_to_adjacent_districts.json
+rm processed_data/ge2025_polling_districts_with_information.geojson
+rm annotations/official_ge_2025.json
 source .venv/bin/activate
 black -l 200 .
 python3 scripts/fix_kml_boundaries.py

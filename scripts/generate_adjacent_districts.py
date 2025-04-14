@@ -271,11 +271,7 @@ def find_adjacent_districts(districts):
                         elif point_coords and isinstance(point_coords, list):
                             for p in point_coords:
                                 if (
-                                    abs(corner[0] - p[0]) < 0.000001
-                                    and abs(corner[1] - p[1]) < 0.000001
-                                    and id_a in corner_districts
-                                    and id_b in corner_districts
-                                    and len(set(corner_districts)) >= 4
+                                    abs(corner[0] - p[0]) < 0.000001 and abs(corner[1] - p[1]) < 0.000001 and id_a in corner_districts and id_b in corner_districts and len(set(corner_districts)) >= 4
                                 ):  # Only exclude for quadripoints (4+ unique districts)
 
                                     # Found a quadripoint

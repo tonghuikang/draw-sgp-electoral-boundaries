@@ -78844,7 +78844,7 @@
           "CK14",
           "CK16",
           "CK17",
-          "HN17"
+          "HN11"
         ],
         "nearest_minor_mrt": {
           "name": "Choa Chu Kang",
@@ -80987,7 +80987,7 @@
           "CK17",
           "CK18",
           "CK27",
-          "HN17"
+          "HN11"
         ],
         "nearest_minor_mrt": {
           "name": "Choa Chu Kang",
@@ -81073,7 +81073,7 @@
           "CK25",
           "CK26",
           "CK28",
-          "HN17"
+          "HN11"
         ],
         "nearest_minor_mrt": {
           "name": "Choa Chu Kang",
@@ -81599,13 +81599,13 @@
       "properties": {
         "name": "HN05",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3088,
+        "elector_size": 3397,
         "adjacent_districts": [
           "HN01",
           "HN03",
           "HN04",
           "HN06",
-          "HN17"
+          "HN11"
         ],
         "nearest_minor_mrt": {
           "name": "Bukit Gombak",
@@ -81723,7 +81723,7 @@
       "properties": {
         "name": "HN04",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3088,
+        "elector_size": 3397,
         "adjacent_districts": [
           "HN01",
           "HN03",
@@ -81825,7 +81825,7 @@
       "properties": {
         "name": "HN01",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3088,
+        "elector_size": 3397,
         "adjacent_districts": [
           "CK28",
           "CK31",
@@ -81833,7 +81833,7 @@
           "HN03",
           "HN04",
           "HN05",
-          "HN17"
+          "HN11"
         ],
         "nearest_minor_mrt": {
           "name": "Bukit Gombak",
@@ -81981,7 +81981,7 @@
       "properties": {
         "name": "HN02",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3088,
+        "elector_size": 3397,
         "adjacent_districts": [
           "CK31",
           "CK32",
@@ -82074,7 +82074,7 @@
       "properties": {
         "name": "HN03",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3088,
+        "elector_size": 3397,
         "adjacent_districts": [
           "CK32",
           "CK33",
@@ -103866,7 +103866,7 @@
       "properties": {
         "name": "HN07",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3088,
+        "elector_size": 3396,
         "adjacent_districts": [
           "BK01",
           "BK02",
@@ -103996,7 +103996,7 @@
       "properties": {
         "name": "HN06",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3088,
+        "elector_size": 3396,
         "adjacent_districts": [
           "CK33",
           "HN03",
@@ -106410,131 +106410,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "HN17",
-        "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3088,
-        "adjacent_districts": [
-          "CK15",
-          "CK16",
-          "CK27",
-          "HN01",
-          "HN05",
-          "HN11"
-        ],
-        "nearest_minor_mrt": {
-          "name": "Bukit Gombak",
-          "distance": 0.014644499770772972,
-          "lat": 1.358702,
-          "long": 103.751787
-        },
-        "nearest_major_mrt": {
-          "name": "Choa Chu Kang",
-          "distance": 0.016182197933073784,
-          "lat": 1.385092,
-          "long": 103.744322
-        }
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              103.735448,
-              1.376109,
-              0.0
-            ],
-            [
-              103.73566,
-              1.375578,
-              0.0
-            ],
-            [
-              103.735614,
-              1.374388,
-              0.0
-            ],
-            [
-              103.73673,
-              1.369655,
-              0.0
-            ],
-            [
-              103.737097,
-              1.369318,
-              0.0
-            ],
-            [
-              103.737561,
-              1.369088,
-              0.0
-            ],
-            [
-              103.737958,
-              1.368635,
-              0.0
-            ],
-            [
-              103.739326,
-              1.364718,
-              0.0
-            ],
-            [
-              103.742191,
-              1.362734,
-              0.0
-            ],
-            [
-              103.744639,
-              1.365687,
-              0.0
-            ],
-            [
-              103.745412,
-              1.366343,
-              0.0
-            ],
-            [
-              103.748553,
-              1.368998,
-              0.0
-            ],
-            [
-              103.746281,
-              1.371122,
-              0.0
-            ],
-            [
-              103.745361,
-              1.371808,
-              0.0
-            ],
-            [
-              103.741334,
-              1.372684,
-              0.0
-            ],
-            [
-              103.738532,
-              1.373702,
-              0.0
-            ],
-            [
-              103.736089,
-              1.375428,
-              0.0
-            ],
-            [
-              103.735448,
-              1.376109,
-              0.0
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "WE01",
         "styleUrl": "#poly-000000-796-77-nodesc",
         "elector_size": 2930,
@@ -108045,7 +107920,7 @@
       "properties": {
         "name": "HN10",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3087,
+        "elector_size": 3396,
         "adjacent_districts": [
           "HN06",
           "HN08",
@@ -108103,7 +107978,7 @@
       "properties": {
         "name": "HN09",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3087,
+        "elector_size": 3396,
         "adjacent_districts": [
           "HN06",
           "HN08",
@@ -110725,7 +110600,7 @@
       "properties": {
         "name": "HN08",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3087,
+        "elector_size": 3396,
         "adjacent_districts": [
           "BK08",
           "HN07",
@@ -111209,6 +111084,11 @@
           "CK01",
           "CK02",
           "CK14",
+          "CK15",
+          "CK16",
+          "CK27",
+          "HN01",
+          "HN05",
           "HN06",
           "HN10",
           "HN12",
@@ -111216,7 +111096,6 @@
           "HN14",
           "HN15",
           "HN16",
-          "HN17",
           "JR42",
           "JR43",
           "JR44",
@@ -111224,13 +111103,13 @@
         ],
         "nearest_minor_mrt": {
           "name": "Lakeside",
-          "distance": 0.020569884349204537,
+          "distance": 0.021842059708892952,
           "lat": 1.3445889,
           "long": 103.7211389
         },
         "nearest_major_mrt": {
           "name": "Choa Chu Kang",
-          "distance": 0.027729831654287076,
+          "distance": 0.025659369168413472,
           "lat": 1.385092,
           "long": 103.744322
         }
@@ -111285,38 +111164,43 @@
               0.0
             ],
             [
-              103.739326,
-              1.364718,
+              103.744639,
+              1.365687,
               0.0
             ],
             [
-              103.737958,
-              1.368635,
+              103.745412,
+              1.366343,
               0.0
             ],
             [
-              103.737561,
-              1.369088,
+              103.748553,
+              1.368998,
               0.0
             ],
             [
-              103.737097,
-              1.369318,
+              103.746281,
+              1.371122,
               0.0
             ],
             [
-              103.73673,
-              1.369655,
+              103.745361,
+              1.371808,
               0.0
             ],
             [
-              103.735614,
-              1.374388,
+              103.741334,
+              1.372684,
               0.0
             ],
             [
-              103.73566,
-              1.375578,
+              103.738532,
+              1.373702,
+              0.0
+            ],
+            [
+              103.736089,
+              1.375428,
               0.0
             ],
             [
