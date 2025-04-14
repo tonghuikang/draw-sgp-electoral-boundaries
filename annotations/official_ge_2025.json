@@ -8,6 +8,7 @@
       "is_enclave": false,
       "compactness": 0.7462478875260017,
       "convexity": 0.7072159308441648,
+      "relevance": 0.4545291034824945,
       "elector_balance": 0.8801988772870745
     },
     {
@@ -18,6 +19,7 @@
       "is_enclave": false,
       "compactness": 0.899920343692822,
       "convexity": 0.958293029826618,
+      "relevance": 0.0,
       "elector_balance": 0.8949298212231064
     },
     {
@@ -28,6 +30,7 @@
       "is_enclave": false,
       "compactness": 0.7854743731234705,
       "convexity": 0.8788164671773019,
+      "relevance": 0.0,
       "elector_balance": 0.9359303716803715
     },
     {
@@ -38,6 +41,7 @@
       "is_enclave": false,
       "compactness": 0.7471419329426141,
       "convexity": 0.8647692514966211,
+      "relevance": 0.0,
       "elector_balance": 0.9417872731575305
     },
     {
@@ -48,6 +52,7 @@
       "is_enclave": false,
       "compactness": 0.916976978907634,
       "convexity": 0.7250337036392652,
+      "relevance": 0.8688541215923843,
       "elector_balance": 0.9595336568272761
     },
     {
@@ -58,6 +63,7 @@
       "is_enclave": false,
       "compactness": 0.8839688468343638,
       "convexity": 0.6929830429886022,
+      "relevance": 0.0,
       "elector_balance": 0.9853287184749322
     },
     {
@@ -68,6 +74,7 @@
       "is_enclave": false,
       "compactness": 0.8135977496017771,
       "convexity": 0.5767651803324657,
+      "relevance": 0.30558908146796715,
       "elector_balance": 0.9958519821723489
     },
     {
@@ -78,6 +85,7 @@
       "is_enclave": false,
       "compactness": 0.8386280053470931,
       "convexity": 0.6671342136026833,
+      "relevance": 0.0,
       "elector_balance": 0.9842806947195761
     },
     {
@@ -88,6 +96,7 @@
       "is_enclave": false,
       "compactness": 0.8476986912102588,
       "convexity": 0.7782845880270333,
+      "relevance": 0.3477923222246283,
       "elector_balance": 0.9436307081220358
     },
     {
@@ -98,6 +107,7 @@
       "is_enclave": false,
       "compactness": 0.7854718195284208,
       "convexity": 0.6150535198126343,
+      "relevance": 0.0,
       "elector_balance": 0.9265364339868939
     },
     {
@@ -108,6 +118,7 @@
       "is_enclave": false,
       "compactness": 0.8878868037360298,
       "convexity": 0.8808364443070849,
+      "relevance": 0.9750001974084223,
       "elector_balance": 0.8965113413784253
     },
     {
@@ -118,6 +129,7 @@
       "is_enclave": false,
       "compactness": 0.908671178496427,
       "convexity": 0.8194425081781592,
+      "relevance": 0.9473198604692571,
       "elector_balance": 0.9188883898403584
     },
     {
@@ -128,6 +140,7 @@
       "is_enclave": false,
       "compactness": 0.754239597761271,
       "convexity": 0.7019181705827026,
+      "relevance": 0.0,
       "elector_balance": 0.923868247337113
     },
     {
@@ -138,6 +151,7 @@
       "is_enclave": false,
       "compactness": 0.88305481927986,
       "convexity": 0.7315503835038782,
+      "relevance": 0.31707051410952475,
       "elector_balance": 0.951262591188293
     },
     {
@@ -148,6 +162,7 @@
       "is_enclave": false,
       "compactness": 0.6672990643499541,
       "convexity": 0.6333760875426361,
+      "relevance": 0.047614559574748826,
       "elector_balance": 0.9345304381115099
     },
     {
@@ -158,6 +173,7 @@
       "is_enclave": false,
       "compactness": 0.9197391115305413,
       "convexity": 0.8470956817750639,
+      "relevance": 0.4573674221723189,
       "elector_balance": 0.8864131567840781
     },
     {
@@ -168,6 +184,7 @@
       "is_enclave": false,
       "compactness": 0.8237630072266178,
       "convexity": 0.8825891490847594,
+      "relevance": 0.45714430739556366,
       "elector_balance": 0.8676172061429029
     },
     {
@@ -178,6 +195,7 @@
       "is_enclave": false,
       "compactness": 0.901136129013961,
       "convexity": 0.809213785174189,
+      "relevance": 0.0,
       "elector_balance": 0.8223712837231669
     },
     {
@@ -188,6 +206,7 @@
       "is_enclave": true,
       "compactness": 0.745637887478907,
       "convexity": 0.7660010062941662,
+      "relevance": 1.0,
       "elector_balance": 0.8456108322670646
     },
     {
@@ -198,6 +217,7 @@
       "is_enclave": false,
       "compactness": 0.8821833539439574,
       "convexity": 0.8422399736135473,
+      "relevance": 0.2999967634398162,
       "elector_balance": 0.9186579019282225
     },
     {
@@ -208,6 +228,7 @@
       "is_enclave": false,
       "compactness": 0.806920773793147,
       "convexity": 0.8874490244625317,
+      "relevance": 0.0,
       "elector_balance": 0.9582637810896789
     },
     {
@@ -218,6 +239,7 @@
       "is_enclave": false,
       "compactness": 0.8341717424393731,
       "convexity": 0.877329925722068,
+      "relevance": 0.0,
       "elector_balance": 0.9600464466726294
     },
     {
@@ -228,6 +250,7 @@
       "is_enclave": false,
       "compactness": 0.7483007286999228,
       "convexity": 0.6967035500107125,
+      "relevance": 1.0,
       "elector_balance": 0.9643520264966632
     },
     {
@@ -238,6 +261,7 @@
       "is_enclave": false,
       "compactness": 0.8785051929465963,
       "convexity": 0.911238771489189,
+      "relevance": 0.8182070208268358,
       "elector_balance": 0.9836009701589316
     },
     {
@@ -248,6 +272,7 @@
       "is_enclave": false,
       "compactness": 0.9013826810957898,
       "convexity": 0.8560925948644819,
+      "relevance": 0.8571536944318009,
       "elector_balance": 0.9288405673925787
     },
     {
@@ -258,6 +283,7 @@
       "is_enclave": false,
       "compactness": 0.8203336934581194,
       "convexity": 0.9353685710813378,
+      "relevance": 0.0,
       "elector_balance": 0.8982949456383167
     },
     {
@@ -268,6 +294,7 @@
       "is_enclave": false,
       "compactness": 0.6448506985782706,
       "convexity": 0.702421074210724,
+      "relevance": 0.6667060864080732,
       "elector_balance": 0.8937500953426998
     },
     {
@@ -278,6 +305,7 @@
       "is_enclave": true,
       "compactness": 0.7149797938982396,
       "convexity": 0.7759216946676594,
+      "relevance": 0.666693157434634,
       "elector_balance": 0.8866333530193308
     },
     {
@@ -288,6 +316,7 @@
       "is_enclave": true,
       "compactness": 0.8974859892099533,
       "convexity": 0.9052351778268514,
+      "relevance": 0.0,
       "elector_balance": 0.8509439472095643
     },
     {
@@ -298,6 +327,7 @@
       "is_enclave": false,
       "compactness": 0.6881602121607935,
       "convexity": 0.6775865733625065,
+      "relevance": 0.0,
       "elector_balance": 0.8385777266377696
     },
     {
@@ -308,6 +338,7 @@
       "is_enclave": false,
       "compactness": 0.8290012066848744,
       "convexity": 0.8158094134398007,
+      "relevance": 0.0,
       "elector_balance": 0.8180378218133927
     },
     {
@@ -318,6 +349,7 @@
       "is_enclave": false,
       "compactness": 0.8539882199664853,
       "convexity": 0.8233895414103815,
+      "relevance": 0.0,
       "elector_balance": 0.8016552219105878
     },
     {
@@ -328,6 +360,7 @@
       "is_enclave": false,
       "compactness": 0.8358970696534459,
       "convexity": 0.8251817812708576,
+      "relevance": 0.0,
       "elector_balance": 0.7829473497635138
     }
   ]

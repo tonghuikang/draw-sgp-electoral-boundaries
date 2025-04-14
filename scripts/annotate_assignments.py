@@ -165,6 +165,50 @@ def calculate_convexity(constituency_districts: List[str], geojson_data: Dict[st
         return 0.0
 
 
+def calculate_relevance(constituency_name: str, polling_districts: List[str], geojson_data: Dict[str, Any], district_to_elector_size: Dict[str, int]) -> float:
+    """Calculate relevance based on constituency name and MRT station names.
+    
+    Score is 1 if constituency name matches either major or minor MRT name for a polling district.
+    For double-barrel names (e.g., "Jurong East-Bukit Batok"), a match with either part counts,
+    but the final score is halved.
+    The constituency score is the elector weighted average of polling district scores.
+    """
+    total_elector_size = sum(district_to_elector_size.get(district, 0) for district in polling_districts)
+    if total_elector_size == 0:
+        return 0.0
+    
+    # Extract parts from constituency name
+    constituency_parts = [constituency_name]
+    if '-' in constituency_name:
+        constituency_parts = [part.strip() for part in constituency_name.split('-')]
+    
+    weighted_score = 0.0
+    for district in polling_districts:
+        district_score = 0.0
+        elector_size = district_to_elector_size.get(district, 0)
+        
+        # Find the district in geojson data
+        for feature in geojson_data['features']:
+            if feature['properties']['name'] == district:
+                major_mrt = feature['properties'].get('nearest_major_mrt', {}).get('name', '')
+                minor_mrt = feature['properties'].get('nearest_minor_mrt', {}).get('name', '')
+                
+                # Check if any constituency part matches either MRT station
+                if any(part in (major_mrt, minor_mrt) for part in constituency_parts):
+                    district_score = 1.0
+                break
+        
+        weighted_score += district_score * elector_size
+    
+    # Calculate elector weighted average
+    relevance_score = weighted_score / total_elector_size
+    
+    # Halve the score for double-barrel names
+    if len(constituency_parts) > 1:
+        relevance_score *= 0.5
+    
+    return relevance_score
+
 def main() -> None:
     # Load data
     assignment_data = load_json("assignments/official_ge_2025.json")
@@ -209,6 +253,9 @@ def main() -> None:
         # Calculate convexity
         convexity = calculate_convexity(polling_districts, geojson_data)
         
+        # Calculate relevance score
+        relevance = calculate_relevance(constituency_name, polling_districts, geojson_data, district_to_elector_size)
+        
         # Add to results
         results.append({
             "constituency_name": constituency_name,
@@ -218,6 +265,7 @@ def main() -> None:
             "is_enclave": is_enclave_result,
             "compactness": compactness,
             "convexity": convexity,
+            "relevance": relevance,
         })
 
     full_elector_size = 0
