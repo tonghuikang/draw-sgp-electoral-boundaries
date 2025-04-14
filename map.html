@@ -151,11 +151,11 @@
         font-weight: bold;
         padding-right: 10px; /* Space between label and value */
         text-align: left;
-        /* No width property */
+        white-space: nowrap; /* Prevent line breaks in labels */
     }
     .stats-value {
         text-align: right;
-        /* No width property */
+        white-space: nowrap; /* Prevent line breaks in values */
     }
     .stats-table tr:nth-child(even) {
         background-color: #f9f9f9;
@@ -410,12 +410,12 @@
                         // Add elector count
                         if (electorSize !== undefined && electorSize !== null) {
                             popupContent += `<tr>
-                                <td class="stats-label">Elector Count:</td>
+                                <td class="stats-label">Elector Count</td>
                                 <td class="stats-value">${Number(electorSize).toLocaleString()}</td>
                             </tr>`;
                         } else {
                             popupContent += `<tr>
-                                <td class="stats-label">Elector Count:</td>
+                                <td class="stats-label">Elector Count</td>
                                 <td class="stats-value">No data</td>
                             </tr>`;
                         }
@@ -423,7 +423,7 @@
                         // Add nearest major MRT
                         if (props.nearest_major_mrt && props.nearest_major_mrt.name) {
                             popupContent += `<tr>
-                                <td class="stats-label">Nearest Major MRT:</td>
+                                <td class="stats-label">Nearest Major MRT</td>
                                 <td class="stats-value">${props.nearest_major_mrt.name}</td>
                             </tr>`;
                         }
@@ -431,7 +431,7 @@
                         // Add nearest minor MRT
                         if (props.nearest_minor_mrt && props.nearest_minor_mrt.name) {
                             popupContent += `<tr>
-                                <td class="stats-label">Nearest Minor MRT:</td>
+                                <td class="stats-label">Nearest Minor MRT</td>
                                 <td class="stats-value">${props.nearest_minor_mrt.name}</td>
                             </tr>`;
                         }
@@ -458,7 +458,7 @@
                         // Add any available information
                         if (props.elector_size !== undefined && props.elector_size !== null) {
                             popupContent += `<tr>
-                                <td class="stats-label">Elector Count:</td>
+                                <td class="stats-label">Elector Count</td>
                                 <td class="stats-value">${Number(props.elector_size).toLocaleString()}</td>
                             </tr>`;
                         }
@@ -466,7 +466,7 @@
                         // Add nearest major MRT if available
                         if (props.nearest_major_mrt && props.nearest_major_mrt.name) {
                             popupContent += `<tr>
-                                <td class="stats-label">Nearest Major MRT:</td>
+                                <td class="stats-label">Nearest Major MRT</td>
                                 <td class="stats-value">${props.nearest_major_mrt.name}</td>
                             </tr>`;
                         }
@@ -474,7 +474,7 @@
                         // Add nearest minor MRT if available
                         if (props.nearest_minor_mrt && props.nearest_minor_mrt.name) {
                             popupContent += `<tr>
-                                <td class="stats-label">Nearest Minor MRT:</td>
+                                <td class="stats-label">Nearest Minor MRT</td>
                                 <td class="stats-value">${props.nearest_minor_mrt.name}</td>
                             </tr>`;
                         }
@@ -952,23 +952,23 @@
                     </div>
                     <table class="stats-table">
                         <tr>
-                            <td class="stats-label">Member Size:</td>
+                            <td class="stats-label">Member Size</td>
                             <td class="stats-value">${constituencyData.member_size}</td>
                         </tr>
                         <tr>
-                            <td class="stats-label">Elector Size:</td>
+                            <td class="stats-label">Elector Size</td>
                             <td class="stats-value">${Number(constituencyData.elector_size).toLocaleString()}</td>
                         </tr>
                         <tr>
-                            <td class="stats-label">Contiguous:</td>
+                            <td class="stats-label">Contiguous</td>
                             <td class="stats-value">${constituencyData.contiguous ? 'Yes' : 'No'}</td>
                         </tr>
                         <tr>
-                            <td class="stats-label">Is Enclave:</td>
+                            <td class="stats-label">Is Enclave</td>
                             <td class="stats-value">${constituencyData.is_enclave ? 'Yes' : 'No'}</td>
                         </tr>
                         <tr>
-                            <td class="stats-label">Compactness:</td>
+                            <td class="stats-label">Compactness</td>
                             <td class="stats-value">${(constituencyData.compactness * 100).toFixed(2)}%</td>
                         </tr>
                     </table>
