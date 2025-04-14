@@ -1,3 +1,4 @@
 .DS_Store
 *.ipynb_checkpoints
-!landmarks/*.csv
+!raw_data/*.csv
+!intermediate_data/*.csv
