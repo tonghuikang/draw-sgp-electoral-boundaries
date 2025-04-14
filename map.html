@@ -431,9 +431,13 @@
                         }
                     }
 
-                    // Add high-zoom label marker (unchanged)
-                    if (labelText && layer.getBounds && layer.getBounds().isValid()) {
-                        const center = layer.getBounds().getCenter();
+                    // Add high-zoom label marker at center of mass
+                    if (labelText && layer.feature && layer.feature.geometry) {
+                        // Calculate center of mass using turf.js
+                        const centroid = turf.centerOfMass(layer.feature);
+                        // Convert turf point [lng, lat] to Leaflet [lat, lng]
+                        const center = L.latLng(centroid.geometry.coordinates[1], centroid.geometry.coordinates[0]);
+                        
                         L.marker(center, {
                             icon: L.divIcon({
                                 className: 'polling-district-label',
@@ -498,7 +502,10 @@
                                 return;
                             }
 
-                            const centerA = layerA.getBounds().getCenter();
+                            // Calculate center of mass of district A using turf.js
+                            const centroidA = turf.centerOfMass(layerA.feature);
+                            // Convert turf point [lng, lat] to Leaflet [lat, lng]
+                            const centerA = L.latLng(centroidA.geometry.coordinates[1], centroidA.geometry.coordinates[0]);
                             const directAdjacentNames = propsA.adjacent_districts || [];
 
                             // Draw A->B lines
@@ -506,8 +513,12 @@
                                 const layerB = pollingDistrictLayers[nameB];
                                 const propsB = pollingDistrictProperties[nameB];
 
-                                if (layerB && layerB.getBounds().isValid() && propsB) {
-                                    const centerB = layerB.getBounds().getCenter();
+                                if (layerB && layerB.feature && propsB) {
+                                    // Calculate center of mass of district B
+                                    const centroidB = turf.centerOfMass(layerB.feature);
+                                    // Convert turf point [lng, lat] to Leaflet [lat, lng]
+                                    const centerB = L.latLng(centroidB.geometry.coordinates[1], centroidB.geometry.coordinates[0]);
+                                    
                                     L.polyline([centerA, centerB], {
                                         color: 'purple', weight: 2, opacity: 0.8, dashArray: '5, 5', className: 'adjacency-line'
                                     }).addTo(adjacencyLinesLayer);
@@ -518,17 +529,21 @@
                                         if (nameC === pdName) { return; } // Skip B->A line
 
                                         const layerC = pollingDistrictLayers[nameC];
-                                        if (layerC && layerC.getBounds().isValid()) {
-                                            const centerC = layerC.getBounds().getCenter();
+                                        if (layerC && layerC.feature) {
+                                            // Calculate center of mass of district C
+                                            const centroidC = turf.centerOfMass(layerC.feature);
+                                            // Convert turf point [lng, lat] to Leaflet [lat, lng]
+                                            const centerC = L.latLng(centroidC.geometry.coordinates[1], centroidC.geometry.coordinates[0]);
+                                            
                                             L.polyline([centerB, centerC], {
                                                 color: 'green', weight: 2, opacity: 0.7, dashArray: '2, 4', className: 'adjacency-line'
                                             }).addTo(adjacencyLinesLayer);
                                         } else {
-                                            console.warn(`      Could not find layer/bounds for indirect adjacent (C): ${nameC}`);
+                                            console.warn(`      Could not find layer/feature for indirect adjacent (C): ${nameC}`);
                                         }
                                     });
                                 } else {
-                                    console.warn(`  Could not find layer/bounds/props for direct adjacent (B): ${nameB}`);
+                                    console.warn(`  Could not find layer/feature/props for direct adjacent (B): ${nameB}`);
                                 }
                             });
                         }
