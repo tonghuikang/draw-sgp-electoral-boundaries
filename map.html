@@ -174,10 +174,6 @@
       <input type="checkbox" id="polling-toggle">
       <label for="polling-toggle">Show Polling Districts</label>
     </div>
-    <div>
-      <input type="checkbox" id="elector-count-toggle">
-      <label for="elector-count-toggle">Show Elector Count</label>
-    </div>
   </div>
   <div id="status" class="status">Initializing map...</div>
   <!-- SIMPLIFIED LEGEND -->
@@ -237,7 +233,7 @@
     let pollingDistrictLayers = {};
     let pollingDistrictProperties = {};
     let selectedDistrictForLines = null;
-    let showElectorCount = false;
+    let showElectorCount = true; // Always show elector count
 
     // --- Highlighting Logic ---
     function resetHighlightStyle(layer, defaultColor) {
@@ -405,14 +401,42 @@
                     if (pdName) {
                         labelText = pdName; // For high-zoom label
                         // Prepare content for the popup (shown on click)
-                        if (showElectorCount) {
-                            popupContent = `<b>${pdName}</b>`;
-                            if (electorSize !== undefined && electorSize !== null) {
-                                popupContent += `<br>${Number(electorSize).toLocaleString()} electors`;
-                            } else {
-                                popupContent += `<br>(No elector data)`;
-                            }
+                        popupContent = `<div class="stats-popup-container">
+                            <div class="stats-popup-header">
+                                <span class="stats-popup-title">${pdName}</span>
+                            </div>
+                            <table class="stats-table">`;
+                            
+                        // Add elector count
+                        if (electorSize !== undefined && electorSize !== null) {
+                            popupContent += `<tr>
+                                <td class="stats-label">Elector Count:</td>
+                                <td class="stats-value">${Number(electorSize).toLocaleString()}</td>
+                            </tr>`;
+                        } else {
+                            popupContent += `<tr>
+                                <td class="stats-label">Elector Count:</td>
+                                <td class="stats-value">No data</td>
+                            </tr>`;
                         }
+                        
+                        // Add nearest major MRT
+                        if (props.nearest_major_mrt && props.nearest_major_mrt.name) {
+                            popupContent += `<tr>
+                                <td class="stats-label">Nearest Major MRT:</td>
+                                <td class="stats-value">${props.nearest_major_mrt.name}</td>
+                            </tr>`;
+                        }
+                        
+                        // Add nearest minor MRT
+                        if (props.nearest_minor_mrt && props.nearest_minor_mrt.name) {
+                            popupContent += `<tr>
+                                <td class="stats-label">Nearest Minor MRT:</td>
+                                <td class="stats-value">${props.nearest_minor_mrt.name}</td>
+                            </tr>`;
+                        }
+                        
+                        popupContent += `</table></div>`;
 
                         // Store references
                         pollingDistrictLayers[pdName] = layer;
@@ -425,10 +449,38 @@
 
                     } else {
                         // Fallback for unnamed polling districts
-                        if (showElectorCount) {
-                            popupContent = 'Polling District (No Name)';
-                            layer.bindPopup(popupContent);
+                        popupContent = `<div class="stats-popup-container">
+                            <div class="stats-popup-header">
+                                <span class="stats-popup-title">Polling District (No Name)</span>
+                            </div>
+                            <table class="stats-table">`;
+                            
+                        // Add any available information
+                        if (props.elector_size !== undefined && props.elector_size !== null) {
+                            popupContent += `<tr>
+                                <td class="stats-label">Elector Count:</td>
+                                <td class="stats-value">${Number(props.elector_size).toLocaleString()}</td>
+                            </tr>`;
                         }
+                        
+                        // Add nearest major MRT if available
+                        if (props.nearest_major_mrt && props.nearest_major_mrt.name) {
+                            popupContent += `<tr>
+                                <td class="stats-label">Nearest Major MRT:</td>
+                                <td class="stats-value">${props.nearest_major_mrt.name}</td>
+                            </tr>`;
+                        }
+                        
+                        // Add nearest minor MRT if available
+                        if (props.nearest_minor_mrt && props.nearest_minor_mrt.name) {
+                            popupContent += `<tr>
+                                <td class="stats-label">Nearest Minor MRT:</td>
+                                <td class="stats-value">${props.nearest_minor_mrt.name}</td>
+                            </tr>`;
+                        }
+                        
+                        popupContent += `</table></div>`;
+                        layer.bindPopup(popupContent);
                     }
 
                     // Add high-zoom label marker at center of mass
@@ -1069,34 +1121,7 @@
             map.removeLayer(pollingLayer);
         }
     });
-    // Add event listener for elector count toggle
-    document.getElementById('elector-count-toggle').addEventListener('change', function() {
-        showElectorCount = this.checked;
-        map.closePopup(); // Close any open popups
-        
-        // Rebuild all popups based on current toggle state
-        Object.keys(pollingDistrictLayers).forEach(pdName => {
-            const layer = pollingDistrictLayers[pdName];
-            const props = pollingDistrictProperties[pdName];
-            
-            if (layer && props) {
-                // First unbind any existing popup
-                layer.unbindPopup();
-                
-                // If toggle is on, add popup
-                if (showElectorCount) {
-                    const electorSize = props.elector_size;
-                    let popupContent = `<b>${pdName}</b>`;
-                    if (electorSize !== undefined && electorSize !== null) {
-                        popupContent += `<br>${Number(electorSize).toLocaleString()} electors`;
-                    } else {
-                        popupContent += `<br>(No elector data)`;
-                    }
-                    layer.bindPopup(popupContent);
-                }
-            }
-        });
-    });
+    // Elector count toggle removed - popups are always shown
     // --- End Toggle Controls ---
 
     // --- Global Event Handlers ---
