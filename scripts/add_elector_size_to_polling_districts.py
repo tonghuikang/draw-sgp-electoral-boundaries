@@ -11,7 +11,7 @@ import kml2geojson
 input_kml = "../intermediate_data/ge2025_polling_districts_fixed.kml"
 elector_size_json = "../intermediate_data/ge2025_polling_distrct_and_estimated_elector_size.json"
 adjacent_districts_json = "../intermediate_data/ge2025_polling_districts_to_adjacent_districts.json"
-output_geojson = "../processed_data/ge2025_polling_districts_with_elector_size.geojson"
+output_geojson = "../processed_data/ge2025_polling_districts_with_information.geojson"
 
 # Ensure paths are absolute
 script_dir = os.path.dirname(os.path.abspath(__file__))

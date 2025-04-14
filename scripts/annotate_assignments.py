@@ -147,7 +147,7 @@ def main():
     adjacency_data = load_json("intermediate_data/ge2025_polling_districts_to_adjacent_districts.json")
     
     # Load GeoJSON data for compactness calculation
-    with open("processed_data/ge2025_polling_districts_with_elector_size.geojson", 'r') as f:
+    with open("processed_data/ge2025_polling_districts_with_information.geojson", 'r') as f:
         geojson_data = json.load(f)
     
     # Organize constituencies and their districts

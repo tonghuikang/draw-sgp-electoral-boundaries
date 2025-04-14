@@ -14,7 +14,7 @@ print(f'Total raw districts: {len(raw_districts)}')
 print(f'Unique raw districts: {len(set(raw_districts))}')
 
 # Load processed GeoJSON with elector size
-with open('processed_data/ge2025_polling_districts_with_elector_size.geojson') as f:
+with open('processed_data/ge2025_polling_districts_with_information.geojson') as f:
     processed = json.load(f)
 
 # Extract polling district IDs from processed data
@@ -35,16 +35,16 @@ print('Districts in processed data but missing from raw data:')
 print(sorted(missing_from_raw))
 
 # Find polling districts that are in ge2025_polling_districts_and_elector_size.json
-# but missing from the processed ge2025_polling_districts_with_elector_size.geojson
+# but missing from the processed ge2025_polling_districts_with_information.geojson
 if missing_from_processed:
     print('\nPolling districts found in ge2025_polling_districts_and_elector_size.json')
-    print('but missing from ge2025_polling_districts_with_elector_size.geojson:')
+    print('but missing from ge2025_polling_districts_with_information.geojson:')
     print(sorted(missing_from_processed))
 
-# Report on polling districts in ge2025_polling_districts_with_elector_size.geojson 
+# Report on polling districts in ge2025_polling_districts_with_information.geojson 
 # but not found in ge2025_polling_districts_and_elector_size.json
 if missing_from_raw:
-    print('\nPolling districts found in ge2025_polling_districts_with_elector_size.geojson')
+    print('\nPolling districts found in ge2025_polling_districts_with_information.geojson')
     print('but not present in ge2025_polling_districts_and_elector_size.json:')
     print(sorted(missing_from_raw))
 
@@ -60,8 +60,8 @@ if duplicates_raw:
 else:
     print("None")
 
-# Check for duplicate polling districts in ge2025_polling_districts_with_elector_size.geojson
-print("\nDuplicate polling districts in ge2025_polling_districts_with_elector_size.geojson:")
+# Check for duplicate polling districts in ge2025_polling_districts_with_information.geojson
+print("\nDuplicate polling districts in ge2025_polling_districts_with_information.geojson:")
 processed_counts = {}
 for district in processed_districts:
     processed_counts[district] = processed_counts.get(district, 0) + 1
