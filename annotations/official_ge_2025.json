@@ -6,7 +6,8 @@
       "elector_size": 161235,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.37015073487454186
+      "compactness": 0.37015073487454186,
+      "convexity": 0.7072159308441648
     },
     {
       "constituency_name": "West Coast-Jurong West",
@@ -14,7 +15,8 @@
       "elector_size": 158581,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.6066863871504304
+      "compactness": 0.6066863871504304,
+      "convexity": 0.958293029826618
     },
     {
       "constituency_name": "Nee Soon",
@@ -22,7 +24,8 @@
       "elector_size": 151634,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.5336331157789892
+      "compactness": 0.5336331157789892,
+      "convexity": 0.8788164671773019
     },
     {
       "constituency_name": "East Coast",
@@ -30,7 +33,8 @@
       "elector_size": 150691,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.4536103491678208
+      "compactness": 0.4536103491678208,
+      "convexity": 0.8647692514966211
     },
     {
       "constituency_name": "Tampines",
@@ -38,7 +42,8 @@
       "elector_size": 147904,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.3375709891276468
+      "compactness": 0.3375709891276468,
+      "convexity": 0.7250337036392652
     },
     {
       "constituency_name": "Aljunied",
@@ -46,7 +51,8 @@
       "elector_size": 144032,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.43610750188513464
+      "compactness": 0.43610750188513464,
+      "convexity": 0.6929830429886022
     },
     {
       "constituency_name": "Jurong East-Bukit Batok",
@@ -54,7 +60,8 @@
       "elector_size": 142510,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.2767059456098521
+      "compactness": 0.2767059456098521,
+      "convexity": 0.5767651803324657
     },
     {
       "constituency_name": "Tanjong Pagar",
@@ -62,7 +69,8 @@
       "elector_size": 139688,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.46190024005569674
+      "compactness": 0.46190024005569674,
+      "convexity": 0.6671342136026833
     },
     {
       "constituency_name": "Sembawang",
@@ -70,7 +78,8 @@
       "elector_size": 133919,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.371437225562971
+      "compactness": 0.371437225562971,
+      "convexity": 0.7782845880270333
     },
     {
       "constituency_name": "Marine Parade-Braddell Heights",
@@ -78,7 +87,8 @@
       "elector_size": 131493,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.2927927681834716
+      "compactness": 0.2927927681834716,
+      "convexity": 0.6150535198126343
     },
     {
       "constituency_name": "Sengkang",
@@ -86,7 +96,8 @@
       "elector_size": 126641,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.4693190120344313
+      "compactness": 0.4693190120344313,
+      "convexity": 0.8808364443070849
     },
     {
       "constituency_name": "Punggol",
@@ -94,7 +105,8 @@
       "elector_size": 123557,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.44839590018982045
+      "compactness": 0.44839590018982045,
+      "convexity": 0.8194425081781592
     },
     {
       "constituency_name": "Holland-Bukit Timah",
@@ -102,7 +114,8 @@
       "elector_size": 122891,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.4518621343656439
+      "compactness": 0.4518621343656439,
+      "convexity": 0.7019181705827026
     },
     {
       "constituency_name": "Marsiling-Yew Tee",
@@ -110,7 +123,8 @@
       "elector_size": 119352,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.4425120372264246
+      "compactness": 0.4425120372264246,
+      "convexity": 0.7315503835038782
     },
     {
       "constituency_name": "Jalan Besar",
@@ -118,7 +132,8 @@
       "elector_size": 106102,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.39982881422148375
+      "compactness": 0.39982881422148375,
+      "convexity": 0.6333760875426361
     },
     {
       "constituency_name": "Pasir Ris-Changi",
@@ -126,7 +141,8 @@
       "elector_size": 100639,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.5120921800667179
+      "compactness": 0.5120921800667179,
+      "convexity": 0.8470956817750639
     },
     {
       "constituency_name": "Bishan-Toa Payoh",
@@ -134,7 +150,8 @@
       "elector_size": 98505,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.5164276383069328
+      "compactness": 0.5164276383069328,
+      "convexity": 0.8825891490847594
     },
     {
       "constituency_name": "Chua Chu Kang",
@@ -142,7 +159,8 @@
       "elector_size": 93368,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.5155350510344633
+      "compactness": 0.5155350510344633,
+      "convexity": 0.809213785174189
     },
     {
       "constituency_name": "Bukit Panjang",
@@ -150,7 +168,8 @@
       "elector_size": 33566,
       "contiguous": true,
       "is_enclave": true,
-      "compactness": 0.27646768436670005
+      "compactness": 0.27646768436670005,
+      "convexity": 0.7660010062941662
     },
     {
       "constituency_name": "Potong Pasir",
@@ -158,7 +177,8 @@
       "elector_size": 30897,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.4852772424788823
+      "compactness": 0.4852772424788823,
+      "convexity": 0.8422399736135473
     },
     {
       "constituency_name": "Jurong Central",
@@ -166,7 +186,8 @@
       "elector_size": 29620,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.4445590147599375
+      "compactness": 0.4445590147599375,
+      "convexity": 0.8874490244625317
     },
     {
       "constituency_name": "Jalan Kayu",
@@ -174,7 +195,8 @@
       "elector_size": 29565,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.4689610229275948
+      "compactness": 0.4689610229275948,
+      "convexity": 0.877329925722068
     },
     {
       "constituency_name": "Hougang",
@@ -182,7 +204,8 @@
       "elector_size": 29433,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.30158597670010723
+      "compactness": 0.30158597670010723,
+      "convexity": 0.6967035500107125
     },
     {
       "constituency_name": "Queenstown",
@@ -190,7 +213,8 @@
       "elector_size": 28857,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.5111014247737813
+      "compactness": 0.5111014247737813,
+      "convexity": 0.911238771489189
     },
     {
       "constituency_name": "Bukit Gombak",
@@ -198,7 +222,8 @@
       "elector_size": 26364,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.6011070696271089
+      "compactness": 0.6011070696271089,
+      "convexity": 0.8560925948644819
     },
     {
       "constituency_name": "Radin Mas",
@@ -206,7 +231,8 @@
       "elector_size": 25497,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.4323066814778115
+      "compactness": 0.4323066814778115,
+      "convexity": 0.9353685710813378
     },
     {
       "constituency_name": "Yio Chu Kang",
@@ -214,7 +240,8 @@
       "elector_size": 25368,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.2613476332244039
+      "compactness": 0.2613476332244039,
+      "convexity": 0.702421074210724
     },
     {
       "constituency_name": "Pioneer",
@@ -222,7 +249,8 @@
       "elector_size": 25166,
       "contiguous": true,
       "is_enclave": true,
-      "compactness": 0.32051390801778257
+      "compactness": 0.32051390801778257,
+      "convexity": 0.7759216946676594
     },
     {
       "constituency_name": "Sembawang West",
@@ -230,7 +258,8 @@
       "elector_size": 24153,
       "contiguous": true,
       "is_enclave": true,
-      "compactness": 0.5060221605191527
+      "compactness": 0.5060221605191527,
+      "convexity": 0.9052351778268514
     },
     {
       "constituency_name": "Tampines Changkat",
@@ -238,7 +267,8 @@
       "elector_size": 23802,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.19669336696644538
+      "compactness": 0.19669336696644538,
+      "convexity": 0.6775865733625065
     },
     {
       "constituency_name": "Marymount",
@@ -246,7 +276,8 @@
       "elector_size": 23219,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.5051396680782164
+      "compactness": 0.5051396680782164,
+      "convexity": 0.8158094134398007
     },
     {
       "constituency_name": "Mountbatten",
@@ -254,7 +285,8 @@
       "elector_size": 22754,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.5394044221496527
+      "compactness": 0.5394044221496527,
+      "convexity": 0.8233895414103815
     },
     {
       "constituency_name": "Kebun Baru",
@@ -262,7 +294,8 @@
       "elector_size": 22223,
       "contiguous": true,
       "is_enclave": false,
-      "compactness": 0.32481082272211226
+      "compactness": 0.32481082272211226,
+      "convexity": 0.8251817812708576
     }
   ]
 }

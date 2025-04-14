@@ -141,6 +141,36 @@ def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[
         print(f"Error calculating compactness for districts {constituency_districts}: {str(e)}")
         return 0.0
 
+
+def calculate_convexity(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
+    """Calculate convexity as area of shape over area of convex hull."""
+    # Extract geometries for the constituency districts
+    constituency_features: List[Dict[str, Any]] = [f for f in geojson_data['features'] 
+                           if f['properties']['name'] in constituency_districts]
+    
+    if not constituency_features:
+        return None
+    
+    # Create a single geometry for the constituency
+    try:
+        geometries: List[Union[MultiPolygon, Polygon]] = [shape(feature['geometry']) for feature in constituency_features]
+        constituency_geometry: Union[MultiPolygon, Polygon] = shapely.ops.unary_union(geometries)
+        
+        # Calculate area of the constituency
+        constituency_area: float = constituency_geometry.area
+        
+        convex_hull = shapely.convex_hull(constituency_geometry)
+        
+        # Compactness ratio (0 to 1, higher is more compact)
+        if convex_hull and convex_hull.area > 0:
+            return constituency_area / convex_hull.area
+        else:
+            return 0.0
+    except Exception as e:
+        print(f"Error calculating compactness for districts {constituency_districts}: {str(e)}")
+        return 0.0
+
+
 def main() -> None:
     # Load data
     assignment_data = load_json("assignments/official_ge_2025.json")
@@ -182,6 +212,9 @@ def main() -> None:
         # Calculate total elector size for the constituency
         total_elector_size = sum(district_to_elector_size.get(district, 0) for district in polling_districts)
         
+        # Calculate convexity
+        convexity = calculate_convexity(polling_districts, geojson_data)
+        
         # Add to results
         results.append({
             "constituency_name": constituency_name,
@@ -189,7 +222,8 @@ def main() -> None:
             "elector_size": total_elector_size,
             "contiguous": contiguous,
             "is_enclave": is_enclave_result,
-            "compactness": compactness
+            "compactness": compactness,
+            "convexity": convexity,
         })
     
     # Use the same name as the input file for output
