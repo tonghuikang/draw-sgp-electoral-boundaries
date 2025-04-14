@@ -1,11 +1,11 @@
 import json
-import math
 import os
-import warnings
 import sys
-import subprocess
-from typing import Dict, List, Set, Union, Optional, Any, Tuple
-from pydrake.geometry.optimization import AffineBall
+from shapely.geometry import shape, Polygon, LineString, MultiPolygon
+import shapely.ops
+import numpy as np
+
+from typing import Dict, List, Set, Union, Optional, Any
 
 # Check if running in a virtual environment
 in_venv = sys.prefix != sys.base_prefix
@@ -13,43 +13,6 @@ if not in_venv:
     print("IMPORTANT: This script requires the shapely and numpy packages.")
     print("Please run with: source .venv/bin/activate && python scripts/annotate_assignments.py")
 
-# Attempt to import required packages
-try:
-    from shapely.geometry import shape, MultiPolygon, Polygon
-    import shapely.ops
-except ImportError:
-    if in_venv:
-        print("Installing required shapely package...")
-        try:
-            subprocess.check_call(["uv", "pip", "install", "shapely"])
-        except:
-            print("Failed to install shapely with uv. Trying with pip...")
-            subprocess.check_call([sys.executable, "-m", "pip", "install", "shapely"])
-    else:
-        sys.exit("shapely package not found. Please activate the virtual environment first.")
-    
-    # Try import again after installation
-    from shapely.geometry import shape, MultiPolygon, Polygon
-    import shapely.ops
-
-# Silence shapely warnings about oriented_envelope
-warnings.filterwarnings("ignore", category=RuntimeWarning)
-
-try:
-    import numpy as np
-except ImportError:
-    if in_venv:
-        print("Installing required numpy package...")
-        try:
-            subprocess.check_call(["uv", "pip", "install", "numpy"])
-        except:
-            print("Failed to install numpy with uv. Trying with pip...")
-            subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy"])
-    else:
-        sys.exit("numpy package not found. Please activate the virtual environment first.")
-    
-    # Try import again after installation
-    import numpy as np
 
 def load_json(filepath: str) -> Dict[str, Any]:
     with open(filepath, 'r') as f:
@@ -114,6 +77,7 @@ def is_enclave(constituency_districts: List[str], all_constituencies: Dict[str, 
     
     return False
 
+
 def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
     """Calculate compactness as area of shape over area of minimum bounding ellipsoid."""
     # Extract geometries for the constituency districts
@@ -126,13 +90,52 @@ def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[
     # Create a single geometry for the constituency
     geometries: List[Union[MultiPolygon, Polygon]] = [shape(feature['geometry']) for feature in constituency_features]
     constituency_geometry: Union[MultiPolygon, Polygon] = shapely.ops.unary_union(geometries)
-    constituency_area: float = constituency_geometry.area
-    convex_hull = shapely.convex_hull(constituency_geometry)
-    coords = np.array(convex_hull.exterior.coords)[:,:2].T  # exclude z-axie
-    ellipsoid = AffineBall.MinimumVolumeCircumscribedEllipsoid(coords, rank_tol=0.001)
-    B_matrix = ellipsoid.B()
-    ellipse_area = math.pi * abs(np.linalg.det(B_matrix))
-    return constituency_area / ellipse_area
+    # Get the centroid (center of mass) of the polygon
+    center = constituency_geometry.centroid
+    cx, cy = center.x, center.y
+
+    # Use a large constant to approximate an "infinite" line.
+    L = 1e5
+
+    chord_lengths = []
+
+    # Iterate through angles from 0 to π (unique directions)
+    for theta in np.linspace(0, np.pi, 720):
+        dx = np.cos(theta)
+        dy = np.sin(theta)
+        # Construct a long line through the centroid
+        start = (cx - L * dx, cy - L * dy)
+        end =   (cx + L * dx, cy + L * dy)
+        line = LineString([start, end])
+        
+        # Find the intersection of the line with the polygon
+        inter = constituency_geometry.intersection(line)
+        
+        chord_length = 0.0
+        if inter.is_empty:
+            chord_length = 0.0
+        elif inter.geom_type == 'LineString':
+            chord_length = inter.length
+        elif inter.geom_type == 'MultiLineString':
+            # Probably should also sum of the nonintersecting
+            chord_length = sum(segment.length for segment in inter.geoms)
+        elif inter.geom_type == 'Point':
+            chord_length = 0.0
+
+        chord_lengths.append(chord_length)
+
+    mean_chord_length = np.median(chord_lengths)
+    compactness = []
+    for chord_length in chord_lengths:
+        if chord_length == 0:
+            compactness.append(0)
+        elif chord_length >= mean_chord_length:
+            ratio_difference = mean_chord_length / chord_length
+        else:
+            ratio_difference = chord_length / mean_chord_length
+        compactness.append(ratio_difference)
+
+    return sum(compactness) / len(compactness)
 
 def calculate_convexity(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
     """Calculate convexity as area of shape over area of convex hull."""
