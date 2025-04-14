@@ -965,6 +965,10 @@
                             <td class="stats-value">${(constituencyData.elector_size / constituencyData.member_size).toFixed(2)}</td>
                         </tr>
                         <tr>
+                            <td class="stats-label">Elector Balance</td>
+                            <td class="stats-value">${(constituencyData.elector_balance * 100).toFixed(2)}%</td>
+                        </tr>
+                        <tr>
                             <td class="stats-label">Contiguous</td>
                             <td class="stats-value">${constituencyData.contiguous ? 'Yes' : 'No'}</td>
                         </tr>

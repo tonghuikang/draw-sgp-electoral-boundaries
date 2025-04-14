@@ -77,6 +77,11 @@ def is_enclave(constituency_districts: List[str], all_constituencies: Dict[str, 
     
     return False
 
+def calculate_geometric_score(a,b):
+    if b == 0 or a == 0:
+        return 0
+    return min(a/b, b/a)
+
 
 def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
     """Calculate compactness as area of shape over area of minimum bounding ellipsoid."""
@@ -127,14 +132,8 @@ def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[
     mean_chord_length = np.median(chord_lengths)
     compactness = []
     for chord_length in chord_lengths:
-        if chord_length == 0:
-            compactness.append(0)
-        elif chord_length >= mean_chord_length:
-            ratio_difference = mean_chord_length / chord_length
-        else:
-            ratio_difference = chord_length / mean_chord_length
-        compactness.append(ratio_difference)
-
+        geometric_score = calculate_geometric_score(chord_length, mean_chord_length)
+        compactness.append(geometric_score)
     return sum(compactness) / len(compactness)
 
 def calculate_convexity(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
@@ -188,7 +187,7 @@ def main() -> None:
         constituency_name = item["constituency_name"]
         polling_districts = item["polling_districts"]
         constituencies[constituency_name] = polling_districts
-    
+
     # Analyze each constituency
     results: List[Dict[str, Any]] = []
     for item in assignment_data["assignment"]:
@@ -220,7 +219,18 @@ def main() -> None:
             "compactness": compactness,
             "convexity": convexity,
         })
-    
+
+    full_elector_size = 0
+    full_member_size = 0
+    for result in results:
+        full_elector_size += result["elector_size"]
+        full_member_size += result["member_size"]
+    for result in results:
+        result["elector_balance"] = calculate_geometric_score(
+            result["elector_size"] / result["member_size"],
+            full_elector_size / full_member_size
+        )
+
     # Use the same name as the input file for output
     input_filename = os.path.basename("assignments/official_ge_2025.json")
     output_path = os.path.join("annotations", input_filename)
