@@ -973,8 +973,8 @@
                             <td class="stats-value">${constituencyData.contiguous ? 'Yes' : 'No'}</td>
                         </tr>
                         <tr>
-                            <td class="stats-label">Enclave</td>
-                            <td class="stats-value">${constituencyData.is_enclave ? 'Yes' : 'No'}</td>
+                            <td class="stats-label">Nonenclavity</td>
+                            <td class="stats-value">${(constituencyData.nonenclavity * 100).toFixed(2)}%</td>
                         </tr>
                         <tr>
                             <td class="stats-label">Compactness</td>

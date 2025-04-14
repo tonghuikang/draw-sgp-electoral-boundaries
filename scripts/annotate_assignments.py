@@ -294,7 +294,7 @@ def main() -> None:
                 "member_size": item["member_size"],
                 "elector_size": total_elector_size,
                 "contiguous": contiguous,
-                "is_enclave": is_enclave_result,
+                "nonenclavity": 1 if not is_enclave_result else 0,
                 "compactness": compactness,
                 "convexity": convexity,
                 "relevance": relevance,
