@@ -179,8 +179,8 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
     """Calculate relevance based on constituency name and MRT station names.
 
     Score is 1 if constituency name matches either major or minor MRT name for a polling district.
-    For double-barrel names (e.g., "Jurong East-Bukit Batok"), a match with either part counts,
-    but the final score is halved.
+    For double-barrel names (e.g., "Jurong East-Bukit Batok"),
+    the minimum relevance score of either part is used.
     The constituency score is the elector weighted average of polling district scores.
 
     Considers name aliases as defined in raw_data/name_aliases.json.
@@ -197,47 +197,47 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
     if "-" in constituency_name:
         constituency_parts = [part.strip() for part in constituency_name.split("-")]
 
-    # Add aliases for each part
-    constituency_parts_with_aliases = set(constituency_parts)
+    # Calculate relevance for each part separately
+    part_relevance_scores = []
     for part in constituency_parts:
+        part_with_aliases = [part]
         if part in name_aliases:
-            constituency_parts_with_aliases.update(name_aliases[part])
+            part_with_aliases.extend(name_aliases[part])
 
-    weighted_score = 0.0
-    for district in polling_districts:
-        district_score = 0.0
-        elector_size = district_to_elector_size.get(district, 0)
+        # Calculate the relevance score for this part
+        part_weighted_score = 0.0
+        for district in polling_districts:
+            district_score = 0.0
+            elector_size = district_to_elector_size.get(district, 0)
 
-        # Find the district in geojson data
-        for feature in geojson_data["features"]:
-            if feature["properties"]["name"] == district:
-                major_mrt = feature["properties"].get("nearest_major_mrt", {}).get("name", "")
-                minor_mrt = feature["properties"].get("nearest_minor_mrt", {}).get("name", "")
+            # Find the district in geojson data
+            for feature in geojson_data["features"]:
+                if feature["properties"]["name"] == district:
+                    major_mrt = feature["properties"].get("nearest_major_mrt", {}).get("name", "")
+                    minor_mrt = feature["properties"].get("nearest_minor_mrt", {}).get("name", "")
 
-                # Add aliases for MRT station names
-                major_mrt_aliases = [major_mrt]
-                if major_mrt in name_aliases:
-                    major_mrt_aliases.extend(name_aliases[major_mrt])
+                    # Add aliases for MRT station names
+                    major_mrt_aliases = [major_mrt]
+                    if major_mrt in name_aliases:
+                        major_mrt_aliases.extend(name_aliases[major_mrt])
 
-                minor_mrt_aliases = [minor_mrt]
-                if minor_mrt in name_aliases:
-                    minor_mrt_aliases.extend(name_aliases[minor_mrt])
+                    minor_mrt_aliases = [minor_mrt]
+                    if minor_mrt in name_aliases:
+                        minor_mrt_aliases.extend(name_aliases[minor_mrt])
 
-                # Check if any constituency part matches any MRT station alias
-                if any(part in major_mrt_aliases or part in minor_mrt_aliases for part in constituency_parts_with_aliases):
-                    district_score = 1.0
-                break
+                    # Check if this part matches any MRT station alias
+                    if any(p in major_mrt_aliases or p in minor_mrt_aliases for p in part_with_aliases):
+                        district_score = 1.0
+                    break
 
-        weighted_score += district_score * elector_size
+            part_weighted_score += district_score * elector_size
 
-    # Calculate elector weighted average
-    relevance_score = weighted_score / total_elector_size
+        # Calculate elector weighted average for this part
+        part_relevance_scores.append(part_weighted_score / total_elector_size)
 
-    # Halve the score for double-barrel names
-    if len(constituency_parts) > 1:
-        relevance_score *= 0.5
-
-    return relevance_score
+    # For single-part names, just return the score
+    # For double-barrel names, return the minimum relevance of the parts
+    return max(part_relevance_scores) if part_relevance_scores else 0.0
 
 
 def main() -> None:

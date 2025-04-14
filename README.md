@@ -42,7 +42,7 @@ rm intermediate_data/mrt_stations_labeled.csv
 rm intermediate_data/ge2025_polling_distrct_and_estimated_elector_size.json
 rm intermediate_data/ge2025_polling_districts_to_adjacent_districts.json
 rm processed_data/ge2025_polling_districts_with_information.geojson
-rm annotations/official_ge_2025.json
+rm annotations/*.json
 source .venv/bin/activate
 black -l 200 .
 python3 scripts/fix_kml_boundaries.py
