@@ -150,6 +150,13 @@ def main() -> None:
     with open("processed_data/ge2025_polling_districts_with_information.geojson", 'r') as f:
         geojson_data = json.load(f)
     
+    # Create mapping of district name to elector size
+    district_to_elector_size: Dict[str, int] = {}
+    for feature in geojson_data['features']:
+        district_name = feature['properties']['name']
+        if 'elector_size' in feature['properties']:
+            district_to_elector_size[district_name] = feature['properties']['elector_size']
+    
     # Organize constituencies and their districts
     constituencies: Dict[str, List[str]] = {}
     for item in assignment_data["assignment"]:
@@ -172,11 +179,14 @@ def main() -> None:
         # Calculate compactness
         compactness = calculate_compactness(polling_districts, geojson_data)
         
+        # Calculate total elector size for the constituency
+        total_elector_size = sum(district_to_elector_size.get(district, 0) for district in polling_districts)
+        
         # Add to results
         results.append({
             "constituency_name": constituency_name,
             "member_size": item["member_size"],
-            "elector_size": item["elector_size"],
+            "elector_size": total_elector_size,
             "contiguous": contiguous,
             "is_enclave": is_enclave_result,
             "compactness": compactness

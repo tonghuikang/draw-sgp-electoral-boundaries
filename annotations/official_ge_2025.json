@@ -3,7 +3,7 @@
     {
       "constituency_name": "Ang Mo Kio",
       "member_size": 5,
-      "elector_size": "161235",
+      "elector_size": 161235,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.37015073487454186
@@ -11,7 +11,7 @@
     {
       "constituency_name": "West Coast-Jurong West",
       "member_size": 5,
-      "elector_size": "158581",
+      "elector_size": 158581,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.6066863871504304
@@ -19,7 +19,7 @@
     {
       "constituency_name": "Nee Soon",
       "member_size": 5,
-      "elector_size": "151634",
+      "elector_size": 151634,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.5336331157789892
@@ -27,7 +27,7 @@
     {
       "constituency_name": "East Coast",
       "member_size": 5,
-      "elector_size": "150691",
+      "elector_size": 150691,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.4536103491678208
@@ -35,7 +35,7 @@
     {
       "constituency_name": "Tampines",
       "member_size": 5,
-      "elector_size": "147904",
+      "elector_size": 147904,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.3375709891276468
@@ -43,7 +43,7 @@
     {
       "constituency_name": "Aljunied",
       "member_size": 5,
-      "elector_size": "144032",
+      "elector_size": 144032,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.43610750188513464
@@ -51,7 +51,7 @@
     {
       "constituency_name": "Jurong East-Bukit Batok",
       "member_size": 5,
-      "elector_size": "142510",
+      "elector_size": 142510,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.2767059456098521
@@ -59,7 +59,7 @@
     {
       "constituency_name": "Tanjong Pagar",
       "member_size": 5,
-      "elector_size": "139688",
+      "elector_size": 139688,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.46190024005569674
@@ -67,7 +67,7 @@
     {
       "constituency_name": "Sembawang",
       "member_size": 5,
-      "elector_size": "133919",
+      "elector_size": 133919,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.371437225562971
@@ -75,7 +75,7 @@
     {
       "constituency_name": "Marine Parade-Braddell Heights",
       "member_size": 5,
-      "elector_size": "131493",
+      "elector_size": 131493,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.2927927681834716
@@ -83,7 +83,7 @@
     {
       "constituency_name": "Sengkang",
       "member_size": 4,
-      "elector_size": "126641",
+      "elector_size": 126641,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.4693190120344313
@@ -91,7 +91,7 @@
     {
       "constituency_name": "Punggol",
       "member_size": 4,
-      "elector_size": "123557",
+      "elector_size": 123557,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.44839590018982045
@@ -99,7 +99,7 @@
     {
       "constituency_name": "Holland-Bukit Timah",
       "member_size": 4,
-      "elector_size": "122891",
+      "elector_size": 122891,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.4518621343656439
@@ -107,7 +107,7 @@
     {
       "constituency_name": "Marsiling-Yew Tee",
       "member_size": 4,
-      "elector_size": "119352",
+      "elector_size": 119352,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.4425120372264246
@@ -115,7 +115,7 @@
     {
       "constituency_name": "Jalan Besar",
       "member_size": 4,
-      "elector_size": "106102",
+      "elector_size": 106102,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.39982881422148375
@@ -123,7 +123,7 @@
     {
       "constituency_name": "Pasir Ris-Changi",
       "member_size": 4,
-      "elector_size": "100639",
+      "elector_size": 100639,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.5120921800667179
@@ -131,7 +131,7 @@
     {
       "constituency_name": "Bishan-Toa Payoh",
       "member_size": 4,
-      "elector_size": "98505",
+      "elector_size": 98505,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.5164276383069328
@@ -139,7 +139,7 @@
     {
       "constituency_name": "Chua Chu Kang",
       "member_size": 4,
-      "elector_size": "93368",
+      "elector_size": 93368,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.5155350510344633
@@ -147,7 +147,7 @@
     {
       "constituency_name": "Bukit Panjang",
       "member_size": 1,
-      "elector_size": "33566",
+      "elector_size": 33566,
       "contiguous": true,
       "is_enclave": true,
       "compactness": 0.27646768436670005
@@ -155,7 +155,7 @@
     {
       "constituency_name": "Potong Pasir",
       "member_size": 1,
-      "elector_size": "30897",
+      "elector_size": 30897,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.4852772424788823
@@ -163,7 +163,7 @@
     {
       "constituency_name": "Jurong Central",
       "member_size": 1,
-      "elector_size": "29620",
+      "elector_size": 29620,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.4445590147599375
@@ -171,7 +171,7 @@
     {
       "constituency_name": "Jalan Kayu",
       "member_size": 1,
-      "elector_size": "29565",
+      "elector_size": 29565,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.4689610229275948
@@ -179,7 +179,7 @@
     {
       "constituency_name": "Hougang",
       "member_size": 1,
-      "elector_size": "29433",
+      "elector_size": 29433,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.30158597670010723
@@ -187,7 +187,7 @@
     {
       "constituency_name": "Queenstown",
       "member_size": 1,
-      "elector_size": "28857",
+      "elector_size": 28857,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.5111014247737813
@@ -195,7 +195,7 @@
     {
       "constituency_name": "Bukit Gombak",
       "member_size": 1,
-      "elector_size": "26364",
+      "elector_size": 26364,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.6011070696271089
@@ -203,7 +203,7 @@
     {
       "constituency_name": "Radin Mas",
       "member_size": 1,
-      "elector_size": "25497",
+      "elector_size": 25497,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.4323066814778115
@@ -211,7 +211,7 @@
     {
       "constituency_name": "Yio Chu Kang",
       "member_size": 1,
-      "elector_size": "25368",
+      "elector_size": 25368,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.2613476332244039
@@ -219,7 +219,7 @@
     {
       "constituency_name": "Pioneer",
       "member_size": 1,
-      "elector_size": "25166",
+      "elector_size": 25166,
       "contiguous": true,
       "is_enclave": true,
       "compactness": 0.32051390801778257
@@ -227,7 +227,7 @@
     {
       "constituency_name": "Sembawang West",
       "member_size": 1,
-      "elector_size": "24153",
+      "elector_size": 24153,
       "contiguous": true,
       "is_enclave": true,
       "compactness": 0.5060221605191527
@@ -235,7 +235,7 @@
     {
       "constituency_name": "Tampines Changkat",
       "member_size": 1,
-      "elector_size": "23802",
+      "elector_size": 23802,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.19669336696644538
@@ -243,7 +243,7 @@
     {
       "constituency_name": "Marymount",
       "member_size": 1,
-      "elector_size": "23219",
+      "elector_size": 23219,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.5051396680782164
@@ -251,7 +251,7 @@
     {
       "constituency_name": "Mountbatten",
       "member_size": 1,
-      "elector_size": "22754",
+      "elector_size": 22754,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.5394044221496527
@@ -259,7 +259,7 @@
     {
       "constituency_name": "Kebun Baru",
       "member_size": 1,
-      "elector_size": "22223",
+      "elector_size": 22223,
       "contiguous": true,
       "is_enclave": false,
       "compactness": 0.32481082272211226
