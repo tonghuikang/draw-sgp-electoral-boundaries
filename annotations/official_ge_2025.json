@@ -173,24 +173,24 @@
       "member_size": 4,
       "elector_size": 106102,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.8405797101449277,
       "compactness": 0.6672990643499541,
       "convexity": 0.6333760875426361,
       "relevance": 0.047614559574748826,
       "elector_balance": 0.9345304381115099,
-      "overall_score": 0.6565640299157698
+      "overall_score": 0.6246799719447553
     },
     {
       "constituency_name": "Pasir Ris-Changi",
       "member_size": 4,
       "elector_size": 100639,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.5277777777777777,
       "compactness": 0.9197391115305413,
       "convexity": 0.8470956817750639,
       "relevance": 0.9147348443446378,
       "elector_balance": 0.8864131567840781,
-      "overall_score": 0.9135965588868643
+      "overall_score": 0.8191521144424199
     },
     {
       "constituency_name": "Bishan-Toa Payoh",
@@ -221,7 +221,7 @@
       "member_size": 1,
       "elector_size": 33566,
       "contiguous": true,
-      "nonenclavity": 0,
+      "nonenclavity": 0.0,
       "compactness": 0.745637887478907,
       "convexity": 0.7660010062941662,
       "relevance": 0.9166716320085802,
@@ -233,12 +233,12 @@
       "member_size": 1,
       "elector_size": 30897,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.5714285714285714,
       "compactness": 0.8821833539439574,
       "convexity": 0.8422399736135473,
       "relevance": 0.2999967634398162,
       "elector_balance": 0.9186579019282225,
-      "overall_score": 0.7886155985851087
+      "overall_score": 0.7029013128708229
     },
     {
       "constituency_name": "Jurong Central",
@@ -257,60 +257,60 @@
       "member_size": 1,
       "elector_size": 29565,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.9285714285714286,
       "compactness": 0.8341717424393731,
       "convexity": 0.877329925722068,
       "relevance": 0.0,
       "elector_balance": 0.9600464466726294,
-      "overall_score": 0.734309622966814
+      "overall_score": 0.7200239086810998
     },
     {
       "constituency_name": "Hougang",
       "member_size": 1,
       "elector_size": 29433,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.22222222222222232,
       "compactness": 0.7483007286999228,
       "convexity": 0.6967035500107125,
       "relevance": 1.0,
       "elector_balance": 0.9643520264966632,
-      "overall_score": 0.8818712610414596
+      "overall_score": 0.7263157054859042
     },
     {
       "constituency_name": "Queenstown",
       "member_size": 1,
       "elector_size": 28857,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.3999999999999999,
       "compactness": 0.8785051929465963,
       "convexity": 0.911238771489189,
       "relevance": 0.8182070208268358,
       "elector_balance": 0.9836009701589316,
-      "overall_score": 0.9183103910843105
+      "overall_score": 0.7983103910843106
     },
     {
       "constituency_name": "Bukit Gombak",
       "member_size": 1,
       "elector_size": 26364,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.8571428571428572,
       "compactness": 0.9013826810957898,
       "convexity": 0.8560925948644819,
       "relevance": 0.5714231527840995,
       "elector_balance": 0.9288405673925787,
-      "overall_score": 0.8515477992273899
+      "overall_score": 0.8229763706559614
     },
     {
       "constituency_name": "Radin Mas",
       "member_size": 1,
       "elector_size": 25497,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.37037037037037046,
       "compactness": 0.8203336934581194,
       "convexity": 0.9353685710813378,
       "relevance": 0.0,
       "elector_balance": 0.8982949456383167,
-      "overall_score": 0.7307994420355548
+      "overall_score": 0.6048735161096289
     },
     {
       "constituency_name": "Yio Chu Kang",
@@ -329,7 +329,7 @@
       "member_size": 1,
       "elector_size": 25166,
       "contiguous": true,
-      "nonenclavity": 0,
+      "nonenclavity": 0.0,
       "compactness": 0.7149797938982396,
       "convexity": 0.7759216946676594,
       "relevance": 0.666693157434634,
@@ -341,7 +341,7 @@
       "member_size": 1,
       "elector_size": 24153,
       "contiguous": true,
-      "nonenclavity": 0,
+      "nonenclavity": 0.0,
       "compactness": 0.8974859892099533,
       "convexity": 0.9052351778268514,
       "relevance": 0.0,
@@ -353,48 +353,48 @@
       "member_size": 1,
       "elector_size": 23802,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.925925925925926,
       "compactness": 0.6881602121607935,
       "convexity": 0.6775865733625065,
       "relevance": 0.0,
       "elector_balance": 0.8385777266377696,
-      "overall_score": 0.640864902432214
+      "overall_score": 0.6260500876173991
     },
     {
       "constituency_name": "Marymount",
       "member_size": 1,
       "elector_size": 23219,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.33333333333333326,
       "compactness": 0.8290012066848744,
       "convexity": 0.8158094134398007,
       "relevance": 0.14285714285714285,
       "elector_balance": 0.8180378218133927,
-      "overall_score": 0.7211411169590421
+      "overall_score": 0.5878077836257087
     },
     {
       "constituency_name": "Mountbatten",
       "member_size": 1,
       "elector_size": 22754,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.8333333333333333,
       "compactness": 0.8539882199664853,
       "convexity": 0.8233895414103815,
       "relevance": 0.2857519557000967,
       "elector_balance": 0.8016552219105878,
-      "overall_score": 0.7529569877975103
+      "overall_score": 0.719623654464177
     },
     {
       "constituency_name": "Kebun Baru",
       "member_size": 1,
       "elector_size": 22223,
       "contiguous": true,
-      "nonenclavity": 1,
+      "nonenclavity": 0.9583333333333335,
       "compactness": 0.8358970696534459,
       "convexity": 0.8251817812708576,
       "relevance": 0.0,
       "elector_balance": 0.7829473497635138,
-      "overall_score": 0.6888052401375634
+      "overall_score": 0.6804719068042301
     }
   ]
 }

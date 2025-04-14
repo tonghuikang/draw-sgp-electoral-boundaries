@@ -4,6 +4,7 @@ import sys
 from shapely.geometry import shape, Polygon, LineString, MultiPolygon
 import shapely.ops
 import numpy as np
+from collections import Counter
 
 from typing import Dict, List, Set, Union, Optional, Any
 
@@ -49,35 +50,59 @@ def is_contiguous(constituency_districts: List[str], adjacency_data: Dict[str, L
     return len(visited) == len(constituency_districts)
 
 
-def is_enclave(constituency_districts: List[str], all_constituencies: Dict[str, List[str]], adjacency_data: Dict[str, List[str]]) -> bool:
-    """Check if a constituency is an enclave of another constituency."""
+def calculate_nonenclavity(constituency_districts: List[str], all_constituencies: Dict[str, List[str]], adjacency_data: Dict[str, List[str]]) -> float:
+    """
+    Calculate nonenclavity as 1 minus (max adjacent constituency count / number of non-enclave polling districts).
+    For each polling district that is not an enclave in the constituency, count the adjacent constituencies.
+    """
     if not constituency_districts:
-        return False
+        return 0.0
 
-    # Get all districts outside this constituency
-    other_constituencies: Dict[str, List[str]] = {}
-    for constituency, districts in all_constituencies.items():
-        if set(districts) != set(constituency_districts):
-            other_constituencies[constituency] = districts
+    # Find districts that are not enclaves (have external adjacents)
+    non_enclave_count = 0
 
-    # Get all neighboring districts
-    neighboring_districts: Set[str] = set()
+    # Track count of adjacent districts by constituency
+    adjacent_constituency_counts = Counter()
+
     for district in constituency_districts:
-        if district in adjacency_data:
-            for adjacent in adjacency_data[district]:
-                if adjacent not in constituency_districts:
-                    neighboring_districts.add(adjacent)
+        # Skip if district has no adjacency data
+        if district not in adjacency_data:
+            continue
 
-    # If all neighboring districts belong to the same constituency, this is an enclave
-    if not neighboring_districts:
-        return False  # Isolated, not an enclave
+        # Get adjacent districts outside the constituency
+        external_adjacents = [adj for adj in adjacency_data[district] if adj not in constituency_districts]
 
-    # Check if all neighboring districts are in the same constituency
-    for constituency, districts in other_constituencies.items():
-        if neighboring_districts.issubset(set(districts)):
-            return True
+        # If no external adjacents, this is an enclave district
+        if not external_adjacents:
+            continue
 
-    return False
+        non_enclave_count += 1
+
+        # Count which constituencies the adjacents belong to
+        adjacent_constituencies = set()
+        for adjacent in external_adjacents:
+            # Find which constituency this adjacent district belongs to
+            for constituency, districts in all_constituencies.items():
+                if adjacent in districts:
+                    adjacent_constituencies.add(constituency)
+
+        for adjacent_constituency in adjacent_constituencies:
+            adjacent_constituency_counts[adjacent_constituency] += 1 / len(adjacent_constituencies)
+
+    # If all districts are enclaves or there are no districts, return 0
+    if non_enclave_count == 0:
+        return 0.0
+
+    # Get the maximum adjacent constituency count
+    max_adjacent_count = max(adjacent_constituency_counts.values())
+
+    # Calculate the ratio and then the nonenclavity score
+    enclavity = max_adjacent_count / non_enclave_count
+    allowed_enclavity = 0.5
+    if enclavity < allowed_enclavity:
+        return 1
+
+    return 1 - (enclavity - allowed_enclavity) / allowed_enclavity
 
 
 def calculate_geometric_score(a, b):
@@ -272,9 +297,8 @@ def main() -> None:
         # Check if contiguous
         contiguous = is_contiguous(polling_districts, adjacency_data)
 
-        # Check if enclave
-        is_enclave_result = is_enclave(polling_districts, constituencies, adjacency_data)
-        nonenclavity = 1 if not is_enclave_result else 0
+        # Calculate nonenclavity
+        nonenclavity = calculate_nonenclavity(polling_districts, constituencies, adjacency_data)
 
         # Calculate compactness
         compactness = calculate_compactness(polling_districts, geojson_data)
@@ -311,13 +335,7 @@ def main() -> None:
         result["elector_balance"] = calculate_geometric_score(result["elector_size"] / result["member_size"], full_elector_size / full_member_size)
 
     for result in results:
-        overall_score = (
-            result["nonenclavity"]
-            + result["compactness"]
-            + result["convexity"]
-            + result["relevance"]
-            + result["elector_balance"]
-        )
+        overall_score = result["nonenclavity"] + result["compactness"] + result["convexity"] + result["relevance"] + result["elector_balance"]
         result["overall_score"] = overall_score / 5
 
     # Use the same name as the input file for output
