@@ -1,0 +1,15 @@
+[project]
+name = "electoral-boundaries"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "drake>=1.40.0",
+    "fiona>=1.10.1",
+    "kml2geojson>=5.1.0",
+    "lxml>=5.3.2",
+    "numpy>=2.2.4",
+    "pandas>=2.2.3",
+    "shapely>=2.1.0",
+]
