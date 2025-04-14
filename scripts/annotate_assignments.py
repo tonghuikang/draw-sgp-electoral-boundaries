@@ -165,6 +165,23 @@ def calculate_convexity(constituency_districts: List[str], geojson_data: Dict[st
         return 0.0
 
 
+def get_name_aliases() -> Dict[str, List[str]]:
+    """Load name aliases from the aliases file and create a lookup dictionary."""
+    try:
+        with open("raw_data/name_aliases.json", 'r') as f:
+            alias_groups = json.load(f)
+        
+        # Create a dictionary mapping each name to all its equivalent names
+        alias_map = {}
+        for group in alias_groups:
+            for name in group:
+                alias_map[name] = group
+        
+        return alias_map
+    except (FileNotFoundError, json.JSONDecodeError):
+        # Return empty dict if file doesn't exist or is invalid
+        return {}
+
 def calculate_relevance(constituency_name: str, polling_districts: List[str], geojson_data: Dict[str, Any], district_to_elector_size: Dict[str, int]) -> float:
     """Calculate relevance based on constituency name and MRT station names.
     
@@ -172,15 +189,26 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
     For double-barrel names (e.g., "Jurong East-Bukit Batok"), a match with either part counts,
     but the final score is halved.
     The constituency score is the elector weighted average of polling district scores.
+    
+    Considers name aliases as defined in raw_data/name_aliases.json.
     """
     total_elector_size = sum(district_to_elector_size.get(district, 0) for district in polling_districts)
     if total_elector_size == 0:
         return 0.0
     
+    # Get name aliases
+    name_aliases = get_name_aliases()
+    
     # Extract parts from constituency name
     constituency_parts = [constituency_name]
     if '-' in constituency_name:
         constituency_parts = [part.strip() for part in constituency_name.split('-')]
+    
+    # Add aliases for each part
+    constituency_parts_with_aliases = set(constituency_parts)
+    for part in constituency_parts:
+        if part in name_aliases:
+            constituency_parts_with_aliases.update(name_aliases[part])
     
     weighted_score = 0.0
     for district in polling_districts:
@@ -193,8 +221,17 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
                 major_mrt = feature['properties'].get('nearest_major_mrt', {}).get('name', '')
                 minor_mrt = feature['properties'].get('nearest_minor_mrt', {}).get('name', '')
                 
-                # Check if any constituency part matches either MRT station
-                if any(part in (major_mrt, minor_mrt) for part in constituency_parts):
+                # Add aliases for MRT station names
+                major_mrt_aliases = [major_mrt]
+                if major_mrt in name_aliases:
+                    major_mrt_aliases.extend(name_aliases[major_mrt])
+                
+                minor_mrt_aliases = [minor_mrt]
+                if minor_mrt in name_aliases:
+                    minor_mrt_aliases.extend(name_aliases[minor_mrt])
+                
+                # Check if any constituency part matches any MRT station alias
+                if any(part in major_mrt_aliases or part in minor_mrt_aliases for part in constituency_parts_with_aliases):
                     district_score = 1.0
                 break
         

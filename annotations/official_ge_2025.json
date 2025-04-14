@@ -30,7 +30,7 @@
       "is_enclave": false,
       "compactness": 0.7854743731234705,
       "convexity": 0.8788164671773019,
-      "relevance": 0.0,
+      "relevance": 1.0,
       "elector_balance": 0.9359303716803715
     },
     {
@@ -195,7 +195,7 @@
       "is_enclave": false,
       "compactness": 0.901136129013961,
       "convexity": 0.809213785174189,
-      "relevance": 0.0,
+      "relevance": 0.8650822551623683,
       "elector_balance": 0.8223712837231669
     },
     {
