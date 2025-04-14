@@ -39,6 +39,7 @@ For now I will work with the inaccuracies. This can be fixed later.
 
 ```
 source .venv/bin/activate
+black -l 200 .
 python3 scripts/fix_kml_boundaries.py
 python3 scripts/label_mrt_stations.py
 python3 scripts/estimate_elector_size.py

@@ -27,28 +27,30 @@ output_geojson = os.path.abspath(os.path.join(script_dir, output_geojson))
 print(f"Converting KML to GeoJSON and adding elector sizes, adjacent districts, and nearest MRT stations...")
 
 # Load elector size data
-with open(elector_size_json, 'r') as f:
+with open(elector_size_json, "r") as f:
     elector_sizes = json.load(f)
 
 # Load adjacent districts data
-with open(adjacent_districts_json, 'r') as f:
+with open(adjacent_districts_json, "r") as f:
     adjacent_districts = json.load(f)
 
 # Load MRT stations data
 mrt_stations = pd.read_csv(mrt_stations_csv)
 
 # Create a lookup dictionary for faster access
-elector_size_dict = {item['polling_district']: item['estimated_elector_size'] for item in elector_sizes}
+elector_size_dict = {item["polling_district"]: item["estimated_elector_size"] for item in elector_sizes}
+
 
 # Function to calculate distance between coordinates (in degrees)
 def calculate_distance(lat1, lon1, lat2, lon2):
     # Simple Euclidean distance for coordinates in degrees
     # This is sufficient for small areas like Singapore
-    return math.sqrt((lat1 - lat2)**2 + (lon1 - lon2)**2)
+    return math.sqrt((lat1 - lat2) ** 2 + (lon1 - lon2) ** 2)
+
 
 # Extract minor and major MRT stations
-minor_mrt_stations = mrt_stations[mrt_stations['is_minor_mrt']].copy()
-major_mrt_stations = mrt_stations[mrt_stations['is_major_mrt']].copy()
+minor_mrt_stations = mrt_stations[mrt_stations["is_minor_mrt"]].copy()
+major_mrt_stations = mrt_stations[mrt_stations["is_major_mrt"]].copy()
 
 # Convert KML to GeoJSON
 geojson_data = kml2geojson.convert(input_kml)
@@ -56,66 +58,63 @@ geojson_data = kml2geojson.convert(input_kml)
 # The converted data is a list, we need the features
 features = []
 for feature_collection in geojson_data:
-    for feature in feature_collection['features']:
+    for feature in feature_collection["features"]:
         # Extract district code from name property
-        district_code = feature.get('properties', {}).get('name')
-        
+        district_code = feature.get("properties", {}).get("name")
+
         if district_code:
             # Add elector size to properties
-            feature['properties']['elector_size'] = elector_size_dict.get(district_code, 0)
-            
+            feature["properties"]["elector_size"] = elector_size_dict.get(district_code, 0)
+
             # Add adjacent districts to properties
-            feature['properties']['adjacent_districts'] = adjacent_districts.get(district_code, [])
-            
+            feature["properties"]["adjacent_districts"] = adjacent_districts.get(district_code, [])
+
             # Calculate center of mass for the polygon
-            geom = shape(feature['geometry'])
+            geom = shape(feature["geometry"])
             centroid = geom.centroid
             center_lat, center_lon = centroid.y, centroid.x
-            
+
             # Find nearest minor MRT station
             nearest_minor_mrt = None
-            min_distance_minor = float('inf')
-            
+            min_distance_minor = float("inf")
+
             for _, station in minor_mrt_stations.iterrows():
-                distance = calculate_distance(center_lat, center_lon, station['lat'], station['long'])
+                distance = calculate_distance(center_lat, center_lon, station["lat"], station["long"])
                 if distance < min_distance_minor:
                     min_distance_minor = distance
                     nearest_minor_mrt = {
-                        'name': station['name'],
-                        'distance': distance,
-                        'lat': station['lat'],
-                        'long': station['long']
+                        "name": station["name"],
+                        "distance": distance,
+                        "lat": station["lat"],
+                        "long": station["long"],
                     }
-            
+
             # Find nearest major MRT station
             nearest_major_mrt = None
-            min_distance_major = float('inf')
-            
+            min_distance_major = float("inf")
+
             for _, station in major_mrt_stations.iterrows():
-                distance = calculate_distance(center_lat, center_lon, station['lat'], station['long'])
+                distance = calculate_distance(center_lat, center_lon, station["lat"], station["long"])
                 if distance < min_distance_major:
                     min_distance_major = distance
                     nearest_major_mrt = {
-                        'name': station['name'],
-                        'distance': distance,
-                        'lat': station['lat'],
-                        'long': station['long']
+                        "name": station["name"],
+                        "distance": distance,
+                        "lat": station["lat"],
+                        "long": station["long"],
                     }
-            
+
             # Add nearest MRT stations to properties
-            feature['properties']['nearest_minor_mrt'] = nearest_minor_mrt
-            feature['properties']['nearest_major_mrt'] = nearest_major_mrt
-            
+            feature["properties"]["nearest_minor_mrt"] = nearest_minor_mrt
+            feature["properties"]["nearest_major_mrt"] = nearest_major_mrt
+
             features.append(feature)
 
 # Create the final GeoJSON structure
-final_geojson = {
-    "type": "FeatureCollection",
-    "features": features
-}
+final_geojson = {"type": "FeatureCollection", "features": features}
 
 # Save the result with pretty formatting (indent=2)
-with open(output_geojson, 'w') as f:
+with open(output_geojson, "w") as f:
     json.dump(final_geojson, f, indent=2)
 
 print(f"Conversion complete. Output saved to {output_geojson}")

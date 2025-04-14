@@ -3,49 +3,49 @@
 import json
 
 # Load the raw data with all polling districts and elector size
-with open('raw_data/ge2025_polling_districts_and_elector_size.json') as f:
+with open("raw_data/ge2025_polling_districts_and_elector_size.json") as f:
     raw = json.load(f)
 
 # Extract all polling districts from raw data
 raw_districts = []
 for item in raw:
-    raw_districts.extend(item['polling_districts'])
-print(f'Total raw districts: {len(raw_districts)}')
-print(f'Unique raw districts: {len(set(raw_districts))}')
+    raw_districts.extend(item["polling_districts"])
+print(f"Total raw districts: {len(raw_districts)}")
+print(f"Unique raw districts: {len(set(raw_districts))}")
 
 # Load processed GeoJSON with elector size
-with open('processed_data/ge2025_polling_districts_with_information.geojson') as f:
+with open("processed_data/ge2025_polling_districts_with_information.geojson") as f:
     processed = json.load(f)
 
 # Extract polling district IDs from processed data
-processed_districts = [feature['properties']['name'] for feature in processed['features']]
-print(f'Total processed districts: {len(processed_districts)}')
-print(f'Unique processed districts: {len(set(processed_districts))}')
+processed_districts = [feature["properties"]["name"] for feature in processed["features"]]
+print(f"Total processed districts: {len(processed_districts)}")
+print(f"Unique processed districts: {len(set(processed_districts))}")
 
 # Find districts in raw data but missing from processed data
 missing_from_processed = set(raw_districts) - set(processed_districts)
-print(f'Districts in raw data but missing from processed data count: {len(missing_from_processed)}')
-print('Districts in raw data but missing from processed data:')
+print(f"Districts in raw data but missing from processed data count: {len(missing_from_processed)}")
+print("Districts in raw data but missing from processed data:")
 print(sorted(missing_from_processed))
 
 # Find districts in processed data but missing from raw data
 missing_from_raw = set(processed_districts) - set(raw_districts)
-print(f'Districts in processed data but missing from raw data count: {len(missing_from_raw)}')
-print('Districts in processed data but missing from raw data:')
+print(f"Districts in processed data but missing from raw data count: {len(missing_from_raw)}")
+print("Districts in processed data but missing from raw data:")
 print(sorted(missing_from_raw))
 
 # Find polling districts that are in ge2025_polling_districts_and_elector_size.json
 # but missing from the processed ge2025_polling_districts_with_information.geojson
 if missing_from_processed:
-    print('\nPolling districts found in ge2025_polling_districts_and_elector_size.json')
-    print('but missing from ge2025_polling_districts_with_information.geojson:')
+    print("\nPolling districts found in ge2025_polling_districts_and_elector_size.json")
+    print("but missing from ge2025_polling_districts_with_information.geojson:")
     print(sorted(missing_from_processed))
 
-# Report on polling districts in ge2025_polling_districts_with_information.geojson 
+# Report on polling districts in ge2025_polling_districts_with_information.geojson
 # but not found in ge2025_polling_districts_and_elector_size.json
 if missing_from_raw:
-    print('\nPolling districts found in ge2025_polling_districts_with_information.geojson')
-    print('but not present in ge2025_polling_districts_and_elector_size.json:')
+    print("\nPolling districts found in ge2025_polling_districts_with_information.geojson")
+    print("but not present in ge2025_polling_districts_and_elector_size.json:")
     print(sorted(missing_from_raw))
 
 # Check for duplicate polling districts in ge2025_polling_districts_and_elector_size.json
