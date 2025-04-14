@@ -81,13 +81,13 @@ def is_enclave(constituency_districts: List[str], all_constituencies: Dict[str, 
 
 
 def calculate_geometric_score(a, b):
-    if b == 0 or a == 0:
+    if a == 0 or b == 0:
         return 0
     return min(a / b, b / a)
 
 
 def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
-    """Calculate compactness as area of shape over area of minimum bounding ellipsoid."""
+    """Average geometric score between the chord length of every quarter-degree through the centroid, and the mean chord length"""
     # Extract geometries for the constituency districts
     constituency_features: List[Dict[str, Any]] = [f for f in geojson_data["features"] if f["properties"]["name"] in constituency_districts]
 
@@ -102,6 +102,7 @@ def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[
     cx, cy = center.x, center.y
 
     # Use a large constant to approximate an "infinite" line.
+    # Coordinates are latitude and longtitude
     L = 1e5
 
     chord_lengths = []
@@ -124,7 +125,7 @@ def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[
         elif inter.geom_type == "LineString":
             chord_length = inter.length
         elif inter.geom_type == "MultiLineString":
-            # Probably should also sum of the nonintersecting
+            # Should also sum of the nonintersecting
             chord_length = sum(segment.length for segment in inter.geoms)
         elif inter.geom_type == "Point":
             chord_length = 0.0
@@ -148,42 +149,30 @@ def calculate_convexity(constituency_districts: List[str], geojson_data: Dict[st
         return None
 
     # Create a single geometry for the constituency
-    try:
-        geometries: List[Union[MultiPolygon, Polygon]] = [shape(feature["geometry"]) for feature in constituency_features]
-        constituency_geometry: Union[MultiPolygon, Polygon] = shapely.ops.unary_union(geometries)
+    geometries: List[Union[MultiPolygon, Polygon]] = [shape(feature["geometry"]) for feature in constituency_features]
+    constituency_geometry: Union[MultiPolygon, Polygon] = shapely.ops.unary_union(geometries)
 
-        # Calculate area of the constituency
-        constituency_area: float = constituency_geometry.area
+    # Calculate area of the constituency
+    constituency_area: float = constituency_geometry.area
 
-        convex_hull = shapely.convex_hull(constituency_geometry)
+    convex_hull = shapely.convex_hull(constituency_geometry)
 
-        # Compactness ratio (0 to 1, higher is more compact)
-        if convex_hull and convex_hull.area > 0:
-            return constituency_area / convex_hull.area
-        else:
-            return 0.0
-    except Exception as e:
-        print(f"Error calculating compactness for districts {constituency_districts}: {str(e)}")
-        return 0.0
+    # Compactness ratio (0 to 1, higher is more compact)
+    return constituency_area / convex_hull.area
 
 
 def get_name_aliases() -> Dict[str, List[str]]:
     """Load name aliases from the aliases file and create a lookup dictionary."""
-    try:
-        with open("raw_data/name_aliases.json", "r") as f:
-            alias_groups = json.load(f)
+    with open("raw_data/name_aliases.json", "r") as f:
+        alias_groups = json.load(f)
 
-        # Create a dictionary mapping each name to all its equivalent names
-        alias_map = {}
-        for group in alias_groups:
-            for name in group:
-                alias_map[name] = group
+    # Create a dictionary mapping each name to all its equivalent names
+    alias_map = {}
+    for group in alias_groups:
+        for name in group:
+            alias_map[name] = group
 
-        return alias_map
-    except (FileNotFoundError, json.JSONDecodeError):
-        # Return empty dict if file doesn't exist or is invalid
-        return {}
-
+    return alias_map
 
 def calculate_relevance(constituency_name: str, polling_districts: List[str], geojson_data: Dict[str, Any], district_to_elector_size: Dict[str, int]) -> float:
     """Calculate relevance based on constituency name and MRT station names.

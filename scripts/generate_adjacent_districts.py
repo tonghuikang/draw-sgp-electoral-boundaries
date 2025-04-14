@@ -37,20 +37,14 @@ def extract_districts_from_kml(kml_path):
         for point in coords_text.split():
             parts = point.split(",")
             if len(parts) >= 2:
-                try:
-                    lon, lat = float(parts[0]), float(parts[1])
-                    points.append((lon, lat))
-                except ValueError:
-                    continue
+                lon, lat = float(parts[0]), float(parts[1])
+                points.append((lon, lat))
 
         # Create Shapely polygon
         if len(points) > 2:  # Need at least 3 points for a polygon
-            try:
-                districts[district_id] = Polygon(points)
-                if not districts[district_id].is_valid:
-                    districts[district_id] = districts[district_id].buffer(0)  # Fix self-intersections
-            except Exception as e:
-                print(f"Error creating polygon for {district_id}: {e}")
+            districts[district_id] = Polygon(points)
+            if not districts[district_id].is_valid:
+                districts[district_id] = districts[district_id].buffer(0)  # Fix self-intersections
 
     return districts
 
@@ -214,84 +208,81 @@ def find_adjacent_districts(districts):
                 skipped += 1
                 continue
 
-            try:
-                # Quick check if polygons are far apart using bounding boxes
-                bbox_a = districts[id_a].bounds
-                bbox_b = districts[id_b].bounds
+            # Quick check if polygons are far apart using bounding boxes
+            bbox_a = districts[id_a].bounds
+            bbox_b = districts[id_b].bounds
 
-                # Calculate maximum possible distance between bounding boxes
-                min_x_a, min_y_a, max_x_a, max_y_a = bbox_a
-                min_x_b, min_y_b, max_x_b, max_y_b = bbox_b
+            # Calculate maximum possible distance between bounding boxes
+            min_x_a, min_y_a, max_x_a, max_y_a = bbox_a
+            min_x_b, min_y_b, max_x_b, max_y_b = bbox_b
 
-                # If bounding boxes are far apart, skip the detailed check
-                # Using a threshold of 0.01 degrees (roughly 1.1 km at the equator)
-                if min_x_a > max_x_b + 0.01 or max_x_a < min_x_b - 0.01 or min_y_a > max_y_b + 0.01 or max_y_a < min_y_b - 0.01:
-                    skipped += 1
-                    continue
+            # If bounding boxes are far apart, skip the detailed check
+            # Using a threshold of 0.01 degrees (roughly 1.1 km at the equator)
+            if min_x_a > max_x_b + 0.01 or max_x_a < min_x_b - 0.01 or min_y_a > max_y_b + 0.01 or max_y_a < min_y_b - 0.01:
+                skipped += 1
+                continue
 
-                # Buffer polygons slightly to handle numerical precision issues
-                buffered_a = districts[id_a].buffer(0.00001)
-                buffered_b = districts[id_b].buffer(0.00001)
+            # Buffer polygons slightly to handle numerical precision issues
+            buffered_a = districts[id_a].buffer(0.00001)
+            buffered_b = districts[id_b].buffer(0.00001)
 
-                # Check if they share a boundary or a point
-                if buffered_a.intersects(buffered_b):
-                    intersection = buffered_a.intersection(buffered_b)
+            # Check if they share a boundary or a point
+            if buffered_a.intersects(buffered_b):
+                intersection = buffered_a.intersection(buffered_b)
 
-                    # Consider adjacent only if they share a boundary line
-                    if intersection.geom_type in ["LineString", "MultiLineString"] or (hasattr(intersection, "length") and intersection.length > 0):
-                        # Add to adjacency lists
-                        adjacency[id_a].append(id_b)
-                        adjacency[id_b].append(id_a)
-                    # This else branch should logically never execute now, but keeping structure for safety
-                    elif intersection.geom_type == "Point" or intersection.geom_type == "MultiPoint":
-                        # They only share a point - look if these belong to a quadripoint
-                        point_coords = None
-                        if intersection.geom_type == "Point":
-                            point_coords = (
-                                round(intersection.x, 6),
-                                round(intersection.y, 6),
-                            )
-                        elif intersection.geom_type == "MultiPoint":
-                            # For MultiPoint, we need to check each point
-                            point_coords = [(round(p.x, 6), round(p.y, 6)) for p in intersection.geoms]
+                # Consider adjacent only if they share a boundary line
+                if intersection.geom_type in ["LineString", "MultiLineString"] or (hasattr(intersection, "length") and intersection.length > 0):
+                    # Add to adjacency lists
+                    adjacency[id_a].append(id_b)
+                    adjacency[id_b].append(id_a)
+                # This else branch should logically never execute now, but keeping structure for safety
+                elif intersection.geom_type == "Point" or intersection.geom_type == "MultiPoint":
+                    # They only share a point - look if these belong to a quadripoint
+                    point_coords = None
+                    if intersection.geom_type == "Point":
+                        point_coords = (
+                            round(intersection.x, 6),
+                            round(intersection.y, 6),
+                        )
+                    elif intersection.geom_type == "MultiPoint":
+                        # For MultiPoint, we need to check each point
+                        point_coords = [(round(p.x, 6), round(p.y, 6)) for p in intersection.geoms]
 
-                        # Check if these districts meet at a multi-corner and don't share a boundary
-                        for corner, corner_districts in multi_corners.items():
-                            # For point intersections
-                            if (
-                                point_coords
-                                and isinstance(point_coords, tuple)
-                                and abs(corner[0] - point_coords[0]) < 0.000001
-                                and abs(corner[1] - point_coords[1]) < 0.000001
-                                and id_a in corner_districts
-                                and id_b in corner_districts
-                                and len(set(corner_districts)) >= 4
-                            ):  # Only exclude for quadripoints (4+ unique districts)
+                    # Check if these districts meet at a multi-corner and don't share a boundary
+                    for corner, corner_districts in multi_corners.items():
+                        # For point intersections
+                        if (
+                            point_coords
+                            and isinstance(point_coords, tuple)
+                            and abs(corner[0] - point_coords[0]) < 0.000001
+                            and abs(corner[1] - point_coords[1]) < 0.000001
+                            and id_a in corner_districts
+                            and id_b in corner_districts
+                            and len(set(corner_districts)) >= 4
+                        ):  # Only exclude for quadripoints (4+ unique districts)
 
-                                # Found a quadripoint where both districts meet
-                                print(f"Districts {id_a} and {id_b} meet at a corner with {len(corner_districts)} districts, not considering adjacent")
-                                # Mark the pair to exclude
-                                exclude_pairs.add((id_a, id_b))
-                                break
+                            # Found a quadripoint where both districts meet
+                            print(f"Districts {id_a} and {id_b} meet at a corner with {len(corner_districts)} districts, not considering adjacent")
+                            # Mark the pair to exclude
+                            exclude_pairs.add((id_a, id_b))
+                            break
 
-                            # For multi-point intersections, check each point
-                            elif point_coords and isinstance(point_coords, list):
-                                for p in point_coords:
-                                    if (
-                                        abs(corner[0] - p[0]) < 0.000001
-                                        and abs(corner[1] - p[1]) < 0.000001
-                                        and id_a in corner_districts
-                                        and id_b in corner_districts
-                                        and len(set(corner_districts)) >= 4
-                                    ):  # Only exclude for quadripoints (4+ unique districts)
+                        # For multi-point intersections, check each point
+                        elif point_coords and isinstance(point_coords, list):
+                            for p in point_coords:
+                                if (
+                                    abs(corner[0] - p[0]) < 0.000001
+                                    and abs(corner[1] - p[1]) < 0.000001
+                                    and id_a in corner_districts
+                                    and id_b in corner_districts
+                                    and len(set(corner_districts)) >= 4
+                                ):  # Only exclude for quadripoints (4+ unique districts)
 
-                                        # Found a quadripoint
-                                        print(f"Districts {id_a} and {id_b} meet at a multipoint corner with {len(corner_districts)} districts, not considering adjacent")
-                                        # Mark the pair to exclude
-                                        exclude_pairs.add((id_a, id_b))
-                                        break
-            except Exception as e:
-                print(f"Error checking adjacency between {id_a} and {id_b}: {e}")
+                                    # Found a quadripoint
+                                    print(f"Districts {id_a} and {id_b} meet at a multipoint corner with {len(corner_districts)} districts, not considering adjacent")
+                                    # Mark the pair to exclude
+                                    exclude_pairs.add((id_a, id_b))
+                                    break
 
     print(f"Excluded {len(exclude_pairs)} district pairs that only meet at corners")
     return adjacency

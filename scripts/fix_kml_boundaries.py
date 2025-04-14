@@ -21,13 +21,8 @@ def parse_coords(coord_string):
     points = []
     lines = [line.strip() for line in coord_string.strip().split("\n") if line.strip()]
     for point_str in lines:
-        try:
-            lon, lat, alt = map(float, point_str.split(","))
-            points.append((lon, lat, alt))
-        except ValueError:
-            if point_str:
-                print(f"Warning: Skipping invalid coordinate point string: {point_str}")
-            continue
+        lon, lat, alt = map(float, point_str.split(","))
+        points.append((lon, lat, alt))
     return points
 
 
@@ -318,145 +313,130 @@ if __name__ == "__main__":
     if not INPUT_KML_FILE.is_file():
         exit(f"Error: Input file not found at {INPUT_KML_FILE}")
 
-    try:
-        # --- Parsing with lxml (remove blank text helps pretty_print) ---
-        # Keep remove_blank_text=True as it helps lxml's pretty printer
-        parser = ET.XMLParser(remove_blank_text=True)
-        tree = ET.parse(str(INPUT_KML_FILE), parser=parser)
-        root = tree.getroot()
+    # --- Parsing with lxml (remove blank text helps pretty_print) ---
+    # Keep remove_blank_text=True as it helps lxml's pretty printer
+    parser = ET.XMLParser(remove_blank_text=True)
+    tree = ET.parse(str(INPUT_KML_FILE), parser=parser)
+    root = tree.getroot()
 
-        namespace = find_namespace(root)
-        print(f"Detected KML namespace: '{namespace}'")
-        ns_map = {"kml": namespace} if namespace else {}
+    namespace = find_namespace(root)
+    print(f"Detected KML namespace: '{namespace}'")
+    ns_map = {"kml": namespace} if namespace else {}
 
-        placemarks_data = {}
-        coords_elements_map = {}
-        print("Extracting Placemark coordinates...")
-        xpath_placemark = ".//kml:Placemark" if namespace else ".//Placemark"
-        xpath_name = "kml:name" if namespace else "name"
-        xpath_coords = "kml:Polygon/kml:outerBoundaryIs/kml:LinearRing/kml:coordinates" if namespace else "Polygon/outerBoundaryIs/LinearRing/coordinates"
+    placemarks_data = {}
+    coords_elements_map = {}
+    print("Extracting Placemark coordinates...")
+    xpath_placemark = ".//kml:Placemark" if namespace else ".//Placemark"
+    xpath_name = "kml:name" if namespace else "name"
+    xpath_coords = "kml:Polygon/kml:outerBoundaryIs/kml:LinearRing/kml:coordinates" if namespace else "Polygon/outerBoundaryIs/LinearRing/coordinates"
 
-        for placemark_elem in root.xpath(xpath_placemark, namespaces=ns_map):
-            name_elem = placemark_elem.find(xpath_name, ns_map)
-            coords_elem = placemark_elem.find(xpath_coords, ns_map)
-            if name_elem is not None and name_elem.text is not None and coords_elem is not None and coords_elem.text is not None:
-                name = name_elem.text.strip()
-                coords_list = parse_coords(coords_elem.text)
-                if coords_list:
-                    if len(coords_list) < 2 or coords_list[0] != coords_list[-1]:
-                        if len(coords_list) >= 1:
-                            print(f"Fixing unclosed polygon for {name} by adding closing point")
-                            coords_list.append(coords_list[0])
-                        else:
-                            continue
-                    placemarks_data[name] = coords_list
-                    # Store the element itself for later modification
-                    coords_elements_map[name] = coords_elem
+    for placemark_elem in root.xpath(xpath_placemark, namespaces=ns_map):
+        name_elem = placemark_elem.find(xpath_name, ns_map)
+        coords_elem = placemark_elem.find(xpath_coords, ns_map)
+        if name_elem is not None and name_elem.text is not None and coords_elem is not None and coords_elem.text is not None:
+            name = name_elem.text.strip()
+            coords_list = parse_coords(coords_elem.text)
+            if coords_list:
+                if len(coords_list) < 2 or coords_list[0] != coords_list[-1]:
+                    if len(coords_list) >= 1:
+                        print(f"Fixing unclosed polygon for {name} by adding closing point")
+                        coords_list.append(coords_list[0])
+                    else:
+                        continue
+                placemarks_data[name] = coords_list
+                # Store the element itself for later modification
+                coords_elements_map[name] = coords_elem
 
-        print(f"Extracted valid coordinate data for {len(placemarks_data)} Placemarks.")
-        if not placemarks_data:
-            exit("Error: No valid Placemark data found.")
+    print(f"Extracted valid coordinate data for {len(placemarks_data)} Placemarks.")
+    if not placemarks_data:
+        exit("Error: No valid Placemark data found.")
 
-        # Identify weak boundaries before snapping
-        weak_boundaries = identify_weak_boundaries(placemarks_data)
+    # Identify weak boundaries before snapping
+    weak_boundaries = identify_weak_boundaries(placemarks_data)
 
-        # Do multiple passes of vertex snapping to ensure all boundaries are aligned
-        vertex_snap_map, representative_altitudes = snap_vertices(placemarks_data, SNAP_TOLERANCE, max_passes=3)
+    # Do multiple passes of vertex snapping to ensure all boundaries are aligned
+    vertex_snap_map, representative_altitudes = snap_vertices(placemarks_data, SNAP_TOLERANCE, max_passes=3)
 
-        # The placemarks_data is now updated with the snapped coordinates from multiple passes
-        print("Rebuilding Placemarks with snapped coordinates...")
-        update_count = 0
+    # The placemarks_data is now updated with the snapped coordinates from multiple passes
+    print("Rebuilding Placemarks with snapped coordinates...")
+    update_count = 0
 
-        # Final check for fully aligned boundaries - verify no remaining close pairs
-        district_boundaries = {}
+    # Final check for fully aligned boundaries - verify no remaining close pairs
+    district_boundaries = {}
 
-        # Extract boundary points for each district
-        for name, coords_list in placemarks_data.items():
-            district_boundaries[name] = set((lon, lat) for lon, lat, _ in coords_list)
+    # Extract boundary points for each district
+    for name, coords_list in placemarks_data.items():
+        district_boundaries[name] = set((lon, lat) for lon, lat, _ in coords_list)
 
-        # Check for any remaining close but unaligned boundaries
-        remaining_misalignments = []
-        print("\nVerifying final boundary alignments...")
+    # Check for any remaining close but unaligned boundaries
+    remaining_misalignments = []
+    print("\nVerifying final boundary alignments...")
 
-        for d1, points1 in district_boundaries.items():
-            for d2, points2 in district_boundaries.items():
-                if d1 >= d2:  # Only check each pair once
-                    continue
+    for d1, points1 in district_boundaries.items():
+        for d2, points2 in district_boundaries.items():
+            if d1 >= d2:  # Only check each pair once
+                continue
 
-                # Check if any points are very close but not identical
-                for p1 in points1:
-                    for p2 in points2:
-                        if p1 == p2:  # Points are exactly aligned
-                            continue
+            # Check if any points are very close but not identical
+            for p1 in points1:
+                for p2 in points2:
+                    if p1 == p2:  # Points are exactly aligned
+                        continue
 
-                        dist_sq = (p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2
-                        if dist_sq < (SNAP_TOLERANCE / 10) ** 2:  # Use tighter tolerance for verification
-                            remaining_misalignments.append(
-                                {
-                                    "district1": d1,
-                                    "district2": d2,
-                                    "point1": p1,
-                                    "point2": p2,
-                                    "distance": dist_sq**0.5,
-                                }
-                            )
+                    dist_sq = (p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2
+                    if dist_sq < (SNAP_TOLERANCE / 10) ** 2:  # Use tighter tolerance for verification
+                        remaining_misalignments.append(
+                            {
+                                "district1": d1,
+                                "district2": d2,
+                                "point1": p1,
+                                "point2": p2,
+                                "distance": dist_sq**0.5,
+                            }
+                        )
 
-        if remaining_misalignments:
-            print(f"WARNING: Found {len(remaining_misalignments)} remaining potential misalignments after snapping")
-            for i, misalign in enumerate(remaining_misalignments[:10], 1):  # Show at most 10
-                print(f"  {i}. Between {misalign['district1']} and {misalign['district2']}")
-                print(f"     Points: {misalign['point1']} and {misalign['point2']}")
-                print(f"     Distance: {misalign['distance']:.2e} degrees")
-            if len(remaining_misalignments) > 10:
-                print(f"     ... and {len(remaining_misalignments) - 10} more")
+    if remaining_misalignments:
+        print(f"WARNING: Found {len(remaining_misalignments)} remaining potential misalignments after snapping")
+        for i, misalign in enumerate(remaining_misalignments[:10], 1):  # Show at most 10
+            print(f"  {i}. Between {misalign['district1']} and {misalign['district2']}")
+            print(f"     Points: {misalign['point1']} and {misalign['point2']}")
+            print(f"     Distance: {misalign['distance']:.2e} degrees")
+        if len(remaining_misalignments) > 10:
+            print(f"     ... and {len(remaining_misalignments) - 10} more")
+    else:
+        print("All boundaries are perfectly aligned!")
+
+    # Update XML with snapped coordinates
+    for name, original_coords_list in placemarks_data.items():
+        # Format coordinates with newlines (including leading/trailing for structure)
+        coord_lines_str = format_coords_for_processing(original_coords_list)
+
+        coords_elem = coords_elements_map.get(name)
+        if coords_elem is not None:
+            # Assign the simple newline-separated string.
+            # lxml's pretty_print will handle base indent, manual step fixes inner.
+            coords_elem.text = coord_lines_str
+            update_count += 1
         else:
-            print("All boundaries are perfectly aligned!")
+            print(f"Error: Could not find stored coordinates element for '{name}' during update.")
 
-        # Update XML with snapped coordinates
-        for name, original_coords_list in placemarks_data.items():
-            # Format coordinates with newlines (including leading/trailing for structure)
-            coord_lines_str = format_coords_for_processing(original_coords_list)
+    print(f"Updated coordinates for {update_count} Placemarks.")
 
-            coords_elem = coords_elements_map.get(name)
-            if coords_elem is not None:
-                # Assign the simple newline-separated string.
-                # lxml's pretty_print will handle base indent, manual step fixes inner.
-                coords_elem.text = coord_lines_str
-                update_count += 1
-            else:
-                print(f"Error: Could not find stored coordinates element for '{name}' during update.")
+    # --- Generate pretty-printed XML string using lxml ---
+    print("Generating base pretty-printed XML string...")
+    pretty_xml_bytes = ET.tostring(tree, encoding="UTF-8", xml_declaration=True, pretty_print=True)  # Use lxml's pretty print
+    pretty_xml_string = pretty_xml_bytes.decode("utf-8")
 
-        print(f"Updated coordinates for {update_count} Placemarks.")
+    # --- Apply manual indentation to coordinate blocks ---
+    print("Applying manual indentation to <coordinates> blocks...")
+    final_xml_string = indent_coordinate_blocks(pretty_xml_string, indent_unit=INDENT_SPACES)
 
-        # --- Generate pretty-printed XML string using lxml ---
-        print("Generating base pretty-printed XML string...")
-        pretty_xml_bytes = ET.tostring(tree, encoding="UTF-8", xml_declaration=True, pretty_print=True)  # Use lxml's pretty print
-        pretty_xml_string = pretty_xml_bytes.decode("utf-8")
+    # --- Write the final, manually adjusted string to file ---
+    print(f"Writing final fixed KML to: {OUTPUT_KML_FILE}")
+    OUTPUT_KML_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_KML_FILE, "w", encoding="utf-8") as f:
+        f.write(final_xml_string)
 
-        # --- Apply manual indentation to coordinate blocks ---
-        print("Applying manual indentation to <coordinates> blocks...")
-        final_xml_string = indent_coordinate_blocks(pretty_xml_string, indent_unit=INDENT_SPACES)
-
-        # --- Write the final, manually adjusted string to file ---
-        print(f"Writing final fixed KML to: {OUTPUT_KML_FILE}")
-        OUTPUT_KML_FILE.parent.mkdir(parents=True, exist_ok=True)
-        with open(OUTPUT_KML_FILE, "w", encoding="utf-8") as f:
-            f.write(final_xml_string)
-
-        if weak_boundaries:
-            print(f"Fixed {len(weak_boundaries)} weak boundaries.")
-        print("Processing complete.")
-
-    except ET.XMLSyntaxError as e:
-        print(f"Error parsing KML file with lxml: {e}")
-    except FileNotFoundError:
-        print(f"Error: Input file not found at {INPUT_KML_FILE}")
-    except ImportError:
-        print("\nError: This script requires the 'lxml' library.")
-        print("Please install it using: pip install lxml")
-        exit(1)
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
-        import traceback
-
-        traceback.print_exc()
+    if weak_boundaries:
+        print(f"Fixed {len(weak_boundaries)} weak boundaries.")
+    print("Processing complete.")
