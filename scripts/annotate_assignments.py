@@ -4,6 +4,7 @@ import os
 import warnings
 import sys
 import subprocess
+from typing import Dict, List, Set, Union, Optional, Any, Tuple
 
 # Check if running in a virtual environment
 in_venv = sys.prefix != sys.base_prefix
@@ -49,23 +50,23 @@ except ImportError:
     # Try import again after installation
     import numpy as np
 
-def load_json(filepath):
+def load_json(filepath: str) -> Dict[str, Any]:
     with open(filepath, 'r') as f:
         return json.load(f)
 
-def save_json(data, filepath):
+def save_json(data: Dict[str, Any], filepath: str) -> None:
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
     with open(filepath, 'w') as f:
         json.dump(data, f, indent=2)
 
-def is_contiguous(constituency_districts, adjacency_data):
+def is_contiguous(constituency_districts: List[str], adjacency_data: Dict[str, List[str]]) -> bool:
     """Check if a constituency is contiguous using breadth-first search."""
     if not constituency_districts:
         return False
     
     # Start BFS from the first district
-    visited = set()
-    queue = [constituency_districts[0]]
+    visited: Set[str] = set()
+    queue: List[str] = [constituency_districts[0]]
     visited.add(constituency_districts[0])
     
     while queue:
@@ -81,19 +82,20 @@ def is_contiguous(constituency_districts, adjacency_data):
     # If all districts are visited, the constituency is contiguous
     return len(visited) == len(constituency_districts)
 
-def is_enclave(constituency_districts, all_constituencies, adjacency_data):
+def is_enclave(constituency_districts: List[str], all_constituencies: Dict[str, List[str]], 
+               adjacency_data: Dict[str, List[str]]) -> bool:
     """Check if a constituency is an enclave of another constituency."""
     if not constituency_districts:
         return False
     
     # Get all districts outside this constituency
-    other_constituencies = {}
+    other_constituencies: Dict[str, List[str]] = {}
     for constituency, districts in all_constituencies.items():
         if set(districts) != set(constituency_districts):
             other_constituencies[constituency] = districts
     
     # Get all neighboring districts
-    neighboring_districts = set()
+    neighboring_districts: Set[str] = set()
     for district in constituency_districts:
         if district in adjacency_data:
             for adjacent in adjacency_data[district]:
@@ -111,10 +113,10 @@ def is_enclave(constituency_districts, all_constituencies, adjacency_data):
     
     return False
 
-def calculate_compactness(constituency_districts, geojson_data):
+def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
     """Calculate compactness as area of shape over area of minimum bounding box."""
     # Extract geometries for the constituency districts
-    constituency_features = [f for f in geojson_data['features'] 
+    constituency_features: List[Dict[str, Any]] = [f for f in geojson_data['features'] 
                            if f['properties']['name'] in constituency_districts]
     
     if not constituency_features:
@@ -122,15 +124,15 @@ def calculate_compactness(constituency_districts, geojson_data):
     
     # Create a single geometry for the constituency
     try:
-        geometries = [shape(feature['geometry']) for feature in constituency_features]
-        constituency_geometry = shapely.ops.unary_union(geometries)
+        geometries: List[Union[MultiPolygon, Polygon]] = [shape(feature['geometry']) for feature in constituency_features]
+        constituency_geometry: Union[MultiPolygon, Polygon] = shapely.ops.unary_union(geometries)
         
         # Calculate area of the constituency
-        constituency_area = constituency_geometry.area
+        constituency_area: float = constituency_geometry.area
         
         # Use the envelope (bounding box) for a more stable measurement
         # This avoids the warnings from minimum_rotated_rectangle
-        min_box = constituency_geometry.envelope
+        min_box: Union[MultiPolygon, Polygon] = constituency_geometry.envelope
         
         # Compactness ratio (0 to 1, higher is more compact)
         if min_box and min_box.area > 0:
@@ -141,7 +143,7 @@ def calculate_compactness(constituency_districts, geojson_data):
         print(f"Error calculating compactness for districts {constituency_districts}: {str(e)}")
         return 0.0
 
-def main():
+def main() -> None:
     # Load data
     assignment_data = load_json("assignments/official_ge_2025.json")
     adjacency_data = load_json("intermediate_data/ge2025_polling_districts_to_adjacent_districts.json")
@@ -151,14 +153,14 @@ def main():
         geojson_data = json.load(f)
     
     # Organize constituencies and their districts
-    constituencies = {}
+    constituencies: Dict[str, List[str]] = {}
     for item in assignment_data["assignment"]:
         constituency_name = item["constituency_name"]
         polling_districts = item["polling_districts"]
         constituencies[constituency_name] = polling_districts
     
     # Analyze each constituency
-    results = []
+    results: List[Dict[str, Any]] = []
     for item in assignment_data["assignment"]:
         constituency_name = item["constituency_name"]
         polling_districts = item["polling_districts"]
