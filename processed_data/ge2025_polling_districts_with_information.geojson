@@ -126,6 +126,7 @@
         ],
         "nearest_mrts": [
           "Mountbatten",
+          "Aljunied",
           "Paya Lebar"
         ]
       },
@@ -270,6 +271,7 @@
         ],
         "nearest_mrts": [
           "Stadium",
+          "Mountbatten",
           "Paya Lebar",
           "Bugis"
         ]
@@ -542,6 +544,7 @@
           "Mountbatten",
           "Dakota",
           "Stadium",
+          "Aljunied",
           "Paya Lebar"
         ]
       },
@@ -6208,8 +6211,8 @@
           "PS12"
         ],
         "nearest_mrts": [
+          "Mattar",
           "Tai Seng",
-          "MacPherson",
           "Serangoon",
           "Paya Lebar"
         ]
@@ -6303,6 +6306,7 @@
           "PS12"
         ],
         "nearest_mrts": [
+          "Bartley",
           "Woodleigh",
           "Tai Seng",
           "Serangoon"
@@ -6466,6 +6470,7 @@
           "PS12"
         ],
         "nearest_mrts": [
+          "Bartley",
           "Serangoon"
         ]
       },
@@ -6927,6 +6932,7 @@
           "PS05"
         ],
         "nearest_mrts": [
+          "Lorong Chuan",
           "Serangoon"
         ]
       },
@@ -7132,6 +7138,7 @@
           "MA47"
         ],
         "nearest_mrts": [
+          "Lorong Chuan",
           "Serangoon"
         ]
       },
@@ -7237,6 +7244,7 @@
           "MA46"
         ],
         "nearest_mrts": [
+          "Lorong Chuan",
           "Serangoon"
         ]
       },
@@ -7351,6 +7359,7 @@
           "MA47"
         ],
         "nearest_mrts": [
+          "Lorong Chuan",
           "Serangoon"
         ]
       },
@@ -7838,8 +7847,8 @@
           "PS12"
         ],
         "nearest_mrts": [
+          "Mattar",
           "MacPherson",
-          "Tai Seng",
           "Paya Lebar"
         ]
       },
@@ -8246,7 +8255,9 @@
           "MP06"
         ],
         "nearest_mrts": [
+          "Mattar",
           "MacPherson",
+          "Aljunied",
           "Paya Lebar"
         ]
       },
@@ -8420,7 +8431,9 @@
           "MP08"
         ],
         "nearest_mrts": [
+          "Mattar",
           "MacPherson",
+          "Aljunied",
           "Paya Lebar"
         ]
       },
@@ -9754,6 +9767,7 @@
           "EC13"
         ],
         "nearest_mrts": [
+          "Upper Changi",
           "Simei",
           "Expo",
           "Tampines"
@@ -9852,6 +9866,7 @@
           "EC13"
         ],
         "nearest_mrts": [
+          "Upper Changi",
           "Simei",
           "Expo",
           "Tampines"
@@ -10004,6 +10019,7 @@
           "TM28"
         ],
         "nearest_mrts": [
+          "Upper Changi",
           "Simei",
           "Tampines East",
           "Tampines"
@@ -10130,6 +10146,7 @@
           "TM27"
         ],
         "nearest_mrts": [
+          "Upper Changi",
           "Tampines East",
           "Changi Airport",
           "Tampines"
@@ -11105,6 +11122,8 @@
         ],
         "nearest_mrts": [
           "Expo",
+          "Tanah Merah",
+          "Simei",
           "Bedok",
           "Tampines"
         ]
@@ -19965,6 +19984,7 @@
         ],
         "nearest_mrts": [
           "Pasir Ris",
+          "Tampines East",
           "Tampines"
         ]
       },
@@ -20053,6 +20073,7 @@
         ],
         "nearest_mrts": [
           "Pasir Ris",
+          "Tampines East",
           "Tampines"
         ]
       },
@@ -21722,8 +21743,8 @@
         ],
         "nearest_mrts": [
           "Pasir Ris",
-          "Tampines",
-          "Sengkang"
+          "Punggol",
+          "Tampines"
         ]
       },
       "geometry": {
@@ -22145,7 +22166,7 @@
         ],
         "nearest_mrts": [
           "Sengkang",
-          "Tampines"
+          "Punggol"
         ]
       },
       "geometry": {
@@ -22680,7 +22701,8 @@
           "SK12"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -24259,7 +24281,8 @@
           "SK13"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -24359,7 +24382,8 @@
           "SK20"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -24489,7 +24513,8 @@
           "SK15"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -24583,7 +24608,8 @@
           "SK16"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -24749,7 +24775,8 @@
           "SK17"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -24833,7 +24860,8 @@
           "SK17"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -24917,7 +24945,8 @@
           "SK20"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -25008,7 +25037,8 @@
           "SK23"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -25113,7 +25143,8 @@
           "SK36"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -25200,7 +25231,8 @@
           "SK36"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -26677,7 +26709,7 @@
         ],
         "nearest_mrts": [
           "Kaki Bukit",
-          "Bedok",
+          "Bedok North",
           "Paya Lebar"
         ]
       },
@@ -26911,6 +26943,7 @@
         ],
         "nearest_mrts": [
           "Kaki Bukit",
+          "Kembangan",
           "Bedok",
           "Paya Lebar"
         ]
@@ -27027,6 +27060,8 @@
         ],
         "nearest_mrts": [
           "Kaki Bukit",
+          "Kembangan",
+          "Eunos",
           "Bedok",
           "Paya Lebar"
         ]
@@ -27172,6 +27207,8 @@
         ],
         "nearest_mrts": [
           "Kaki Bukit",
+          "Ubi",
+          "Eunos",
           "Paya Lebar"
         ]
       },
@@ -27466,7 +27503,7 @@
         ],
         "nearest_mrts": [
           "Kaki Bukit",
-          "Tai Seng",
+          "Bedok North",
           "Bedok",
           "Paya Lebar",
           "Tampines",
@@ -27661,9 +27698,9 @@
         ],
         "nearest_mrts": [
           "Hougang",
+          "Kovan",
           "Tampines",
-          "Serangoon",
-          "Sengkang"
+          "Serangoon"
         ]
       },
       "geometry": {
@@ -28823,6 +28860,7 @@
           "AJ34"
         ],
         "nearest_mrts": [
+          "Lorong Chuan",
           "Serangoon"
         ]
       },
@@ -29157,6 +29195,7 @@
           "MA47"
         ],
         "nearest_mrts": [
+          "Lorong Chuan",
           "Serangoon"
         ]
       },
@@ -29277,6 +29316,7 @@
           "MA45"
         ],
         "nearest_mrts": [
+          "Lorong Chuan",
           "Bishan",
           "Serangoon"
         ]
@@ -29470,6 +29510,7 @@
           "MA45"
         ],
         "nearest_mrts": [
+          "Lorong Chuan",
           "Serangoon",
           "Ang Mo Kio"
         ]
@@ -29680,6 +29721,7 @@
           "AM65"
         ],
         "nearest_mrts": [
+          "Lorong Chuan",
           "Ang Mo Kio",
           "Serangoon"
         ]
@@ -31002,7 +31044,7 @@
         ],
         "nearest_mrts": [
           "Hougang",
-          "Serangoon"
+          "Kovan"
         ]
       },
       "geometry": {
@@ -31095,8 +31137,8 @@
         ],
         "nearest_mrts": [
           "Hougang",
-          "Sengkang",
-          "Serangoon"
+          "Buangkok",
+          "Sengkang"
         ]
       },
       "geometry": {
@@ -32002,6 +32044,7 @@
         ],
         "nearest_mrts": [
           "Hougang",
+          "Buangkok",
           "Sengkang"
         ]
       },
@@ -32387,7 +32430,7 @@
         ],
         "nearest_mrts": [
           "Hougang",
-          "Serangoon"
+          "Kovan"
         ]
       },
       "geometry": {
@@ -32638,7 +32681,8 @@
           "HG09"
         ],
         "nearest_mrts": [
-          "Hougang"
+          "Hougang",
+          "Kovan"
         ]
       },
       "geometry": {
@@ -33736,8 +33780,9 @@
         "nearest_mrts": [
           "Boon Keng",
           "Farrer Park",
-          "Newton",
-          "Bugis"
+          "Novena",
+          "Toa Payoh",
+          "Newton"
         ]
       },
       "geometry": {
@@ -33835,7 +33880,7 @@
           "Boon Keng",
           "Toa Payoh",
           "Farrer Park",
-          "Newton"
+          "Novena"
         ]
       },
       "geometry": {
@@ -34345,8 +34390,8 @@
           "JB22"
         ],
         "nearest_mrts": [
-          "Boon Keng",
-          "Bugis"
+          "Geylang Bahru",
+          "Boon Keng"
         ]
       },
       "geometry": {
@@ -34444,8 +34489,8 @@
           "JB14"
         ],
         "nearest_mrts": [
+          "Geylang Bahru",
           "Boon Keng",
-          "Potong Pasir",
           "Paya Lebar"
         ]
       },
@@ -34521,6 +34566,7 @@
           "JB22"
         ],
         "nearest_mrts": [
+          "Geylang Bahru",
           "Kallang",
           "Boon Keng",
           "Paya Lebar",
@@ -34635,12 +34681,9 @@
           "PS08"
         ],
         "nearest_mrts": [
+          "Geylang Bahru",
           "Potong Pasir",
-          "Boon Keng",
-          "Aljunied",
-          "Paya Lebar",
-          "Serangoon",
-          "Bugis"
+          "Boon Keng"
         ]
       },
       "geometry": {
@@ -35421,6 +35464,7 @@
           "JB26"
         ],
         "nearest_mrts": [
+          "Bendemeer",
           "Lavender",
           "Boon Keng",
           "Farrer Park",
@@ -35873,6 +35917,7 @@
         ],
         "nearest_mrts": [
           "Farrer Park",
+          "Lavender",
           "Bugis"
         ]
       },
@@ -36464,6 +36509,7 @@
           "MB08"
         ],
         "nearest_mrts": [
+          "Nicoll Highway",
           "Lavender",
           "Promenade",
           "Bugis"
@@ -36742,8 +36788,8 @@
         "nearest_mrts": [
           "Esplanade",
           "Promenade",
-          "Bugis",
-          "Raffles Place"
+          "City Hall",
+          "Bugis"
         ]
       },
       "geometry": {
@@ -37108,6 +37154,7 @@
           "WE51"
         ],
         "nearest_mrts": [
+          "Marina Bay",
           "Downtown",
           "Bayfront",
           "Raffles Place"
@@ -38367,6 +38414,8 @@
         ],
         "nearest_mrts": [
           "Farrer Park",
+          "Novena",
+          "Little India",
           "Newton"
         ]
       },
@@ -38928,10 +38977,10 @@
           "TP16"
         ],
         "nearest_mrts": [
+          "Farrer Road",
           "Holland Village",
           "Buona Vista",
-          "Orchard",
-          "Newton"
+          "Orchard"
         ]
       },
       "geometry": {
@@ -39174,6 +39223,7 @@
         ],
         "nearest_mrts": [
           "Botanic Gardens",
+          "Farrer Road",
           "Stevens",
           "Orchard"
         ]
@@ -40098,6 +40148,7 @@
         ],
         "nearest_mrts": [
           "Outram Park",
+          "Tanjong Pagar",
           "HarbourFront",
           "Chinatown",
           "Raffles Place"
@@ -40365,8 +40416,8 @@
         ],
         "nearest_mrts": [
           "Outram Park",
-          "Chinatown",
-          "Raffles Place"
+          "Tanjong Pagar",
+          "Chinatown"
         ]
       },
       "geometry": {
@@ -40494,6 +40545,7 @@
         ],
         "nearest_mrts": [
           "Outram Park",
+          "Tanjong Pagar",
           "Chinatown"
         ]
       },
@@ -40561,7 +40613,7 @@
         "nearest_mrts": [
           "Maxwell",
           "Outram Park",
-          "Chinatown"
+          "Tanjong Pagar"
         ]
       },
       "geometry": {
@@ -40719,8 +40771,8 @@
         ],
         "nearest_mrts": [
           "Outram Park",
-          "Chinatown",
-          "Raffles Place"
+          "Tiong Bahru",
+          "Chinatown"
         ]
       },
       "geometry": {
@@ -41966,6 +42018,7 @@
           "TP37"
         ],
         "nearest_mrts": [
+          "Orchard Boulevard",
           "Orchard"
         ]
       },
@@ -45862,6 +45915,7 @@
           "MR06"
         ],
         "nearest_mrts": [
+          "Bright Hill",
           "Upper Thomson",
           "Mayflower",
           "Bishan",
@@ -46133,8 +46187,7 @@
           "MR06"
         ],
         "nearest_mrts": [
-          "Mayflower",
-          "Upper Thomson",
+          "Bright Hill",
           "Ang Mo Kio",
           "Bishan"
         ]
@@ -46269,8 +46322,8 @@
           "MR06"
         ],
         "nearest_mrts": [
+          "Bright Hill",
           "Upper Thomson",
-          "Mayflower",
           "Bishan",
           "Ang Mo Kio"
         ]
@@ -46494,7 +46547,7 @@
         ],
         "nearest_mrts": [
           "Upper Thomson",
-          "Marymount",
+          "Bright Hill",
           "Bishan"
         ]
       },
@@ -47024,6 +47077,7 @@
           "MR06"
         ],
         "nearest_mrts": [
+          "Bright Hill",
           "Bishan",
           "Ang Mo Kio"
         ]
@@ -48234,7 +48288,8 @@
         ],
         "nearest_mrts": [
           "Braddell",
-          "Bishan"
+          "Bishan",
+          "Toa Payoh"
         ]
       },
       "geometry": {
@@ -48335,7 +48390,8 @@
         ],
         "nearest_mrts": [
           "Braddell",
-          "Bishan"
+          "Bishan",
+          "Toa Payoh"
         ]
       },
       "geometry": {
@@ -48447,9 +48503,9 @@
           "BS22"
         ],
         "nearest_mrts": [
+          "Caldecott",
           "Braddell",
-          "Toa Payoh",
-          "Bishan"
+          "Toa Payoh"
         ]
       },
       "geometry": {
@@ -48570,7 +48626,7 @@
         ],
         "nearest_mrts": [
           "Upper Thomson",
-          "Marymount",
+          "Caldecott",
           "Braddell",
           "Toa Payoh",
           "Bishan",
@@ -50883,6 +50939,8 @@
           "YK10"
         ],
         "nearest_mrts": [
+          "Springleaf",
+          "Lentor",
           "Mayflower",
           "Yio Chu Kang",
           "Khatib",
@@ -51009,6 +51067,7 @@
           "YK10"
         ],
         "nearest_mrts": [
+          "Lentor",
           "Yio Chu Kang",
           "Ang Mo Kio",
           "Yishun"
@@ -51103,6 +51162,7 @@
         ],
         "nearest_mrts": [
           "Sengkang",
+          "Punggol",
           "Yishun"
         ]
       },
@@ -51269,7 +51329,8 @@
         ],
         "nearest_mrts": [
           "Sengkang",
-          "Hougang"
+          "Hougang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -52242,6 +52303,7 @@
           "YK05"
         ],
         "nearest_mrts": [
+          "Lentor",
           "Yio Chu Kang",
           "Ang Mo Kio"
         ]
@@ -52391,6 +52453,7 @@
           "YK10"
         ],
         "nearest_mrts": [
+          "Lentor",
           "Yio Chu Kang",
           "Ang Mo Kio"
         ]
@@ -52476,6 +52539,7 @@
           "YK07"
         ],
         "nearest_mrts": [
+          "Lentor",
           "Mayflower",
           "Yio Chu Kang",
           "Ang Mo Kio"
@@ -52936,6 +53000,7 @@
         ],
         "nearest_mrts": [
           "Mayflower",
+          "Bright Hill",
           "Ang Mo Kio"
         ]
       },
@@ -53026,6 +53091,7 @@
           "YK09"
         ],
         "nearest_mrts": [
+          "Bright Hill",
           "Mayflower",
           "Ang Mo Kio"
         ]
@@ -54765,6 +54831,7 @@
         ],
         "nearest_mrts": [
           "Hougang",
+          "Kovan",
           "Ang Mo Kio",
           "Sengkang",
           "Serangoon"
@@ -55508,7 +55575,7 @@
         ],
         "nearest_mrts": [
           "Hougang",
-          "Sengkang",
+          "Kovan",
           "Serangoon"
         ]
       },
@@ -55615,6 +55682,7 @@
         ],
         "nearest_mrts": [
           "Hougang",
+          "Kovan",
           "Sengkang",
           "Serangoon"
         ]
@@ -55721,6 +55789,7 @@
         ],
         "nearest_mrts": [
           "Hougang",
+          "Buangkok",
           "Sengkang",
           "Serangoon"
         ]
@@ -55808,6 +55877,7 @@
         ],
         "nearest_mrts": [
           "Hougang",
+          "Buangkok",
           "Sengkang",
           "Serangoon"
         ]
@@ -55948,8 +56018,8 @@
         ],
         "nearest_mrts": [
           "Hougang",
-          "Sengkang",
-          "Serangoon"
+          "Buangkok",
+          "Sengkang"
         ]
       },
       "geometry": {
@@ -57698,7 +57768,8 @@
           "SK09"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -57749,7 +57820,8 @@
           "SK10"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -58268,7 +58340,8 @@
           "SK27"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -58347,7 +58420,8 @@
           "AM20"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -58507,7 +58581,7 @@
         ],
         "nearest_mrts": [
           "Sengkang",
-          "Serangoon"
+          "Punggol"
         ]
       },
       "geometry": {
@@ -60874,7 +60948,8 @@
           "NS47"
         ],
         "nearest_mrts": [
-          "Yishun"
+          "Yishun",
+          "Khatib"
         ]
       },
       "geometry": {
@@ -61028,7 +61103,8 @@
           "NS41"
         ],
         "nearest_mrts": [
-          "Yishun"
+          "Yishun",
+          "Khatib"
         ]
       },
       "geometry": {
@@ -61204,7 +61280,8 @@
           "NS40"
         ],
         "nearest_mrts": [
-          "Yishun"
+          "Yishun",
+          "Khatib"
         ]
       },
       "geometry": {
@@ -61270,7 +61347,8 @@
           "NS39"
         ],
         "nearest_mrts": [
-          "Yishun"
+          "Yishun",
+          "Khatib"
         ]
       },
       "geometry": {
@@ -63395,6 +63473,7 @@
           "YK01"
         ],
         "nearest_mrts": [
+          "Springleaf",
           "Khatib",
           "Yishun"
         ]
@@ -63929,6 +64008,7 @@
           "SB29"
         ],
         "nearest_mrts": [
+          "Woodlands North",
           "Woodlands"
         ]
       },
@@ -64088,6 +64168,7 @@
           "SB18"
         ],
         "nearest_mrts": [
+          "Woodlands North",
           "Woodlands"
         ]
       },
@@ -67253,7 +67334,8 @@
           "SB06"
         ],
         "nearest_mrts": [
-          "Woodlands"
+          "Woodlands",
+          "Admiralty"
         ]
       },
       "geometry": {
@@ -67785,6 +67867,7 @@
           "SB15"
         ],
         "nearest_mrts": [
+          "Woodlands North",
           "Woodlands"
         ]
       },
@@ -67919,6 +68002,7 @@
           "SB15"
         ],
         "nearest_mrts": [
+          "Woodlands North",
           "Marsiling",
           "Woodlands"
         ]
@@ -71152,7 +71236,8 @@
           "MY41"
         ],
         "nearest_mrts": [
-          "Choa Chu Kang"
+          "Choa Chu Kang",
+          "Yew Tee"
         ]
       },
       "geometry": {
@@ -72278,6 +72363,8 @@
         ],
         "nearest_mrts": [
           "Choa Chu Kang",
+          "Yew Tee",
+          "Lakeside",
           "Boon Lay",
           "Jurong East"
         ]
@@ -72825,7 +72912,8 @@
           "MY39"
         ],
         "nearest_mrts": [
-          "Choa Chu Kang"
+          "Choa Chu Kang",
+          "Bukit Panjang"
         ]
       },
       "geometry": {
@@ -73147,7 +73235,8 @@
           "CK23"
         ],
         "nearest_mrts": [
-          "Choa Chu Kang"
+          "Choa Chu Kang",
+          "Bukit Panjang"
         ]
       },
       "geometry": {
@@ -73656,7 +73745,7 @@
         ],
         "nearest_mrts": [
           "Choa Chu Kang",
-          "Jurong East"
+          "Bukit Panjang"
         ]
       },
       "geometry": {
@@ -74253,6 +74342,7 @@
           "HT40"
         ],
         "nearest_mrts": [
+          "Cashew",
           "Bukit Panjang"
         ]
       },
@@ -75337,6 +75427,8 @@
           "Hillview",
           "Bukit Gombak",
           "Beauty World",
+          "Bukit Batok",
+          "Bukit Panjang",
           "Jurong East"
         ]
       },
@@ -75583,7 +75675,8 @@
           "CK27"
         ],
         "nearest_mrts": [
-          "Choa Chu Kang"
+          "Choa Chu Kang",
+          "Bukit Panjang"
         ]
       },
       "geometry": {
@@ -75659,7 +75752,7 @@
         ],
         "nearest_mrts": [
           "Choa Chu Kang",
-          "Jurong East"
+          "Bukit Panjang"
         ]
       },
       "geometry": {
@@ -75737,7 +75830,7 @@
         ],
         "nearest_mrts": [
           "Choa Chu Kang",
-          "Jurong East"
+          "Bukit Panjang"
         ]
       },
       "geometry": {
@@ -75912,7 +76005,8 @@
           "WE20"
         ],
         "nearest_mrts": [
-          "Boon Lay"
+          "Boon Lay",
+          "Pioneer"
         ]
       },
       "geometry": {
@@ -75985,7 +76079,7 @@
         ],
         "nearest_mrts": [
           "Boon Lay",
-          "Jurong East"
+          "Pioneer"
         ]
       },
       "geometry": {
@@ -76077,7 +76171,7 @@
         ],
         "nearest_mrts": [
           "Boon Lay",
-          "Jurong East"
+          "Lakeside"
         ]
       },
       "geometry": {
@@ -77962,6 +78056,7 @@
         ],
         "nearest_mrts": [
           "Beauty World",
+          "Bukit Batok",
           "Jurong East"
         ]
       },
@@ -82199,7 +82294,8 @@
           "WE20"
         ],
         "nearest_mrts": [
-          "Boon Lay"
+          "Boon Lay",
+          "Pioneer"
         ]
       },
       "geometry": {
@@ -82616,7 +82712,8 @@
           "WE25"
         ],
         "nearest_mrts": [
-          "Boon Lay"
+          "Boon Lay",
+          "Lakeside"
         ]
       },
       "geometry": {
@@ -82784,7 +82881,8 @@
           "WE26"
         ],
         "nearest_mrts": [
-          "Boon Lay"
+          "Boon Lay",
+          "Lakeside"
         ]
       },
       "geometry": {
@@ -82889,7 +82987,8 @@
           "WE27"
         ],
         "nearest_mrts": [
-          "Boon Lay"
+          "Boon Lay",
+          "Lakeside"
         ]
       },
       "geometry": {
@@ -83024,6 +83123,8 @@
           "WE40"
         ],
         "nearest_mrts": [
+          "Gul Circle",
+          "Tuas Crescent",
           "Joo Koon",
           "Pioneer",
           "Boon Lay",
@@ -85978,10 +86079,11 @@
           "WE51"
         ],
         "nearest_mrts": [
+          "Pasir Panjang",
           "Kent Ridge",
+          "Queenstown",
           "Buona Vista",
           "HarbourFront",
-          "Clementi",
           "Orchard"
         ]
       },
@@ -86547,6 +86649,8 @@
           "WE51"
         ],
         "nearest_mrts": [
+          "Telok Blangah",
+          "Labrador Park",
           "Redhill",
           "Queenstown",
           "Tiong Bahru",
@@ -86706,8 +86810,9 @@
           "WE50"
         ],
         "nearest_mrts": [
-          "HarbourFront",
-          "Orchard"
+          "Telok Blangah",
+          "Labrador Park",
+          "HarbourFront"
         ]
       },
       "geometry": {
@@ -86810,8 +86915,9 @@
           "WE49"
         ],
         "nearest_mrts": [
-          "HarbourFront",
-          "Orchard"
+          "Telok Blangah",
+          "Labrador Park",
+          "HarbourFront"
         ]
       },
       "geometry": {
@@ -86891,8 +86997,9 @@
           "WE50"
         ],
         "nearest_mrts": [
-          "HarbourFront",
-          "Orchard"
+          "Telok Blangah",
+          "Labrador Park",
+          "HarbourFront"
         ]
       },
       "geometry": {
@@ -87008,8 +87115,9 @@
           "WE51"
         ],
         "nearest_mrts": [
-          "HarbourFront",
-          "Orchard"
+          "Telok Blangah",
+          "Labrador Park",
+          "HarbourFront"
         ]
       },
       "geometry": {
@@ -87095,10 +87203,11 @@
           "WE51"
         ],
         "nearest_mrts": [
+          "Pasir Panjang",
           "Haw Par Villa",
+          "Labrador Park",
           "Kent Ridge",
           "HarbourFront",
-          "Clementi",
           "Jurong East",
           "Orchard",
           "Raffles Place"
@@ -90187,6 +90296,7 @@
           "HT18"
         ],
         "nearest_mrts": [
+          "Cashew",
           "Bukit Panjang"
         ]
       },
@@ -90288,6 +90398,7 @@
           "HT18"
         ],
         "nearest_mrts": [
+          "Cashew",
           "Bukit Panjang"
         ]
       },
@@ -90633,8 +90744,10 @@
           "JR01"
         ],
         "nearest_mrts": [
+          "King Albert Park",
           "Beauty World",
           "Clementi",
+          "Bukit Panjang",
           "Jurong East"
         ]
       },
@@ -90929,9 +91042,9 @@
           "HT24"
         ],
         "nearest_mrts": [
+          "Sixth Avenue",
+          "Tan Kah Kee",
           "Botanic Gardens",
-          "Holland Village",
-          "Stevens",
           "Beauty World",
           "Buona Vista",
           "Newton",
@@ -91145,8 +91258,8 @@
           "HT24"
         ],
         "nearest_mrts": [
+          "Tan Kah Kee",
           "Botanic Gardens",
-          "Stevens",
           "Buona Vista",
           "Newton",
           "Orchard"
@@ -91475,11 +91588,11 @@
           "TP03"
         ],
         "nearest_mrts": [
+          "Farrer Road",
           "Botanic Gardens",
-          "Holland Village",
-          "Commonwealth",
           "Buona Vista",
-          "Orchard"
+          "Orchard",
+          "Newton"
         ]
       },
       "geometry": {
@@ -91586,8 +91699,9 @@
           "TP02"
         ],
         "nearest_mrts": [
+          "Sixth Avenue",
+          "Tan Kah Kee",
           "Holland Village",
-          "Botanic Gardens",
           "Buona Vista",
           "Clementi",
           "Orchard"
@@ -91783,6 +91897,7 @@
           "TP01"
         ],
         "nearest_mrts": [
+          "King Albert Park",
           "Dover",
           "Holland Village",
           "Buona Vista",
@@ -92009,6 +92124,7 @@
           "HT27"
         ],
         "nearest_mrts": [
+          "King Albert Park",
           "Beauty World",
           "Buona Vista",
           "Clementi",
@@ -94061,6 +94177,7 @@
           "HT18"
         ],
         "nearest_mrts": [
+          "Cashew",
           "Hillview",
           "Bukit Panjang"
         ]
@@ -94172,6 +94289,7 @@
           "HT18"
         ],
         "nearest_mrts": [
+          "Cashew",
           "Bukit Panjang"
         ]
       },
@@ -94506,7 +94624,8 @@
           "CK26"
         ],
         "nearest_mrts": [
-          "Choa Chu Kang"
+          "Choa Chu Kang",
+          "Bukit Panjang"
         ]
       },
       "geometry": {
@@ -94936,7 +95055,8 @@
           "SK11"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -95685,7 +95805,8 @@
           "SK12"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -96593,7 +96714,8 @@
           "SK07"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -96652,7 +96774,8 @@
           "SK07"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -96719,7 +96842,8 @@
           "SK09"
         ],
         "nearest_mrts": [
-          "Sengkang"
+          "Sengkang",
+          "Punggol"
         ]
       },
       "geometry": {
@@ -96775,7 +96899,7 @@
         ],
         "nearest_mrts": [
           "Sengkang",
-          "Serangoon"
+          "Punggol"
         ]
       },
       "geometry": {
@@ -97776,7 +97900,8 @@
           "NS43"
         ],
         "nearest_mrts": [
-          "Yishun"
+          "Yishun",
+          "Khatib"
         ]
       },
       "geometry": {
@@ -97971,7 +98096,8 @@
           "CK27"
         ],
         "nearest_mrts": [
-          "Choa Chu Kang"
+          "Choa Chu Kang",
+          "Bukit Panjang"
         ]
       },
       "geometry": {
@@ -98519,7 +98645,8 @@
           "TP10"
         ],
         "nearest_mrts": [
-          "Newton"
+          "Newton",
+          "Novena"
         ]
       },
       "geometry": {
@@ -101120,7 +101247,8 @@
           "NS41"
         ],
         "nearest_mrts": [
-          "Yishun"
+          "Yishun",
+          "Khatib"
         ]
       },
       "geometry": {
@@ -101201,7 +101329,8 @@
           "NS41"
         ],
         "nearest_mrts": [
-          "Yishun"
+          "Yishun",
+          "Khatib"
         ]
       },
       "geometry": {
@@ -102840,6 +102969,7 @@
           "YK02"
         ],
         "nearest_mrts": [
+          "Lentor",
           "Yio Chu Kang",
           "Ang Mo Kio"
         ]
@@ -102895,7 +103025,7 @@
           "PS12"
         ],
         "nearest_mrts": [
-          "Woodleigh",
+          "Bartley",
           "Serangoon"
         ]
       },
@@ -103782,6 +103912,7 @@
         ],
         "nearest_mrts": [
           "HarbourFront",
+          "Tanjong Pagar",
           "Chinatown",
           "Raffles Place"
         ]
@@ -104045,6 +104176,7 @@
         ],
         "nearest_mrts": [
           "Great World",
+          "Napier",
           "Orchard"
         ]
       },
@@ -105631,6 +105763,8 @@
           "WE49"
         ],
         "nearest_mrts": [
+          "Telok Blangah",
+          "Labrador Park",
           "Redhill",
           "Queenstown",
           "HarbourFront"

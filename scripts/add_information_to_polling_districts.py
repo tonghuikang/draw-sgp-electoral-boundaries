@@ -13,7 +13,7 @@ import math
 input_kml = "../intermediate_data/ge2025_polling_districts_fixed.kml"
 elector_size_json = "../intermediate_data/ge2025_polling_distrct_and_estimated_elector_size.json"
 adjacent_districts_json = "../intermediate_data/ge2025_polling_districts_to_adjacent_districts.json"
-mrt_stations_csv = "../intermediate_data/mrt_stations_labeled.csv"
+mrt_stations_csv = "../raw_data/mrt_stations.csv"
 output_geojson = "../processed_data/ge2025_polling_districts_with_information.geojson"
 
 # Ensure paths are absolute
@@ -35,7 +35,8 @@ with open(adjacent_districts_json, "r") as f:
     adjacent_districts = json.load(f)
 
 # Load MRT stations data
-mrt_stations = pd.read_csv(mrt_stations_csv).to_records()
+mrt_stations = pd.read_csv(mrt_stations_csv)
+mrt_stations = mrt_stations[mrt_stations["is_opened"]].reset_index(drop=True).to_dict("records")
 
 # Create a lookup dictionary for faster access
 elector_size_dict = {item["polling_district"]: item["estimated_elector_size"] for item in elector_sizes}
@@ -75,16 +76,12 @@ for feature_collection in geojson_data:
             best_ratio = 0
             require_major_station = False
             nearest_mrts = []
-            for distance, station in sorted(zip(distances, mrt_stations)):
+            for distance, _, station in sorted(zip(distances, list(range(len(distances))), mrt_stations)):
                 distance = max(1e-9, distance)
-                if require_major_station and not station["is_major_mrt"]:
-                    continue
                 ratio = station["passengers"] / distance
                 if ratio > best_ratio * (1 - 1 / (len(nearest_mrts) + 1)):
                     nearest_mrts.append(station["name"])
                 best_ratio = max(ratio, best_ratio)
-                if station["is_major_mrt"]:
-                    require_major_station = True
 
             # Add nearest MRT stations to properties
             feature["properties"]["nearest_mrts"] = nearest_mrts

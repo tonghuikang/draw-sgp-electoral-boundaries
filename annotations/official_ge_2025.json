@@ -92,9 +92,9 @@
       "nonenclavity": 1,
       "compactness": 0.8386280053470931,
       "convexity": 0.6671342136026833,
-      "relevance": 0.0,
+      "relevance": 0.07579749155260294,
       "elector_balance": 0.9842806947195761,
-      "overall_score": 0.6980085827338705
+      "overall_score": 0.713168081044391
     },
     {
       "constituency_name": "Sembawang",
@@ -140,9 +140,9 @@
       "nonenclavity": 1,
       "compactness": 0.908671178496427,
       "convexity": 0.8194425081781592,
-      "relevance": 0.9473198604692571,
+      "relevance": 1.0,
       "elector_balance": 0.9188883898403584,
-      "overall_score": 0.9188643873968403
+      "overall_score": 0.9294004153029889
     },
     {
       "constituency_name": "Holland-Bukit Timah",
@@ -152,9 +152,9 @@
       "nonenclavity": 1,
       "compactness": 0.754239597761271,
       "convexity": 0.7019181705827026,
-      "relevance": 0.10025144233507742,
+      "relevance": 0.05012572116753871,
       "elector_balance": 0.923868247337113,
-      "overall_score": 0.6960554916032329
+      "overall_score": 0.686030347369725
     },
     {
       "constituency_name": "Marsiling-Yew Tee",
@@ -200,9 +200,9 @@
       "nonenclavity": 1,
       "compactness": 0.8237630072266178,
       "convexity": 0.8825891490847594,
-      "relevance": 0.599918785848434,
+      "relevance": 0.6570732450129435,
       "elector_balance": 0.8676172061429029,
-      "overall_score": 0.8347776296605428
+      "overall_score": 0.8462085214934447
     },
     {
       "constituency_name": "Chua Chu Kang",
@@ -368,9 +368,9 @@
       "nonenclavity": 0.33333333333333326,
       "compactness": 0.8290012066848744,
       "convexity": 0.8158094134398007,
-      "relevance": 0.2857142857142857,
+      "relevance": 0.14285714285714285,
       "elector_balance": 0.8180378218133927,
-      "overall_score": 0.6163792121971373
+      "overall_score": 0.5878077836257087
     },
     {
       "constituency_name": "Mountbatten",
@@ -380,9 +380,9 @@
       "nonenclavity": 0.8333333333333333,
       "compactness": 0.8539882199664853,
       "convexity": 0.8233895414103815,
-      "relevance": 0.42858398523336555,
+      "relevance": 0.571459963083414,
       "elector_balance": 0.8016552219105878,
-      "overall_score": 0.7481900603708308
+      "overall_score": 0.7767652559408404
     },
     {
       "constituency_name": "Kebun Baru",
