@@ -17,7 +17,7 @@ district_to_size = {}
 with open(input_file, "r") as f:
     data = json.load(f)
 
-# Process each electoral division
+# Process each constituency division
 for division in data:
     elector_size = division["elector_size"]
     polling_districts = division["polling_districts"]

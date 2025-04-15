@@ -71,7 +71,7 @@
       color: #0066FF;
     }
     /* --- Tooltip/Popup Styles --- */
-    .leaflet-tooltip { /* Style for hover tooltips (now only for Electoral Boundaries) */
+    .leaflet-tooltip { /* Style for hover tooltips (now only for Constituency Boundaries) */
       font-weight: bold;
       background-color: rgba(255, 255, 255, 0.9);
       border: 2px solid #FFA500;
@@ -251,20 +251,20 @@
     // --- Highlighting Logic ---
     function resetHighlightStyle(layer, defaultColor) {
        if (layer && typeof layer.setStyle === 'function') {
-          // Check if this is an electoral boundary (blue) or polling district (red)
-          const isElectoralBoundary = defaultColor === '#0066FF';
-          // Use weight 4 for electoral boundaries, 2 for polling districts
-          const weight = isElectoralBoundary ? 4 : 2;
+          // Check if this is a constituency boundary (blue) or polling district (red)
+          const isConstituencyBoundary = defaultColor === '#0066FF';
+          // Use weight 4 for constituency boundaries, 2 for polling districts
+          const weight = isConstituencyBoundary ? 4 : 2;
           
           // Determine which pane to use based on whether this is an SMC
           let pane = 'defaultPane';
-          if (isElectoralBoundary && layer.feature && layer.feature.properties && layer.feature.properties.member_size === 1) {
+          if (isConstituencyBoundary && layer.feature && layer.feature.properties && layer.feature.properties.member_size === 1) {
               pane = 'smcPane';
           }
           
-          // Calculate z-index for electoral boundaries based on polling district count
+          // Calculate z-index for constituency boundaries based on polling district count
           let zIndex = 0;
-          if (isElectoralBoundary && layer.feature && layer.feature.properties && layer.feature.properties.polling_districts) {
+          if (isConstituencyBoundary && layer.feature && layer.feature.properties && layer.feature.properties.polling_districts) {
               const maxPdCount = 100; // Assuming no constituency has more than 100 polling districts
               const pdCount = layer.feature.properties.polling_districts.length;
               zIndex = maxPdCount - pdCount; // Smaller constituencies get higher z-index
@@ -292,10 +292,10 @@
             resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
         }
         
-        // Check if this is an electoral boundary (blue) or polling district (red)
-        const isElectoralBoundary = defaultColor === '#0066FF';
-        // Use weight 6 for electoral boundaries, 4 for polling districts when highlighted
-        const highlightWeight = isElectoralBoundary ? 6 : 4;
+        // Check if this is a constituency boundary (blue) or polling district (red)
+        const isConstituencyBoundary = defaultColor === '#0066FF';
+        // Use weight 6 for constituency boundaries, 4 for polling districts when highlighted
+        const highlightWeight = isConstituencyBoundary ? 6 : 4;
         
         // Apply highlight style to the entire layer
         if (layer && typeof layer.setStyle === 'function') {
@@ -365,12 +365,12 @@
             return;
         }
 
-        // Store references to individual layers for electoral boundaries
+        // Store references to individual layers for constituency boundaries
         const individualLayers = [];
 
         const layer = L.geoJSON(geojsonData, {
             style: feature => {
-                // Calculate z-index for electoral boundaries based on polling district count
+                // Calculate z-index for constituency boundaries based on polling district count
                 let zIndex = 0;
                 let isSMC = false;
                 
@@ -393,7 +393,7 @@
                 
                 return { 
                     color: color, 
-                    weight: isPollingDistrict ? 2 : 4, // Only electoral boundaries are bolder (4), polling districts stay at 2
+                    weight: isPollingDistrict ? 2 : 4, // Only constituency boundaries are bolder (4), polling districts stay at 2
                     opacity: 0.7, 
                     fillOpacity: 0,
                     zIndex: zIndex, // Add z-index based on polling district count
@@ -619,7 +619,7 @@
                         // and allows the popup to open.
                         L.DomEvent.stopPropagation(e);
                         
-                        // For electoral boundaries, show statistics
+                        // For constituency boundaries, show statistics
                         if (!isPollingDistrict) {
                             const constituencyName = props.name || props.Name || props.NAME || props.CONSTITUENCY || props.constituency;
                             if (constituencyName) {
@@ -658,7 +658,7 @@
             } // end onEachFeature
         }).addTo(featureGroup);
 
-        // If these are electoral boundaries, ensure smaller constituencies are on top
+        // If these are constituency boundaries, ensure smaller constituencies are on top
         if (!isPollingDistrict && geojsonData.features) {
             // The features are already sorted by polling district count (ascending)
             // Bring each layer to front in reverse order (smallest to largest)
@@ -705,8 +705,8 @@
             }
         });
         
-        // Create electoral boundaries based on assignments
-        let electoralFeatures = [];
+        // Create constituency boundaries based on assignments
+        let constituencyFeatures = [];
         
         for (const constituency of assignments.assignment) {
             const constituencyName = constituency.constituency_name;
@@ -818,7 +818,7 @@
                     }
                 };
                 
-                electoralFeatures.push(constituencyFeature);
+                constituencyFeatures.push(constituencyFeature);
                 
             } catch (error) {
                 console.error(`Error processing constituency ${constituencyName}:`, error);
@@ -888,7 +888,7 @@
                             }
                         };
                         
-                        electoralFeatures.push(constituencyFeature);
+                        constituencyFeatures.push(constituencyFeature);
                     } else {
                         throw new Error("Failed to create convex hull");
                     }
@@ -898,9 +898,9 @@
             }
         }
         
-        // Sort electoral features by member size and polling district count
+        // Sort constituency features by member size and polling district count
         // This ensures SMCs and smaller constituencies are rendered on top of larger ones
-        electoralFeatures.sort((a, b) => {
+        constituencyFeatures.sort((a, b) => {
             const aIsSMC = a.properties.member_size === 1;
             const bIsSMC = b.properties.member_size === 1;
             
@@ -917,7 +917,7 @@
         
         return {
             type: "FeatureCollection",
-            features: electoralFeatures
+            features: constituencyFeatures
         };
     }
 
@@ -1031,7 +1031,7 @@
     async function loadAllLayers() {
         const localAssignmentsUrl = 'assignments/official_ge_2025.json';
         const localPollingUrl = 'processed_data/ge2025_polling_districts_with_information.geojson';
-        const githubBaseUrl = 'https://raw.githubusercontent.com/tonghuikang/draw-sgp-electoral-boundaries/master/';
+        const githubBaseUrl = 'https://raw.githubusercontent.com/tonghuikang/electoral-boundaries/master/';
         const githubAssignmentsUrl = githubBaseUrl + localAssignmentsUrl;
         const githubPollingUrl = githubBaseUrl + localPollingUrl;
         
