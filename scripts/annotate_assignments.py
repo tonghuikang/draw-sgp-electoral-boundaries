@@ -334,8 +334,10 @@ def main() -> None:
         result["elector_balance"] = calculate_geometric_score(result["elector_size"] / result["member_size"], full_elector_size / full_member_size)
 
     for result in results:
-        overall_score = result["nonenclavity"] + result["compactness"] + result["convexity"] + result["relevance"] + result["elector_balance"]
-        result["overall_score"] = overall_score / 5
+        constituency_score = (result["nonenclavity"] + result["compactness"] + result["convexity"] + result["relevance"] + result["elector_balance"]) / 5
+        # the overall score is upper bounded by elector_balance
+        constituency_score = min(constituency_score, result["elector_balance"])
+        result["constituency_score"] = constituency_score
 
     # Use the same name as the input file for output
     input_filename = os.path.basename("assignments/official_ge_2025.json")
