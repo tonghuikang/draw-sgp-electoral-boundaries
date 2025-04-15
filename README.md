@@ -13,6 +13,7 @@ For each constituency, we can measure how good they are:
 - Convexity - We want the constituency to have a convex shape
 - Relevance - We want the assigned name of the constituency to reflect its location
 
+Please refer to [scoring.md](./SCORING.md) for a detailed explanation.
 
 ## Sources
 
