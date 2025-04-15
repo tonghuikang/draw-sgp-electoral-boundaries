@@ -168,8 +168,8 @@
   <div id="map"></div>
   <div class="controls">
     <div>
-      <input type="checkbox" id="electoral-toggle" checked>
-      <label for="electoral-toggle">Show Official 2025 Constituencies</label>
+      <input type="checkbox" id="constituency-toggle" checked>
+      <label for="constituency-toggle">Show Official 2025 Constituencies</label>
     </div>
     <div>
       <input type="checkbox" id="polling-toggle">
@@ -181,7 +181,7 @@
   <div class="legend">
     <div class="legend-item">
       <span class="legend-color" style="background-color: transparent; border-color: #0066FF;"></span>
-      <span>Electoral Boundaries</span>
+      <span>Constituency Boundaries</span>
     </div>
     <div class="legend-item">
       <span class="legend-color" style="background-color: transparent; border-color: #FF0000;"></span>
@@ -218,13 +218,13 @@
     });
 
     // Create layers without adding them to the map yet
-    let electoralLayer = L.featureGroup();
+    let constituencyLayer = L.featureGroup();
     let pollingLayer = L.featureGroup();
     let adjacencyLinesLayer = L.layerGroup().addTo(map);
     
     // Add layers based on checkbox state
-    if (document.getElementById('electoral-toggle').checked) {
-      electoralLayer.addTo(map);
+    if (document.getElementById('constituency-toggle').checked) {
+      constituencyLayer.addTo(map);
     }
     if (document.getElementById('polling-toggle').checked) {
       pollingLayer.addTo(map);
@@ -495,13 +495,13 @@
                      // --- End Polling District Specific Logic ---
 
                 } else {
-                    // --- Electoral Boundary Logic (Keep hover tooltip) ---
-                    tooltipContent = props.name || props.Name || props.NAME || props.CONSTITUENCY || props.constituency || 'Electoral Boundary (No Name)';
+                    // --- Constituency Boundary Logic (Keep hover tooltip) ---
+                    tooltipContent = props.name || props.Name || props.NAME || props.CONSTITUENCY || props.constituency || 'Constituency Boundary (No Name)';
                     if (tooltipContent) {
                         layer.bindTooltip(tooltipContent, { 
                             permanent: false, 
                             direction: 'center', 
-                            className: 'electoral-tooltip', 
+                            className: 'constituency-tooltip', 
                             sticky: true, 
                             opacity: 0.9, 
                             interactive: false,
@@ -509,22 +509,22 @@
                             pane: 'labelPane' // Use the special pane for tooltips
                         });
                         
-                        // Add popup for electoral boundaries with statistics
+                        // Add popup for constituency boundaries with statistics
                         const constituencyName = tooltipContent;
                         // Create popup content with preloaded statistics
-                        const popupId = `electoral-popup-${constituencyName.replace(/\s+/g, '-')}`;
-                        const popupContent = `<div id="${popupId}" class="electoral-popup"></div>`;
+                        const popupId = `constituency-popup-${constituencyName.replace(/\s+/g, '-')}`;
+                        const popupContent = `<div id="${popupId}" class="constituency-popup"></div>`;
                         layer.bindPopup(popupContent);
                         
                         // Pre-populate popup content when binding
                         layer.on('popupopen', function() {
                             const popupElement = document.getElementById(popupId);
                             if (popupElement) {
-                                getElectoralStatistics(constituencyName, popupElement);
+                                getConstituencyStatistics(constituencyName, popupElement);
                             }
                         });
                     }
-                    // --- End Electoral Boundary Logic ---
+                    // --- End Constituency Boundary Logic ---
                 }
 
 
@@ -613,9 +613,9 @@
                             if (constituencyName) {
                                 // When popup opens, show the statistics
                                 layer.on('popupopen', function() {
-                                    const popupElement = document.getElementById(`electoral-popup-${constituencyName.replace(/\s+/g, '-')}`);
+                                    const popupElement = document.getElementById(`constituency-popup-${constituencyName.replace(/\s+/g, '-')}`);
                                     if (popupElement) {
-                                        getElectoralStatistics(constituencyName, popupElement);
+                                        getConstituencyStatistics(constituencyName, popupElement);
                                     }
                                 });
                             }
@@ -681,8 +681,8 @@
         }
     } // End parseGeoJSON
 
-    // --- Construct Electoral Boundaries from Assignments ---
-    async function constructElectoralBoundaries(pollingGeoJSON, assignments) {
+    // --- Construct Constituency Boundaries from Assignments ---
+    async function constructConstituencyBoundaries(pollingGeoJSON, assignments) {
         
         // Create a mapping of polling district codes to their GeoJSON features
         const pollingDistrictMap = {};
@@ -910,10 +910,10 @@
     }
 
     // Store preloaded statistics
-    let electoralStatistics = {};
+    let constituencyStatistics = {};
     
     // Function to preload all statistics from annotations file
-    async function preloadElectoralStatistics() {
+    async function preloadConstituencyStatistics() {
         try {
             const response = await fetch('annotations/official_ge_2025.json');
             if (!response.ok) {
@@ -923,10 +923,10 @@
             const data = await response.json();
             // Store all statistics in a map for quick access
             data.annotations.forEach(constituency => {
-                electoralStatistics[constituency.constituency_name] = constituency;
+                constituencyStatistics[constituency.constituency_name] = constituency;
             });
             
-            console.log("Electoral statistics preloaded successfully");
+            console.log("Constituency statistics preloaded successfully");
             return true;
         } catch (error) {
             console.error("Error preloading statistics:", error);
@@ -935,8 +935,8 @@
     }
     
     // Function to get statistics for a constituency
-    function getElectoralStatistics(constituencyName, popupElement) {
-        const constituencyData = electoralStatistics[constituencyName];
+    function getConstituencyStatistics(constituencyName, popupElement) {
+        const constituencyData = constituencyStatistics[constituencyName];
         
         if (constituencyData) {
             // Create a proper table with better styling using CSS classes
@@ -1010,7 +1010,7 @@
         let bounds = L.latLngBounds();
         let assignmentsData = null;
         let pollingGeoJSON = null;
-        let electoralGeoJSON = null;
+        let constituencyGeoJSON = null;
         let assignmentsSource = 'local';
         let pollingSource = 'local';
         pollingDistrictLayers = {};
@@ -1063,21 +1063,21 @@
                 }
             }
 
-            // Construct Electoral Boundaries from Assignments and Polling Districts
+            // Construct Constituency Boundaries from Assignments and Polling Districts
             if (assignmentsData && pollingGeoJSON) {
-                statusElement.textContent = "Constructing electoral boundaries...";
-                electoralGeoJSON = await constructElectoralBoundaries(pollingGeoJSON, assignmentsData);
+                statusElement.textContent = "Constructing constituency boundaries...";
+                constituencyGeoJSON = await constructConstituencyBoundaries(pollingGeoJSON, assignmentsData);
             } else {
-                console.error("Missing data needed to construct electoral boundaries");
-                statusElement.textContent += " Failed to construct electoral boundaries.";
+                console.error("Missing data needed to construct constituency boundaries");
+                statusElement.textContent += " Failed to construct constituency boundaries.";
             }
 
             // Parse
             statusElement.textContent = "Processing map data...";
-            if (electoralGeoJSON) {
-                parseGeoJSON(electoralGeoJSON, electoralLayer, '#0066FF', false); // Blue outline, has tooltip
-                if (electoralLayer.getBounds().isValid()) bounds.extend(electoralLayer.getBounds());
-            } else { statusElement.textContent += " Failed to load electoral data."; }
+            if (constituencyGeoJSON) {
+                parseGeoJSON(constituencyGeoJSON, constituencyLayer, '#0066FF', false); // Blue outline, has tooltip
+                if (constituencyLayer.getBounds().isValid()) bounds.extend(constituencyLayer.getBounds());
+            } else { statusElement.textContent += " Failed to load constituency data."; }
 
             if (pollingGeoJSON) {
                 parseGeoJSON(pollingGeoJSON, pollingLayer, '#FF0000', true); // Red outline, has popup
@@ -1112,14 +1112,14 @@
     // --- End Load All Layers ---
 
     // --- Toggle Controls (unchanged) ---
-    document.getElementById('electoral-toggle').addEventListener('change', function() {
-        if (this.checked) { map.addLayer(electoralLayer); }
+    document.getElementById('constituency-toggle').addEventListener('change', function() {
+        if (this.checked) { map.addLayer(constituencyLayer); }
         else {
-            if (activeHighlight && electoralLayer.hasLayer(activeHighlight.layer)) {
+            if (activeHighlight && constituencyLayer.hasLayer(activeHighlight.layer)) {
                 resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
                 activeHighlight = null;
             }
-            map.removeLayer(electoralLayer);
+            map.removeLayer(constituencyLayer);
         }
     });
     document.getElementById('polling-toggle').addEventListener('change', function() {
@@ -1176,8 +1176,8 @@
     document.addEventListener('DOMContentLoaded', async function() {
         document.getElementById('status').textContent = "Initializing...";
         
-        // Preload electoral statistics
-        await preloadElectoralStatistics();
+        // Preload constituency statistics
+        await preloadConstituencyStatistics();
         
         // Load map layers
         loadAllLayers();
