@@ -210,11 +210,11 @@
       "elector_size": 93368,
       "contiguous": true,
       "nonenclavity": 1,
-      "compactness": 0.9076639252868779,
-      "convexity": 0.8169755785202415,
+      "compactness": 0.907663886497971,
+      "convexity": 0.8169756620096764,
       "relevance": 0.8650822551623683,
       "elector_balance": 0.8223712837231669,
-      "overall_score": 0.8824186085385308
+      "overall_score": 0.8824186174786364
     },
     {
       "constituency_name": "Bukit Panjang",

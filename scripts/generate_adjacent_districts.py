@@ -171,8 +171,7 @@ def find_adjacent_districts(districts):
 
                     # If they share a line segment (not just a point), they're adjacent regardless
                     # of their arrangement around this particular point
-                    if intersection.geom_type in ["LineString", "MultiLineString", "MultiPoint"] or hasattr(intersection, "length") and intersection.length > 0:
-                        # Note: inclusion of MultiPoint can cause false positives
+                    if intersection.geom_type in ["LineString", "MultiLineString"] or hasattr(intersection, "length") and intersection.length > 0:
                         print(f"  Districts {d1} and {d2} meet diagonally at this point but also share a boundary elsewhere, keeping them adjacent")
                     else:
                         # Only exclude truly diagonal districts that only meet at this point
