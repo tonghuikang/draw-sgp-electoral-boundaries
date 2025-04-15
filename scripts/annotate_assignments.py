@@ -226,8 +226,6 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
     part_relevance_scores = []
     for part in constituency_parts:
         part_with_aliases = [part]
-        if part in name_aliases:
-            part_with_aliases.extend(name_aliases[part])
 
         # Calculate the relevance score for this part
         part_weighted_score = 0.0
@@ -262,7 +260,7 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
         part_relevance_scores.append(part_weighted_score / total_elector_size)
 
     # For single-part names, just return the score
-    # For double-barrel names, return the minimum relevance of the parts
+    # For double-barrel names, return the maximum relevance of the parts
     return max(part_relevance_scores) if part_relevance_scores else 0.0
 
 
