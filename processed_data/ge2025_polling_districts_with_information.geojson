@@ -59825,7 +59825,7 @@
       "properties": {
         "name": "NS50",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "HT02",
           "KR01",
@@ -60118,7 +60118,7 @@
       "properties": {
         "name": "NS06",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS01",
           "NS05",
@@ -60204,7 +60204,7 @@
       "properties": {
         "name": "NS02",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS01",
           "NS03",
@@ -60264,7 +60264,7 @@
       "properties": {
         "name": "NS04",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS01",
           "NS02",
@@ -60356,7 +60356,7 @@
       "properties": {
         "name": "NS03",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS02",
           "NS04",
@@ -60456,7 +60456,7 @@
       "properties": {
         "name": "NS13",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS03",
           "NS12",
@@ -60515,7 +60515,7 @@
       "properties": {
         "name": "NS12",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS03",
           "NS04",
@@ -60600,7 +60600,7 @@
       "properties": {
         "name": "NS14",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS13",
           "NS15",
@@ -60675,7 +60675,7 @@
       "properties": {
         "name": "NS18",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS14",
           "NS17",
@@ -60774,7 +60774,7 @@
       "properties": {
         "name": "NS20",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "AM03",
           "NS01",
@@ -60784,6 +60784,7 @@
           "NS14",
           "NS18",
           "NS19",
+          "NS21",
           "NS22",
           "NS23",
           "NS41",
@@ -60974,7 +60975,7 @@
       "properties": {
         "name": "NS41",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS20",
           "NS23",
@@ -61132,7 +61133,7 @@
       "properties": {
         "name": "NS40",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS24",
           "NS38",
@@ -61212,7 +61213,7 @@
       "properties": {
         "name": "NS38",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS25",
           "NS37",
@@ -61309,7 +61310,7 @@
       "properties": {
         "name": "NS39",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS24",
           "NS25",
@@ -61374,9 +61375,9 @@
       "properties": {
         "name": "NS25",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
-          "NS19",
+          "NS21",
           "NS22",
           "NS24",
           "NS26",
@@ -61451,11 +61452,11 @@
       "properties": {
         "name": "NS26",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS16",
           "NS17",
-          "NS19",
+          "NS21",
           "NS25",
           "NS27",
           "NS37"
@@ -61552,11 +61553,12 @@
       "properties": {
         "name": "NS17",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS16",
           "NS18",
           "NS19",
+          "NS21",
           "NS26"
         ],
         "nearest_mrts": [
@@ -61646,7 +61648,7 @@
       "properties": {
         "name": "NS16",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS14",
           "NS15",
@@ -61761,7 +61763,7 @@
       "properties": {
         "name": "NS15",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS11",
           "NS12",
@@ -61846,7 +61848,7 @@
       "properties": {
         "name": "NS11",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS04",
           "NS10",
@@ -61936,7 +61938,7 @@
       "properties": {
         "name": "NS10",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS04",
           "NS05",
@@ -62042,7 +62044,7 @@
       "properties": {
         "name": "NS07",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS05",
           "NS06",
@@ -62132,7 +62134,7 @@
       "properties": {
         "name": "NS09",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS07",
           "NS08",
@@ -62221,7 +62223,7 @@
       "properties": {
         "name": "NS08",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS06",
           "NS07",
@@ -62291,7 +62293,7 @@
       "properties": {
         "name": "NS29",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS08",
           "NS28",
@@ -62386,7 +62388,7 @@
       "properties": {
         "name": "NS28",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS09",
           "NS10",
@@ -62460,7 +62462,7 @@
       "properties": {
         "name": "NS30",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS27",
           "NS29",
@@ -62559,7 +62561,7 @@
       "properties": {
         "name": "NS31",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS27",
           "NS30",
@@ -62632,7 +62634,7 @@
       "properties": {
         "name": "NS27",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS11",
           "NS15",
@@ -62782,7 +62784,7 @@
       "properties": {
         "name": "NS36",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS27",
           "NS33",
@@ -62853,7 +62855,7 @@
       "properties": {
         "name": "NS35",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS34",
           "NS36",
@@ -62923,7 +62925,7 @@
       "properties": {
         "name": "NS42",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS37",
           "NS38",
@@ -63014,7 +63016,7 @@
       "properties": {
         "name": "NS45",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS43",
           "NS44",
@@ -63083,7 +63085,7 @@
       "properties": {
         "name": "NS44",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS34",
           "NS35",
@@ -63169,7 +63171,7 @@
       "properties": {
         "name": "NS34",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS32",
           "NS33",
@@ -63256,7 +63258,7 @@
       "properties": {
         "name": "NS33",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS27",
           "NS32",
@@ -63321,7 +63323,7 @@
       "properties": {
         "name": "NS32",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS31",
           "NS33",
@@ -63391,7 +63393,7 @@
       "properties": {
         "name": "NS49",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS29",
           "NS30",
@@ -63501,7 +63503,7 @@
       "properties": {
         "name": "NS48",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "KR01",
           "NS47",
@@ -63653,7 +63655,7 @@
       "properties": {
         "name": "NS46",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS44",
           "NS45",
@@ -63702,7 +63704,7 @@
       "properties": {
         "name": "NS47",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "AM03",
           "NS20",
@@ -96202,7 +96204,7 @@
       "properties": {
         "name": "NS01",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS02",
           "NS04",
@@ -96303,7 +96305,7 @@
       "properties": {
         "name": "NS05",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS01",
           "NS04",
@@ -97774,14 +97776,12 @@
       "properties": {
         "name": "NS19",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS17",
           "NS18",
           "NS20",
-          "NS22",
-          "NS25",
-          "NS26"
+          "NS21"
         ],
         "nearest_mrts": [
           "Yishun"
@@ -97822,6 +97822,62 @@
               0.0
             ],
             [
+              103.846967,
+              1.429724,
+              0.0
+            ],
+            [
+              103.849372,
+              1.429839,
+              0.0
+            ],
+            [
+              103.849307,
+              1.430408,
+              0.0
+            ],
+            [
+              103.847194,
+              1.432424,
+              0.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NS21",
+        "styleUrl": "#poly-000000-796-77-nodesc",
+        "elector_size": 3033,
+        "adjacent_districts": [
+          "NS17",
+          "NS19",
+          "NS20",
+          "NS22",
+          "NS25",
+          "NS26"
+        ],
+        "nearest_mrts": [
+          "Yishun"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.846967,
+              1.429724,
+              0.0
+            ],
+            [
+              103.846207,
+              1.429319,
+              0.0
+            ],
+            [
               103.846287,
               1.427619,
               0.0
@@ -97852,13 +97908,8 @@
               0.0
             ],
             [
-              103.849307,
-              1.430408,
-              0.0
-            ],
-            [
-              103.847194,
-              1.432424,
+              103.846967,
+              1.429724,
               0.0
             ]
           ]
@@ -97931,7 +97982,7 @@
       "properties": {
         "name": "NS37",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS26",
           "NS27",
@@ -98059,7 +98110,7 @@
       "properties": {
         "name": "NS43",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3094,
+        "elector_size": 3032,
         "adjacent_districts": [
           "NS37",
           "NS42",
@@ -101216,10 +101267,10 @@
       "properties": {
         "name": "NS22",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
-          "NS19",
           "NS20",
+          "NS21",
           "NS23",
           "NS24",
           "NS25"
@@ -101281,7 +101332,7 @@
       "properties": {
         "name": "NS23",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS20",
           "NS22",
@@ -101361,7 +101412,7 @@
       "properties": {
         "name": "NS24",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3095,
+        "elector_size": 3033,
         "adjacent_districts": [
           "NS22",
           "NS23",
