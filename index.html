@@ -624,8 +624,10 @@
                         // Check if click is near a vertex
                         const nearestVertex = findNearestVertex(e.latlng, layer);
                         if (nearestVertex) {
-                            // Format coordinates as "longitude,latitude,0"
-                            const coordText = `${nearestVertex.lng.toFixed(6)},${nearestVertex.lat.toFixed(6)},0`;
+                            // Format coordinates as "longitude,latitude,0" without trailing zeros
+                            const lng = parseFloat(nearestVertex.lng.toFixed(6)).toString();
+                            const lat = parseFloat(nearestVertex.lat.toFixed(6)).toString();
+                            const coordText = `${lng},${lat},0`;
                             
                             // Only show coordinates popup if "Show Polling Districts" is checked
                             if (document.getElementById('polling-toggle').checked) {

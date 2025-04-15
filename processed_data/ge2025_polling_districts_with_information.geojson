@@ -22693,7 +22693,7 @@
       "properties": {
         "name": "SK04",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "PN52",
           "SK03",
@@ -23015,7 +23015,7 @@
       "properties": {
         "name": "SK12",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK04",
           "SK05",
@@ -23110,7 +23110,7 @@
       "properties": {
         "name": "SK23",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK12",
           "SK20",
@@ -23230,7 +23230,7 @@
       "properties": {
         "name": "SK22",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK21",
           "SK23",
@@ -23329,7 +23329,7 @@
       "properties": {
         "name": "SK21",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK19",
           "SK20",
@@ -23414,7 +23414,7 @@
       "properties": {
         "name": "SK34",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3088,
         "adjacent_districts": [
           "SK21",
           "SK33",
@@ -23559,7 +23559,7 @@
       "properties": {
         "name": "SK33",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK22",
           "SK32",
@@ -23674,7 +23674,7 @@
       "properties": {
         "name": "SK32",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK24",
           "SK31",
@@ -23728,7 +23728,7 @@
       "properties": {
         "name": "SK31",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK24",
           "SK30",
@@ -23792,7 +23792,7 @@
       "properties": {
         "name": "SK41",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3088,
         "adjacent_districts": [
           "AM15",
           "AM49",
@@ -23908,7 +23908,7 @@
       "properties": {
         "name": "SK40",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3088,
         "adjacent_districts": [
           "SK32",
           "SK38",
@@ -23997,7 +23997,7 @@
       "properties": {
         "name": "SK39",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3088,
         "adjacent_districts": [
           "SK33",
           "SK34",
@@ -24088,7 +24088,7 @@
       "properties": {
         "name": "SK38",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3088,
         "adjacent_districts": [
           "AM51",
           "SK37",
@@ -24179,7 +24179,7 @@
       "properties": {
         "name": "SK37",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3088,
         "adjacent_districts": [
           "AJ44",
           "AJ51",
@@ -24272,7 +24272,7 @@
       "properties": {
         "name": "SK03",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "PN46",
           "PN51",
@@ -24373,7 +24373,7 @@
       "properties": {
         "name": "SK13",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK02",
           "SK03",
@@ -24504,7 +24504,7 @@
       "properties": {
         "name": "SK02",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "PN46",
           "SK01",
@@ -24600,7 +24600,7 @@
       "properties": {
         "name": "SK15",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK01",
           "SK02",
@@ -24765,7 +24765,7 @@
       "properties": {
         "name": "SK01",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3167,
+        "elector_size": 3089,
         "adjacent_districts": [
           "PN45",
           "PN46",
@@ -24852,12 +24852,13 @@
       "properties": {
         "name": "SK16",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK01",
           "SK14",
           "SK15",
-          "SK17"
+          "SK17",
+          "SK18"
         ],
         "nearest_mrts": [
           "Sengkang",
@@ -24937,7 +24938,7 @@
       "properties": {
         "name": "SK14",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK13",
           "SK15",
@@ -25027,11 +25028,11 @@
       "properties": {
         "name": "SK20",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK13",
           "SK14",
-          "SK17",
+          "SK18",
           "SK19",
           "SK21",
           "SK23"
@@ -25134,9 +25135,9 @@
       "properties": {
         "name": "SK19",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
-          "SK17",
+          "SK18",
           "SK20",
           "SK21",
           "SK35",
@@ -25220,14 +25221,13 @@
       "properties": {
         "name": "SK17",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "AJ44",
           "PN44",
           "SK01",
           "SK16",
-          "SK19",
-          "SK20",
+          "SK18",
           "SK36"
         ],
         "nearest_mrts": [
@@ -25240,8 +25240,8 @@
         "coordinates": [
           [
             [
-              103.904067,
-              1.386931,
+              103.905474,
+              1.385354,
               0.0
             ],
             [
@@ -25305,13 +25305,49 @@
               0.0
             ],
             [
-              103.907007,
-              1.387339,
+              103.905474,
+              1.385354,
+              0.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SK18",
+        "styleUrl": "#poly-000000-796-77-nodesc",
+        "elector_size": 3089,
+        "adjacent_districts": [
+          "SK16",
+          "SK17",
+          "SK19",
+          "SK20",
+          "SK36"
+        ],
+        "nearest_mrts": [
+          "Sengkang",
+          "Punggol"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.907511,
+              1.38647,
               0.0
             ],
             [
-              103.906481,
-              1.388058,
+              103.905474,
+              1.385354,
+              0.0
+            ],
+            [
+              103.904067,
+              1.386931,
               0.0
             ],
             [
@@ -25320,18 +25356,18 @@
               0.0
             ],
             [
-              103.905408,
-              1.388047,
+              103.906481,
+              1.388058,
               0.0
             ],
             [
-              103.904679,
-              1.387393,
+              103.907007,
+              1.387339,
               0.0
             ],
             [
-              103.904067,
-              1.386931,
+              103.907511,
+              1.38647,
               0.0
             ]
           ]
@@ -25343,10 +25379,11 @@
       "properties": {
         "name": "SK36",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3088,
         "adjacent_districts": [
           "AJ44",
           "SK17",
+          "SK18",
           "SK19",
           "SK35",
           "SK37"
@@ -25449,7 +25486,7 @@
       "properties": {
         "name": "SK35",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3088,
         "adjacent_districts": [
           "SK19",
           "SK34",
@@ -57810,7 +57847,7 @@
       "properties": {
         "name": "SK07",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "AM02",
           "PW05",
@@ -57892,7 +57929,7 @@
       "properties": {
         "name": "SK10",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK07",
           "SK09",
@@ -57963,7 +58000,7 @@
       "properties": {
         "name": "SK09",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "AM01",
           "SK07",
@@ -58019,7 +58056,7 @@
       "properties": {
         "name": "SK26",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK09",
           "SK10",
@@ -58079,7 +58116,7 @@
       "properties": {
         "name": "SK25",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK10",
           "SK24",
@@ -58143,7 +58180,7 @@
       "properties": {
         "name": "SK30",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "AM15",
           "SK25",
@@ -58202,7 +58239,7 @@
       "properties": {
         "name": "SK29",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "AM15",
           "SK26",
@@ -58256,7 +58293,7 @@
       "properties": {
         "name": "SK27",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "AM07",
           "AM15",
@@ -95047,7 +95084,7 @@
       "properties": {
         "name": "SK06",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "PW06",
           "SK05",
@@ -95796,7 +95833,7 @@
       "properties": {
         "name": "SK05",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "PW07",
           "SK04",
@@ -95857,7 +95894,7 @@
       "properties": {
         "name": "SK11",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK05",
           "SK06",
@@ -95912,7 +95949,7 @@
       "properties": {
         "name": "SK24",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK10",
           "SK11",
@@ -96836,7 +96873,7 @@
       "properties": {
         "name": "SK08",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "SK07",
           "SK09"
@@ -102262,7 +102299,7 @@
       "properties": {
         "name": "SK28",
         "styleUrl": "#poly-000000-796-77-nodesc",
-        "elector_size": 3166,
+        "elector_size": 3089,
         "adjacent_districts": [
           "AM15",
           "SK27",

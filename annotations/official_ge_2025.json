@@ -126,11 +126,11 @@
       "elector_size": 126641,
       "contiguous": true,
       "nonenclavity": 1,
-      "compactness": 0.8878868037360298,
-      "convexity": 0.8808364443070849,
-      "relevance": 0.9500003948168445,
+      "compactness": 0.88795820496419,
+      "convexity": 0.8806883052377596,
+      "relevance": 0.951232223371578,
       "elector_balance": 0.8965113413784253,
-      "overall_score": 0.9230469968476769
+      "overall_score": 0.9232780149903906
     },
     {
       "constituency_name": "Punggol",

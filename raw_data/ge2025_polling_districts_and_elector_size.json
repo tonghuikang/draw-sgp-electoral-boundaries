@@ -81,7 +81,7 @@
   },
   {
     "elector_size": 126641,
-    "polling_districts": ["SK01", "SK02", "SK03", "SK04", "SK05", "SK06", "SK07", "SK08", "SK09", "SK10", "SK11", "SK12", "SK13", "SK14", "SK15", "SK16", "SK17", "SK19", "SK20", "SK21", "SK22", "SK23", "SK24", "SK25", "SK26", "SK27", "SK28", "SK29", "SK30", "SK31", "SK32", "SK33", "SK34", "SK35", "SK36", "SK37", "SK38", "SK39", "SK40", "SK41"]
+    "polling_districts": ["SK01", "SK02", "SK03", "SK04", "SK05", "SK06", "SK07", "SK08", "SK09", "SK10", "SK11", "SK12", "SK13", "SK14", "SK15", "SK16", "SK17", "SK18", "SK19", "SK20", "SK21", "SK22", "SK23", "SK24", "SK25", "SK26", "SK27", "SK28", "SK29", "SK30", "SK31", "SK32", "SK33", "SK34", "SK35", "SK36", "SK37", "SK38", "SK39", "SK40", "SK41"]
   },
   {
     "elector_size": 96825,
