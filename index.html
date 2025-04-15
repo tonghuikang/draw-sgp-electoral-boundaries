@@ -974,7 +974,7 @@
             let content = `
                 <div class="stats-popup-container">
                     <div class="stats-popup-header">
-                        <span class="stats-popup-title">${constituencyName}</span>
+                        <span class="stats-popup-title">${constituencyName}${constituencyData.member_size === 1 ? ' SMC' : ' GRC'}</span>
                     </div>
                     <table class="stats-table">
                         <tr>
