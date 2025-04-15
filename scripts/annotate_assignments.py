@@ -220,48 +220,48 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
     # Extract parts from constituency name
     constituency_parts = [constituency_name]
     if "-" in constituency_name:
-        constituency_parts = [part.strip() for part in constituency_name.split("-")]
+        constituency_parts = list(set(part.strip() for part in constituency_name.split("-")))
 
-    # Calculate relevance for each part separately
-    part_relevance_scores = []
-    for part in constituency_parts:
-        part_with_aliases = [part]
+    all_match_count = 0
+    partial_match_counts = [0 for _ in constituency_parts]
+    total_elector_size = 0
 
-        # Calculate the relevance score for this part
-        part_weighted_score = 0.0
-        for district in polling_districts:
-            district_score = 0.0
-            elector_size = district_to_elector_size.get(district, 0)
+    for district in polling_districts:
 
-            # Find the district in geojson data
-            for feature in geojson_data["features"]:
-                if feature["properties"]["name"] == district:
-                    # Get all MRT station names from the nearest_mrts list
-                    mrt_stations = feature["properties"].get("nearest_mrts", [])
+        matched_constituency_parts = set()
 
-                    # Create a list to hold all MRT names with their aliases
-                    all_mrt_aliases = []
+        # Find the district in geojson data
+        for feature in geojson_data["features"]:
+            if feature["properties"]["name"] == district:
+                # Get all MRT station names from the nearest_mrts list
+                mrt_stations = feature["properties"].get("nearest_mrts", [])
 
-                    # Add aliases for each MRT station name
-                    for mrt in mrt_stations:
-                        mrt_aliases = [mrt]
-                        if mrt in name_aliases:
-                            mrt_aliases.extend(name_aliases[mrt])
-                        all_mrt_aliases.extend(mrt_aliases)
+                # Add aliases for each MRT station name
+                for mrt in mrt_stations:
+                    if mrt in constituency_parts:
+                        matched_constituency_parts.add(mrt)
+                    if mrt in name_aliases:
+                        for mrt_alias in name_aliases[mrt]:
+                            if mrt_alias in constituency_parts:
+                                matched_constituency_parts.add(mrt_alias)
+                break
 
-                    # Check if this part matches any MRT station alias
-                    if any(p in all_mrt_aliases for p in part_with_aliases):
-                        district_score = 1.0
-                    break
+        elector_size = district_to_elector_size.get(district, 0)
+        total_elector_size += elector_size
+        if len(matched_constituency_parts) == len(constituency_parts):
+            all_match_count += elector_size
+        else:
+            for constituency_part in matched_constituency_parts:
+                partial_match_counts[constituency_parts.index(constituency_part)] += elector_size
 
-            part_weighted_score += district_score * elector_size
+    # probably should just fork the logic for single barrel versus double barrel names?
+    numerator = all_match_count + sum(partial_match_count / len(partial_match_counts) ** 0.5 for partial_match_count in partial_match_counts)
+    denominator = total_elector_size
 
-        # Calculate elector weighted average for this part
-        part_relevance_scores.append(part_weighted_score / total_elector_size)
-
-    # For single-part names, just return the score
-    # For double-barrel names, return the maximum relevance of the parts
-    return max(part_relevance_scores) if part_relevance_scores else 0.0
+    # For single-part names, just return the weighted match ratio.
+    # For double-barrel names, it is the weighted sum of the full match ratio,
+    # and the weighted sum partial match ratio divided by square root two.
+    return numerator / denominator
 
 
 def main() -> None:

@@ -80,9 +80,9 @@
       "nonenclavity": 1,
       "compactness": 0.8361028796002361,
       "convexity": 0.6087447548377528,
-      "relevance": 0.6666409374780717,
+      "relevance": 0.6762465884899246,
       "elector_balance": 0.9958519821723489,
-      "overall_score": 0.8214681108176819
+      "overall_score": 0.8233892410200525
     },
     {
       "constituency_name": "Tanjong Pagar",
@@ -152,9 +152,9 @@
       "nonenclavity": 1,
       "compactness": 0.754239597761271,
       "convexity": 0.7019181705827026,
-      "relevance": 0.05012572116753871,
+      "relevance": 0.03544423734943269,
       "elector_balance": 0.923868247337113,
-      "overall_score": 0.686030347369725
+      "overall_score": 0.6830940506061038
     },
     {
       "constituency_name": "Marsiling-Yew Tee",
@@ -164,9 +164,9 @@
       "nonenclavity": 1,
       "compactness": 0.88305481927986,
       "convexity": 0.7315503835038782,
-      "relevance": 0.3414605536564113,
+      "relevance": 0.48289814599632275,
       "elector_balance": 0.951262591188293,
-      "overall_score": 0.7814656695256886
+      "overall_score": 0.8097531879936708
     },
     {
       "constituency_name": "Jalan Besar",
@@ -188,9 +188,9 @@
       "nonenclavity": 0.5277777777777777,
       "compactness": 0.9197391115305413,
       "convexity": 0.8470956817750639,
-      "relevance": 0.9147348443446378,
+      "relevance": 0.6894428209985312,
       "elector_balance": 0.8864131567840781,
-      "overall_score": 0.8191521144424199
+      "overall_score": 0.7740937097731985
     },
     {
       "constituency_name": "Bishan-Toa Payoh",
@@ -200,9 +200,9 @@
       "nonenclavity": 1,
       "compactness": 0.8237630072266178,
       "convexity": 0.8825891490847594,
-      "relevance": 0.6570732450129435,
+      "relevance": 0.7656854249492381,
       "elector_balance": 0.8676172061429029,
-      "overall_score": 0.8462085214934447
+      "overall_score": 0.8679309574807036
     },
     {
       "constituency_name": "Chua Chu Kang",
