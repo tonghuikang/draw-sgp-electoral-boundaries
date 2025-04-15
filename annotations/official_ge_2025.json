@@ -8,9 +8,9 @@
       "nonenclavity": 1,
       "compactness": 0.7462478875260017,
       "convexity": 0.7072159308441648,
-      "relevance": 0.4545291034824945,
+      "relevance": 0.5090830154743077,
       "elector_balance": 0.8801988772870745,
-      "overall_score": 0.7576383598279471
+      "overall_score": 0.7685491422263098
     },
     {
       "constituency_name": "West Coast-Jurong West",
@@ -32,9 +32,9 @@
       "nonenclavity": 1,
       "compactness": 0.7854743731234705,
       "convexity": 0.8788164671773019,
-      "relevance": 1.0,
+      "relevance": 0.9387868156218262,
       "elector_balance": 0.9359303716803715,
-      "overall_score": 0.9200442423962288
+      "overall_score": 0.9078016055205941
     },
     {
       "constituency_name": "East Coast",
@@ -56,9 +56,9 @@
       "nonenclavity": 1,
       "compactness": 0.916976978907634,
       "convexity": 0.7250337036392652,
-      "relevance": 0.8688541215923843,
+      "relevance": 0.9625297490263955,
       "elector_balance": 0.9595336568272761,
-      "overall_score": 0.8940796921933121
+      "overall_score": 0.9128148176801142
     },
     {
       "constituency_name": "Aljunied",
@@ -80,9 +80,9 @@
       "nonenclavity": 1,
       "compactness": 0.8361028796002361,
       "convexity": 0.6087447548377528,
-      "relevance": 0.5622622973826398,
+      "relevance": 0.6666409374780717,
       "elector_balance": 0.9958519821723489,
-      "overall_score": 0.8005923827985957
+      "overall_score": 0.8214681108176819
     },
     {
       "constituency_name": "Tanjong Pagar",
@@ -104,9 +104,9 @@
       "nonenclavity": 1,
       "compactness": 0.8476986912102588,
       "convexity": 0.7782845880270333,
-      "relevance": 0.3477923222246283,
+      "relevance": 0.5434255034759817,
       "elector_balance": 0.9436307081220358,
-      "overall_score": 0.7834812619167912
+      "overall_score": 0.8226078981670618
     },
     {
       "constituency_name": "Marine Parade-Braddell Heights",
@@ -128,9 +128,9 @@
       "nonenclavity": 1,
       "compactness": 0.8878868037360298,
       "convexity": 0.8808364443070849,
-      "relevance": 0.9750001974084223,
+      "relevance": 0.9500003948168445,
       "elector_balance": 0.8965113413784253,
-      "overall_score": 0.9280469573659923
+      "overall_score": 0.9230469968476769
     },
     {
       "constituency_name": "Punggol",
@@ -152,9 +152,9 @@
       "nonenclavity": 1,
       "compactness": 0.754239597761271,
       "convexity": 0.7019181705827026,
-      "relevance": 0.025062860583769355,
+      "relevance": 0.10025144233507742,
       "elector_balance": 0.923868247337113,
-      "overall_score": 0.6810177752529711
+      "overall_score": 0.6960554916032329
     },
     {
       "constituency_name": "Marsiling-Yew Tee",
@@ -164,9 +164,9 @@
       "nonenclavity": 1,
       "compactness": 0.88305481927986,
       "convexity": 0.7315503835038782,
-      "relevance": 0.31707051410952475,
+      "relevance": 0.3414605536564113,
       "elector_balance": 0.951262591188293,
-      "overall_score": 0.7765876616163112
+      "overall_score": 0.7814656695256886
     },
     {
       "constituency_name": "Jalan Besar",
@@ -200,9 +200,9 @@
       "nonenclavity": 1,
       "compactness": 0.8237630072266178,
       "convexity": 0.8825891490847594,
-      "relevance": 0.8857215369778184,
+      "relevance": 0.599918785848434,
       "elector_balance": 0.8676172061429029,
-      "overall_score": 0.8919381798864198
+      "overall_score": 0.8347776296605428
     },
     {
       "constituency_name": "Chua Chu Kang",
@@ -212,9 +212,9 @@
       "nonenclavity": 1,
       "compactness": 0.907663886497971,
       "convexity": 0.8169756620096764,
-      "relevance": 0.8650822551623683,
+      "relevance": 0.800627624025362,
       "elector_balance": 0.8223712837231669,
-      "overall_score": 0.8824186174786364
+      "overall_score": 0.8695276912512352
     },
     {
       "constituency_name": "Bukit Panjang",
@@ -224,9 +224,9 @@
       "nonenclavity": 0.0,
       "compactness": 0.745637887478907,
       "convexity": 0.7660010062941662,
-      "relevance": 0.9166716320085802,
+      "relevance": 1.0,
       "elector_balance": 0.8456108322670646,
-      "overall_score": 0.6547842716097436
+      "overall_score": 0.6714499452080276
     },
     {
       "constituency_name": "Potong Pasir",
@@ -236,9 +236,9 @@
       "nonenclavity": 0.5714285714285714,
       "compactness": 0.8821833539439574,
       "convexity": 0.8422399736135473,
-      "relevance": 0.2999967634398162,
+      "relevance": 0.4999838171990808,
       "elector_balance": 0.9186579019282225,
-      "overall_score": 0.7029013128708229
+      "overall_score": 0.7428987236226758
     },
     {
       "constituency_name": "Jurong Central",
@@ -284,9 +284,9 @@
       "nonenclavity": 0.3999999999999999,
       "compactness": 0.8785051929465963,
       "convexity": 0.911238771489189,
-      "relevance": 0.8182070208268358,
+      "relevance": 0.9091035104134179,
       "elector_balance": 0.9836009701589316,
-      "overall_score": 0.7983103910843106
+      "overall_score": 0.8164896890016269
     },
     {
       "constituency_name": "Bukit Gombak",
@@ -296,9 +296,9 @@
       "nonenclavity": 0.8571428571428572,
       "compactness": 0.9013826810957898,
       "convexity": 0.8560925948644819,
-      "relevance": 0.5714231527840995,
+      "relevance": 0.8571157639204976,
       "elector_balance": 0.9288405673925787,
-      "overall_score": 0.8229763706559614
+      "overall_score": 0.880114892883241
     },
     {
       "constituency_name": "Radin Mas",
@@ -320,9 +320,9 @@
       "nonenclavity": 1,
       "compactness": 0.6448506985782706,
       "convexity": 0.702421074210724,
-      "relevance": 0.6667060864080732,
+      "relevance": 0.7778303374329865,
       "elector_balance": 0.8937500953426998,
-      "overall_score": 0.7815455909079535
+      "overall_score": 0.8037704411129362
     },
     {
       "constituency_name": "Pioneer",
@@ -368,9 +368,9 @@
       "nonenclavity": 0.33333333333333326,
       "compactness": 0.8290012066848744,
       "convexity": 0.8158094134398007,
-      "relevance": 0.14285714285714285,
+      "relevance": 0.2857142857142857,
       "elector_balance": 0.8180378218133927,
-      "overall_score": 0.5878077836257087
+      "overall_score": 0.6163792121971373
     },
     {
       "constituency_name": "Mountbatten",
@@ -380,9 +380,9 @@
       "nonenclavity": 0.8333333333333333,
       "compactness": 0.8539882199664853,
       "convexity": 0.8233895414103815,
-      "relevance": 0.2857519557000967,
+      "relevance": 0.42858398523336555,
       "elector_balance": 0.8016552219105878,
-      "overall_score": 0.719623654464177
+      "overall_score": 0.7481900603708308
     },
     {
       "constituency_name": "Kebun Baru",

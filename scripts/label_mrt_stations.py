@@ -76,7 +76,7 @@ def label_mrt_stations():
     # Filter the dataframe to include only stations that are either minor or major.
     df_output = df.loc[
         df["is_minor_mrt"] | df["is_major_mrt"],
-        ["name", "lat", "long", "is_minor_mrt", "is_major_mrt"],
+        ["name", "lat", "long", "is_minor_mrt", "is_major_mrt", "passengers"],
     ]
 
     # Save the output to CSV

@@ -421,19 +421,11 @@
                             </tr>`;
                         }
                         
-                        // Add nearest major MRT
-                        if (props.nearest_major_mrt && props.nearest_major_mrt.name) {
+                        // Add nearest MRTs
+                        if (props.nearest_mrts && props.nearest_mrts.length > 0) {
                             popupContent += `<tr>
-                                <td class="stats-label">Nearest Major MRT</td>
-                                <td class="stats-value">${props.nearest_major_mrt.name}</td>
-                            </tr>`;
-                        }
-                        
-                        // Add nearest minor MRT
-                        if (props.nearest_minor_mrt && props.nearest_minor_mrt.name) {
-                            popupContent += `<tr>
-                                <td class="stats-label">Nearest Minor MRT</td>
-                                <td class="stats-value">${props.nearest_minor_mrt.name}</td>
+                                <td class="stats-label">Nearest MRTs</td>
+                                <td class="stats-value">${props.nearest_mrts.join('<br>')}</td>
                             </tr>`;
                         }
                         

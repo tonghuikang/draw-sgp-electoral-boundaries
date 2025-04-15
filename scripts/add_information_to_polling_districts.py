@@ -35,7 +35,7 @@ with open(adjacent_districts_json, "r") as f:
     adjacent_districts = json.load(f)
 
 # Load MRT stations data
-mrt_stations = pd.read_csv(mrt_stations_csv)
+mrt_stations = pd.read_csv(mrt_stations_csv).to_records()
 
 # Create a lookup dictionary for faster access
 elector_size_dict = {item["polling_district"]: item["estimated_elector_size"] for item in elector_sizes}
@@ -47,10 +47,6 @@ def calculate_distance(lat1, lon1, lat2, lon2):
     # This is sufficient for small areas like Singapore
     return math.sqrt((lat1 - lat2) ** 2 + (lon1 - lon2) ** 2)
 
-
-# Extract minor and major MRT stations
-minor_mrt_stations = mrt_stations[mrt_stations["is_minor_mrt"]].copy()
-major_mrt_stations = mrt_stations[mrt_stations["is_major_mrt"]].copy()
 
 # Convert KML to GeoJSON
 geojson_data = kml2geojson.convert(input_kml)
@@ -74,39 +70,24 @@ for feature_collection in geojson_data:
             centroid = geom.centroid
             center_lat, center_lon = centroid.y, centroid.x
 
-            # Find nearest minor MRT station
-            nearest_minor_mrt = None
-            min_distance_minor = float("inf")
+            distances = [calculate_distance(center_lat, center_lon, station["lat"], station["long"]) for station in mrt_stations]
 
-            for _, station in minor_mrt_stations.iterrows():
-                distance = calculate_distance(center_lat, center_lon, station["lat"], station["long"])
-                if distance < min_distance_minor:
-                    min_distance_minor = distance
-                    nearest_minor_mrt = {
-                        "name": station["name"],
-                        "distance": distance,
-                        "lat": station["lat"],
-                        "long": station["long"],
-                    }
-
-            # Find nearest major MRT station
-            nearest_major_mrt = None
-            min_distance_major = float("inf")
-
-            for _, station in major_mrt_stations.iterrows():
-                distance = calculate_distance(center_lat, center_lon, station["lat"], station["long"])
-                if distance < min_distance_major:
-                    min_distance_major = distance
-                    nearest_major_mrt = {
-                        "name": station["name"],
-                        "distance": distance,
-                        "lat": station["lat"],
-                        "long": station["long"],
-                    }
+            best_ratio = 0
+            require_major_station = False
+            nearest_mrts = []
+            for distance, station in sorted(zip(distances, mrt_stations)):
+                distance = max(1e-9, distance)
+                if require_major_station and not station["is_major_mrt"]:
+                    continue
+                ratio = station["passengers"] / distance
+                if ratio > best_ratio * (1 - 1 / (len(nearest_mrts) + 1)):
+                    nearest_mrts.append(station["name"])
+                best_ratio = max(ratio, best_ratio)
+                if station["is_major_mrt"]:
+                    require_major_station = True
 
             # Add nearest MRT stations to properties
-            feature["properties"]["nearest_minor_mrt"] = nearest_minor_mrt
-            feature["properties"]["nearest_major_mrt"] = nearest_major_mrt
+            feature["properties"]["nearest_mrts"] = nearest_mrts
 
             features.append(feature)
 

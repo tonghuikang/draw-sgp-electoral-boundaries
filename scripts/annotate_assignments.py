@@ -238,20 +238,21 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
             # Find the district in geojson data
             for feature in geojson_data["features"]:
                 if feature["properties"]["name"] == district:
-                    major_mrt = feature["properties"].get("nearest_major_mrt", {}).get("name", "")
-                    minor_mrt = feature["properties"].get("nearest_minor_mrt", {}).get("name", "")
+                    # Get all MRT station names from the nearest_mrts list
+                    mrt_stations = feature["properties"].get("nearest_mrts", [])
 
-                    # Add aliases for MRT station names
-                    major_mrt_aliases = [major_mrt]
-                    if major_mrt in name_aliases:
-                        major_mrt_aliases.extend(name_aliases[major_mrt])
+                    # Create a list to hold all MRT names with their aliases
+                    all_mrt_aliases = []
 
-                    minor_mrt_aliases = [minor_mrt]
-                    if minor_mrt in name_aliases:
-                        minor_mrt_aliases.extend(name_aliases[minor_mrt])
+                    # Add aliases for each MRT station name
+                    for mrt in mrt_stations:
+                        mrt_aliases = [mrt]
+                        if mrt in name_aliases:
+                            mrt_aliases.extend(name_aliases[mrt])
+                        all_mrt_aliases.extend(mrt_aliases)
 
                     # Check if this part matches any MRT station alias
-                    if any(p in major_mrt_aliases or p in minor_mrt_aliases for p in part_with_aliases):
+                    if any(p in all_mrt_aliases for p in part_with_aliases):
                         district_score = 1.0
                     break
 
