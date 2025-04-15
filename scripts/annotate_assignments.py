@@ -339,12 +339,16 @@ def main() -> None:
         constituency_score = min(constituency_score, result["elector_balance"])
         result["constituency_score"] = constituency_score
 
+    # Calculate overall score as member-weighted average of constituency scores
+    overall_score = sum(result["constituency_score"] * result["member_size"] for result in results) / full_member_size
+    assignment_data["overall_score"] = overall_score
+
     # Use the same name as the input file for output
     input_filename = os.path.basename("assignments/official_ge_2025.json")
     output_path = os.path.join("annotations", input_filename)
 
     # Save results
-    save_json({"annotations": results}, output_path)
+    save_json({"annotations": results, "overall_score": overall_score}, output_path)
     print(f"Annotations saved to {output_path}")
 
 

@@ -61,6 +61,15 @@
       vertical-align: middle;
       border: 1px solid #555; /* Add border for visibility since fill is gone */
     }
+    #overall-score {
+      margin-top: 10px;
+      padding-top: 5px;
+      border-top: 1px solid #ddd;
+    }
+    #overall-score-value {
+      font-weight: bold;
+      color: #0066FF;
+    }
     /* --- Tooltip/Popup Styles --- */
     .leaflet-tooltip { /* Style for hover tooltips (now only for Electoral Boundaries) */
       font-weight: bold;
@@ -186,6 +195,9 @@
     <div class="legend-item">
       <span class="legend-color" style="background-color: transparent; border-color: #FF0000;"></span>
       <span>Polling Districts</span>
+    </div>
+    <div class="legend-item" id="overall-score">
+      <strong>Overall Score: </strong><span id="overall-score-value"></span>
     </div>
   </div>
   <!-- END SIMPLIFIED LEGEND -->
@@ -926,10 +938,29 @@
                 constituencyStatistics[constituency.constituency_name] = constituency;
             });
             
+            // Display overall score in the legend
+            if (data.overall_score !== undefined) {
+                const scoreElement = document.getElementById('overall-score-value');
+                if (scoreElement) {
+                    scoreElement.textContent = (data.overall_score * 100).toFixed(2) + '%';
+                }
+            } else {
+                // Hide the overall score element if no data is available
+                const overallScoreElement = document.getElementById('overall-score');
+                if (overallScoreElement) {
+                    overallScoreElement.style.display = 'none';
+                }
+            }
+            
             console.log("Constituency statistics preloaded successfully");
             return true;
         } catch (error) {
             console.error("Error preloading statistics:", error);
+            // Hide the overall score element since we couldn't load the data
+            const overallScoreElement = document.getElementById('overall-score');
+            if (overallScoreElement) {
+                overallScoreElement.style.display = 'none';
+            }
             return false;
         }
     }

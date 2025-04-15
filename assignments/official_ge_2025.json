@@ -1,5 +1,4 @@
 {
-  "name": "Official GE2025 boundaries",
   "assignment": [
     {"constituency_name": "Ang Mo Kio", "member_size": 5, "polling_districts": ["AM11", "AM12", "AM13", "AM14", "AM15", "AM16", "AM17", "AM18", "AM19", "AM20", "AM21", "AM22", "AM23", "AM24", "AM25", "AM26", "AM27", "AM28", "AM29", "AM30", "AM31", "AM32", "AM33", "AM34", "AM35", "AM36", "AM37", "AM38", "AM39", "AM40", "AM41", "AM42", "AM43", "AM44", "AM45", "AM46", "AM47", "AM48", "AM49", "AM50", "AM51", "AM52", "AM53", "AM54", "AM55", "AM56", "AM57", "AM58", "AM59", "AM60", "AM61", "AM62", "AM63", "AM64", "AM65"]},
     {"constituency_name": "West Coast-Jurong West", "member_size": 5, "polling_districts": ["JR23", "JR24", "JR25", "JR26", "JR27", "JR28", "JR29", "JR30", "JR31", "JR32", "JR33", "JR34", "JR35", "JR36", "WE01", "WE02", "WE03", "WE04", "WE05", "WE06", "WE07", "WE08", "WE09", "WE10", "WE11", "WE12", "WE13", "WE14", "WE15", "WE16", "WE17", "WE18", "WE19", "WE20", "WE21", "WE22", "WE23", "WE24", "WE25", "WE26", "WE27", "WE28", "WE29", "WE30", "WE31", "WE32", "WE33", "WE34", "WE35", "WE36", "WE37", "WE38", "WE39", "WE40"]},
