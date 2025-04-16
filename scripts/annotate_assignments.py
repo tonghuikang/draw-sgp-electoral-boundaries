@@ -293,9 +293,6 @@ def score_assignment(assignment_data: Dict[str, Any]) -> Dict[str, Any]:
         constituency_name = item["constituency_name"]
         polling_districts = item["polling_districts"]
 
-        # Check if contiguous
-        contiguous = is_contiguous(polling_districts, adjacency_data)
-
         # Calculate nonenclavity
         nonenclavity = calculate_nonenclavity(polling_districts, constituencies, adjacency_data)
 
@@ -317,7 +314,6 @@ def score_assignment(assignment_data: Dict[str, Any]) -> Dict[str, Any]:
                 "constituency_name": constituency_name,
                 "member_size": item["member_size"],
                 "elector_size": total_elector_size,
-                "contiguous": contiguous,
                 "nonenclavity": nonenclavity,
                 "compactness": compactness,
                 "convexity": convexity,
