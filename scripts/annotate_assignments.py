@@ -345,9 +345,74 @@ def score_assignment(assignment_data: Dict[str, Any]) -> Dict[str, Any]:
     return {"annotations": results, "overall_score": overall_score}
 
 
+def validate_assignment(assignment_data: Dict[str, Any]) -> tuple[bool, Dict]:
+    """
+    Validate that the constituency assignment meets all requirements:
+    1. Each constituency is contiguous
+    2. All polling districts are assigned exactly once
+    3. The elector sizes match the official data
+    
+    Returns a dictionary with validation results and any errors found.
+    """
+    # Organize constituencies and their districts
+    constituencies: Dict[str, List[str]] = {}
+    all_assigned_districts: List[str] = []
+    
+    for item in assignment_data["assignment"]:
+        constituency_name = item["constituency_name"]
+        polling_districts = item["polling_districts"]
+        constituencies[constituency_name] = polling_districts
+        all_assigned_districts.extend(polling_districts)
+    
+    # Check if all constituencies are contiguous
+    non_contiguous = []
+    for constituency_name, polling_districts in constituencies.items():
+        if not is_contiguous(polling_districts, adjacency_data):
+            non_contiguous.append(constituency_name)
+    
+    # Check if any polling districts are assigned multiple times
+    district_counts = Counter(all_assigned_districts)
+    duplicate_districts = {district: count for district, count in district_counts.items() if count > 1}
+    
+    # Check if all polling districts from the data are assigned
+    all_known_districts = set(district_to_elector_size.keys())
+    unassigned_districts = all_known_districts - set(all_assigned_districts)
+    unknown_districts = set(all_assigned_districts) - all_known_districts
+    
+    # Check total elector size
+    total_assigned_electors = sum(district_to_elector_size.get(district, 0) for district in all_assigned_districts)
+    total_expected_electors = sum(district_to_elector_size.values())
+    
+    errors = {
+        "non_contiguous_constituencies": non_contiguous,
+        "duplicate_districts": duplicate_districts,
+        "unassigned_districts": list(unassigned_districts),
+        "unknown_districts": list(unknown_districts),
+        "total_electors": {
+            "assigned": total_assigned_electors,
+            "expected": total_expected_electors,
+            "difference": total_assigned_electors - total_expected_electors
+        }
+    }
+    
+    is_valid = (
+        len(non_contiguous) == 0 and
+        len(duplicate_districts) == 0 and
+        len(unassigned_districts) == 0 and
+        len(unknown_districts) == 0 and
+        total_assigned_electors == total_expected_electors
+    )
+    
+    return is_valid, errors
+
+
 def main() -> None:
     # Load data
     assignment_data = load_json("assignments/official_ge_2025.json")
+
+    is_valid, errors = validate_assignment(assignment_data)
+    if not is_valid:
+        raise ValueError(errors)
 
     # Score the assignment
     results = score_assignment(assignment_data)
