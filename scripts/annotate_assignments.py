@@ -351,6 +351,7 @@ def validate_assignment(assignment_data: Dict[str, Any]) -> tuple[bool, Dict]:
     Returns a dictionary with validation results and any errors found.
     """
     # Organize constituencies and their districts
+    constituency_names: List[str] = []
     constituencies: Dict[str, List[str]] = {}
     all_assigned_districts: List[str] = []
     assigned_member_sizes: List[int] = []
@@ -359,6 +360,7 @@ def validate_assignment(assignment_data: Dict[str, Any]) -> tuple[bool, Dict]:
         constituency_name = item["constituency_name"]
         polling_districts = item["polling_districts"]
         member_size = item["member_size"]
+        constituency_names.append(constituency_name)
         constituencies[constituency_name] = polling_districts
         all_assigned_districts.extend(polling_districts)
         assigned_member_sizes.append(member_size)
@@ -378,6 +380,13 @@ def validate_assignment(assignment_data: Dict[str, Any]) -> tuple[bool, Dict]:
     unassigned_districts = all_known_districts - set(all_assigned_districts)
     unknown_districts = set(all_assigned_districts) - all_known_districts
 
+    # Check if all constituencies have unique names
+    constituency_name_parts = []
+    for constituency_name in constituency_names:
+        for constituency_name_part in constituency_name.split("-"):
+            constituency_name_parts.append(constituency_name_part)
+    duplicate_constituency_name_parts = {constituency_name_part: count for constituency_name_part, count in Counter(constituency_name_parts).items() if count > 1}
+
     # Check total member sizes
     EXPECTED_MEMBER_SIZES = sorted([5] * 10 + [4] * 8 + [1] * 15)
     assigned_member_sizes.sort()
@@ -391,6 +400,7 @@ def validate_assignment(assignment_data: Dict[str, Any]) -> tuple[bool, Dict]:
         "unknown_districts": list(unknown_districts),
         "missing_member_sizes": missing_member_sizes,
         "extra_member_sizes": extra_member_sizes,
+        "duplicate_constituency_name_parts": duplicate_constituency_name_parts,
     }
 
     is_valid = (
@@ -400,6 +410,7 @@ def validate_assignment(assignment_data: Dict[str, Any]) -> tuple[bool, Dict]:
         and len(unknown_districts) == 0
         and len(missing_member_sizes) == 0
         and len(extra_member_sizes) == 0
+        and len(duplicate_constituency_name_parts) == 0
     )
 
     return is_valid, errors
