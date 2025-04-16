@@ -217,12 +217,59 @@
     map.getPane('defaultPane').style.zIndex = 600; // Same as default overlay pane
     map.getPane('labelPane').style.zIndex = 3000; // Very high z-index to ensure labels are on top of everything
     
-    // Use CartoDB Voyager for a cleaner base map that still shows transit lines
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 20
-    }).addTo(map);
+    // Create variables to track tile layers
+    let voyagerLayer = null;
+    let osmLayer = null;
+    let currentZoomThreshold = 15;
+    let previousZoom = map.getZoom();
+    
+    // Function to initialize both tile layers
+    function initializeTileLayers() {
+      // Create both layers but only add the appropriate one to the map
+      voyagerLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 16,
+        minZoom: 12
+      });
+      
+      osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+        minZoom: 14
+      });
+      
+      // Add the appropriate layer based on initial zoom
+      if (map.getZoom() > currentZoomThreshold) {
+        osmLayer.addTo(map);
+      } else {
+        voyagerLayer.addTo(map);
+      }
+    }
+    
+    // Function to check zoom and update layers if threshold crossed
+    function checkZoomForLayerSwitch() {
+      const currentZoom = map.getZoom();
+      
+      // Only switch layers if we cross the threshold
+      if ((previousZoom < currentZoomThreshold && currentZoom > currentZoomThreshold) ||
+          (previousZoom > currentZoomThreshold && currentZoom < currentZoomThreshold)) {
+            if (currentZoom > currentZoomThreshold) {
+                map.removeLayer(voyagerLayer);
+                osmLayer.addTo(map);
+            } else {
+                map.removeLayer(osmLayer);
+                voyagerLayer.addTo(map);
+            }
+            previousZoom = currentZoom;
+        }      
+    }
+    
+    // Initialize tile layers
+    initializeTileLayers();
+    
+    // Update tile layer only when crossing zoom threshold
+    map.on('zoomend', checkZoomForLayerSwitch);
     
     // Coordinate display popup
     const coordPopup = L.popup({
