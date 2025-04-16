@@ -591,19 +591,11 @@
                      // --- End Polling District Specific Logic ---
 
                 } else {
-                    // --- Constituency Boundary Logic (Keep hover tooltip) ---
+                    // --- Constituency Boundary Logic (No hover tooltip) ---
                     tooltipContent = props.name || props.Name || props.NAME || props.CONSTITUENCY || props.constituency || 'Constituency Boundary (No Name)';
                     if (tooltipContent) {
-                        layer.bindTooltip(tooltipContent, { 
-                            permanent: false, 
-                            direction: 'center', 
-                            className: 'constituency-tooltip', 
-                            sticky: true, 
-                            opacity: 0.9, 
-                            interactive: false,
-                            zIndexOffset: 3000, // Ensure tooltips appear above all other elements
-                            pane: 'labelPane' // Use the special pane for tooltips
-                        });
+                        // Removed tooltip binding to stop showing orange label on mouseover
+                        // while still keeping the orange border highlight
                         
                         // Add popup for constituency boundaries with statistics
                         const constituencyName = tooltipContent;
