@@ -87,6 +87,10 @@
         font-weight: bold;
         line-height: 1.4;
     }
+    /* Ensure popups appear above labels */
+    .leaflet-popup {
+        z-index: 4000 !important; /* Higher than labelPane (3000) */
+    }
     /* --- End Tooltip/Popup Styles --- */
 
     .polling-district-label div {
@@ -237,9 +241,11 @@
     map.createPane('defaultPane');
     map.createPane('smcPane'); // Single Member Constituencies pane
     map.createPane('labelPane'); // Special pane for labels and tooltips
+    map.createPane('popupPane'); // Special pane for popups to be above labels
     map.getPane('smcPane').style.zIndex = 650; // Higher than the default overlay pane (600)
     map.getPane('defaultPane').style.zIndex = 600; // Same as default overlay pane
     map.getPane('labelPane').style.zIndex = 3000; // Very high z-index to ensure labels are on top of everything
+    map.getPane('popupPane').style.zIndex = 4000; // Even higher z-index to ensure popups are above labels
     
     // Create variables to track tile layers
     let voyagerLayer = null;
@@ -300,7 +306,7 @@
       closeButton: true,
       autoClose: true,
       className: 'coord-popup',
-      pane: 'labelPane' // Use the special pane for popups
+      pane: 'popupPane' // Use our custom popup pane with higher z-index
     });
 
     // Create layers without adding them to the map yet
@@ -523,7 +529,9 @@
 
                         // *** Bind Popup only if showElectorCount is true ***
                         if (showElectorCount) {
-                            layer.bindPopup(popupContent);
+                            layer.bindPopup(popupContent, {
+                                pane: 'popupPane' // Use our custom popup pane with higher z-index
+                            });
                         }
 
                     } else {
@@ -559,7 +567,9 @@
                         }
                         
                         popupContent += `</table></div>`;
-                        layer.bindPopup(popupContent);
+                        layer.bindPopup(popupContent, {
+                            pane: 'popupPane' // Use our custom popup pane with higher z-index
+                        });
                     }
 
                     // Add high-zoom label marker at center of mass
@@ -600,7 +610,9 @@
                         // Create popup content with preloaded statistics
                         const popupId = `constituency-popup-${constituencyName.replace(/\s+/g, '-')}`;
                         const popupContent = `<div id="${popupId}" class="constituency-popup"></div>`;
-                        layer.bindPopup(popupContent);
+                        layer.bindPopup(popupContent, {
+                            pane: 'popupPane' // Use our custom popup pane with higher z-index
+                        });
                         
                         // Pre-populate popup content when binding
                         layer.on('popupopen', function() {
