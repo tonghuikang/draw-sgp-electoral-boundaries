@@ -264,9 +264,8 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
     return numerator / denominator
 
 
-def main() -> None:
-    # Load data
-    assignment_data = load_json("assignments/official_ge_2025.json")
+def score_assignment(assignment_data: Dict[str, Any]) -> Dict[str, Any]:
+    # Load supporting data
     adjacency_data = load_json("intermediate_data/ge2025_polling_districts_to_adjacent_districts.json")
 
     # Load GeoJSON data for compactness calculation
@@ -341,14 +340,23 @@ def main() -> None:
 
     # Calculate overall score as member-weighted average of constituency scores
     overall_score = sum(result["constituency_score"] * result["member_size"] for result in results) / full_member_size
-    assignment_data["overall_score"] = overall_score
 
+    return {"annotations": results, "overall_score": overall_score}
+
+
+def main() -> None:
+    # Load data
+    assignment_data = load_json("assignments/official_ge_2025.json")
+    
+    # Score the assignment
+    results = score_assignment(assignment_data)
+    
     # Use the same name as the input file for output
     input_filename = os.path.basename("assignments/official_ge_2025.json")
     output_path = os.path.join("annotations", input_filename)
 
     # Save results
-    save_json({"annotations": results, "overall_score": overall_score}, output_path)
+    save_json(results, output_path)
     print(f"Annotations saved to {output_path}")
 
 
