@@ -264,21 +264,22 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
     return numerator / denominator
 
 
+# Load supporting data
+adjacency_data = load_json("intermediate_data/ge2025_polling_districts_to_adjacent_districts.json")
+
+# Load GeoJSON data for compactness calculation
+with open("processed_data/ge2025_polling_districts_with_information.geojson", "r") as f:
+    geojson_data = json.load(f)
+
+# Create mapping of district name to elector size
+district_to_elector_size: Dict[str, int] = {}
+for feature in geojson_data["features"]:
+    district_name = feature["properties"]["name"]
+    if "elector_size" in feature["properties"]:
+        district_to_elector_size[district_name] = feature["properties"]["elector_size"]
+
+
 def score_assignment(assignment_data: Dict[str, Any]) -> Dict[str, Any]:
-    # Load supporting data
-    adjacency_data = load_json("intermediate_data/ge2025_polling_districts_to_adjacent_districts.json")
-
-    # Load GeoJSON data for compactness calculation
-    with open("processed_data/ge2025_polling_districts_with_information.geojson", "r") as f:
-        geojson_data = json.load(f)
-
-    # Create mapping of district name to elector size
-    district_to_elector_size: Dict[str, int] = {}
-    for feature in geojson_data["features"]:
-        district_name = feature["properties"]["name"]
-        if "elector_size" in feature["properties"]:
-            district_to_elector_size[district_name] = feature["properties"]["elector_size"]
-
     # Organize constituencies and their districts
     constituencies: Dict[str, List[str]] = {}
     for item in assignment_data["assignment"]:
@@ -347,10 +348,10 @@ def score_assignment(assignment_data: Dict[str, Any]) -> Dict[str, Any]:
 def main() -> None:
     # Load data
     assignment_data = load_json("assignments/official_ge_2025.json")
-    
+
     # Score the assignment
     results = score_assignment(assignment_data)
-    
+
     # Use the same name as the input file for output
     input_filename = os.path.basename("assignments/official_ge_2025.json")
     output_path = os.path.join("annotations", input_filename)
