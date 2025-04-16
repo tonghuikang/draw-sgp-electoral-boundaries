@@ -260,7 +260,7 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 16,
-        minZoom: 12
+        minZoom: 11
       });
       
       osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1258,12 +1258,22 @@
 
     // --- Toggle Controls (unchanged) ---
     document.getElementById('constituency-toggle').addEventListener('change', function() {
-        if (this.checked) { map.addLayer(constituencyLayer); }
+        const mapElement = document.getElementById('map');
+        if (this.checked) { 
+            map.addLayer(constituencyLayer);
+            // Show constituency labels based on current zoom level
+            const zoom = map.getZoom();
+            if (zoom >= 13 && zoom <= 14) {
+                mapElement.classList.remove('hide-constituency-labels');
+            }
+        }
         else {
             if (activeHighlight && constituencyLayer.hasLayer(activeHighlight.layer)) {
                 resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
                 activeHighlight = null;
             }
+            // Hide constituency labels when unchecked
+            mapElement.classList.add('hide-constituency-labels');
             map.removeLayer(constituencyLayer);
         }
     });
@@ -1315,16 +1325,16 @@
         // Show polling district labels at high zoom levels (>= 14)
         if (zoom >= 14) { 
             mapElement.classList.add('show-labels'); 
-            mapElement.classList.add('hide-constituency-labels');
         }
         else { 
             mapElement.classList.remove('show-labels');
-            // Only show constituency labels at default zoom level (11-13)
-            if (zoom >= 11 && zoom <= 13) {
-                mapElement.classList.remove('hide-constituency-labels');
-            } else {
-                mapElement.classList.add('hide-constituency-labels');
-            }
+        }
+        
+        // Only show constituency labels at zoom levels 13-14
+        if (zoom >= 13 && zoom <= 14) {
+            mapElement.classList.remove('hide-constituency-labels');
+        } else {
+            mapElement.classList.add('hide-constituency-labels');
         }
     }
     map.on('zoomend', handleZoomEnd);
