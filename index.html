@@ -100,11 +100,30 @@
       border-radius: 2px;
       box-shadow: 0 0 1px #000;
     }
+    .constituency-label div {
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
+      font-size: 10px;
+      font-weight: bold;
+      color: #0066FF;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 2px 4px;
+      border-radius: 3px;
+      display: inline-block; /* Make div only as wide as its content */
+      transform: translate(-50%, 0); /* Center the label horizontally */
+    }
     .district-label {
       display: none;
     }
     .show-labels .district-label {
       display: block;
+    }
+    .constituency-name-label {
+      display: block;
+    }
+    .hide-constituency-labels .constituency-name-label {
+      display: none;
     }
     .adjacency-line {
         pointer-events: none;
@@ -590,6 +609,34 @@
                                 getConstituencyStatistics(constituencyName, popupElement);
                             }
                         });
+                        
+                        // Add label at center of mass for constituency
+                        if (layer.feature && layer.feature.geometry) {
+                            // Calculate center of mass using turf.js
+                            const centroid = turf.centerOfMass(layer.feature);
+                            // Convert turf point [lng, lat] to Leaflet [lat, lng]
+                            const center = L.latLng(centroid.geometry.coordinates[1], centroid.geometry.coordinates[0]);
+                            
+                            // Add suffix based on member size
+                            const suffix = props.member_size === 1 ? ' SMC' : ' GRC';
+                            const labelText = `${constituencyName}${suffix}`;
+                            
+                            // Create a label at the center of mass
+                            // Use a div with exact text width
+                            const iconHeight = 20;
+                            
+                            L.marker(center, {
+                                icon: L.divIcon({
+                                    className: 'constituency-label',
+                                    html: `<div class="constituency-name-label">${labelText}</div>`,
+                                    iconSize: null, // Let the text determine the width
+                                    iconAnchor: [0, iconHeight/2] // Center vertically, let text center horizontally
+                                }),
+                                interactive: false, 
+                                keyboard: false,
+                                pane: 'labelPane' // Use the special pane for labels
+                            }).addTo(map);
+                        }
                     }
                     // --- End Constituency Boundary Logic ---
                 }
@@ -1248,12 +1295,25 @@
     } else { console.error("Could not get map container."); }
     // --- End Global Event Handlers ---
 
-    // --- Zoom Handling (unchanged) ---
+    // --- Zoom Handling ---
     function handleZoomEnd() {
         const zoom = map.getZoom();
         const mapElement = document.getElementById('map');
-        if (zoom >= 14) { mapElement.classList.add('show-labels'); }
-        else { mapElement.classList.remove('show-labels'); }
+        
+        // Show polling district labels at high zoom levels (>= 14)
+        if (zoom >= 14) { 
+            mapElement.classList.add('show-labels'); 
+            mapElement.classList.add('hide-constituency-labels');
+        }
+        else { 
+            mapElement.classList.remove('show-labels');
+            // Only show constituency labels at default zoom level (11-13)
+            if (zoom >= 11 && zoom <= 13) {
+                mapElement.classList.remove('hide-constituency-labels');
+            } else {
+                mapElement.classList.add('hide-constituency-labels');
+            }
+        }
     }
     map.on('zoomend', handleZoomEnd);
     // --- End Zoom Handling ---
