@@ -21,10 +21,13 @@ def load_json(filepath: str) -> Dict[str, Any]:
         return json.load(f)
 
 
-def save_json(data: Dict[str, Any], filepath: str) -> None:
+def save_json(data: Dict[str, Any], filepath: str, noindent=True) -> None:
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    json_string = json.dumps(data, indent=2)
+    if noindent:
+        json_string = json_string.replace(",\n        ", ", ").replace("[\n        ", "[").replace("\n      ]", "]").replace("\n      ", " ").replace("\n    }", "}").replace('{ "', '{"')
     with open(filepath, "w") as f:
-        json.dump(data, f, indent=2)
+        f.write(json_string)
 
 
 def is_contiguous(constituency_districts: List[str], adjacency_data: Dict[str, List[str]]) -> bool:
@@ -427,7 +430,7 @@ def main() -> None:
     output_path = os.path.join("annotations", input_filename)
 
     # Save results
-    save_json(results, output_path)
+    save_json(results, output_path, noindent=False)
     print(f"Annotations saved to {output_path}")
 
 
