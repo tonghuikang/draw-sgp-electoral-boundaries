@@ -5,8 +5,9 @@ from shapely.geometry import shape, Polygon, LineString, MultiPolygon
 import shapely.ops
 import numpy as np
 from collections import Counter
+from functools import cache
 
-from typing import Dict, List, Set, Union, Optional, Any
+from typing import Dict, List, Set, Union, Any
 
 # Check if running in a virtual environment
 in_venv = sys.prefix != sys.base_prefix
@@ -111,7 +112,8 @@ def calculate_geometric_score(a, b):
     return min(a / b, b / a)
 
 
-def calculate_compactness(constituency_districts: List[str]) -> Optional[float]:
+@cache
+def calculate_compactness(constituency_districts: tuple[str]) -> float:
     """Average geometric score between the chord length of every quarter-degree through the centroid, and the mean chord length"""
     # Extract geometries for the constituency districts
     constituency_features: List[Dict[str, Any]] = [f for f in geojson_data["features"] if f["properties"]["name"] in constituency_districts]
@@ -165,7 +167,8 @@ def calculate_compactness(constituency_districts: List[str]) -> Optional[float]:
     return sum(compactness) / len(compactness)
 
 
-def calculate_convexity(constituency_districts: List[str]) -> Optional[float]:
+@cache
+def calculate_convexity(constituency_districts: tuple[str]) -> float:
     """Calculate convexity as area of shape over area of convex hull."""
     # Extract geometries for the constituency districts
     constituency_features: List[Dict[str, Any]] = [f for f in geojson_data["features"] if f["properties"]["name"] in constituency_districts]
@@ -196,7 +199,8 @@ for group in alias_groups:
         name_aliases[name] = group
 
 
-def calculate_relevance(constituency_name: str, polling_districts: List[str]) -> float:
+@cache
+def calculate_relevance(constituency_name: str, polling_districts: tuple[str]) -> float:
     """Calculate relevance based on constituency name and MRT station names.
 
     Score is 1 if constituency name matches either major or minor MRT name for a polling district.
@@ -290,12 +294,13 @@ def score_assignment(assignment_data: Dict[str, Any]) -> Dict[str, Any]:
         nonenclavity = calculate_nonenclavity(polling_districts, constituencies)
 
         # Calculate compactness
-        compactness = calculate_compactness(polling_districts)
+        compactness = calculate_compactness(tuple(polling_districts))
+
         # Calculate convexity
-        convexity = calculate_convexity(polling_districts)
+        convexity = calculate_convexity(tuple(polling_districts))
 
         # Calculate relevance score
-        relevance = calculate_relevance(constituency_name, polling_districts)
+        relevance = calculate_relevance(constituency_name, tuple(polling_districts))
 
         # Add to results
         results.append(
