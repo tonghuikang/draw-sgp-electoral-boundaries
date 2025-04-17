@@ -50,7 +50,7 @@ def is_contiguous(constituency_districts: List[str], adjacency_data: Dict[str, L
     return len(visited) == len(constituency_districts)
 
 
-def calculate_nonenclavity(constituency_districts: List[str], all_constituencies: Dict[str, List[str]], adjacency_data: Dict[str, List[str]]) -> float:
+def calculate_nonenclavity(constituency_districts: List[str], all_constituencies: Dict[str, List[str]]) -> float:
     """
     Calculate nonenclavity as 1 minus (max adjacent constituency count / number of non-enclave polling districts).
     For each polling district that is not an enclave in the constituency, count the adjacent constituencies.
@@ -111,7 +111,7 @@ def calculate_geometric_score(a, b):
     return min(a / b, b / a)
 
 
-def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
+def calculate_compactness(constituency_districts: List[str]) -> Optional[float]:
     """Average geometric score between the chord length of every quarter-degree through the centroid, and the mean chord length"""
     # Extract geometries for the constituency districts
     constituency_features: List[Dict[str, Any]] = [f for f in geojson_data["features"] if f["properties"]["name"] in constituency_districts]
@@ -165,7 +165,7 @@ def calculate_compactness(constituency_districts: List[str], geojson_data: Dict[
     return sum(compactness) / len(compactness)
 
 
-def calculate_convexity(constituency_districts: List[str], geojson_data: Dict[str, Any]) -> Optional[float]:
+def calculate_convexity(constituency_districts: List[str]) -> Optional[float]:
     """Calculate convexity as area of shape over area of convex hull."""
     # Extract geometries for the constituency districts
     constituency_features: List[Dict[str, Any]] = [f for f in geojson_data["features"] if f["properties"]["name"] in constituency_districts]
@@ -186,21 +186,17 @@ def calculate_convexity(constituency_districts: List[str], geojson_data: Dict[st
     return constituency_area / convex_hull.area
 
 
-def get_name_aliases() -> Dict[str, List[str]]:
-    """Load name aliases from the aliases file and create a lookup dictionary."""
-    with open("raw_data/name_aliases.json", "r") as f:
-        alias_groups = json.load(f)
+with open("raw_data/name_aliases.json", "r") as f:
+    alias_groups = json.load(f)
 
-    # Create a dictionary mapping each name to all its equivalent names
-    alias_map = {}
-    for group in alias_groups:
-        for name in group:
-            alias_map[name] = group
-
-    return alias_map
+# Create a dictionary mapping each name to all its equivalent names
+name_aliases = {}
+for group in alias_groups:
+    for name in group:
+        name_aliases[name] = group
 
 
-def calculate_relevance(constituency_name: str, polling_districts: List[str], geojson_data: Dict[str, Any], district_to_elector_size: Dict[str, int]) -> float:
+def calculate_relevance(constituency_name: str, polling_districts: List[str]) -> float:
     """Calculate relevance based on constituency name and MRT station names.
 
     Score is 1 if constituency name matches either major or minor MRT name for a polling district.
@@ -210,12 +206,6 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
 
     Considers name aliases as defined in raw_data/name_aliases.json.
     """
-    total_elector_size = sum(district_to_elector_size.get(district, 0) for district in polling_districts)
-    if total_elector_size == 0:
-        return 0.0
-
-    # Get name aliases
-    name_aliases = get_name_aliases()
 
     # Extract parts from constituency name
     constituency_parts = [constituency_name]
@@ -227,24 +217,23 @@ def calculate_relevance(constituency_name: str, polling_districts: List[str], ge
     total_elector_size = 0
 
     for district in polling_districts:
+        if district not in district_features:
+            continue
 
         matched_constituency_parts = set()
+        properties = district_features[district]
 
-        # Find the district in geojson data
-        for feature in geojson_data["features"]:
-            if feature["properties"]["name"] == district:
-                # Get all MRT station names from the nearest_mrts list
-                mrt_stations = feature["properties"].get("nearest_mrts", [])
+        # Get all MRT station names from the nearest_mrts list
+        mrt_stations = properties.get("nearest_mrts", [])
 
-                # Add aliases for each MRT station name
-                for mrt in mrt_stations:
-                    if mrt in constituency_parts:
-                        matched_constituency_parts.add(mrt)
-                    if mrt in name_aliases:
-                        for mrt_alias in name_aliases[mrt]:
-                            if mrt_alias in constituency_parts:
-                                matched_constituency_parts.add(mrt_alias)
-                break
+        # Add aliases for each MRT station name
+        for mrt in mrt_stations:
+            if mrt in constituency_parts:
+                matched_constituency_parts.add(mrt)
+            if mrt in name_aliases:
+                for mrt_alias in name_aliases[mrt]:
+                    if mrt_alias in constituency_parts:
+                        matched_constituency_parts.add(mrt_alias)
 
         elector_size = district_to_elector_size.get(district, 0)
         total_elector_size += elector_size
@@ -271,10 +260,12 @@ adjacency_data = load_json("intermediate_data/ge2025_polling_districts_to_adjace
 with open("processed_data/ge2025_polling_districts_with_information.geojson", "r") as f:
     geojson_data = json.load(f)
 
-# Create mapping of district name to elector size
+# Create mapping of district name to elector size and properties
 district_to_elector_size: Dict[str, int] = {}
+district_features: Dict[str, Dict[str, Any]] = {}
 for feature in geojson_data["features"]:
     district_name = feature["properties"]["name"]
+    district_features[district_name] = feature["properties"]
     if "elector_size" in feature["properties"]:
         district_to_elector_size[district_name] = feature["properties"]["elector_size"]
 
@@ -293,27 +284,25 @@ def score_assignment(assignment_data: Dict[str, Any]) -> Dict[str, Any]:
         constituency_name = item["constituency_name"]
         polling_districts = item["polling_districts"]
 
+        local_elector_size = sum(district_to_elector_size.get(district, 0) for district in polling_districts)
+
         # Calculate nonenclavity
-        nonenclavity = calculate_nonenclavity(polling_districts, constituencies, adjacency_data)
+        nonenclavity = calculate_nonenclavity(polling_districts, constituencies)
 
         # Calculate compactness
-        compactness = calculate_compactness(polling_districts, geojson_data)
-
-        # Calculate total elector size for the constituency
-        total_elector_size = sum(district_to_elector_size.get(district, 0) for district in polling_districts)
-
+        compactness = calculate_compactness(polling_districts)
         # Calculate convexity
-        convexity = calculate_convexity(polling_districts, geojson_data)
+        convexity = calculate_convexity(polling_districts)
 
         # Calculate relevance score
-        relevance = calculate_relevance(constituency_name, polling_districts, geojson_data, district_to_elector_size)
+        relevance = calculate_relevance(constituency_name, polling_districts)
 
         # Add to results
         results.append(
             {
                 "constituency_name": constituency_name,
                 "member_size": item["member_size"],
-                "elector_size": total_elector_size,
+                "elector_size": local_elector_size,
                 "nonenclavity": nonenclavity,
                 "compactness": compactness,
                 "convexity": convexity,
