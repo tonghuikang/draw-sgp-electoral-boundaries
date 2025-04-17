@@ -331,12 +331,13 @@ def score_assignment(assignment_data: Dict[str, Any]) -> Dict[str, Any]:
 
     for result in results:
         constituency_score = (result["nonenclavity"] + result["compactness"] + result["convexity"] + result["relevance"] + result["elector_balance"]) / 5
-        # the overall score is upper bounded by elector_balance
+        # each constituency_score score is upper bounded by their elector_balance
         constituency_score = min(constituency_score, result["elector_balance"])
         result["constituency_score"] = constituency_score
 
-    # Calculate overall score as member-weighted average of constituency scores
+    # Calculate overall score as member-weighted average of constituency scores, bounded by minimum elector_balance
     overall_score = sum(result["constituency_score"] * result["member_size"] for result in results) / full_member_size
+    overall_score = min(overall_score, min(result["elector_balance"] for result in results))
 
     return {"annotations": results, "overall_score": overall_score}
 
