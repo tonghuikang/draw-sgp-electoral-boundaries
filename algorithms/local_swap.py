@@ -8,6 +8,7 @@ from scripts.score_assignments import score_assignment, validate_assignment, loa
 
 assignment_data = load_json("assignments/official_ge_2025.json")
 assignments = assignment_data["assignment"]
+assignment_data["assignment_name"] = "With local optimization"
 
 adjacency_data = load_json("intermediate_data/ge2025_polling_districts_to_adjacent_districts.json")
 
