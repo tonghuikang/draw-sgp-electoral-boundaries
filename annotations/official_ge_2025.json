@@ -5,22 +5,22 @@
       "member_size": 5,
       "elector_size": 161235,
       "nonenclavity": 1,
-      "compactness": 0.7462478875260017,
-      "convexity": 0.7072159308441648,
+      "compactness": 0.7462471478902807,
+      "convexity": 0.7072173596056404,
       "relevance": 0.4908983781437033,
       "elector_balance": 0.8801988772870745,
-      "constituency_score": 0.7649122147601889
+      "constituency_score": 0.7649123525853398
     },
     {
       "constituency_name": "West Coast-Jurong West",
       "member_size": 5,
       "elector_size": 158581,
       "nonenclavity": 1,
-      "compactness": 0.899920343692822,
-      "convexity": 0.958293029826618,
+      "compactness": 0.8999208406806593,
+      "convexity": 0.9582937451721927,
       "relevance": 0.0,
       "elector_balance": 0.8949298212231064,
-      "constituency_score": 0.7506286389485093
+      "constituency_score": 0.7506288814151916
     },
     {
       "constituency_name": "Nee Soon",
@@ -60,11 +60,11 @@
       "member_size": 5,
       "elector_size": 144032,
       "nonenclavity": 1,
-      "compactness": 0.8839688468343638,
-      "convexity": 0.6929830429886022,
+      "compactness": 0.8839610773304383,
+      "convexity": 0.6929924638503866,
       "relevance": 0.0,
       "elector_balance": 0.9853287184749322,
-      "constituency_score": 0.7124561216595797
+      "constituency_score": 0.7124564519311514
     },
     {
       "constituency_name": "Jurong East-Bukit Batok",
@@ -104,19 +104,19 @@
       "member_size": 5,
       "elector_size": 131493,
       "nonenclavity": 1,
-      "compactness": 0.7854718195284208,
-      "convexity": 0.6150535198126343,
+      "compactness": 0.7855235030048111,
+      "convexity": 0.6150811616615494,
       "relevance": 0.0,
       "elector_balance": 0.9265364339868939,
-      "constituency_score": 0.6654123546655899
+      "constituency_score": 0.6654282197306509
     },
     {
       "constituency_name": "Sengkang",
       "member_size": 4,
       "elector_size": 126641,
       "nonenclavity": 1,
-      "compactness": 0.88795820496419,
-      "convexity": 0.8806883052377596,
+      "compactness": 0.8878779328909591,
+      "convexity": 0.8805697623181558,
       "relevance": 0.951232223371578,
       "elector_balance": 0.8965113413784253,
       "constituency_score": 0.8965113413784253
@@ -170,19 +170,19 @@
       "member_size": 4,
       "elector_size": 100639,
       "nonenclavity": 0.5277777777777777,
-      "compactness": 0.9197391115305413,
-      "convexity": 0.8470956817750639,
+      "compactness": 0.9197373217121545,
+      "convexity": 0.847097604482202,
       "relevance": 0.6894428209985312,
       "elector_balance": 0.8864131567840781,
-      "constituency_score": 0.7740937097731985
+      "constituency_score": 0.7740937363509486
     },
     {
       "constituency_name": "Bishan-Toa Payoh",
       "member_size": 4,
       "elector_size": 98505,
       "nonenclavity": 1,
-      "compactness": 0.8237630072266178,
-      "convexity": 0.8825891490847594,
+      "compactness": 0.8237861895277373,
+      "convexity": 0.8825938693997676,
       "relevance": 0.7656854249492381,
       "elector_balance": 0.8676172061429029,
       "constituency_score": 0.8676172061429029
@@ -192,8 +192,8 @@
       "member_size": 4,
       "elector_size": 93368,
       "nonenclavity": 1,
-      "compactness": 0.907663886497971,
-      "convexity": 0.8169756620096764,
+      "compactness": 0.9076636966492391,
+      "convexity": 0.81697636722266,
       "relevance": 0.800627624025362,
       "elector_balance": 0.8223712837231669,
       "constituency_score": 0.8223712837231669
@@ -214,11 +214,11 @@
       "member_size": 1,
       "elector_size": 30897,
       "nonenclavity": 0.5714285714285714,
-      "compactness": 0.8821833539439574,
-      "convexity": 0.8422399736135473,
+      "compactness": 0.8821261159202497,
+      "convexity": 0.8424972022931998,
       "relevance": 0.4999838171990808,
       "elector_balance": 0.9186579019282225,
-      "constituency_score": 0.7428987236226758
+      "constituency_score": 0.7429387217538648
     },
     {
       "constituency_name": "Jurong Central",
@@ -280,11 +280,11 @@
       "member_size": 1,
       "elector_size": 25497,
       "nonenclavity": 0.37037037037037046,
-      "compactness": 0.8203336934581194,
-      "convexity": 0.9353685710813378,
+      "compactness": 0.8203332824895306,
+      "convexity": 0.9353695394044143,
       "relevance": 0.0,
       "elector_balance": 0.8982949456383167,
-      "constituency_score": 0.6048735161096289
+      "constituency_score": 0.6048736275805264
     },
     {
       "constituency_name": "Yio Chu Kang",
@@ -313,11 +313,11 @@
       "member_size": 1,
       "elector_size": 24153,
       "nonenclavity": 0.0,
-      "compactness": 0.8974859892099533,
-      "convexity": 0.9052351778268514,
+      "compactness": 0.8983406219174941,
+      "convexity": 0.9048222187206258,
       "relevance": 0.0,
       "elector_balance": 0.8509439472095643,
-      "constituency_score": 0.5307330228492738
+      "constituency_score": 0.5308213575695369
     },
     {
       "constituency_name": "Tampines Changkat",
@@ -364,5 +364,5 @@
       "constituency_score": 0.6804719068042301
     }
   ],
-  "overall_score": 0.7733613785874063
+  "overall_score": 0.7733635582655062
 }
