@@ -82,11 +82,11 @@
       "member_size": 5,
       "elector_size": 139688,
       "nonenclavity": 1,
-      "compactness": 0.8386280053470931,
-      "convexity": 0.6671342136026833,
+      "compactness": 0.8386286549334416,
+      "convexity": 0.6671347777517028,
       "relevance": 0.07579749155260294,
       "elector_balance": 0.9842806947195761,
-      "constituency_score": 0.713168081044391
+      "constituency_score": 0.7131683237914647
     },
     {
       "constituency_name": "Sembawang",
@@ -126,8 +126,8 @@
       "member_size": 4,
       "elector_size": 123557,
       "nonenclavity": 1,
-      "compactness": 0.908671178496427,
-      "convexity": 0.8194425081781592,
+      "compactness": 0.9086701031335562,
+      "convexity": 0.8194442150915641,
       "relevance": 1.0,
       "elector_balance": 0.9188883898403584,
       "constituency_score": 0.9188883898403584
@@ -364,5 +364,5 @@
       "constituency_score": 0.6804719068042301
     }
   ],
-  "overall_score": 0.7733635582655062
+  "overall_score": 0.773363570778242
 }

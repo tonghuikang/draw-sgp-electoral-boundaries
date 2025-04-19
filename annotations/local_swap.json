@@ -3,24 +3,24 @@
     {
       "constituency_name": "Buangkok",
       "member_size": 5,
-      "elector_size": 140647,
+      "elector_size": 140648,
       "nonenclavity": 1,
-      "compactness": 0.853597224189627,
-      "convexity": 0.7454407465002169,
-      "relevance": 0.4410474450219343,
-      "elector_balance": 0.9910380767870128,
-      "constituency_score": 0.8062246984997582
+      "compactness": 0.8733092882401399,
+      "convexity": 0.7400367457045794,
+      "relevance": 0.44104430919742904,
+      "elector_balance": 0.9910451230665408,
+      "constituency_score": 0.809087093241738
     },
     {
       "constituency_name": "Boon Lay",
       "member_size": 5,
       "elector_size": 142177,
       "nonenclavity": 1,
-      "compactness": 0.8751559668648031,
-      "convexity": 0.9105126021596025,
+      "compactness": 0.8751553588973549,
+      "convexity": 0.910513912019661,
       "relevance": 0.6361788474929138,
       "elector_balance": 0.998184417869145,
-      "constituency_score": 0.884006366877293
+      "constituency_score": 0.8840065072558149
     },
     {
       "constituency_name": "Nee Soon",
@@ -58,13 +58,13 @@
     {
       "constituency_name": "Serangoon",
       "member_size": 5,
-      "elector_size": 140676,
+      "elector_size": 140675,
       "nonenclavity": 1,
-      "compactness": 0.8536951453419271,
-      "convexity": 0.75774204716437,
-      "relevance": 0.6849142710910177,
-      "elector_balance": 0.9912424188933273,
-      "constituency_score": 0.8575187764981284
+      "compactness": 0.8528090407327927,
+      "convexity": 0.7494193727306552,
+      "relevance": 0.6849120312777679,
+      "elector_balance": 0.9912353726137992,
+      "constituency_score": 0.855675163471003
     },
     {
       "constituency_name": "Jurong East-Bukit Batok",
@@ -115,22 +115,22 @@
       "member_size": 4,
       "elector_size": 114288,
       "nonenclavity": 1,
-      "compactness": 0.8167991219876426,
-      "convexity": 0.853574433065244,
+      "compactness": 0.8167483432593445,
+      "convexity": 0.8534648409692134,
       "relevance": 1.0,
       "elector_balance": 0.9934121936117979,
-      "constituency_score": 0.932757149732937
+      "constituency_score": 0.9327250755680712
     },
     {
       "constituency_name": "Punggol",
       "member_size": 4,
       "elector_size": 113200,
       "nonenclavity": 1.0,
-      "compactness": 0.8341768366269044,
-      "convexity": 0.7358998534129527,
+      "compactness": 0.8341794635777782,
+      "convexity": 0.7359029848844009,
       "relevance": 1.0,
       "elector_balance": 0.997048553224472,
-      "constituency_score": 0.9134250486528657
+      "constituency_score": 0.9134262003373301
     },
     {
       "constituency_name": "Clementi",
@@ -179,24 +179,24 @@
     {
       "constituency_name": "Bishan-Toa Payoh",
       "member_size": 4,
-      "elector_size": 112986,
+      "elector_size": 114144,
       "nonenclavity": 1,
-      "compactness": 0.858834872283135,
-      "convexity": 0.8148220999479501,
-      "relevance": 0.7416054849840255,
-      "elector_balance": 0.9951636734507083,
-      "constituency_score": 0.8820852261331638
+      "compactness": 0.8851673842154427,
+      "convexity": 0.8627072006548845,
+      "relevance": 0.7412554928775855,
+      "elector_balance": 0.9946654470099625,
+      "constituency_score": 0.8967591049515751
     },
     {
       "constituency_name": "Chua Chu Kang",
       "member_size": 4,
       "elector_size": 113066,
       "nonenclavity": 1,
-      "compactness": 0.9229900762694241,
-      "convexity": 0.8258050562951311,
+      "compactness": 0.9229898903158321,
+      "convexity": 0.825805758891203,
       "relevance": 0.7169352413634514,
       "elector_balance": 0.9958683014035172,
-      "constituency_score": 0.8923197350663047
+      "constituency_score": 0.8923198383948007
     },
     {
       "constituency_name": "Bukit Panjang",
@@ -214,11 +214,11 @@
       "member_size": 1,
       "elector_size": 27333,
       "nonenclavity": 1,
-      "compactness": 0.7906072164838095,
-      "convexity": 0.8258787244957073,
+      "compactness": 0.7904775213254739,
+      "convexity": 0.8261198189561709,
       "relevance": 0.6681300991475506,
       "elector_balance": 0.9629797917061658,
-      "constituency_score": 0.8495191663666468
+      "constituency_score": 0.8495414462270723
     },
     {
       "constituency_name": "Lakeside",
@@ -258,33 +258,33 @@
       "member_size": 1,
       "elector_size": 27907,
       "nonenclavity": 1.0,
-      "compactness": 0.7615128851785781,
-      "convexity": 0.6816286114940907,
+      "compactness": 0.7615146869067596,
+      "convexity": 0.6816261288926748,
       "relevance": 0.5648761959365034,
       "elector_balance": 0.9832026139517788,
-      "constituency_score": 0.7982440613121902
+      "constituency_score": 0.7982439251375433
     },
     {
       "constituency_name": "Bukit Gombak",
       "member_size": 1,
       "elector_size": 28653,
-      "nonenclavity": 0.9047619047619049,
+      "nonenclavity": 0.9047619047619047,
       "compactness": 0.8964486282375923,
       "convexity": 0.8485072676061838,
       "relevance": 1.0,
       "elector_balance": 0.9906038877561264,
-      "constituency_score": 0.9280643376723615
+      "constituency_score": 0.9280643376723614
     },
     {
       "constituency_name": "HarbourFront",
       "member_size": 1,
       "elector_size": 28323,
       "nonenclavity": 0.9090909090909092,
-      "compactness": 0.7922588548879504,
-      "convexity": 0.886609346813292,
+      "compactness": 0.7922582436322492,
+      "convexity": 0.8866104568069967,
       "relevance": 0.9073897539102497,
       "elector_balance": 0.9978588753702021,
-      "constituency_score": 0.8986415480145207
+      "constituency_score": 0.8986416477621214
     },
     {
       "constituency_name": "Yio Chu Kang",
@@ -313,44 +313,44 @@
       "member_size": 1,
       "elector_size": 28899,
       "nonenclavity": 1.0,
-      "compactness": 0.8977748694041512,
-      "convexity": 0.8060400610007763,
+      "compactness": 0.8971427067770206,
+      "convexity": 0.8069193847606001,
       "relevance": 0.8992698709297899,
       "elector_balance": 0.982171465998003,
-      "constituency_score": 0.9170512534665441
+      "constituency_score": 0.9171006856930827
     },
     {
       "constituency_name": "Simei",
       "member_size": 1,
       "elector_size": 30625,
       "nonenclavity": 1.0,
-      "compactness": 0.8037129110367398,
-      "convexity": 0.610450644018462,
+      "compactness": 0.8037181216143318,
+      "convexity": 0.6106020238396506,
       "relevance": 0.9095183673469388,
       "elector_balance": 0.9268170839469808,
-      "constituency_score": 0.8500998012698243
+      "constituency_score": 0.8501311193495804
     },
     {
-      "constituency_name": "Bright Hill",
+      "constituency_name": "Ang Mo Kio",
       "member_size": 1,
-      "elector_size": 28582,
-      "nonenclavity": 1.0,
-      "compactness": 0.9096061509982216,
-      "convexity": 0.7535629631179734,
-      "relevance": 0.23210412147505424,
-      "elector_balance": 0.9930646279433311,
-      "constituency_score": 0.777667572706916
+      "elector_size": 27424,
+      "nonenclavity": 1,
+      "compactness": 0.7741965368892568,
+      "convexity": 0.6465081366445673,
+      "relevance": 1.0,
+      "elector_balance": 0.9661858488914459,
+      "constituency_score": 0.877378104485054
     },
     {
       "constituency_name": "Aljunied",
       "member_size": 1,
       "elector_size": 28982,
       "nonenclavity": 0.8888888888888888,
-      "compactness": 0.8585288685079882,
-      "convexity": 0.7462258691110452,
+      "compactness": 0.8584762143036733,
+      "convexity": 0.7463877458463308,
       "relevance": 0.887826927058174,
       "elector_balance": 0.9793586776577285,
-      "constituency_score": 0.872165846244765
+      "constituency_score": 0.8721876907509591
     },
     {
       "constituency_name": "Mayflower",
@@ -364,5 +364,5 @@
       "constituency_score": 0.9250738541178991
     }
   ],
-  "overall_score": 0.8757471851639625
+  "overall_score": 0.8774327750521783
 }
