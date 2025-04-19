@@ -414,30 +414,34 @@ def validate_assignment(assignment_data: Dict[str, Any]) -> tuple[bool, Dict]:
     return is_valid, errors
 
 
+def score_assignment_file(assignment_file):
+    input_path = os.path.join("assignments", assignment_file)
+    output_path = os.path.join("annotations", assignment_file)
+
+    print(f"Processing {assignment_file}...")
+
+    # Load assignment data
+    assignment_data = load_json(input_path)
+
+    # Validate assignment
+    is_valid, errors = validate_assignment(assignment_data)
+    if not is_valid:
+        raise ValueError(f"Invalid assignment {assignment_file}: {errors}")
+
+    # Score the assignment
+    results = score_assignment(assignment_data)
+
+    # Save results
+    save_json(results, output_path, noindent=False)
+    print(f"Annotations saved to {output_path}")
+
+
 def main() -> None:
     # Get all assignment files
     assignment_files = [f for f in os.listdir("assignments") if f.endswith(".json")]
 
     for assignment_file in assignment_files:
-        input_path = os.path.join("assignments", assignment_file)
-        output_path = os.path.join("annotations", assignment_file)
-
-        print(f"Processing {assignment_file}...")
-
-        # Load assignment data
-        assignment_data = load_json(input_path)
-
-        # Validate assignment
-        is_valid, errors = validate_assignment(assignment_data)
-        if not is_valid:
-            raise ValueError(f"Invalid assignment {assignment_file}: {errors}")
-
-        # Score the assignment
-        results = score_assignment(assignment_data)
-
-        # Save results
-        save_json(results, output_path, noindent=False)
-        print(f"Annotations saved to {output_path}")
+        score_assignment_file(assignment_file)
 
 
 if __name__ == "__main__":
