@@ -415,23 +415,29 @@ def validate_assignment(assignment_data: Dict[str, Any]) -> tuple[bool, Dict]:
 
 
 def main() -> None:
-    # Load data
-    assignment_data = load_json("assignments/official_ge_2025.json")
-
-    is_valid, errors = validate_assignment(assignment_data)
-    if not is_valid:
-        raise ValueError(errors)
-
-    # Score the assignment
-    results = score_assignment(assignment_data)
-
-    # Use the same name as the input file for output
-    input_filename = os.path.basename("assignments/official_ge_2025.json")
-    output_path = os.path.join("annotations", input_filename)
-
-    # Save results
-    save_json(results, output_path, noindent=False)
-    print(f"Annotations saved to {output_path}")
+    # Get all assignment files
+    assignment_files = [f for f in os.listdir("assignments") if f.endswith(".json")]
+    
+    for assignment_file in assignment_files:
+        input_path = os.path.join("assignments", assignment_file)
+        output_path = os.path.join("annotations", assignment_file)
+        
+        print(f"Processing {assignment_file}...")
+        
+        # Load assignment data
+        assignment_data = load_json(input_path)
+        
+        # Validate assignment
+        is_valid, errors = validate_assignment(assignment_data)
+        if not is_valid:
+            raise ValueError(f"Invalid assignment {assignment_file}: {errors}")
+            
+        # Score the assignment
+        results = score_assignment(assignment_data)
+        
+        # Save results
+        save_json(results, output_path, noindent=False)
+        print(f"Annotations saved to {output_path}")
 
 
 if __name__ == "__main__":
