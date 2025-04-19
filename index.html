@@ -209,6 +209,10 @@
       <label for="constituency-toggle">Show Official 2025 Constituencies</label>
     </div>
     <div>
+      <input type="checkbox" id="local-optimization-toggle">
+      <label for="local-optimization-toggle">Show Local Optimization</label>
+    </div>
+    <div>
       <input type="checkbox" id="polling-toggle">
       <label for="polling-toggle">Show Polling Districts</label>
     </div>
@@ -218,7 +222,7 @@
   <div class="legend">
     <div class="legend-item">
       <span class="legend-color" style="background-color: transparent; border-color: #0066FF;"></span>
-      <span>Constituency Boundaries</span>
+      <span>Constituencies</span>
     </div>
     <div class="legend-item">
       <span class="legend-color" style="background-color: transparent; border-color: #FF0000;"></span>
@@ -311,12 +315,16 @@
 
     // Create layers without adding them to the map yet
     let constituencyLayer = L.featureGroup();
+    let localOptimizationLayer = L.featureGroup();
     let pollingLayer = L.featureGroup();
     let adjacencyLinesLayer = L.layerGroup().addTo(map);
     
     // Add layers based on checkbox state
     if (document.getElementById('constituency-toggle').checked) {
       constituencyLayer.addTo(map);
+    }
+    if (document.getElementById('local-optimization-toggle').checked) {
+      localOptimizationLayer.addTo(map);
     }
     if (document.getElementById('polling-toggle').checked) {
       pollingLayer.addTo(map);
@@ -614,32 +622,35 @@
                             }
                         });
                         
-                        // Add label at center of mass for constituency
-                        if (layer.feature && layer.feature.geometry) {
-                            // Calculate center of mass using turf.js
-                            const centroid = turf.centerOfMass(layer.feature);
-                            // Convert turf point [lng, lat] to Leaflet [lat, lng]
-                            const center = L.latLng(centroid.geometry.coordinates[1], centroid.geometry.coordinates[0]);
-                            
-                            // Add suffix based on member size
-                            const suffix = props.member_size === 1 ? ' SMC' : ' GRC';
-                            const labelText = `${constituencyName}${suffix}`;
-                            
-                            // Create a label at the center of mass
-                            // Use a div with exact text width
-                            const iconHeight = 20;
-                            
-                            L.marker(center, {
-                                icon: L.divIcon({
-                                    className: 'constituency-label',
-                                    html: `<div class="constituency-name-label">${labelText}</div>`,
-                                    iconSize: null, // Let the text determine the width
-                                    iconAnchor: [0, iconHeight/2] // Center vertically, let text center horizontally
-                                }),
-                                interactive: false, 
-                                keyboard: false,
-                                pane: 'labelPane' // Use the special pane for labels
-                            }).addTo(map);
+                            // Add label at center of mass for constituency
+                            if (layer.feature && layer.feature.geometry) {
+                                // Calculate center of mass using turf.js
+                                const centroid = turf.centerOfMass(layer.feature);
+                                // Convert turf point [lng, lat] to Leaflet [lat, lng]
+                                const center = L.latLng(centroid.geometry.coordinates[1], centroid.geometry.coordinates[0]);
+                                
+                                // Add suffix based on member size
+                                const suffix = props.member_size === 1 ? ' SMC' : ' GRC';
+                                const labelText = `${constituencyName}${suffix}`;
+                                
+                                // Create a label at the center of mass
+                                // Use a div with exact text width
+                                const iconHeight = 20;
+                                
+                                // All labels should be blue
+                                const labelColor = '#0066FF';
+                                
+                                L.marker(center, {
+                                    icon: L.divIcon({
+                                        className: 'constituency-label',
+                                        html: `<div class="constituency-name-label" style="color: ${labelColor};">${labelText}</div>`,
+                                        iconSize: null, // Let the text determine the width
+                                        iconAnchor: [0, iconHeight/2] // Center vertically, let text center horizontally
+                                    }),
+                                    interactive: false, 
+                                    keyboard: false,
+                                    pane: 'labelPane' // Use the special pane for labels
+                                }).addTo(featureGroup); // Add to feature group instead of map
                         }
                     }
                     // --- End Constituency Boundary Logic ---
@@ -1030,25 +1041,44 @@
     // Store preloaded statistics
     let constituencyStatistics = {};
     
-    // Function to preload all statistics from annotations file
+    // Store statistics for both assignment types
+    let officialStatistics = {};
+    let localSwapStatistics = {};
+    let currentStatistics = {};
+    
+    // Function to preload all statistics from annotations files
     async function preloadConstituencyStatistics() {
         try {
-            const response = await fetch('annotations/official_ge_2025.json');
+            // Load official statistics
+            let response = await fetch('annotations/official_ge_2025.json');
             if (!response.ok) {
                 throw new Error(`HTTP status ${response.status}`);
             }
             
-            const data = await response.json();
-            // Store all statistics in a map for quick access
-            data.annotations.forEach(constituency => {
-                constituencyStatistics[constituency.constituency_name] = constituency;
+            const officialData = await response.json();
+            officialData.annotations.forEach(constituency => {
+                officialStatistics[constituency.constituency_name] = constituency;
             });
             
-            // Display overall score in the legend
-            if (data.overall_score !== undefined) {
+            // Load local swap statistics
+            response = await fetch('annotations/local_swap.json');
+            if (!response.ok) {
+                throw new Error(`HTTP status ${response.status}`);
+            }
+            
+            const localSwapData = await response.json();
+            localSwapData.annotations.forEach(constituency => {
+                localSwapStatistics[constituency.constituency_name] = constituency;
+            });
+            
+            // Set initial statistics (official)
+            currentStatistics = officialStatistics;
+            
+            // Display initial overall score in the legend
+            if (officialData.overall_score !== undefined) {
                 const scoreElement = document.getElementById('overall-score-value');
                 if (scoreElement) {
-                    scoreElement.textContent = (data.overall_score * 100).toFixed(2) + '%';
+                    scoreElement.textContent = (officialData.overall_score * 100).toFixed(2) + '%';
                 }
             } else {
                 // Hide the overall score element if no data is available
@@ -1073,7 +1103,7 @@
     
     // Function to get statistics for a constituency
     function getConstituencyStatistics(constituencyName, popupElement) {
-        const constituencyData = constituencyStatistics[constituencyName];
+        const constituencyData = currentStatistics[constituencyName];
         
         if (constituencyData) {
             // Create a proper table with better styling using CSS classes
@@ -1132,9 +1162,11 @@
     // --- Load All Layers ---
     async function loadAllLayers() {
         const localAssignmentsUrl = 'assignments/official_ge_2025.json';
+        const localOptimizationUrl = 'assignments/local_swap.json';
         const localPollingUrl = 'processed_data/ge2025_polling_districts_with_information.geojson';
         const githubBaseUrl = 'https://raw.githubusercontent.com/tonghuikang/electoral-boundaries/master/';
         const githubAssignmentsUrl = githubBaseUrl + localAssignmentsUrl;
+        const githubOptimizationUrl = githubBaseUrl + localOptimizationUrl;
         const githubPollingUrl = githubBaseUrl + localPollingUrl;
         
         const statusElement = document.getElementById('status');
@@ -1142,9 +1174,12 @@
         statusElement.style.display = 'block';
         let bounds = L.latLngBounds();
         let assignmentsData = null;
+        let localOptimizationData = null;
         let pollingGeoJSON = null;
         let constituencyGeoJSON = null;
+        let localOptimizationGeoJSON = null;
         let assignmentsSource = 'local';
+        let optimizationSource = 'local';
         let pollingSource = 'local';
         pollingDistrictLayers = {};
         pollingDistrictProperties = {};
@@ -1195,6 +1230,29 @@
                     statusElement.innerHTML = "Failed to load polling data from any source.";
                 }
             }
+            
+            // Fetch Local Optimization with fallback
+            try {
+                const response = await fetch(localOptimizationUrl);
+                if (!response.ok) throw new Error(`HTTP status ${response.status} for local optimization`);
+                localOptimizationData = await response.json();
+                statusElement.innerHTML = "Loaded local optimization data...";
+                optimizationSource = 'local';
+            } catch (localError) {
+                console.error(`Failed to load local optimization: ${localError.message}`);
+                statusElement.innerHTML = "Local optimization not available, trying GitHub...";
+                
+                try {
+                    const githubResponse = await fetch(githubOptimizationUrl);
+                    if (!githubResponse.ok) throw new Error(`HTTP status ${githubResponse.status} for GitHub optimization`);
+                    localOptimizationData = await githubResponse.json();
+                    statusElement.innerHTML = "Loaded optimization data from GitHub...";
+                    optimizationSource = 'github';
+                } catch (githubError) {
+                    console.error(`Failed to load optimization from GitHub: ${githubError.message}`);
+                    statusElement.innerHTML = "Failed to load optimization data from any source.";
+                }
+            }
 
             // Construct Constituency Boundaries from Assignments and Polling Districts
             if (assignmentsData && pollingGeoJSON) {
@@ -1204,6 +1262,15 @@
                 console.error("Missing data needed to construct constituency boundaries");
                 statusElement.textContent += " Failed to construct constituency boundaries.";
             }
+            
+            // Construct Local Optimization Boundaries
+            if (localOptimizationData && pollingGeoJSON) {
+                statusElement.textContent = "Constructing local optimization boundaries...";
+                localOptimizationGeoJSON = await constructConstituencyBoundaries(pollingGeoJSON, localOptimizationData);
+            } else {
+                console.error("Missing data needed to construct local optimization boundaries");
+                statusElement.textContent += " Failed to construct local optimization boundaries.";
+            }
 
             // Parse
             statusElement.textContent = "Processing map data...";
@@ -1211,6 +1278,11 @@
                 parseGeoJSON(constituencyGeoJSON, constituencyLayer, '#0066FF', false); // Blue outline, has tooltip
                 if (constituencyLayer.getBounds().isValid()) bounds.extend(constituencyLayer.getBounds());
             } else { statusElement.textContent += " Failed to load constituency data."; }
+            
+            if (localOptimizationGeoJSON) {
+                parseGeoJSON(localOptimizationGeoJSON, localOptimizationLayer, '#0066FF', false); // Blue outline, has tooltip
+                if (localOptimizationLayer.getBounds().isValid()) bounds.extend(localOptimizationLayer.getBounds());
+            } else { statusElement.textContent += " Failed to load local optimization data."; }
 
             if (pollingGeoJSON) {
                 parseGeoJSON(pollingGeoJSON, pollingLayer, '#FF0000', true); // Red outline, has popup
@@ -1254,6 +1326,28 @@
             if (zoom >= 13 && zoom <= 14) {
                 mapElement.classList.remove('hide-constituency-labels');
             }
+            
+            // Use official statistics
+            currentStatistics = officialStatistics;
+            
+            // Update overall score in legend
+            const scoreElement = document.getElementById('overall-score-value');
+            if (scoreElement) {
+                fetch('annotations/official_ge_2025.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.overall_score !== undefined) {
+                            scoreElement.textContent = (data.overall_score * 100).toFixed(2) + '%';
+                        }
+                    })
+                    .catch(error => console.error("Error updating score:", error));
+            }
+            
+            // Uncheck local optimization toggle when constituency toggle is checked
+            if (document.getElementById('local-optimization-toggle').checked) {
+                document.getElementById('local-optimization-toggle').checked = false;
+                map.removeLayer(localOptimizationLayer);
+            }
         }
         else {
             if (activeHighlight && constituencyLayer.hasLayer(activeHighlight.layer)) {
@@ -1265,6 +1359,49 @@
             map.removeLayer(constituencyLayer);
         }
     });
+    document.getElementById('local-optimization-toggle').addEventListener('change', function() {
+        const mapElement = document.getElementById('map');
+        if (this.checked) { 
+            map.addLayer(localOptimizationLayer);
+            // Show constituency labels based on current zoom level
+            const zoom = map.getZoom();
+            if (zoom >= 13 && zoom <= 14) {
+                mapElement.classList.remove('hide-constituency-labels');
+            }
+            
+            // Use local swap statistics
+            currentStatistics = localSwapStatistics;
+            
+            // Update overall score in legend
+            const scoreElement = document.getElementById('overall-score-value');
+            if (scoreElement) {
+                fetch('annotations/local_swap.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.overall_score !== undefined) {
+                            scoreElement.textContent = (data.overall_score * 100).toFixed(2) + '%';
+                        }
+                    })
+                    .catch(error => console.error("Error updating score:", error));
+            }
+            
+            // Uncheck constituency toggle when local optimization toggle is checked
+            if (document.getElementById('constituency-toggle').checked) {
+                document.getElementById('constituency-toggle').checked = false;
+                map.removeLayer(constituencyLayer);
+            }
+        }
+        else {
+            if (activeHighlight && localOptimizationLayer.hasLayer(activeHighlight.layer)) {
+                resetHighlightStyle(activeHighlight.layer, activeHighlight.defaultColor);
+                activeHighlight = null;
+            }
+            // Hide constituency labels when unchecked
+            mapElement.classList.add('hide-constituency-labels');
+            map.removeLayer(localOptimizationLayer);
+        }
+    });
+    
     document.getElementById('polling-toggle').addEventListener('change', function() {
         if (this.checked) { map.addLayer(pollingLayer); }
         else {

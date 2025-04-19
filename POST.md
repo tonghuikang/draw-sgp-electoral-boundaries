@@ -27,4 +27,11 @@ I elaborate on the measure in this file.
 
 Note that this is not the best possible boundaries.
 
+
+# Improvements
+
+Please tell whether the place names listed for your polling district is accurate and exhaustive.
+Currently it is based on the nearest MRT.
+I am planning to include road names (e.g. if you live along East Coast Road you are considered to be in East Coast).
+
 I welcome contributions.
