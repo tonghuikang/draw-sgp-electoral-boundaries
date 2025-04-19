@@ -42,8 +42,8 @@ for iteration in range(3):
                         polling_districts_2_for_consideration.add(b)
 
             # don't consider all pairs
-            polling_districts_1_for_consideration = list(polling_districts_1_for_consideration)[::1 + len(polling_districts_1_for_consideration) // 5]
-            polling_districts_2_for_consideration = list(polling_districts_2_for_consideration)[::1 + len(polling_districts_2_for_consideration) // 5]
+            polling_districts_1_for_consideration = list(polling_districts_1_for_consideration)[:: 1 + len(polling_districts_1_for_consideration) // 5]
+            polling_districts_2_for_consideration = list(polling_districts_2_for_consideration)[:: 1 + len(polling_districts_2_for_consideration) // 5]
 
             escape = False
             for a in polling_districts_1_for_consideration:
@@ -69,10 +69,10 @@ for iteration in range(3):
                 for b in polling_districts_2_for_consideration:
                     if escape:
                         break
-                    if (a,b) in pairs_tried:
+                    if (a, b) in pairs_tried:
                         continue
-                    pairs_tried.add((a,b))
-                    pairs_tried.add((b,a))
+                    pairs_tried.add((a, b))
+                    pairs_tried.add((b, a))
                     polling_districts_1.remove(a)
                     polling_districts_1.append(b)
                     polling_districts_2.remove(b)

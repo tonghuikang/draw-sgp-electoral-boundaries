@@ -51198,6 +51198,7 @@
           "YK01"
         ],
         "nearest_mrts": [
+          "Seletar (airport)",
           "Sengkang",
           "Punggol",
           "Yishun"
@@ -51365,8 +51366,8 @@
           "AM09"
         ],
         "nearest_mrts": [
+          "Seletar (airport)",
           "Sengkang",
-          "Hougang",
           "Punggol"
         ]
       },
@@ -51428,8 +51429,8 @@
           "AM12"
         ],
         "nearest_mrts": [
-          "Sengkang",
-          "Hougang"
+          "Seletar (airport)",
+          "Sengkang"
         ]
       },
       "geometry": {
@@ -51489,9 +51490,9 @@
           "AM21"
         ],
         "nearest_mrts": [
+          "Seletar (airport)",
           "Buangkok",
-          "Sengkang",
-          "Ang Mo Kio"
+          "Sengkang"
         ]
       },
       "geometry": {
@@ -58617,8 +58618,8 @@
           "AM08"
         ],
         "nearest_mrts": [
-          "Sengkang",
-          "Punggol"
+          "Seletar (airport)",
+          "Sengkang"
         ]
       },
       "geometry": {
@@ -96813,6 +96814,7 @@
           "SK07"
         ],
         "nearest_mrts": [
+          "Seletar (airport)",
           "Sengkang",
           "Punggol"
         ]
@@ -96937,8 +96939,8 @@
           "AM13"
         ],
         "nearest_mrts": [
-          "Sengkang",
-          "Punggol"
+          "Seletar (airport)",
+          "Sengkang"
         ]
       },
       "geometry": {
@@ -100545,8 +100547,8 @@
           "AM10"
         ],
         "nearest_mrts": [
+          "Seletar (airport)",
           "Sengkang",
-          "Hougang",
           "Ang Mo Kio"
         ]
       },
@@ -100611,8 +100613,8 @@
           "AM11"
         ],
         "nearest_mrts": [
+          "Seletar (airport)",
           "Sengkang",
-          "Hougang",
           "Ang Mo Kio"
         ]
       },
@@ -100673,10 +100675,10 @@
           "AM21"
         ],
         "nearest_mrts": [
+          "Seletar (airport)",
           "Buangkok",
           "Sengkang",
-          "Ang Mo Kio",
-          "Serangoon"
+          "Ang Mo Kio"
         ]
       },
       "geometry": {

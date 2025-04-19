@@ -7,9 +7,9 @@
       "nonenclavity": 1,
       "compactness": 0.7462478875260017,
       "convexity": 0.7072159308441648,
-      "relevance": 0.5090830154743077,
+      "relevance": 0.4908983781437033,
       "elector_balance": 0.8801988772870745,
-      "constituency_score": 0.7685491422263098
+      "constituency_score": 0.7649122147601889
     },
     {
       "constituency_name": "West Coast-Jurong West",
@@ -364,5 +364,5 @@
       "constituency_score": 0.6804719068042301
     }
   ],
-  "overall_score": 0.7735488490753507
+  "overall_score": 0.7733613785874063
 }
